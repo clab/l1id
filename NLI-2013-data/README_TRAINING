@@ -1,0 +1,42 @@
+Description
+------------
+NLI Shared Task 2013 training data (subset of TOEFL11)
+
+A sample of 9,900 TOEFL essays from 11 languages (Arabic, Chinese, French, German, Hindi, Italian, Japanese, Korean, Spanish, Telugu, and Turkish)
+that were sampled as evenly possible from 8 retired TOEFL Independent prompts. The dataset was created with the goal of providing a common corpus 
+for the task of Native Language Identification.
+
+The index files and directory names use the following abbreviations for languages:
+    ARA = Arabic
+    CHI = Chinese
+    FRE = French
+    GER = German
+    HIN = Hindi
+    ITA = Italian
+    JPN = Japanese
+    KOR = Korean
+    SPA = Spanish
+    TEL = Telugu
+    TUR = Turkish
+
+
+Files
+-----
+index-training.csv
+    An index of all of the essays in the training set.
+    The fields of the index are: Filename, Prompt, Native Language, Proficiency Level
+    
+    Possible proficiency levels are: low, medium, and high.
+
+tokenized/
+    Directory containing sub-directories for each language with all of the essays in the training set. 
+    Each filename is in index-training.csv
+    
+    Each essay has been sentence and word tokenized using ETS's proprietary tokenizers.
+    
+    
+
+Questions
+---------
+Please submit any questions about the data to nlisharedtask2013@gmail.com, or post on the NLI Shared Task 2013 Google Group forum.
+    
