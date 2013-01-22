@@ -1,0 +1,26 @@
+To run everything execute:
+
+./train.sh config/params.sh
+
+Directory structure:
+
++ src                       all .py and .sh scripts.
+|   + feature_extractors    Special .py files implementing FeatureExtractor interface.
+|                           Dynamically loaded from the extract_instances.py
+|
++ data                      all data files.
+|   + input                 inputs to the project.
+|   + work                  all files produced by the scripts while the project is running.
+|                           each experiment creates its own subdirectory.
+|
++ config                    configurations of experiments.
+|
+./train.sh                  executes the training with a config set passed via command line (by default config/params.sh)
+./local_config.sh           paths to external tools such as Creg, TurboTagger, etc.
+
+
+
+To add a new feature extractor create a new python script under src/feature_extractors and subclass the
+FeatureExtractor interface declared in src/feature_extractor.py.
+Define a function REGISTER_FEATURE_EXTRACTOR that returns an instance of your subclass.
+
