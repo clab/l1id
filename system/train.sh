@@ -56,4 +56,4 @@ ${BIN_DIR}/extract_instances.py --input_dir="${TRAINING_INPUT_DIR}" \
 
 echo "-------------------------------------------------------------------------"
 echo "Running Cross Validation (creg)"
-${BIN_DIR}/run_cross_validation.sh ${TRAIN_FEATURES} ${TRAIN_LABELS}
+#${BIN_DIR}/run_cross_validation.sh ${TRAIN_FEATURES} ${TRAIN_LABELS}
