@@ -14,7 +14,13 @@
 # an environment variable PARAMS (this is useful when running under qsub).
 # By default it will use ./config/params.sh.
 
-export ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+if [[ "${ROOT_DIR}" == *"/opt/torque"* ]] ; then
+  # This happens when running the script under 'qsub'
+  ROOT_DIR=$PWD
+fi
+export ROOT_DIR
+
 
 if [ "$#" == "1" ] ; then
   PARAMS="$1"
@@ -50,4 +56,4 @@ ${BIN_DIR}/extract_instances.py --input_dir="${TRAINING_INPUT_DIR}" \
 
 echo "-------------------------------------------------------------------------"
 echo "Running Cross Validation (creg)"
-#${BIN_DIR}/cross_validation.sh ${TRAIN_FEATURES} ${TRAIN_LABELS}
+${BIN_DIR}/run_cross_validation.sh ${TRAIN_FEATURES} ${TRAIN_LABELS}
