@@ -26,7 +26,7 @@ class PosBigramsFeatureExtractor(feature_extractor.FeatureExtractor):
     for line in open(pos_filename):
       words = line.split()
       pos_tags = [w.split("_")[-1] for w in words]
-      for index in xrange(pos_tags-1):
+      for index in xrange(len(pos_tags)-1):
         pos_bigram = pos_tags[index:index+1]
         counts["POS_" + "_".join(pos_bigram)] += 1
         total += 1
