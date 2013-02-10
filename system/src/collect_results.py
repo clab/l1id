@@ -63,7 +63,9 @@ def ReadPredictions(filename):
   result = {}
   for line in open(filename):
     instance, predicted_label, weights = line.strip().split("\t")
-    lang, test_filename = instance.split("_")
+    sep_pos = instance.find("_")
+    lang = instance[:sep_pos]
+    test_filename = instance[sep_pos+1:]
     result[(lang, test_filename)] = predicted_label
   return result
 
@@ -107,7 +109,7 @@ def PrintProfiledResults(predictions, metadata, out_file):
   prompt_matrix = collections.defaultdict(int)
   correct_count = 0
   for (lang, filename), predicted_label in predictions.iteritems():
-    prompt, level = metadata[(lang, filename)]
+    prompt, level = metadata.get( (lang, filename), ("unk", "unk") )
     is_correct = (lang == predicted_label)
     language_matrix[(lang, is_correct)] += 1
     level_matrix[(level, is_correct)] += 1
