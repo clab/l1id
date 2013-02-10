@@ -11,6 +11,7 @@ export ADD_PUNCTUATION_FEATURES=1
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
+export TRAINING_INPUT_INDEX_FILE=${INPUT_DIR}/NLI_2013_Training_Data/index-training.csv
 export EXPERIMENT_DIR=${WORK_DIR}/${EXPERIMENT_NAME}
 
 # Names of intermediate files:
@@ -18,6 +19,7 @@ export POS_TAGGED_DIR=${EXPERIMENT_DIR}/pos_tagged
 export TURBO_TAGGED_DIR=${EXPERIMENT_DIR}/turbo_tagged
 export TRAIN_FEATURES=${EXPERIMENT_DIR}/train.feat
 export TRAIN_LABELS=${EXPERIMENT_DIR}/train.labels
+export CROSS_VALIDATION_RESULTS=${EXPERIMENT_DIR}/train.results.txt
 
 # The lines below create the command line parameters for the extract_instances.py
 # based on the parameters above.

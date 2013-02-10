@@ -15,7 +15,7 @@ for ((i = 0; i < NUM_FOLDS; i++)); do
   TRAIN_LABEL=${OUT_FILE_PREFIX}.train.label
   TEST_FEAT=${OUT_FILE_PREFIX}.test.feat
   TEST_LABEL=${OUT_FILE_PREFIX}.test.label
-  WEIGHTS=${OUT_FILE_PREFIX}.weights.txt
+  PREDICTED_LABELS=${OUT_FILE_PREFIX}.test.predicted
   RESULTS=${OUT_FILE_PREFIX}.results.txt
   # Since Creg needs two separate files for Features and Labels, we run
   # generate_fold.py once for each of these files.
@@ -28,10 +28,14 @@ for ((i = 0; i < NUM_FOLDS; i++)); do
   # Now run Creg and store the results in a file.
   # If it fails, see the ${RESULTS} for error messages.
   ${CREG_BIN} -x ${TRAIN_FEAT} -y ${TRAIN_LABEL} --l1 1.0 --tx ${TEST_FEAT} \
-      --ty ${TEST_LABEL} > ${WEIGHTS} 2> ${RESULTS}
+      --ty ${TEST_LABEL} -D -W > ${PREDICTED_LABELS} 2> ${RESULTS}
 done
 
 # Now parse the results files from all the folds, calculate the Mean, Min and
 # Max.
-${BIN_DIR}/collect_results.py  \
-    --creg_results_file_pattern="${CROSS_VALIDATION_DIR}/fold_?.results.txt"
+${BIN_DIR}/collect_results.py  --metadata_file="${TRAINING_INPUT_INDEX_FILE}" \
+    --creg_results_file_pattern="${CROSS_VALIDATION_DIR}/fold_?.results.txt" \
+    --creg_predictions_file_pattern="${CROSS_VALIDATION_DIR}/fold_?.test.predicted" \
+    --out_file="${CROSS_VALIDATION_RESULTS}"
+
+cat ${CROSS_VALIDATION_RESULTS}
