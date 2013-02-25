@@ -15,7 +15,7 @@ export ADD_CONTEXTUAL_FW_FEATURES=0
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
 export TRAINING_INPUT_INDEX_FILE=${INPUT_DIR}/NLI_2013_Training_Data/index-training.csv
 export EXPERIMENT_DIR=${WORK_DIR}/${EXPERIMENT_NAME}
-export FW_LIST_FILE=${WORK_DIR}/function_words.txt
+export FW_LIST_FILE=${INPUT_DIR}/function_words.txt
 
 # Names of intermediate files:
 export POS_TAGGED_DIR=${EXPERIMENT_DIR}/pos_tagged
