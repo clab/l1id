@@ -25,7 +25,7 @@ class ContextualFunctionWordsFeatureExtractor(feature_extractor.FeatureExtractor
 
   def ExtractFeaturesFromInstance(self, text, language, filename):
     # Find a corresponding tagged file
-    pos_filename = os.path.join(self.fw_pos_tagged_dir, "/".join(filename.split("/")[-2:]))
+    pos_filename = os.path.join(self.fw_pos_tagged_dir, os.path.basename(filename))
     pos_tags=open(pos_filename).readlines()
     counts = collections.defaultdict(int)
     total = 0
@@ -35,11 +35,11 @@ class ContextualFunctionWordsFeatureExtractor(feature_extractor.FeatureExtractor
       tokens = [w.split("_")[0] for w in words]
       for index in xrange(len(pos_tags)-1):
         if tokens[index] in self.function_words:
-    bigram = tokens[index] + " " + pos_tags[index+1]#neighbor from right
-    counts["FW_" + "_" + bigram]+=1
-    if index > 0:
-      bigram = pos_tags[index-1] + " " +tokens[index] #neighbor from left
-      counts["FW_" + "_" + bigram]+=1
+          bigram = tokens[index] + " " + pos_tags[index+1]#neighbor from right
+          counts["FW_" + "_" + bigram]+=1
+        if index > 0:
+          bigram = pos_tags[index-1] + " " +tokens[index] #neighbor from left
+          counts["FW_" + "_" + bigram]+=1
         total += 1
     total = float(total)
     # Normalize to probabilities

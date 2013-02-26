@@ -8,8 +8,7 @@ export EXPERIMENT_NAME=all_features
 # Set to 1 features you want to be included in this experiment.
 export ADD_POS_FEATURES=1
 export ADD_PUNCTUATION_FEATURES=1
-export ADD_CONTEXTUAL_FW_FEATURES=0
-
+export ADD_CONTEXTUAL_FW_FEATURES=1
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
