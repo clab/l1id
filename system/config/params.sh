@@ -6,7 +6,7 @@ export EXPERIMENT_NAME=all_features
 
 # Which features should be extracted in this experiment.
 # Set to 1 features you want to be included in this experiment.
-export ADD_POS_FEATURES=0
+export ADD_POS_FEATURES=1
 export ADD_PUNCTUATION_FEATURES=1
 
 # Directory with training texts

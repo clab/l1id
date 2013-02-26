@@ -20,7 +20,7 @@ class PosBigramsFeatureExtractor(feature_extractor.FeatureExtractor):
 
   def ExtractFeaturesFromInstance(self, text, language, filename):
     # Find a corresponding tagged file
-    pos_filename = os.path.join(self.pos_tagged_dir, "/".join(filename.split("/")[-2:]))
+    pos_filename = os.path.join(self.pos_tagged_dir, "/".join(filename.split("/")[-1:]))
     counts = collections.defaultdict(int)
     total = 0
     for line in open(pos_filename):

@@ -42,8 +42,6 @@ echo "Preprocessing..."
 if [ "${ADD_POS_FEATURES}" == "1" ] ; then
   ${BIN_DIR}/run_pos_tagger.sh ${TRAINING_INPUT_DIR} ${POS_TAGGED_DIR}
 fi
-#${BIN_DIR}/run_turbo_tagger.sh ${TRAINING_INPUT_DIR} ${TURBO_TAGGED_DIR}
-
 
 echo "-------------------------------------------------------------------------"
 echo "Extracting features"
@@ -51,6 +49,7 @@ echo "Extracting features"
 # Creates a file with features and a file with labels in Creg format.
 ${BIN_DIR}/extract_instances.py --input_dir="${TRAINING_INPUT_DIR}" \
   --features_filename="${TRAIN_FEATURES}" --labels_filename="${TRAIN_LABELS}" \
+  --metadata_filename="${TRAINING_INPUT_INDEX_FILE}" \
   ${EXTRACT_FEATURES_PARAMS}
 
 
