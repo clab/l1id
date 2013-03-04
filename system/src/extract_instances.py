@@ -1,5 +1,5 @@
 #!/bin/env python2.7
-
+from __future__ import print_function
 import sys
 import glob
 import os
@@ -34,9 +34,12 @@ class InstanceExtractor:
 
   def ProcessInputDir(self, input_dir):
     """Processing all .txt files in a directory."""
+    nProcessed = 0
     for filename in sorted(glob.iglob(os.path.join(input_dir, "*.txt"))):
       lang = self.file_to_lang_dict[os.path.basename(filename)]
       self._ProcessSingleFile(filename, lang)
+      nProcessed += 1
+    assert nProcessed>0, 'No .txt files found in {}'.format(input_dir)
 
   def _ProcessSingleFile(self, filename, language):
     """Extracts features from an input file using feature_extractors."""
@@ -72,10 +75,11 @@ def main(argv):
   try:
     argv = FLAGS(argv)  # parse flags
   except gflags.FlagsError, e:
-    print '%s\nUsage: %s\n%s' % (e, sys.argv[0], FLAGS)
+    print('%s\nUsage: %s\n%s' % (e, sys.argv[0], FLAGS), file=sys.stderr)
     sys.exit(1)
   file_to_lang = LoadMetadata(open(FLAGS.metadata_filename))
   feature_extractors = feature_extractor.Repository.GetActiveFeatureExtractors()
+  print('Feature extractors:',feature_extractors, file=sys.stderr)
   instance_extractor = InstanceExtractor(feature_extractors, file_to_lang,
       open(FLAGS.features_filename, "w"), open(FLAGS.labels_filename, "w"))
   instance_extractor.ProcessInputDir(FLAGS.input_dir)
