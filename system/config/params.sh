@@ -2,13 +2,13 @@
 
 # Name of the experiment. This also defines which directory the output will be
 # stored in (under ../data/work/).
-export EXPERIMENT_NAME=all_features
+export EXPERIMENT_NAME=pos_ngrams
 
 # Which features should be extracted in this experiment.
 # Set to 1 features you want to be included in this experiment.
 export ADD_POS_FEATURES=1
-export ADD_PUNCTUATION_FEATURES=1
-export ADD_CONTEXTUAL_FW_FEATURES=1
+export ADD_PUNCTUATION_FEATURES=0
+export ADD_CONTEXTUAL_FW_FEATURES=0
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
@@ -28,8 +28,9 @@ export CROSS_VALIDATION_RESULTS=${EXPERIMENT_DIR}/train.results.txt
 # NOTE: Don't forget to append an extra space after each parameter.
 EXTRACT_FEATURES_PARAMS=""
 if [ "${ADD_POS_FEATURES}" == "1" ] ; then
-  EXTRACT_FEATURES_PARAMS+="--append_pos_bigrams_features=True "
-  EXTRACT_FEATURES_PARAMS+="--pos_tagged_dir=${POS_TAGGED_DIR} "
+  EXTRACT_FEATURES_PARAMS+="--append_pos_ngrams_features=True "
+  EXTRACT_FEATURES_PARAMS+="--max_ngrams_order=3 "
+  EXTRACT_FEATURES_PARAMS+="--pos_tagged_dir_ngrams=${POS_TAGGED_DIR} "
 fi
 if [ "${ADD_PUNCTUATION_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_punctuation_features=True "
