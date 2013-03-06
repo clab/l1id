@@ -91,15 +91,17 @@ def CollectPredictions(creg_predictions_file_pattern, predictions_files):
 
 def PrintAccMatrix(title, matrix, out_file):
   out_file.write("\n\nResults by {}:\n".format(title))
-  out_file.write("\tCorrect\tWrong\tAccuracy")
+  out_file.write("\tCorrect\tWrong\tAcc\tRel Freq")
   properties = sorted({x for x,y in matrix})
+  totals = Counter({x: matrix[(x,True)]+matrix[(x,False)] for x in properties})
   for prop in properties:
     out_file.write("\n{}".format(prop))
     for is_correct in [True, False]:
       out_file.write("\t{}".format(matrix[(prop, is_correct)]))
-    total = matrix[(prop, True)] + matrix[(prop, False)]
+    total = totals[prop]
     accuracy = matrix[(prop, True)] / total
-    out_file.write("\t{:.3f}".format(accuracy))
+    freq = total / sum(totals.values())
+    out_file.write("\t{:.3f}\t{:.3f}".format(accuracy, freq))
   out_file.write("\n")
   
 def PrintPrecRecMatrix(title, predictions, out_file):
