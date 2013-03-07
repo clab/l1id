@@ -97,14 +97,17 @@ def PrintAccMatrix(title, matrix, out_file):
   for prop in properties:
     out_file.write("\n{}".format(prop))
     for is_correct in [True, False]:
-      out_file.write("\t{}".format(matrix[(prop, is_correct)]))
+      out_file.write("\t{:4}".format(matrix[(prop, is_correct)]))
     total = totals[prop]
     accuracy = matrix[(prop, True)] / total
     freq = total / sum(totals.values())
     out_file.write("\t{:.3f}\t{:.3f}".format(accuracy, freq))
   out_file.write("\n")
   
-def PrintPrecRecMatrix(title, predictions, out_file):
+def PrintPrecRecMatrix(title, predictions, out_file, weights=None):
+  custom_weights = weights is not None
+  if not custom_weights:
+  	weights = lambda lang,filename: 1
   out_file.write("\n\nResults by {}:\n".format(title))
   out_file.write("\tCorrect\tFP\tPrec\tFN\tRecall\tF1")
   tpC, fpC, fnC = Counter(), Counter(), Counter()
@@ -112,14 +115,15 @@ def PrintPrecRecMatrix(title, predictions, out_file):
   for (gold, itemid), pred in predictions.iteritems():
     n += 1
     if pred==gold:
-      tpC[gold] += 1
+      tpC[gold] += weights(gold,itemid)
     else:
-      fpC[pred] += 1
-      fnC[gold] += 1
+      fpC[pred] += weights(gold,itemid)
+      fnC[gold] += weights(gold,itemid)
+  countfmt = ": >5.1f" if custom_weights else ":3"
   for prop in sorted(set(tpC.keys()+fpC.keys()+fnC.keys())):
     out_file.write("\n{}".format(prop))
     prec, rec, f1 = PRF(tpC[prop], fpC[prop], fnC[prop])
-    out_file.write("\t{}\t{}\t{:.3f}\t{}\t{:.3f}\t{:.3f}".format(tpC[prop],fpC[prop],prec,fnC[prop],rec,f1))
+    out_file.write(("\t{"+countfmt+"}\t{"+countfmt+"}\t{:.3f}\t{"+countfmt+"}\t{:.3f}\t{:.3f}").format(tpC[prop],fpC[prop],prec,fnC[prop],rec,f1))
   out_file.write("\n")
 
 def PrintConfusionMatrix(predictions, out_file):
@@ -134,7 +138,7 @@ def PrintConfusionMatrix(predictions, out_file):
   for lang in all_languages:
     out_file.write("\n{}".format(lang))
     for predicted_lang in all_languages:
-      out_file.write("\t{}".format(confusion_matrix[(predicted_lang, lang)]))
+      out_file.write("\t{:3}".format(confusion_matrix[(predicted_lang, lang)]))
   out_file.write("\n")
 
 def PrintProfiledResults(predictions, metadata, out_file):
@@ -144,15 +148,19 @@ def PrintProfiledResults(predictions, metadata, out_file):
   correct_count = 0
   for (lang, filename), predicted_label in predictions.iteritems():
     prompt, level = metadata.get( (lang, filename), ("unk", "unk") )
-    level = level.replace('low','1 low').replace('medium', '2 med').replace('high', '3 high')
     level_dist[level] += 1
     is_correct = (lang == predicted_label)
+    level = level.replace('low','1 low').replace('medium', '2 med').replace('high', '3 high')
     level_matrix[(level, is_correct)] += 1
     prompt_matrix[(prompt, is_correct)] += 1
     if is_correct:
       correct_count += 1
+  for k in level_dist:
+	level_dist[k] /= sum(level_dist.values())
   PrintPrecRecMatrix("language", predictions, out_file)
   PrintAccMatrix("level", level_matrix, out_file)
+  PrintPrecRecMatrix("language, weighted by level", predictions, out_file, 
+  	weights=lambda lang,filename: level_dist[metadata.get((lang, filename), ("unk", "unk"))[1]])
   PrintAccMatrix("prompt", prompt_matrix, out_file)
   accuracy = correct_count/len(predictions)
   out_file.write("\n\nTotal accuracy:\t{}\n\n".format(accuracy))
