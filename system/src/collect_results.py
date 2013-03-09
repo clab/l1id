@@ -1,21 +1,26 @@
 #!/bin/env python2.7
-
+from __future__ import division
 import sys
 import glob
 import os
 import re
 import gflags
-import collections
+from collections import Counter
 
 FLAGS = gflags.FLAGS
 
 gflags.DEFINE_string("creg_results_file_pattern", None,
     "File pattern of the creg STDERR output")
-gflags.MarkFlagAsRequired("creg_results_file_pattern")
 
 gflags.DEFINE_string("creg_predictions_file_pattern", None,
     "File pattern of the creg STDOUT output")
-gflags.MarkFlagAsRequired("creg_predictions_file_pattern")
+
+gflags.DEFINE_string("creg_results_files", None,
+    "List of creg STDERR output files")
+
+gflags.DEFINE_string("creg_predictions_files", None,
+    "List of creg STDOUT output files")
+
 
 gflags.DEFINE_string("metadata_file", None,
     "CSV file with metadata about the corpora")
@@ -26,6 +31,13 @@ gflags.DEFINE_string("out_file", None,
 
 def avg(l):
   return sum(l)/len(l)
+
+def PRF(tp, fp, fn):
+  assert tp>=0 and fp>=0 and fn>=0
+  p = tp/(tp+fp) if (tp+fp>0) else float('NaN')
+  r = tp/(tp+fn) if (tp+fn>0) else float('NaN')
+  f = 2*p*r/(p+r) if p>0 and r>0 else float('NaN')
+  return p, r, f
 
 def ReadAccuracy(filename):
   line = ""
@@ -41,9 +53,9 @@ def ReadAccuracy(filename):
   else:
     return float(match.group(1))
 
-def CollectAccuracy(creg_results_file_pattern, out_file):
+def CollectAccuracy(creg_results_file_pattern, results_files, out_file):
   experiment_stats = []
-  for filename in glob.iglob(creg_results_file_pattern):
+  for filename in results_files or glob.iglob(creg_results_file_pattern):
     accuracy = ReadAccuracy(filename)
     if accuracy is not None:
       experiment_stats.append(accuracy)
@@ -62,34 +74,60 @@ def ReadCorpusMetadata(metadata_filename):
 def ReadPredictions(filename):
   result = {}
   for line in open(filename):
-    instance, predicted_label, weights = line.strip().split("\t")
+    instance, predicted_label = line.strip().split("\t")[:2]
     sep_pos = instance.find("_")
     lang = instance[:sep_pos]
     test_filename = instance[sep_pos+1:]
     result[(lang, test_filename)] = predicted_label
   return result
 
-def CollectPredictions(creg_predictions_file_pattern):
+def CollectPredictions(creg_predictions_file_pattern, predictions_files):
   result = {}
-  for filename in glob.iglob(creg_predictions_file_pattern):
+  nFiles = 0
+  for filename in predictions_files or glob.iglob(creg_predictions_file_pattern):
     result.update(ReadPredictions(filename))
-  return result
+    nFiles += 1
+  return nFiles, result
 
-def PrintResultsMatrix(title, matrix, out_file):
+def PrintAccMatrix(title, matrix, out_file):
   out_file.write("\n\nResults by {}:\n".format(title))
-  out_file.write("\tCorrect\tWrong\tAccuracy")
-  properties = sorted(set([x for x,y in matrix]))
+  out_file.write("\tCorrect\tWrong\tAcc\tRel Freq")
+  properties = sorted({x for x,y in matrix})
+  totals = Counter({x: matrix[(x,True)]+matrix[(x,False)] for x in properties})
   for prop in properties:
     out_file.write("\n{}".format(prop))
     for is_correct in [True, False]:
-      out_file.write("\t{}".format(matrix[(prop, is_correct)]))
-    total = matrix[(prop, True)] + matrix[(prop, False)]
-    accuracy = matrix[(prop, True)] / float(total)
-    out_file.write("\t{:.3f}".format(accuracy))
+      out_file.write("\t{:4}".format(matrix[(prop, is_correct)]))
+    total = totals[prop]
+    accuracy = matrix[(prop, True)] / total
+    freq = total / sum(totals.values())
+    out_file.write("\t{:.3f}\t{:.3f}".format(accuracy, freq))
+  out_file.write("\n")
+  
+def PrintPrecRecMatrix(title, predictions, out_file, weights=None):
+  custom_weights = weights is not None
+  if not custom_weights:
+  	weights = lambda lang,filename: 1
+  out_file.write("\n\nResults by {}:\n".format(title))
+  out_file.write("\tCorrect\tFP\tPrec\tFN\tRecall\tF1")
+  tpC, fpC, fnC = Counter(), Counter(), Counter()
+  n = 0
+  for (gold, itemid), pred in predictions.iteritems():
+    n += 1
+    if pred==gold:
+      tpC[gold] += weights(gold,itemid)
+    else:
+      fpC[pred] += weights(gold,itemid)
+      fnC[gold] += weights(gold,itemid)
+  countfmt = ": >5.1f" if custom_weights else ":3"
+  for prop in sorted(set(tpC.keys()+fpC.keys()+fnC.keys())):
+    out_file.write("\n{}".format(prop))
+    prec, rec, f1 = PRF(tpC[prop], fpC[prop], fnC[prop])
+    out_file.write(("\t{"+countfmt+"}\t{"+countfmt+"}\t{:.3f}\t{"+countfmt+"}\t{:.3f}\t{:.3f}").format(tpC[prop],fpC[prop],prec,fnC[prop],rec,f1))
   out_file.write("\n")
 
 def PrintConfusionMatrix(predictions, out_file):
-  confusion_matrix = collections.defaultdict(int)
+  confusion_matrix = Counter()
   all_languages = set()
   for (lang, filename), predicted_label in predictions.iteritems():
     all_languages.add(lang)
@@ -100,32 +138,39 @@ def PrintConfusionMatrix(predictions, out_file):
   for lang in all_languages:
     out_file.write("\n{}".format(lang))
     for predicted_lang in all_languages:
-      out_file.write("\t{}".format(confusion_matrix[(predicted_lang, lang)]))
+      out_file.write("\t{:3}".format(confusion_matrix[(predicted_lang, lang)]))
   out_file.write("\n")
 
 def PrintProfiledResults(predictions, metadata, out_file):
-  language_matrix = collections.defaultdict(int)
-  level_matrix = collections.defaultdict(int)
-  prompt_matrix = collections.defaultdict(int)
+  level_matrix = Counter()
+  prompt_matrix = Counter()
+  level_dist = Counter()
   correct_count = 0
   for (lang, filename), predicted_label in predictions.iteritems():
     prompt, level = metadata.get( (lang, filename), ("unk", "unk") )
+    level_dist[level] += 1
     is_correct = (lang == predicted_label)
-    language_matrix[(lang, is_correct)] += 1
+    level = level.replace('low','1 low').replace('medium', '2 med').replace('high', '3 high')
     level_matrix[(level, is_correct)] += 1
     prompt_matrix[(prompt, is_correct)] += 1
     if is_correct:
       correct_count += 1
-  PrintResultsMatrix("language", language_matrix, out_file)
-  PrintResultsMatrix("level", level_matrix, out_file)
-  PrintResultsMatrix("prompt", prompt_matrix, out_file)
-  accuracy = correct_count/float(len(predictions))
+  for k in level_dist:
+	level_dist[k] /= sum(level_dist.values())
+  PrintPrecRecMatrix("language", predictions, out_file)
+  PrintAccMatrix("level", level_matrix, out_file)
+  PrintPrecRecMatrix("language, weighted by level", predictions, out_file, 
+  	weights=lambda lang,filename: level_dist[metadata.get((lang, filename), ("unk", "unk"))[1]])
+  PrintAccMatrix("prompt", prompt_matrix, out_file)
+  accuracy = correct_count/len(predictions)
   out_file.write("\n\nTotal accuracy:\t{}\n\n".format(accuracy))
 
 def main(argv):
   try:
     argv = FLAGS(argv)  # parse flags
-  except gflags.FlagsError, e:
+    assert (FLAGS.creg_predictions_file_pattern is not None) ^ (FLAGS.creg_predictions_files is not None)
+    assert (FLAGS.creg_results_file_pattern is not None) ^ (FLAGS.creg_results_files is not None)
+  except (gflags.FlagsError, AssertionError), e:
     print '%s\nUsage: %s\n%s' % (e, sys.argv[0], FLAGS)
     sys.exit(1)
   if FLAGS.out_file is not None:
@@ -134,10 +179,11 @@ def main(argv):
     out_file = sys.stdout
 
   corpus_metadata = ReadCorpusMetadata(FLAGS.metadata_file)
-  file_predictions = CollectPredictions(FLAGS.creg_predictions_file_pattern)
+  nFiles, file_predictions = CollectPredictions(FLAGS.creg_predictions_file_pattern, FLAGS.creg_predictions_files.split() if FLAGS.creg_predictions_files else None)
+  out_file.write('Results collected over %d files' % nFiles)
   PrintConfusionMatrix(file_predictions, out_file)
   PrintProfiledResults(file_predictions, corpus_metadata, out_file)
-  CollectAccuracy(FLAGS.creg_results_file_pattern, out_file)
+  CollectAccuracy(FLAGS.creg_results_file_pattern, FLAGS.creg_results_files.split() if FLAGS.creg_results_files else None, out_file)
  
 if __name__ == '__main__':
   main(sys.argv)

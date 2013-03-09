@@ -5,6 +5,7 @@ import glob
 import os
 import json
 import gflags
+import codecs
 import feature_extractor
 
 FLAGS = gflags.FLAGS
@@ -45,7 +46,8 @@ class InstanceExtractor:
     """Extracts features from an input file using feature_extractors."""
     base_filename = os.path.basename(filename)
     instance = "_".join( (language, base_filename) )
-    text = open(filename).read()
+    #text = open(filename).read()
+    text = codecs.open(filename,"r","utf-8").read()
     feature_dict = {}
     for extractor in self.feature_extractors:
       feature_dict.update(

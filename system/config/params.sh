@@ -8,7 +8,9 @@ export EXPERIMENT_NAME=pos_ngrams
 # Set to 1 features you want to be included in this experiment.
 export ADD_POS_FEATURES=1
 export ADD_PUNCTUATION_FEATURES=0
-export ADD_CONTEXTUAL_FW_FEATURES=0
+export ADD_CFW_BIGRAMS_FEATURES=0
+export ADD_CFW_TRIGRAMS_FEATURES=0
+export ADD_CHARACTERS_FEATURES=0
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
@@ -35,9 +37,18 @@ fi
 if [ "${ADD_PUNCTUATION_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_punctuation_features=True "
 fi
-if [ "${ADD_CONTEXTUAL_FW_FEATURES}" == "1" ] ; then
-  EXTRACT_FEATURES_PARAMS+="--append_contextual_function_words_features=True "
-  EXTRACT_FEATURES_PARAMS+="--fw_pos_tagged_dir=${POS_TAGGED_DIR} "
-  EXTRACT_FEATURES_PARAMS+="--function_words_list_path=${FW_LIST_FILE} "
+if [ "${ADD_CFW_BIGRAMS_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_cfw_bigrams_features=True "
+  EXTRACT_FEATURES_PARAMS+="--pos_tagged_dir_cfw_bigrams=${POS_TAGGED_DIR} "
+  EXTRACT_FEATURES_PARAMS+="--fw_bigrams_file=${FW_LIST_FILE} "
+fi
+if [ "${ADD_CFW_TRIGRAMS_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_cfw_trigrams_features=True "
+  EXTRACT_FEATURES_PARAMS+="--pos_tagged_dir_cfw_trigrams=${POS_TAGGED_DIR} "
+  EXTRACT_FEATURES_PARAMS+="--fw_trigrams_file=${FW_LIST_FILE} "
+fi
+if [ "${ADD_CHARACTERS_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_characters_ngrams_features=True "
+  EXTRACT_FEATURES_PARAMS+="--characters_max_ngrams_order=3 "
 fi
 export EXTRACT_FEATURES_PARAMS
