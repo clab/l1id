@@ -2,15 +2,17 @@
 
 # Name of the experiment. This also defines which directory the output will be
 # stored in (under ../data/work/).
-export EXPERIMENT_NAME=pos_ngrams
+export EXPERIMENT_NAME=repetitions
 
 # Which features should be extracted in this experiment.
 # Set to 1 features you want to be included in this experiment.
-export ADD_POS_FEATURES=1
+export ADD_POS_FEATURES=0
 export ADD_PUNCTUATION_FEATURES=0
 export ADD_CFW_BIGRAMS_FEATURES=0
 export ADD_CFW_TRIGRAMS_FEATURES=0
 export ADD_CHARACTERS_FEATURES=0
+export ADD_PRONOUNS_FEATURES=0
+export ADD_REPETITIONS_FEATURES=1
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
@@ -51,4 +53,12 @@ if [ "${ADD_CHARACTERS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_characters_ngrams_features=True "
   EXTRACT_FEATURES_PARAMS+="--characters_max_ngrams_order=3 "
 fi
+if [ "${ADD_PRONOUNS_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_pronouns_features=True "
+fi
+if [ "${ADD_REPETITIONS_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_repetitions_features=True "
+  EXTRACT_FEATURES_PARAMS+="--pos_tagged_dir_repetitions=${POS_TAGGED_DIR} "
+fi
+
 export EXTRACT_FEATURES_PARAMS
