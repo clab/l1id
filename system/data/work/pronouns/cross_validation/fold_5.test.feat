@@ -1,0 +1,992 @@
+CHI_1003222.txt	{"Pronouns_it": 0.11764705882352941, "Pronouns_them": 0.058823529411764705, "Pronouns_they": 0.4117647058823529, "Pronouns_we": 0.29411764705882354, "Pronouns_you": 0.058823529411764705, "Pronouns_yourself": 0.058823529411764705}
+FRE_1003331.txt	{"Pronouns_he": 0.058823529411764705, "Pronouns_it": 0.17647058823529413, "Pronouns_one": 0.11764705882352941, "Pronouns_she": 0.058823529411764705, "Pronouns_them": 0.058823529411764705, "Pronouns_they": 0.058823529411764705, "Pronouns_us": 0.17647058823529413, "Pronouns_we": 0.11764705882352941, "Pronouns_you": 0.17647058823529413}
+CHI_1004306.txt	{"Pronouns_it": 0.25, "Pronouns_me": 0.125, "Pronouns_they": 0.25, "Pronouns_we": 0.25, "Pronouns_you": 0.125}
+ARA_1005075.txt	{"Pronouns_i": 0.06666666666666667, "Pronouns_it": 0.13333333333333333, "Pronouns_me": 0.06666666666666667, "Pronouns_one": 0.06666666666666667, "Pronouns_you": 0.4666666666666667, "Pronouns_yourself": 0.2}
+SPA_1008264.txt	{"Pronouns_he": 0.09090909090909091, "Pronouns_it": 0.5, "Pronouns_she": 0.045454545454545456, "Pronouns_them": 0.045454545454545456, "Pronouns_we": 0.09090909090909091, "Pronouns_you": 0.22727272727272727}
+SPA_1008407.txt	{"Pronouns_it": 0.5625, "Pronouns_them": 0.0625, "Pronouns_they": 0.1875, "Pronouns_us": 0.0625, "Pronouns_we": 0.0625, "Pronouns_you": 0.0625}
+JPN_1008636.txt	{"Pronouns_it": 0.375, "Pronouns_one": 0.625}
+JPN_1012091.txt	{"Pronouns_it": 0.38461538461538464, "Pronouns_me": 0.23076923076923078, "Pronouns_them": 0.07692307692307693, "Pronouns_they": 0.07692307692307693, "Pronouns_we": 0.23076923076923078}
+SPA_1014249.txt	{"Pronouns_it": 0.125, "Pronouns_one": 0.125, "Pronouns_them": 0.125, "Pronouns_they": 0.125, "Pronouns_us": 0.125, "Pronouns_we": 0.375}
+ARA_1016403.txt	{"Pronouns_it": 0.125, "Pronouns_me": 0.125, "Pronouns_one": 0.0625, "Pronouns_them": 0.0625, "Pronouns_they": 0.125, "Pronouns_us": 0.0625, "Pronouns_we": 0.3125, "Pronouns_you": 0.125}
+JPN_1017259.txt	{"Pronouns_it": 0.5, "Pronouns_me": 0.3333333333333333, "Pronouns_they": 0.16666666666666666}
+CHI_1020198.txt	{"Pronouns_it": 0.05263157894736842, "Pronouns_itself": 0.05263157894736842, "Pronouns_them": 0.05263157894736842, "Pronouns_they": 0.631578947368421, "Pronouns_you": 0.21052631578947367}
+ARA_1020466.txt	{"Pronouns_it": 0.20689655172413793, "Pronouns_one": 0.10344827586206896, "Pronouns_them": 0.06896551724137931, "Pronouns_they": 0.3448275862068966, "Pronouns_you": 0.27586206896551724}
+TUR_1021364.txt	{"Pronouns_they": 1.0}
+GER_1024355.txt	{"Pronouns_he": 0.14285714285714285, "Pronouns_her": 0.14285714285714285, "Pronouns_him": 0.14285714285714285, "Pronouns_it": 0.2857142857142857, "Pronouns_she": 0.14285714285714285, "Pronouns_they": 0.14285714285714285}
+KOR_1028941.txt	{"Pronouns_he": 0.4444444444444444, "Pronouns_him": 0.1111111111111111, "Pronouns_it": 0.1111111111111111, "Pronouns_they": 0.3333333333333333}
+JPN_102895.txt	{"Pronouns_it": 0.06451612903225806, "Pronouns_them": 0.03225806451612903, "Pronouns_they": 0.6451612903225806, "Pronouns_we": 0.25806451612903225}
+ITA_1033242.txt	{}
+CHI_103424.txt	{"Pronouns_he": 0.19047619047619047, "Pronouns_him": 0.047619047619047616, "Pronouns_it": 0.14285714285714285, "Pronouns_me": 0.047619047619047616, "Pronouns_them": 0.047619047619047616, "Pronouns_they": 0.42857142857142855, "Pronouns_we": 0.047619047619047616, "Pronouns_you": 0.047619047619047616}
+GER_1037543.txt	{"Pronouns_he": 0.09090909090909091, "Pronouns_it": 0.18181818181818182, "Pronouns_me": 0.045454545454545456, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.5, "Pronouns_us": 0.045454545454545456, "Pronouns_you": 0.045454545454545456}
+KOR_1038555.txt	{"Pronouns_it": 0.2222222222222222, "Pronouns_them": 0.05555555555555555, "Pronouns_themselves": 0.05555555555555555, "Pronouns_they": 0.6666666666666666}
+TUR_104261.txt	{"Pronouns_i": 0.47368421052631576, "Pronouns_it": 0.10526315789473684, "Pronouns_them": 0.05263157894736842, "Pronouns_they": 0.3157894736842105, "Pronouns_us": 0.05263157894736842}
+ITA_1043863.txt	{"Pronouns_it": 0.1, "Pronouns_them": 0.1, "Pronouns_they": 0.7, "Pronouns_we": 0.1}
+ARA_1049008.txt	{"Pronouns_i": 0.18181818181818182, "Pronouns_it": 0.13636363636363635, "Pronouns_one": 0.045454545454545456, "Pronouns_them": 0.2727272727272727, "Pronouns_they": 0.3181818181818182, "Pronouns_we": 0.045454545454545456}
+SPA_1049910.txt	{"Pronouns_he": 0.0625, "Pronouns_him": 0.125, "Pronouns_i": 0.0625, "Pronouns_it": 0.0625, "Pronouns_one": 0.25, "Pronouns_she": 0.0625, "Pronouns_they": 0.0625, "Pronouns_we": 0.0625, "Pronouns_you": 0.25}
+ITA_1050908.txt	{"Pronouns_him": 0.05263157894736842, "Pronouns_i": 0.3157894736842105, "Pronouns_it": 0.05263157894736842, "Pronouns_they": 0.15789473684210525, "Pronouns_us": 0.10526315789473684, "Pronouns_we": 0.21052631578947367, "Pronouns_you": 0.10526315789473684}
+TUR_105101.txt	{"Pronouns_he": 0.08333333333333333, "Pronouns_it": 0.25, "Pronouns_she": 0.08333333333333333, "Pronouns_them": 0.08333333333333333, "Pronouns_they": 0.08333333333333333, "Pronouns_us": 0.08333333333333333, "Pronouns_we": 0.3333333333333333}
+FRE_1052464.txt	{"Pronouns_her": 0.1, "Pronouns_they": 0.8, "Pronouns_we": 0.1}
+SPA_1052687.txt	{"Pronouns_it": 0.125, "Pronouns_them": 0.125, "Pronouns_they": 0.125, "Pronouns_us": 0.125, "Pronouns_we": 0.5}
+GER_1055941.txt	{"Pronouns_it": 0.42857142857142855, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.42857142857142855}
+TUR_1056811.txt	{"Pronouns_he": 0.42857142857142855, "Pronouns_him": 0.09523809523809523, "Pronouns_it": 0.047619047619047616, "Pronouns_one": 0.23809523809523808, "Pronouns_us": 0.09523809523809523, "Pronouns_we": 0.09523809523809523}
+ARA_1056841.txt	{"Pronouns_i": 0.29411764705882354, "Pronouns_it": 0.08823529411764706, "Pronouns_one": 0.058823529411764705, "Pronouns_you": 0.5, "Pronouns_yourself": 0.058823529411764705}
+ARA_1057533.txt	{"Pronouns_it": 0.23809523809523808, "Pronouns_one": 0.047619047619047616, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.14285714285714285, "Pronouns_we": 0.19047619047619047, "Pronouns_you": 0.23809523809523808}
+TUR_1063443.txt	{"Pronouns_it": 0.23076923076923078, "Pronouns_one": 0.07692307692307693, "Pronouns_them": 0.15384615384615385, "Pronouns_they": 0.15384615384615385, "Pronouns_us": 0.23076923076923078, "Pronouns_we": 0.15384615384615385}
+TEL_1064788.txt	{"Pronouns_i": 0.25, "Pronouns_it": 0.125, "Pronouns_one": 0.125, "Pronouns_they": 0.5}
+ITA_106547.txt	{"Pronouns_he": 0.08695652173913043, "Pronouns_her": 0.17391304347826086, "Pronouns_it": 0.13043478260869565, "Pronouns_me": 0.043478260869565216, "Pronouns_one": 0.043478260869565216, "Pronouns_she": 0.043478260869565216, "Pronouns_you": 0.4782608695652174}
+FRE_1065623.txt	{"Pronouns_he": 0.2, "Pronouns_it": 0.3333333333333333, "Pronouns_one": 0.13333333333333333, "Pronouns_they": 0.06666666666666667, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.13333333333333333, "Pronouns_you": 0.06666666666666667}
+CHI_1066683.txt	{"Pronouns_he": 0.04, "Pronouns_it": 0.04, "Pronouns_me": 0.04, "Pronouns_oneself": 0.04, "Pronouns_she": 0.04, "Pronouns_they": 0.12, "Pronouns_we": 0.12, "Pronouns_you": 0.52, "Pronouns_yourself": 0.04}
+CHI_1066847.txt	{"Pronouns_he": 0.047619047619047616, "Pronouns_one": 0.047619047619047616, "Pronouns_she": 0.047619047619047616, "Pronouns_they": 0.09523809523809523, "Pronouns_us": 0.09523809523809523, "Pronouns_we": 0.6666666666666666}
+TUR_1066886.txt	{"Pronouns_it": 0.058823529411764705, "Pronouns_me": 0.058823529411764705, "Pronouns_them": 0.17647058823529413, "Pronouns_they": 0.7058823529411765}
+HIN_1067059.txt	{"Pronouns_he": 0.08823529411764706, "Pronouns_her": 0.029411764705882353, "Pronouns_i": 0.058823529411764705, "Pronouns_it": 0.058823529411764705, "Pronouns_one": 0.2647058823529412, "Pronouns_she": 0.029411764705882353, "Pronouns_we": 0.029411764705882353, "Pronouns_you": 0.4117647058823529, "Pronouns_yourself": 0.029411764705882353}
+ARA_1068473.txt	{"Pronouns_he": 0.07692307692307693, "Pronouns_it": 0.5384615384615384, "Pronouns_she": 0.07692307692307693, "Pronouns_them": 0.15384615384615385, "Pronouns_we": 0.07692307692307693, "Pronouns_you": 0.07692307692307693}
+KOR_1073001.txt	{"Pronouns_he": 0.5555555555555556, "Pronouns_i": 0.1111111111111111, "Pronouns_it": 0.1111111111111111, "Pronouns_one": 0.05555555555555555, "Pronouns_they": 0.1111111111111111, "Pronouns_you": 0.05555555555555555}
+HIN_1073131.txt	{"Pronouns_i": 0.3157894736842105, "Pronouns_it": 0.15789473684210525, "Pronouns_one": 0.15789473684210525, "Pronouns_them": 0.10526315789473684, "Pronouns_they": 0.21052631578947367, "Pronouns_you": 0.05263157894736842}
+ITA_1073428.txt	{"Pronouns_it": 0.3, "Pronouns_us": 0.05, "Pronouns_we": 0.35, "Pronouns_you": 0.3}
+ITA_1076546.txt	{"Pronouns_i": 0.13333333333333333, "Pronouns_it": 0.2, "Pronouns_one": 0.13333333333333333, "Pronouns_them": 0.06666666666666667, "Pronouns_they": 0.4, "Pronouns_we": 0.06666666666666667}
+JPN_1077545.txt	{"Pronouns_i": 0.4166666666666667, "Pronouns_it": 0.16666666666666666, "Pronouns_me": 0.027777777777777776, "Pronouns_one": 0.027777777777777776, "Pronouns_them": 0.08333333333333333, "Pronouns_they": 0.16666666666666666, "Pronouns_us": 0.027777777777777776, "Pronouns_we": 0.08333333333333333}
+ITA_1077814.txt	{"Pronouns_i": 0.09090909090909091, "Pronouns_it": 0.18181818181818182, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.18181818181818182, "Pronouns_us": 0.09090909090909091, "Pronouns_we": 0.18181818181818182, "Pronouns_you": 0.09090909090909091, "Pronouns_yourself": 0.09090909090909091}
+GER_1078378.txt	{"Pronouns_i": 0.06451612903225806, "Pronouns_it": 0.03225806451612903, "Pronouns_one": 0.16129032258064516, "Pronouns_them": 0.06451612903225806, "Pronouns_they": 0.06451612903225806, "Pronouns_us": 0.0967741935483871, "Pronouns_we": 0.45161290322580644, "Pronouns_you": 0.06451612903225806}
+GER_1078433.txt	{"Pronouns_it": 0.13333333333333333, "Pronouns_one": 0.06666666666666667, "Pronouns_them": 0.2, "Pronouns_they": 0.13333333333333333, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.2, "Pronouns_you": 0.2}
+JPN_1079643.txt	{"Pronouns_it": 0.35714285714285715, "Pronouns_they": 0.6428571428571429}
+CHI_1082245.txt	{"Pronouns_it": 0.14285714285714285, "Pronouns_itself": 0.07142857142857142, "Pronouns_themselves": 0.07142857142857142, "Pronouns_they": 0.5714285714285714, "Pronouns_we": 0.14285714285714285}
+ARA_1086584.txt	{"Pronouns_he": 0.041666666666666664, "Pronouns_one": 0.125, "Pronouns_she": 0.041666666666666664, "Pronouns_we": 0.16666666666666666, "Pronouns_you": 0.625}
+ARA_1087713.txt	{"Pronouns_he": 0.07142857142857142, "Pronouns_it": 0.2857142857142857, "Pronouns_mine": 0.07142857142857142, "Pronouns_one": 0.35714285714285715, "Pronouns_they": 0.07142857142857142, "Pronouns_we": 0.14285714285714285}
+ITA_1090730.txt	{"Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_themselves": 0.14285714285714285, "Pronouns_they": 0.5714285714285714}
+FRE_1093339.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_them": 0.16666666666666666, "Pronouns_themselves": 0.08333333333333333, "Pronouns_they": 0.4166666666666667}
+TUR_1093349.txt	{"Pronouns_he": 0.4, "Pronouns_it": 0.06666666666666667, "Pronouns_one": 0.26666666666666666, "Pronouns_she": 0.06666666666666667, "Pronouns_they": 0.2}
+GER_1093577.txt	{"Pronouns_it": 0.13333333333333333, "Pronouns_them": 0.13333333333333333, "Pronouns_they": 0.26666666666666666, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.4}
+HIN_1094011.txt	{"Pronouns_her": 0.09090909090909091, "Pronouns_himself": 0.18181818181818182, "Pronouns_it": 0.09090909090909091, "Pronouns_itself": 0.09090909090909091, "Pronouns_oneself": 0.09090909090909091, "Pronouns_they": 0.2727272727272727, "Pronouns_we": 0.18181818181818182}
+SPA_1097795.txt	{"Pronouns_it": 0.23076923076923078, "Pronouns_them": 0.38461538461538464, "Pronouns_they": 0.38461538461538464}
+JPN_1098453.txt	{"Pronouns_myself": 0.125, "Pronouns_they": 0.125, "Pronouns_we": 0.75}
+FRE_1098800.txt	{"Pronouns_it": 0.09523809523809523, "Pronouns_them": 0.09523809523809523, "Pronouns_they": 0.38095238095238093, "Pronouns_we": 0.42857142857142855}
+CHI_1108278.txt	{"Pronouns_it": 0.3125, "Pronouns_one": 0.0625, "Pronouns_them": 0.0625, "Pronouns_you": 0.5625}
+JPN_1109700.txt	{"Pronouns_it": 0.13333333333333333, "Pronouns_me": 0.06666666666666667, "Pronouns_one": 0.06666666666666667, "Pronouns_they": 0.6666666666666666, "Pronouns_we": 0.06666666666666667}
+SPA_1116840.txt	{"Pronouns_he": 0.045454545454545456, "Pronouns_himself": 0.045454545454545456, "Pronouns_it": 0.18181818181818182, "Pronouns_one": 0.09090909090909091, "Pronouns_oneself": 0.045454545454545456, "Pronouns_them": 0.045454545454545456, "Pronouns_they": 0.36363636363636365, "Pronouns_us": 0.09090909090909091, "Pronouns_we": 0.09090909090909091}
+CHI_1118473.txt	{"Pronouns_it": 0.1, "Pronouns_itself": 0.1, "Pronouns_one": 0.1, "Pronouns_themselves": 0.1, "Pronouns_us": 0.2, "Pronouns_we": 0.4}
+ARA_1121124.txt	{"Pronouns_he": 0.09090909090909091, "Pronouns_her": 0.18181818181818182, "Pronouns_him": 0.09090909090909091, "Pronouns_it": 0.45454545454545453, "Pronouns_she": 0.09090909090909091, "Pronouns_they": 0.09090909090909091}
+JPN_1121144.txt	{"Pronouns_it": 0.25, "Pronouns_they": 0.08333333333333333, "Pronouns_us": 0.16666666666666666, "Pronouns_we": 0.5}
+ITA_1122079.txt	{"Pronouns_her": 0.0625, "Pronouns_it": 0.25, "Pronouns_me": 0.0625, "Pronouns_she": 0.375, "Pronouns_them": 0.0625, "Pronouns_they": 0.1875}
+ITA_112324.txt	{"Pronouns_i": 0.10526315789473684, "Pronouns_it": 0.10526315789473684, "Pronouns_one": 0.15789473684210525, "Pronouns_they": 0.15789473684210525, "Pronouns_we": 0.10526315789473684, "Pronouns_you": 0.3157894736842105, "Pronouns_yourself": 0.05263157894736842}
+HIN_1123295.txt	{"Pronouns_he": 0.09090909090909091, "Pronouns_i": 0.09090909090909091, "Pronouns_it": 0.36363636363636365, "Pronouns_me": 0.09090909090909091, "Pronouns_themselves": 0.09090909090909091, "Pronouns_they": 0.09090909090909091, "Pronouns_us": 0.09090909090909091, "Pronouns_we": 0.09090909090909091}
+ITA_1127021.txt	{"Pronouns_her": 0.125, "Pronouns_himself": 0.125, "Pronouns_it": 0.25, "Pronouns_they": 0.375, "Pronouns_we": 0.125}
+SPA_1127786.txt	{"Pronouns_i": 0.18181818181818182, "Pronouns_it": 0.09090909090909091, "Pronouns_one": 0.045454545454545456, "Pronouns_they": 0.5454545454545454, "Pronouns_we": 0.13636363636363635}
+ITA_1128278.txt	{"Pronouns_me": 0.125, "Pronouns_they": 0.625, "Pronouns_we": 0.25}
+CHI_1132436.txt	{"Pronouns_it": 0.2, "Pronouns_one": 0.1, "Pronouns_them": 0.4, "Pronouns_they": 0.3}
+FRE_1133410.txt	{"Pronouns_him": 0.125, "Pronouns_it": 0.375, "Pronouns_me": 0.125, "Pronouns_myself": 0.125, "Pronouns_one": 0.25}
+FRE_1134121.txt	{"Pronouns_it": 0.38461538461538464, "Pronouns_one": 0.07692307692307693, "Pronouns_them": 0.07692307692307693, "Pronouns_they": 0.3076923076923077, "Pronouns_we": 0.15384615384615385}
+HIN_1134674.txt	{"Pronouns_he": 0.12903225806451613, "Pronouns_i": 0.25806451612903225, "Pronouns_it": 0.03225806451612903, "Pronouns_me": 0.0967741935483871, "Pronouns_myself": 0.03225806451612903, "Pronouns_them": 0.12903225806451613, "Pronouns_themselves": 0.03225806451612903, "Pronouns_they": 0.12903225806451613, "Pronouns_we": 0.16129032258064516}
+GER_1136056.txt	{"Pronouns_it": 0.125, "Pronouns_one": 0.25, "Pronouns_them": 0.125, "Pronouns_they": 0.125, "Pronouns_us": 0.125, "Pronouns_we": 0.25}
+SPA_1136743.txt	{"Pronouns_i": 0.07692307692307693, "Pronouns_it": 0.23076923076923078, "Pronouns_one": 0.15384615384615385, "Pronouns_themselves": 0.07692307692307693, "Pronouns_they": 0.38461538461538464, "Pronouns_you": 0.07692307692307693}
+ARA_1137241.txt	{"Pronouns_he": 0.4, "Pronouns_they": 0.6}
+ITA_1139220.txt	{"Pronouns_it": 0.3076923076923077, "Pronouns_one": 0.07692307692307693, "Pronouns_they": 0.15384615384615385, "Pronouns_you": 0.46153846153846156}
+SPA_1140857.txt	{"Pronouns_it": 0.38461538461538464, "Pronouns_them": 0.23076923076923078, "Pronouns_they": 0.07692307692307693, "Pronouns_you": 0.23076923076923078, "Pronouns_yourself": 0.07692307692307693}
+CHI_1142499.txt	{"Pronouns_he": 0.21739130434782608, "Pronouns_him": 0.08695652173913043, "Pronouns_himself": 0.043478260869565216, "Pronouns_it": 0.13043478260869565, "Pronouns_one": 0.08695652173913043, "Pronouns_them": 0.043478260869565216, "Pronouns_they": 0.13043478260869565, "Pronouns_us": 0.043478260869565216, "Pronouns_we": 0.21739130434782608}
+JPN_114410.txt	{"Pronouns_he": 0.2, "Pronouns_me": 0.2, "Pronouns_one": 0.2, "Pronouns_them": 0.2, "Pronouns_they": 0.2}
+CHI_1144227.txt	{"Pronouns_he": 0.04, "Pronouns_i": 0.2, "Pronouns_it": 0.16, "Pronouns_one": 0.32, "Pronouns_they": 0.2, "Pronouns_we": 0.08}
+ITA_1145027.txt	{"Pronouns_it": 0.2, "Pronouns_them": 0.5, "Pronouns_they": 0.3}
+CHI_114592.txt	{"Pronouns_it": 0.2777777777777778, "Pronouns_me": 0.1111111111111111, "Pronouns_one": 0.16666666666666666, "Pronouns_she": 0.05555555555555555, "Pronouns_they": 0.05555555555555555, "Pronouns_we": 0.05555555555555555, "Pronouns_you": 0.2777777777777778}
+GER_1147723.txt	{"Pronouns_i": 0.037037037037037035, "Pronouns_it": 0.18518518518518517, "Pronouns_one": 0.14814814814814814, "Pronouns_them": 0.037037037037037035, "Pronouns_you": 0.5925925925925926}
+HIN_1147876.txt	{"Pronouns_it": 0.2727272727272727, "Pronouns_one": 0.09090909090909091, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.2727272727272727, "Pronouns_you": 0.2727272727272727}
+ARA_1156070.txt	{"Pronouns_i": 0.15384615384615385, "Pronouns_it": 0.3076923076923077, "Pronouns_one": 0.07692307692307693, "Pronouns_them": 0.38461538461538464, "Pronouns_they": 0.07692307692307693}
+FRE_1156109.txt	{"Pronouns_he": 0.16666666666666666, "Pronouns_it": 0.25, "Pronouns_one": 0.16666666666666666, "Pronouns_they": 0.08333333333333333, "Pronouns_we": 0.3333333333333333}
+GER_1158665.txt	{"Pronouns_i": 0.14285714285714285, "Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.42857142857142855}
+TUR_1159656.txt	{"Pronouns_it": 0.26666666666666666, "Pronouns_one": 0.26666666666666666, "Pronouns_them": 0.06666666666666667, "Pronouns_us": 0.2, "Pronouns_we": 0.13333333333333333, "Pronouns_you": 0.06666666666666667}
+HIN_1165441.txt	{"Pronouns_he": 0.0625, "Pronouns_it": 0.0625, "Pronouns_she": 0.0625, "Pronouns_them": 0.1875, "Pronouns_they": 0.1875, "Pronouns_we": 0.4375}
+FRE_116813.txt	{"Pronouns_he": 0.07692307692307693, "Pronouns_it": 0.23076923076923078, "Pronouns_one": 0.15384615384615385, "Pronouns_them": 0.07692307692307693, "Pronouns_they": 0.07692307692307693, "Pronouns_you": 0.38461538461538464}
+KOR_11717.txt	{"Pronouns_it": 0.5, "Pronouns_one": 0.16666666666666666, "Pronouns_they": 0.3333333333333333}
+GER_1173244.txt	{"Pronouns_it": 0.8333333333333334, "Pronouns_one": 0.16666666666666666}
+ARA_1175579.txt	{"Pronouns_he": 0.125, "Pronouns_i": 0.3125, "Pronouns_it": 0.125, "Pronouns_one": 0.125, "Pronouns_them": 0.1875, "Pronouns_they": 0.125}
+ARA_1177462.txt	{"Pronouns_it": 0.08333333333333333, "Pronouns_them": 0.25, "Pronouns_they": 0.25, "Pronouns_we": 0.4166666666666667}
+ARA_1180480.txt	{"Pronouns_he": 0.0625, "Pronouns_him": 0.0625, "Pronouns_it": 0.1875, "Pronouns_one": 0.125, "Pronouns_us": 0.3125, "Pronouns_we": 0.25}
+TUR_1180768.txt	{"Pronouns_he": 0.06451612903225806, "Pronouns_her": 0.0967741935483871, "Pronouns_i": 0.0967741935483871, "Pronouns_it": 0.0967741935483871, "Pronouns_one": 0.03225806451612903, "Pronouns_she": 0.06451612903225806, "Pronouns_they": 0.12903225806451613, "Pronouns_we": 0.0967741935483871, "Pronouns_you": 0.3225806451612903}
+ARA_1182862.txt	{"Pronouns_i": 0.06666666666666667, "Pronouns_one": 0.13333333333333333, "Pronouns_they": 0.26666666666666666, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.3333333333333333, "Pronouns_you": 0.13333333333333333}
+ITA_1183428.txt	{"Pronouns_he": 0.07142857142857142, "Pronouns_it": 0.2857142857142857, "Pronouns_ourselves": 0.07142857142857142, "Pronouns_they": 0.21428571428571427, "Pronouns_we": 0.35714285714285715}
+HIN_1186488.txt	{"Pronouns_he": 0.1111111111111111, "Pronouns_it": 0.2777777777777778, "Pronouns_one": 0.1111111111111111, "Pronouns_them": 0.05555555555555555, "Pronouns_themselves": 0.05555555555555555, "Pronouns_they": 0.3888888888888889}
+JPN_1188120.txt	{"Pronouns_one": 0.2, "Pronouns_them": 0.1, "Pronouns_they": 0.1, "Pronouns_we": 0.6}
+TUR_1189330.txt	{"Pronouns_it": 0.2, "Pronouns_one": 0.1, "Pronouns_she": 0.1, "Pronouns_them": 0.1, "Pronouns_they": 0.2, "Pronouns_we": 0.3}
+HIN_1190625.txt	{"Pronouns_i": 0.21739130434782608, "Pronouns_it": 0.08695652173913043, "Pronouns_me": 0.043478260869565216, "Pronouns_myself": 0.043478260869565216, "Pronouns_one": 0.17391304347826086, "Pronouns_them": 0.08695652173913043, "Pronouns_they": 0.043478260869565216, "Pronouns_we": 0.30434782608695654}
+ITA_1193763.txt	{"Pronouns_he": 0.6111111111111112, "Pronouns_him": 0.05555555555555555, "Pronouns_it": 0.2222222222222222, "Pronouns_me": 0.05555555555555555, "Pronouns_they": 0.05555555555555555}
+ARA_1196559.txt	{"Pronouns_he": 0.1, "Pronouns_her": 0.26666666666666666, "Pronouns_it": 0.1, "Pronouns_one": 0.03333333333333333, "Pronouns_she": 0.13333333333333333, "Pronouns_us": 0.13333333333333333, "Pronouns_we": 0.16666666666666666, "Pronouns_you": 0.06666666666666667}
+ITA_1197013.txt	{"Pronouns_it": 0.5, "Pronouns_me": 0.045454545454545456, "Pronouns_one": 0.09090909090909091, "Pronouns_they": 0.18181818181818182, "Pronouns_us": 0.045454545454545456, "Pronouns_we": 0.13636363636363635}
+ARA_119703.txt	{"Pronouns_it": 0.2857142857142857, "Pronouns_one": 0.14285714285714285, "Pronouns_they": 0.5714285714285714}
+TUR_119900.txt	{"Pronouns_he": 0.03225806451612903, "Pronouns_herself": 0.03225806451612903, "Pronouns_him": 0.03225806451612903, "Pronouns_i": 0.06451612903225806, "Pronouns_it": 0.22580645161290322, "Pronouns_one": 0.06451612903225806, "Pronouns_ourselves": 0.03225806451612903, "Pronouns_she": 0.03225806451612903, "Pronouns_themselves": 0.03225806451612903, "Pronouns_they": 0.03225806451612903, "Pronouns_we": 0.0967741935483871, "Pronouns_you": 0.3225806451612903}
+JPN_1199948.txt	{"Pronouns_it": 0.20689655172413793, "Pronouns_myself": 0.034482758620689655, "Pronouns_them": 0.034482758620689655, "Pronouns_they": 0.034482758620689655, "Pronouns_you": 0.5862068965517241, "Pronouns_yourself": 0.10344827586206896}
+CHI_1200966.txt	{"Pronouns_he": 0.35714285714285715, "Pronouns_i": 0.07142857142857142, "Pronouns_it": 0.35714285714285715, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.07142857142857142}
+HIN_1201791.txt	{"Pronouns_him": 0.041666666666666664, "Pronouns_it": 0.25, "Pronouns_one": 0.08333333333333333, "Pronouns_them": 0.041666666666666664, "Pronouns_they": 0.3333333333333333, "Pronouns_us": 0.125, "Pronouns_we": 0.08333333333333333, "Pronouns_you": 0.041666666666666664}
+ITA_1202581.txt	{"Pronouns_i": 0.3333333333333333, "Pronouns_they": 0.3333333333333333, "Pronouns_we": 0.3333333333333333}
+TEL_1206100.txt	{"Pronouns_he": 0.2, "Pronouns_it": 0.13333333333333333, "Pronouns_one": 0.13333333333333333, "Pronouns_they": 0.2, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.26666666666666666}
+FRE_12072.txt	{"Pronouns_he": 0.10526315789473684, "Pronouns_it": 0.5263157894736842, "Pronouns_ourselves": 0.05263157894736842, "Pronouns_them": 0.15789473684210525, "Pronouns_we": 0.10526315789473684, "Pronouns_you": 0.05263157894736842}
+GER_1208345.txt	{"Pronouns_he": 0.043478260869565216, "Pronouns_it": 0.08695652173913043, "Pronouns_me": 0.043478260869565216, "Pronouns_one": 0.043478260869565216, "Pronouns_she": 0.043478260869565216, "Pronouns_you": 0.7391304347826086}
+JPN_1208682.txt	{"Pronouns_it": 0.2222222222222222, "Pronouns_they": 0.7777777777777778}
+HIN_1210964.txt	{"Pronouns_he": 0.56, "Pronouns_him": 0.2, "Pronouns_i": 0.04, "Pronouns_it": 0.12, "Pronouns_one": 0.08}
+JPN_1212524.txt	{"Pronouns_it": 0.2857142857142857, "Pronouns_they": 0.14285714285714285, "Pronouns_we": 0.5714285714285714}
+GER_1212655.txt	{"Pronouns_it": 0.2, "Pronouns_me": 0.13333333333333333, "Pronouns_myself": 0.06666666666666667, "Pronouns_one": 0.13333333333333333, "Pronouns_they": 0.26666666666666666, "Pronouns_you": 0.2}
+FRE_1212864.txt	{"Pronouns_me": 0.07692307692307693, "Pronouns_they": 0.23076923076923078, "Pronouns_we": 0.07692307692307693, "Pronouns_you": 0.6153846153846154}
+ITA_1214622.txt	{"Pronouns_i": 0.1111111111111111, "Pronouns_one": 0.1111111111111111, "Pronouns_we": 0.6666666666666666, "Pronouns_you": 0.1111111111111111}
+FRE_1216116.txt	{"Pronouns_it": 0.7368421052631579, "Pronouns_one": 0.05263157894736842, "Pronouns_they": 0.05263157894736842, "Pronouns_we": 0.10526315789473684, "Pronouns_you": 0.05263157894736842}
+SPA_1218175.txt	{"Pronouns_he": 0.42424242424242425, "Pronouns_him": 0.045454545454545456, "Pronouns_it": 0.30303030303030304, "Pronouns_one": 0.015151515151515152, "Pronouns_she": 0.030303030303030304, "Pronouns_they": 0.045454545454545456, "Pronouns_we": 0.07575757575757576, "Pronouns_you": 0.06060606060606061}
+HIN_1218265.txt	{"Pronouns_he": 0.2857142857142857, "Pronouns_her": 0.07142857142857142, "Pronouns_him": 0.07142857142857142, "Pronouns_it": 0.14285714285714285, "Pronouns_she": 0.07142857142857142, "Pronouns_they": 0.2857142857142857, "Pronouns_we": 0.07142857142857142}
+FRE_1219360.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.16666666666666666, "Pronouns_they": 0.16666666666666666, "Pronouns_we": 0.5}
+JPN_1220510.txt	{"Pronouns_them": 0.3333333333333333, "Pronouns_they": 0.6666666666666666}
+ARA_1221538.txt	{"Pronouns_he": 0.022727272727272728, "Pronouns_her": 0.022727272727272728, "Pronouns_him": 0.022727272727272728, "Pronouns_i": 0.045454545454545456, "Pronouns_it": 0.13636363636363635, "Pronouns_me": 0.09090909090909091, "Pronouns_one": 0.045454545454545456, "Pronouns_she": 0.045454545454545456, "Pronouns_them": 0.022727272727272728, "Pronouns_they": 0.25, "Pronouns_we": 0.045454545454545456, "Pronouns_you": 0.20454545454545456, "Pronouns_yourself": 0.045454545454545456}
+HIN_1223973.txt	{"Pronouns_i": 0.13043478260869565, "Pronouns_it": 0.4782608695652174, "Pronouns_me": 0.13043478260869565, "Pronouns_one": 0.08695652173913043, "Pronouns_they": 0.08695652173913043, "Pronouns_we": 0.043478260869565216, "Pronouns_you": 0.043478260869565216}
+ARA_1228978.txt	{"Pronouns_i": 0.25, "Pronouns_one": 0.125, "Pronouns_they": 0.625}
+SPA_1229300.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.16666666666666666, "Pronouns_we": 0.1111111111111111, "Pronouns_you": 0.5, "Pronouns_yourself": 0.05555555555555555}
+TEL_1229456.txt	{"Pronouns_i": 0.2, "Pronouns_it": 0.4, "Pronouns_them": 0.1, "Pronouns_us": 0.1, "Pronouns_we": 0.2}
+GER_1230192.txt	{"Pronouns_he": 0.05555555555555555, "Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.05555555555555555, "Pronouns_them": 0.05555555555555555, "Pronouns_they": 0.2777777777777778, "Pronouns_we": 0.05555555555555555, "Pronouns_you": 0.3333333333333333}
+JPN_1230337.txt	{"Pronouns_it": 0.08, "Pronouns_one": 0.04, "Pronouns_them": 0.04, "Pronouns_they": 0.04, "Pronouns_us": 0.04, "Pronouns_we": 0.12, "Pronouns_you": 0.64}
+JPN_1232958.txt	{"Pronouns_them": 0.25, "Pronouns_they": 0.25, "Pronouns_you": 0.5}
+KOR_1233515.txt	{"Pronouns_he": 0.21428571428571427, "Pronouns_him": 0.07142857142857142, "Pronouns_me": 0.07142857142857142, "Pronouns_mine": 0.07142857142857142, "Pronouns_one": 0.07142857142857142, "Pronouns_we": 0.5}
+GER_1234298.txt	{"Pronouns_it": 0.08, "Pronouns_one": 0.04, "Pronouns_you": 0.88}
+GER_1234305.txt	{"Pronouns_he": 0.4, "Pronouns_me": 0.2, "Pronouns_one": 0.1, "Pronouns_she": 0.1, "Pronouns_they": 0.1, "Pronouns_you": 0.1}
+SPA_1234478.txt	{"Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.5714285714285714, "Pronouns_themselves": 0.14285714285714285, "Pronouns_they": 0.14285714285714285}
+ITA_1237588.txt	{"Pronouns_he": 0.5882352941176471, "Pronouns_it": 0.11764705882352941, "Pronouns_they": 0.29411764705882354}
+SPA_1242689.txt	{"Pronouns_he": 0.08333333333333333, "Pronouns_it": 0.375, "Pronouns_them": 0.041666666666666664, "Pronouns_you": 0.5}
+JPN_1242840.txt	{"Pronouns_it": 0.4, "Pronouns_they": 0.4, "Pronouns_we": 0.2}
+ARA_1245716.txt	{"Pronouns_it": 0.14285714285714285, "Pronouns_me": 0.07142857142857142, "Pronouns_one": 0.07142857142857142, "Pronouns_them": 0.07142857142857142, "Pronouns_themselves": 0.14285714285714285, "Pronouns_they": 0.42857142857142855, "Pronouns_you": 0.07142857142857142}
+KOR_1246574.txt	{"Pronouns_i": 0.6428571428571429, "Pronouns_it": 0.07142857142857142, "Pronouns_me": 0.07142857142857142, "Pronouns_myself": 0.03571428571428571, "Pronouns_one": 0.14285714285714285, "Pronouns_they": 0.03571428571428571}
+TEL_1247584.txt	{"Pronouns_he": 0.1111111111111111, "Pronouns_him": 0.3333333333333333, "Pronouns_i": 0.1111111111111111, "Pronouns_it": 0.1111111111111111, "Pronouns_one": 0.1111111111111111, "Pronouns_we": 0.2222222222222222}
+ITA_1251028.txt	{"Pronouns_it": 0.2222222222222222, "Pronouns_us": 0.1111111111111111, "Pronouns_we": 0.6666666666666666}
+TEL_1253475.txt	{"Pronouns_he": 0.1111111111111111, "Pronouns_her": 0.1111111111111111, "Pronouns_him": 0.2222222222222222, "Pronouns_it": 0.1111111111111111, "Pronouns_they": 0.4444444444444444}
+ITA_1254161.txt	{"Pronouns_her": 0.2, "Pronouns_she": 0.2, "Pronouns_they": 0.6}
+JPN_1254527.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_themselves": 0.08333333333333333, "Pronouns_us": 0.08333333333333333, "Pronouns_we": 0.5}
+JPN_1254592.txt	{"Pronouns_it": 0.06666666666666667, "Pronouns_she": 0.1, "Pronouns_them": 0.03333333333333333, "Pronouns_us": 0.1, "Pronouns_we": 0.3333333333333333, "Pronouns_you": 0.26666666666666666, "Pronouns_yourself": 0.1}
+ITA_1254807.txt	{"Pronouns_he": 0.2857142857142857, "Pronouns_him": 0.047619047619047616, "Pronouns_i": 0.09523809523809523, "Pronouns_it": 0.14285714285714285, "Pronouns_mine": 0.047619047619047616, "Pronouns_ourselves": 0.047619047619047616, "Pronouns_they": 0.19047619047619047, "Pronouns_us": 0.047619047619047616, "Pronouns_we": 0.09523809523809523}
+JPN_1257286.txt	{"Pronouns_it": 0.037037037037037035, "Pronouns_one": 0.14814814814814814, "Pronouns_us": 0.037037037037037035, "Pronouns_we": 0.7777777777777778}
+GER_1258000.txt	{"Pronouns_i": 0.23529411764705882, "Pronouns_it": 0.058823529411764705, "Pronouns_one": 0.058823529411764705, "Pronouns_they": 0.35294117647058826, "Pronouns_us": 0.058823529411764705, "Pronouns_you": 0.23529411764705882}
+HIN_126012.txt	{"Pronouns_i": 0.5454545454545454, "Pronouns_it": 0.09090909090909091, "Pronouns_me": 0.045454545454545456, "Pronouns_one": 0.22727272727272727, "Pronouns_them": 0.045454545454545456, "Pronouns_we": 0.045454545454545456}
+CHI_1260549.txt	{"Pronouns_them": 0.23809523809523808, "Pronouns_themselves": 0.14285714285714285, "Pronouns_they": 0.6190476190476191}
+KOR_1263388.txt	{"Pronouns_he": 0.25, "Pronouns_it": 0.08333333333333333, "Pronouns_me": 0.041666666666666664, "Pronouns_them": 0.041666666666666664, "Pronouns_they": 0.5416666666666666, "Pronouns_we": 0.041666666666666664}
+HIN_1268009.txt	{"Pronouns_it": 0.125, "Pronouns_myself": 0.125, "Pronouns_they": 0.75}
+TEL_1268660.txt	{"Pronouns_he": 0.375, "Pronouns_it": 0.375, "Pronouns_them": 0.125, "Pronouns_they": 0.125}
+KOR_1270316.txt	{"Pronouns_it": 0.6666666666666666, "Pronouns_one": 0.3333333333333333}
+GER_127154.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_one": 0.14285714285714285, "Pronouns_they": 0.19047619047619047, "Pronouns_us": 0.047619047619047616, "Pronouns_you": 0.2857142857142857}
+CHI_1273337.txt	{"Pronouns_her": 0.2, "Pronouns_they": 0.8}
+FRE_1273981.txt	{"Pronouns_it": 0.125, "Pronouns_one": 0.125, "Pronouns_them": 0.125, "Pronouns_they": 0.625}
+HIN_1275111.txt	{"Pronouns_he": 0.21875, "Pronouns_himself": 0.03125, "Pronouns_it": 0.1875, "Pronouns_one": 0.0625, "Pronouns_they": 0.21875, "Pronouns_we": 0.21875, "Pronouns_you": 0.0625}
+ARA_127642.txt	{"Pronouns_it": 0.0625, "Pronouns_me": 0.020833333333333332, "Pronouns_one": 0.08333333333333333, "Pronouns_them": 0.020833333333333332, "Pronouns_they": 0.22916666666666666, "Pronouns_we": 0.020833333333333332, "Pronouns_you": 0.5625}
+JPN_1278490.txt	{"Pronouns_he": 0.7, "Pronouns_it": 0.2, "Pronouns_they": 0.1}
+ARA_1282586.txt	{"Pronouns_he": 0.05555555555555555, "Pronouns_him": 0.05555555555555555, "Pronouns_it": 0.5, "Pronouns_she": 0.05555555555555555, "Pronouns_they": 0.2222222222222222, "Pronouns_you": 0.1111111111111111}
+TUR_128748.txt	{"Pronouns_it": 0.19230769230769232, "Pronouns_me": 0.038461538461538464, "Pronouns_myself": 0.038461538461538464, "Pronouns_one": 0.038461538461538464, "Pronouns_them": 0.038461538461538464, "Pronouns_they": 0.6538461538461539}
+ARA_1288671.txt	{"Pronouns_he": 0.06666666666666667, "Pronouns_them": 0.4666666666666667, "Pronouns_you": 0.4666666666666667}
+FRE_1290036.txt	{"Pronouns_he": 0.07142857142857142, "Pronouns_i": 0.5, "Pronouns_it": 0.09523809523809523, "Pronouns_me": 0.047619047619047616, "Pronouns_myself": 0.023809523809523808, "Pronouns_one": 0.11904761904761904, "Pronouns_us": 0.023809523809523808, "Pronouns_you": 0.11904761904761904}
+TEL_1293221.txt	{"Pronouns_her": 0.2, "Pronouns_it": 0.04, "Pronouns_she": 0.48, "Pronouns_they": 0.2, "Pronouns_we": 0.04, "Pronouns_you": 0.04}
+JPN_1293651.txt	{"Pronouns_it": 0.5, "Pronouns_they": 0.3, "Pronouns_we": 0.2}
+ARA_1293756.txt	{"Pronouns_he": 0.2727272727272727, "Pronouns_him": 0.18181818181818182, "Pronouns_i": 0.09090909090909091, "Pronouns_one": 0.18181818181818182, "Pronouns_they": 0.2727272727272727}
+ARA_1296993.txt	{"Pronouns_i": 0.23076923076923078, "Pronouns_it": 0.07692307692307693, "Pronouns_them": 0.07692307692307693, "Pronouns_they": 0.15384615384615385, "Pronouns_us": 0.23076923076923078, "Pronouns_we": 0.23076923076923078}
+CHI_1299460.txt	{"Pronouns_it": 0.6363636363636364, "Pronouns_them": 0.18181818181818182, "Pronouns_they": 0.18181818181818182}
+SPA_130215.txt	{"Pronouns_he": 0.25, "Pronouns_her": 0.0625, "Pronouns_him": 0.0625, "Pronouns_she": 0.0625, "Pronouns_they": 0.0625, "Pronouns_us": 0.0625, "Pronouns_we": 0.375, "Pronouns_you": 0.0625}
+CHI_1304031.txt	{"Pronouns_her": 0.21052631578947367, "Pronouns_i": 0.05263157894736842, "Pronouns_me": 0.05263157894736842, "Pronouns_she": 0.42105263157894735, "Pronouns_them": 0.05263157894736842, "Pronouns_they": 0.21052631578947367}
+TUR_1304325.txt	{"Pronouns_he": 0.21428571428571427, "Pronouns_it": 0.07142857142857142, "Pronouns_one": 0.07142857142857142, "Pronouns_she": 0.21428571428571427, "Pronouns_them": 0.07142857142857142, "Pronouns_they": 0.35714285714285715}
+KOR_1305417.txt	{"Pronouns_i": 0.1111111111111111, "Pronouns_one": 0.1111111111111111, "Pronouns_they": 0.1111111111111111, "Pronouns_us": 0.1111111111111111, "Pronouns_we": 0.5555555555555556}
+CHI_1305928.txt	{"Pronouns_it": 0.5, "Pronouns_we": 0.16666666666666666, "Pronouns_you": 0.3333333333333333}
+SPA_1306397.txt	{"Pronouns_it": 0.3076923076923077, "Pronouns_one": 0.07692307692307693, "Pronouns_them": 0.07692307692307693, "Pronouns_they": 0.23076923076923078, "Pronouns_we": 0.3076923076923077}
+HIN_1307364.txt	{"Pronouns_him": 0.05, "Pronouns_i": 0.05, "Pronouns_it": 0.2, "Pronouns_one": 0.05, "Pronouns_them": 0.05, "Pronouns_they": 0.25, "Pronouns_we": 0.25, "Pronouns_you": 0.1}
+TEL_1307705.txt	{"Pronouns_he": 0.2, "Pronouns_him": 0.1, "Pronouns_i": 0.1, "Pronouns_it": 0.2, "Pronouns_one": 0.15, "Pronouns_they": 0.05, "Pronouns_us": 0.05, "Pronouns_we": 0.05, "Pronouns_you": 0.1}
+JPN_1308777.txt	{"Pronouns_it": 0.32, "Pronouns_one": 0.52, "Pronouns_them": 0.08, "Pronouns_they": 0.04, "Pronouns_we": 0.04}
+JPN_131324.txt	{"Pronouns_it": 0.25, "Pronouns_they": 0.25, "Pronouns_we": 0.5}
+JPN_1314208.txt	{"Pronouns_myself": 0.5, "Pronouns_they": 0.5}
+GER_13148.txt	{"Pronouns_it": 0.25925925925925924, "Pronouns_one": 0.25925925925925924, "Pronouns_them": 0.037037037037037035, "Pronouns_themselves": 0.037037037037037035, "Pronouns_they": 0.37037037037037035, "Pronouns_you": 0.037037037037037035}
+TEL_1316893.txt	{"Pronouns_i": 0.04, "Pronouns_it": 0.32, "Pronouns_one": 0.08, "Pronouns_them": 0.08, "Pronouns_they": 0.24, "Pronouns_us": 0.04, "Pronouns_we": 0.16, "Pronouns_you": 0.04}
+FRE_1319320.txt	{"Pronouns_he": 0.2727272727272727, "Pronouns_her": 0.045454545454545456, "Pronouns_it": 0.09090909090909091, "Pronouns_me": 0.045454545454545456, "Pronouns_one": 0.13636363636363635, "Pronouns_she": 0.2727272727272727, "Pronouns_them": 0.09090909090909091, "Pronouns_you": 0.045454545454545456}
+JPN_1319386.txt	{"Pronouns_her": 0.14285714285714285, "Pronouns_it": 0.14285714285714285, "Pronouns_me": 0.14285714285714285, "Pronouns_them": 0.14285714285714285, "Pronouns_we": 0.42857142857142855}
+TEL_1319703.txt	{"Pronouns_i": 0.18181818181818182, "Pronouns_it": 0.09090909090909091, "Pronouns_one": 0.09090909090909091, "Pronouns_them": 0.2727272727272727, "Pronouns_they": 0.18181818181818182, "Pronouns_we": 0.18181818181818182}
+TEL_1320779.txt	{"Pronouns_i": 0.10344827586206896, "Pronouns_it": 0.06896551724137931, "Pronouns_them": 0.034482758620689655, "Pronouns_they": 0.3793103448275862, "Pronouns_us": 0.034482758620689655, "Pronouns_we": 0.034482758620689655, "Pronouns_you": 0.3448275862068966}
+SPA_1321705.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_they": 0.05555555555555555, "Pronouns_you": 0.7777777777777778}
+TEL_1323204.txt	{"Pronouns_he": 0.17647058823529413, "Pronouns_him": 0.17647058823529413, "Pronouns_i": 0.17647058823529413, "Pronouns_it": 0.11764705882352941, "Pronouns_one": 0.17647058823529413, "Pronouns_they": 0.058823529411764705, "Pronouns_we": 0.11764705882352941}
+FRE_1324450.txt	{"Pronouns_i": 0.14285714285714285, "Pronouns_it": 0.42857142857142855, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.14285714285714285, "Pronouns_we": 0.14285714285714285}
+SPA_1324776.txt	{"Pronouns_him": 0.09090909090909091, "Pronouns_it": 0.09090909090909091, "Pronouns_one": 0.2727272727272727, "Pronouns_ours": 0.18181818181818182, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.18181818181818182, "Pronouns_us": 0.09090909090909091}
+GER_1326401.txt	{"Pronouns_it": 0.38461538461538464, "Pronouns_one": 0.11538461538461539, "Pronouns_you": 0.5}
+GER_132694.txt	{"Pronouns_me": 0.46153846153846156, "Pronouns_one": 0.23076923076923078, "Pronouns_they": 0.3076923076923077}
+CHI_1327245.txt	{"Pronouns_her": 0.06666666666666667, "Pronouns_it": 0.2, "Pronouns_me": 0.2, "Pronouns_one": 0.06666666666666667, "Pronouns_she": 0.06666666666666667, "Pronouns_them": 0.06666666666666667, "Pronouns_they": 0.06666666666666667, "Pronouns_us": 0.13333333333333333, "Pronouns_you": 0.13333333333333333}
+GER_1327758.txt	{"Pronouns_it": 0.4, "Pronouns_them": 0.4, "Pronouns_they": 0.1, "Pronouns_us": 0.1}
+CHI_1328828.txt	{"Pronouns_them": 0.06666666666666667, "Pronouns_they": 0.6666666666666666, "Pronouns_we": 0.13333333333333333, "Pronouns_you": 0.13333333333333333}
+TEL_1329824.txt	{"Pronouns_himself": 0.15384615384615385, "Pronouns_it": 0.3076923076923077, "Pronouns_ourselves": 0.07692307692307693, "Pronouns_them": 0.07692307692307693, "Pronouns_they": 0.23076923076923078, "Pronouns_we": 0.15384615384615385}
+SPA_1329832.txt	{"Pronouns_he": 0.0625, "Pronouns_it": 0.1875, "Pronouns_them": 0.125, "Pronouns_they": 0.375, "Pronouns_we": 0.125, "Pronouns_you": 0.125}
+HIN_1330811.txt	{"Pronouns_i": 0.0625, "Pronouns_it": 0.25, "Pronouns_one": 0.125, "Pronouns_they": 0.125, "Pronouns_we": 0.1875, "Pronouns_you": 0.25}
+TEL_1335332.txt	{"Pronouns_he": 0.30303030303030304, "Pronouns_him": 0.12121212121212122, "Pronouns_i": 0.030303030303030304, "Pronouns_it": 0.12121212121212122, "Pronouns_one": 0.18181818181818182, "Pronouns_us": 0.030303030303030304, "Pronouns_we": 0.21212121212121213}
+JPN_1340428.txt	{"Pronouns_he": 0.043478260869565216, "Pronouns_it": 0.21739130434782608, "Pronouns_me": 0.043478260869565216, "Pronouns_one": 0.13043478260869565, "Pronouns_us": 0.043478260869565216, "Pronouns_you": 0.5217391304347826}
+SPA_1340599.txt	{"Pronouns_he": 0.11538461538461539, "Pronouns_it": 0.2692307692307692, "Pronouns_one": 0.038461538461538464, "Pronouns_they": 0.038461538461538464, "Pronouns_you": 0.5384615384615384}
+TUR_1344754.txt	{"Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.2857142857142857, "Pronouns_they": 0.14285714285714285, "Pronouns_we": 0.2857142857142857, "Pronouns_you": 0.14285714285714285}
+CHI_1347639.txt	{"Pronouns_one": 0.18181818181818182, "Pronouns_them": 0.36363636363636365, "Pronouns_they": 0.45454545454545453}
+SPA_1350846.txt	{"Pronouns_he": 0.0625, "Pronouns_it": 0.125, "Pronouns_one": 0.125, "Pronouns_them": 0.0625, "Pronouns_themselves": 0.0625, "Pronouns_they": 0.25, "Pronouns_you": 0.3125}
+TEL_1351210.txt	{"Pronouns_them": 0.2222222222222222, "Pronouns_themselves": 0.1111111111111111, "Pronouns_they": 0.3333333333333333, "Pronouns_us": 0.1111111111111111, "Pronouns_we": 0.2222222222222222}
+JPN_1351833.txt	{"Pronouns_he": 0.1, "Pronouns_her": 0.13333333333333333, "Pronouns_it": 0.16666666666666666, "Pronouns_me": 0.1, "Pronouns_one": 0.23333333333333334, "Pronouns_she": 0.13333333333333333, "Pronouns_them": 0.03333333333333333, "Pronouns_we": 0.1}
+TEL_1353162.txt	{"Pronouns_he": 0.2, "Pronouns_it": 0.15, "Pronouns_me": 0.05, "Pronouns_one": 0.1, "Pronouns_she": 0.2, "Pronouns_them": 0.05, "Pronouns_they": 0.15, "Pronouns_we": 0.1}
+CHI_135427.txt	{"Pronouns_it": 0.07142857142857142, "Pronouns_me": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_they": 0.2857142857142857, "Pronouns_we": 0.35714285714285715}
+HIN_1357524.txt	{"Pronouns_i": 0.15384615384615385, "Pronouns_it": 0.23076923076923078, "Pronouns_theirs": 0.07692307692307693, "Pronouns_them": 0.07692307692307693, "Pronouns_they": 0.46153846153846156}
+TUR_1358742.txt	{"Pronouns_him": 0.07692307692307693, "Pronouns_i": 0.3076923076923077, "Pronouns_me": 0.15384615384615385, "Pronouns_myself": 0.07692307692307693, "Pronouns_one": 0.07692307692307693, "Pronouns_them": 0.07692307692307693, "Pronouns_they": 0.07692307692307693, "Pronouns_us": 0.15384615384615385}
+FRE_136161.txt	{"Pronouns_he": 0.26666666666666666, "Pronouns_it": 0.06666666666666667, "Pronouns_me": 0.06666666666666667, "Pronouns_one": 0.13333333333333333, "Pronouns_they": 0.06666666666666667, "Pronouns_we": 0.4}
+ARA_1362574.txt	{"Pronouns_him": 0.047619047619047616, "Pronouns_i": 0.047619047619047616, "Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_us": 0.047619047619047616, "Pronouns_we": 0.23809523809523808, "Pronouns_you": 0.3333333333333333}
+ARA_1363582.txt	{"Pronouns_i": 0.1794871794871795, "Pronouns_it": 0.02564102564102564, "Pronouns_me": 0.02564102564102564, "Pronouns_one": 0.07692307692307693, "Pronouns_them": 0.10256410256410256, "Pronouns_they": 0.07692307692307693, "Pronouns_us": 0.02564102564102564, "Pronouns_we": 0.23076923076923078, "Pronouns_you": 0.2564102564102564}
+ARA_1364947.txt	{"Pronouns_them": 0.2727272727272727, "Pronouns_they": 0.6363636363636364, "Pronouns_you": 0.09090909090909091}
+SPA_1364983.txt	{"Pronouns_it": 0.8333333333333334, "Pronouns_one": 0.16666666666666666}
+JPN_1365003.txt	{"Pronouns_it": 0.3, "Pronouns_them": 0.1, "Pronouns_they": 0.5, "Pronouns_we": 0.1}
+ITA_1367819.txt	{"Pronouns_it": 0.6, "Pronouns_me": 0.2, "Pronouns_we": 0.2}
+SPA_1374444.txt	{"Pronouns_i": 0.05, "Pronouns_it": 0.35, "Pronouns_one": 0.05, "Pronouns_them": 0.05, "Pronouns_they": 0.5}
+TUR_1374745.txt	{"Pronouns_herself": 0.058823529411764705, "Pronouns_it": 0.058823529411764705, "Pronouns_them": 0.058823529411764705, "Pronouns_they": 0.6470588235294118, "Pronouns_we": 0.058823529411764705, "Pronouns_you": 0.11764705882352941}
+KOR_1374769.txt	{"Pronouns_it": 0.23529411764705882, "Pronouns_them": 0.17647058823529413, "Pronouns_themselves": 0.029411764705882353, "Pronouns_they": 0.5588235294117647}
+SPA_1375526.txt	{"Pronouns_it": 0.21428571428571427, "Pronouns_me": 0.07142857142857142, "Pronouns_them": 0.21428571428571427, "Pronouns_they": 0.5}
+FRE_1378461.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_they": 0.4, "Pronouns_you": 0.26666666666666666}
+SPA_1378691.txt	{"Pronouns_it": 0.2727272727272727, "Pronouns_them": 0.18181818181818182, "Pronouns_themselves": 0.09090909090909091, "Pronouns_they": 0.36363636363636365, "Pronouns_you": 0.09090909090909091}
+FRE_138102.txt	{"Pronouns_it": 0.25, "Pronouns_one": 0.125, "Pronouns_we": 0.0625, "Pronouns_you": 0.5625}
+GER_1382670.txt	{"Pronouns_her": 0.21428571428571427, "Pronouns_it": 0.07142857142857142, "Pronouns_me": 0.07142857142857142, "Pronouns_them": 0.21428571428571427, "Pronouns_they": 0.35714285714285715, "Pronouns_you": 0.07142857142857142}
+TEL_1384177.txt	{"Pronouns_he": 0.16666666666666666, "Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.16666666666666666, "Pronouns_them": 0.16666666666666666, "Pronouns_they": 0.3333333333333333}
+ITA_1387124.txt	{"Pronouns_i": 0.07142857142857142, "Pronouns_it": 0.21428571428571427, "Pronouns_one": 0.07142857142857142, "Pronouns_they": 0.07142857142857142, "Pronouns_we": 0.14285714285714285, "Pronouns_you": 0.42857142857142855}
+ITA_1387433.txt	{"Pronouns_he": 0.043478260869565216, "Pronouns_her": 0.043478260869565216, "Pronouns_it": 0.21739130434782608, "Pronouns_itself": 0.043478260869565216, "Pronouns_me": 0.08695652173913043, "Pronouns_mine": 0.043478260869565216, "Pronouns_oneself": 0.043478260869565216, "Pronouns_she": 0.17391304347826086, "Pronouns_them": 0.043478260869565216, "Pronouns_we": 0.043478260869565216, "Pronouns_you": 0.21739130434782608}
+HIN_1388859.txt	{}
+TEL_1389071.txt	{"Pronouns_he": 0.2222222222222222, "Pronouns_i": 0.1111111111111111, "Pronouns_they": 0.5555555555555556, "Pronouns_we": 0.1111111111111111}
+SPA_1389928.txt	{"Pronouns_he": 0.05, "Pronouns_one": 0.15, "Pronouns_she": 0.05, "Pronouns_they": 0.05, "Pronouns_we": 0.1, "Pronouns_you": 0.6}
+HIN_1390370.txt	{"Pronouns_he": 0.125, "Pronouns_her": 0.0625, "Pronouns_him": 0.0625, "Pronouns_them": 0.125, "Pronouns_they": 0.5625, "Pronouns_we": 0.0625}
+HIN_1390371.txt	{"Pronouns_him": 0.16666666666666666, "Pronouns_i": 0.3333333333333333, "Pronouns_one": 0.5}
+GER_139132.txt	{"Pronouns_it": 0.2, "Pronouns_they": 0.2, "Pronouns_we": 0.2, "Pronouns_you": 0.4}
+ARA_1393619.txt	{"Pronouns_i": 0.17647058823529413, "Pronouns_it": 0.058823529411764705, "Pronouns_me": 0.058823529411764705, "Pronouns_myself": 0.11764705882352941, "Pronouns_one": 0.058823529411764705, "Pronouns_them": 0.058823529411764705, "Pronouns_we": 0.47058823529411764}
+GER_1396592.txt	{"Pronouns_her": 0.05555555555555555, "Pronouns_himself": 0.05555555555555555, "Pronouns_it": 0.16666666666666666, "Pronouns_me": 0.05555555555555555, "Pronouns_them": 0.1111111111111111, "Pronouns_themselves": 0.05555555555555555, "Pronouns_they": 0.4444444444444444, "Pronouns_you": 0.05555555555555555}
+TUR_1397179.txt	{"Pronouns_i": 0.041666666666666664, "Pronouns_it": 0.3333333333333333, "Pronouns_them": 0.4166666666666667, "Pronouns_they": 0.125, "Pronouns_we": 0.08333333333333333}
+CHI_139743.txt	{"Pronouns_he": 0.12, "Pronouns_i": 0.08, "Pronouns_it": 0.36, "Pronouns_me": 0.04, "Pronouns_one": 0.08, "Pronouns_they": 0.04, "Pronouns_us": 0.04, "Pronouns_we": 0.16, "Pronouns_you": 0.08}
+TUR_1399985.txt	{"Pronouns_it": 0.10526315789473684, "Pronouns_one": 0.10526315789473684, "Pronouns_you": 0.7368421052631579, "Pronouns_yourself": 0.05263157894736842}
+SPA_140055.txt	{"Pronouns_her": 0.05555555555555555, "Pronouns_itself": 0.05555555555555555, "Pronouns_them": 0.05555555555555555, "Pronouns_they": 0.1111111111111111, "Pronouns_we": 0.1111111111111111, "Pronouns_you": 0.6111111111111112}
+ARA_1401829.txt	{"Pronouns_i": 0.2727272727272727, "Pronouns_it": 0.18181818181818182, "Pronouns_one": 0.09090909090909091, "Pronouns_them": 0.18181818181818182, "Pronouns_they": 0.09090909090909091, "Pronouns_we": 0.18181818181818182}
+KOR_1403529.txt	{"Pronouns_it": 0.17647058823529413, "Pronouns_me": 0.058823529411764705, "Pronouns_them": 0.029411764705882353, "Pronouns_they": 0.058823529411764705, "Pronouns_we": 0.5294117647058824, "Pronouns_you": 0.14705882352941177}
+CHI_1406462.txt	{"Pronouns_he": 0.07692307692307693, "Pronouns_it": 0.07692307692307693, "Pronouns_itself": 0.07692307692307693, "Pronouns_me": 0.23076923076923078, "Pronouns_myself": 0.3076923076923077, "Pronouns_one": 0.15384615384615385, "Pronouns_she": 0.07692307692307693}
+KOR_1408430.txt	{"Pronouns_he": 0.2777777777777778, "Pronouns_one": 0.05555555555555555, "Pronouns_them": 0.05555555555555555, "Pronouns_themselves": 0.05555555555555555, "Pronouns_they": 0.5555555555555556}
+SPA_1409810.txt	{"Pronouns_it": 0.2857142857142857, "Pronouns_myself": 0.03571428571428571, "Pronouns_they": 0.25, "Pronouns_us": 0.03571428571428571, "Pronouns_we": 0.07142857142857142, "Pronouns_you": 0.32142857142857145}
+CHI_1410658.txt	{"Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.07142857142857142, "Pronouns_them": 0.21428571428571427, "Pronouns_they": 0.2857142857142857, "Pronouns_us": 0.07142857142857142, "Pronouns_we": 0.21428571428571427}
+TEL_1411758.txt	{"Pronouns_one": 0.2, "Pronouns_us": 0.4, "Pronouns_we": 0.4}
+TEL_141405.txt	{"Pronouns_i": 0.125, "Pronouns_it": 0.125, "Pronouns_they": 0.125, "Pronouns_we": 0.625}
+TEL_14163.txt	{"Pronouns_i": 0.23076923076923078, "Pronouns_it": 0.07692307692307693, "Pronouns_them": 0.23076923076923078, "Pronouns_they": 0.46153846153846156}
+HIN_1417976.txt	{"Pronouns_i": 0.26666666666666666, "Pronouns_it": 0.6, "Pronouns_they": 0.06666666666666667, "Pronouns_us": 0.06666666666666667}
+HIN_1419617.txt	{"Pronouns_her": 0.07142857142857142, "Pronouns_i": 0.21428571428571427, "Pronouns_it": 0.14285714285714285, "Pronouns_they": 0.14285714285714285, "Pronouns_you": 0.42857142857142855}
+JPN_1420461.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_one": 0.3333333333333333, "Pronouns_them": 0.3333333333333333}
+ARA_1421108.txt	{"Pronouns_i": 0.1388888888888889, "Pronouns_it": 0.19444444444444445, "Pronouns_one": 0.1111111111111111, "Pronouns_they": 0.16666666666666666, "Pronouns_you": 0.3333333333333333, "Pronouns_yourself": 0.05555555555555555}
+FRE_1424711.txt	{"Pronouns_it": 0.1875, "Pronouns_one": 0.25, "Pronouns_them": 0.0625, "Pronouns_us": 0.0625, "Pronouns_we": 0.0625, "Pronouns_you": 0.375}
+TUR_1426459.txt	{"Pronouns_i": 0.2222222222222222, "Pronouns_it": 0.05555555555555555, "Pronouns_me": 0.05555555555555555, "Pronouns_one": 0.3333333333333333, "Pronouns_them": 0.1111111111111111, "Pronouns_we": 0.05555555555555555, "Pronouns_you": 0.16666666666666666}
+TUR_1429329.txt	{"Pronouns_he": 0.2222222222222222, "Pronouns_himself": 0.1111111111111111, "Pronouns_it": 0.4444444444444444, "Pronouns_us": 0.1111111111111111, "Pronouns_you": 0.1111111111111111}
+KOR_1430295.txt	{"Pronouns_he": 0.21428571428571427, "Pronouns_it": 0.21428571428571427, "Pronouns_they": 0.07142857142857142, "Pronouns_we": 0.14285714285714285, "Pronouns_you": 0.35714285714285715}
+SPA_1432328.txt	{"Pronouns_it": 0.21428571428571427, "Pronouns_me": 0.07142857142857142, "Pronouns_they": 0.2857142857142857, "Pronouns_we": 0.42857142857142855}
+FRE_1433088.txt	{"Pronouns_it": 0.45, "Pronouns_itself": 0.05, "Pronouns_one": 0.05, "Pronouns_they": 0.1, "Pronouns_us": 0.05, "Pronouns_you": 0.3}
+TEL_1440110.txt	{"Pronouns_he": 0.1111111111111111, "Pronouns_it": 0.4444444444444444, "Pronouns_one": 0.2222222222222222, "Pronouns_them": 0.1111111111111111, "Pronouns_they": 0.1111111111111111}
+JPN_144050.txt	{"Pronouns_he": 0.09090909090909091, "Pronouns_it": 0.18181818181818182, "Pronouns_me": 0.09090909090909091, "Pronouns_one": 0.09090909090909091, "Pronouns_she": 0.09090909090909091, "Pronouns_them": 0.18181818181818182, "Pronouns_we": 0.2727272727272727}
+FRE_1441585.txt	{"Pronouns_he": 0.25, "Pronouns_i": 0.027777777777777776, "Pronouns_it": 0.5, "Pronouns_them": 0.027777777777777776, "Pronouns_we": 0.027777777777777776, "Pronouns_you": 0.16666666666666666}
+TEL_1442408.txt	{"Pronouns_i": 0.16666666666666666, "Pronouns_it": 0.1111111111111111, "Pronouns_them": 0.16666666666666666, "Pronouns_themselves": 0.05555555555555555, "Pronouns_they": 0.4444444444444444, "Pronouns_you": 0.05555555555555555}
+TUR_1442833.txt	{"Pronouns_he": 0.03125, "Pronouns_it": 0.34375, "Pronouns_me": 0.03125, "Pronouns_myself": 0.03125, "Pronouns_one": 0.09375, "Pronouns_she": 0.03125, "Pronouns_them": 0.0625, "Pronouns_they": 0.21875, "Pronouns_us": 0.03125, "Pronouns_we": 0.0625, "Pronouns_you": 0.0625}
+GER_1443675.txt	{"Pronouns_it": 0.6666666666666666, "Pronouns_them": 0.16666666666666666, "Pronouns_we": 0.16666666666666666}
+TEL_1444735.txt	{"Pronouns_he": 0.058823529411764705, "Pronouns_me": 0.11764705882352941, "Pronouns_one": 0.11764705882352941, "Pronouns_ourselves": 0.058823529411764705, "Pronouns_them": 0.058823529411764705, "Pronouns_they": 0.11764705882352941, "Pronouns_we": 0.47058823529411764}
+ARA_1444892.txt	{"Pronouns_he": 0.125, "Pronouns_one": 0.125, "Pronouns_they": 0.75}
+TUR_1445417.txt	{"Pronouns_her": 0.041666666666666664, "Pronouns_it": 0.041666666666666664, "Pronouns_them": 0.16666666666666666, "Pronouns_themselves": 0.041666666666666664, "Pronouns_they": 0.375, "Pronouns_us": 0.041666666666666664, "Pronouns_we": 0.125, "Pronouns_you": 0.16666666666666666}
+FRE_1446521.txt	{"Pronouns_i": 0.09090909090909091, "Pronouns_it": 0.18181818181818182, "Pronouns_one": 0.09090909090909091, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.2727272727272727, "Pronouns_you": 0.2727272727272727}
+FRE_1448761.txt	{"Pronouns_it": 0.2222222222222222, "Pronouns_one": 0.2222222222222222, "Pronouns_them": 0.1111111111111111, "Pronouns_they": 0.1111111111111111, "Pronouns_us": 0.1111111111111111, "Pronouns_we": 0.1111111111111111, "Pronouns_you": 0.1111111111111111}
+TEL_1449466.txt	{"Pronouns_it": 0.1111111111111111, "Pronouns_one": 0.3333333333333333, "Pronouns_oneself": 0.1111111111111111, "Pronouns_she": 0.1111111111111111, "Pronouns_they": 0.2222222222222222, "Pronouns_we": 0.1111111111111111}
+ITA_1458251.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_them": 0.16666666666666666, "Pronouns_themselves": 0.041666666666666664, "Pronouns_we": 0.041666666666666664, "Pronouns_you": 0.4166666666666667}
+TEL_1458451.txt	{"Pronouns_it": 0.17647058823529413, "Pronouns_me": 0.058823529411764705, "Pronouns_she": 0.17647058823529413, "Pronouns_them": 0.058823529411764705, "Pronouns_they": 0.058823529411764705, "Pronouns_us": 0.17647058823529413, "Pronouns_we": 0.29411764705882354}
+FRE_1473155.txt	{"Pronouns_he": 0.07142857142857142, "Pronouns_him": 0.07142857142857142, "Pronouns_it": 0.35714285714285715, "Pronouns_one": 0.14285714285714285, "Pronouns_they": 0.35714285714285715}
+CHI_147799.txt	{"Pronouns_he": 0.05555555555555555, "Pronouns_i": 0.7222222222222222, "Pronouns_you": 0.2222222222222222}
+GER_1483810.txt	{"Pronouns_her": 0.2, "Pronouns_it": 0.8}
+ITA_1484285.txt	{"Pronouns_he": 0.1111111111111111, "Pronouns_one": 0.1111111111111111, "Pronouns_them": 0.2222222222222222, "Pronouns_themselves": 0.1111111111111111, "Pronouns_you": 0.4444444444444444}
+CHI_1485238.txt	{"Pronouns_it": 0.1111111111111111, "Pronouns_ourselves": 0.05555555555555555, "Pronouns_she": 0.05555555555555555, "Pronouns_they": 0.16666666666666666, "Pronouns_us": 0.16666666666666666, "Pronouns_we": 0.4444444444444444}
+ARA_1488760.txt	{"Pronouns_i": 0.15384615384615385, "Pronouns_it": 0.15384615384615385, "Pronouns_me": 0.07692307692307693, "Pronouns_we": 0.15384615384615385, "Pronouns_you": 0.46153846153846156}
+HIN_1490134.txt	{"Pronouns_i": 0.1111111111111111, "Pronouns_it": 0.3333333333333333, "Pronouns_myself": 0.1111111111111111, "Pronouns_them": 0.1111111111111111, "Pronouns_we": 0.3333333333333333}
+ITA_1493498.txt	{"Pronouns_it": 0.6666666666666666, "Pronouns_they": 0.3333333333333333}
+CHI_1494104.txt	{"Pronouns_he": 0.09090909090909091, "Pronouns_it": 0.36363636363636365, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.36363636363636365, "Pronouns_we": 0.09090909090909091}
+HIN_1500685.txt	{"Pronouns_he": 0.1111111111111111, "Pronouns_it": 0.3333333333333333, "Pronouns_one": 0.2222222222222222, "Pronouns_them": 0.1111111111111111, "Pronouns_they": 0.2222222222222222}
+SPA_1502174.txt	{"Pronouns_he": 0.16129032258064516, "Pronouns_him": 0.03225806451612903, "Pronouns_it": 0.16129032258064516, "Pronouns_one": 0.03225806451612903, "Pronouns_she": 0.06451612903225806, "Pronouns_they": 0.16129032258064516, "Pronouns_we": 0.0967741935483871, "Pronouns_you": 0.2903225806451613}
+TEL_1503331.txt	{"Pronouns_he": 0.07407407407407407, "Pronouns_her": 0.1111111111111111, "Pronouns_i": 0.037037037037037035, "Pronouns_it": 0.037037037037037035, "Pronouns_she": 0.25925925925925924, "Pronouns_them": 0.1111111111111111, "Pronouns_they": 0.2962962962962963, "Pronouns_we": 0.07407407407407407}
+TEL_1505541.txt	{"Pronouns_he": 0.07142857142857142, "Pronouns_i": 0.21428571428571427, "Pronouns_mine": 0.07142857142857142, "Pronouns_one": 0.07142857142857142, "Pronouns_them": 0.07142857142857142, "Pronouns_themselves": 0.14285714285714285, "Pronouns_they": 0.35714285714285715}
+CHI_1505558.txt	{"Pronouns_i": 0.043478260869565216, "Pronouns_it": 0.30434782608695654, "Pronouns_them": 0.043478260869565216, "Pronouns_they": 0.21739130434782608, "Pronouns_you": 0.391304347826087}
+HIN_1505590.txt	{"Pronouns_he": 0.125, "Pronouns_it": 0.375, "Pronouns_one": 0.125, "Pronouns_them": 0.125, "Pronouns_themselves": 0.125, "Pronouns_you": 0.125}
+KOR_1510196.txt	{"Pronouns_it": 0.25, "Pronouns_one": 0.08333333333333333, "Pronouns_we": 0.6666666666666666}
+ITA_152045.txt	{"Pronouns_it": 0.3103448275862069, "Pronouns_me": 0.034482758620689655, "Pronouns_one": 0.034482758620689655, "Pronouns_them": 0.06896551724137931, "Pronouns_they": 0.3103448275862069, "Pronouns_us": 0.10344827586206896, "Pronouns_we": 0.13793103448275862}
+CHI_1520668.txt	{"Pronouns_one": 0.6666666666666666, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.26666666666666666}
+ITA_1522984.txt	{"Pronouns_it": 0.2857142857142857, "Pronouns_me": 0.07142857142857142, "Pronouns_one": 0.14285714285714285, "Pronouns_them": 0.07142857142857142, "Pronouns_they": 0.14285714285714285, "Pronouns_us": 0.14285714285714285, "Pronouns_we": 0.14285714285714285}
+JPN_1528856.txt	{"Pronouns_it": 0.2631578947368421, "Pronouns_one": 0.21052631578947367, "Pronouns_them": 0.05263157894736842, "Pronouns_we": 0.42105263157894735, "Pronouns_you": 0.05263157894736842}
+SPA_1531692.txt	{"Pronouns_one": 0.125, "Pronouns_them": 0.125, "Pronouns_they": 0.5, "Pronouns_we": 0.25}
+ARA_1535216.txt	{"Pronouns_i": 0.3333333333333333, "Pronouns_it": 0.2222222222222222, "Pronouns_they": 0.2222222222222222, "Pronouns_we": 0.2222222222222222}
+JPN_1541036.txt	{"Pronouns_he": 0.14285714285714285, "Pronouns_him": 0.14285714285714285, "Pronouns_it": 0.14285714285714285, "Pronouns_me": 0.2857142857142857, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.14285714285714285}
+ITA_1541362.txt	{"Pronouns_it": 0.3125, "Pronouns_me": 0.125, "Pronouns_mine": 0.0625, "Pronouns_myself": 0.0625, "Pronouns_one": 0.125, "Pronouns_them": 0.1875, "Pronouns_they": 0.0625, "Pronouns_you": 0.0625}
+TUR_154577.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.2777777777777778, "Pronouns_them": 0.05555555555555555, "Pronouns_themselves": 0.05555555555555555, "Pronouns_we": 0.3888888888888889, "Pronouns_you": 0.05555555555555555}
+HIN_1545863.txt	{"Pronouns_i": 0.07692307692307693, "Pronouns_it": 0.07692307692307693, "Pronouns_me": 0.07692307692307693, "Pronouns_one": 0.15384615384615385, "Pronouns_them": 0.07692307692307693, "Pronouns_they": 0.5384615384615384}
+HIN_1546461.txt	{"Pronouns_he": 0.0625, "Pronouns_i": 0.0625, "Pronouns_it": 0.4375, "Pronouns_one": 0.0625, "Pronouns_them": 0.125, "Pronouns_they": 0.25}
+KOR_1550770.txt	{"Pronouns_it": 0.3793103448275862, "Pronouns_me": 0.034482758620689655, "Pronouns_myself": 0.06896551724137931, "Pronouns_one": 0.034482758620689655, "Pronouns_she": 0.13793103448275862, "Pronouns_they": 0.3103448275862069, "Pronouns_we": 0.034482758620689655}
+CHI_1550812.txt	{"Pronouns_i": 0.16666666666666666, "Pronouns_it": 0.06666666666666667, "Pronouns_one": 0.03333333333333333, "Pronouns_ourselves": 0.06666666666666667, "Pronouns_them": 0.06666666666666667, "Pronouns_they": 0.06666666666666667, "Pronouns_us": 0.13333333333333333, "Pronouns_we": 0.36666666666666664, "Pronouns_you": 0.03333333333333333}
+KOR_1551308.txt	{"Pronouns_it": 0.2, "Pronouns_one": 0.1, "Pronouns_they": 0.7}
+FRE_155157.txt	{"Pronouns_i": 0.17647058823529413, "Pronouns_it": 0.17647058823529413, "Pronouns_one": 0.058823529411764705, "Pronouns_them": 0.17647058823529413, "Pronouns_they": 0.23529411764705882, "Pronouns_you": 0.17647058823529413}
+HIN_1551953.txt	{"Pronouns_i": 0.09090909090909091, "Pronouns_it": 0.36363636363636365, "Pronouns_them": 0.2727272727272727, "Pronouns_they": 0.22727272727272727, "Pronouns_we": 0.045454545454545456}
+TEL_1555847.txt	{"Pronouns_he": 0.16666666666666666, "Pronouns_it": 0.08333333333333333, "Pronouns_me": 0.16666666666666666, "Pronouns_mine": 0.08333333333333333, "Pronouns_one": 0.08333333333333333, "Pronouns_she": 0.16666666666666666, "Pronouns_they": 0.08333333333333333, "Pronouns_we": 0.16666666666666666}
+HIN_1556463.txt	{"Pronouns_i": 0.18181818181818182, "Pronouns_them": 0.18181818181818182, "Pronouns_they": 0.45454545454545453, "Pronouns_us": 0.09090909090909091, "Pronouns_we": 0.09090909090909091}
+FRE_1557193.txt	{"Pronouns_i": 0.45714285714285713, "Pronouns_it": 0.2, "Pronouns_one": 0.02857142857142857, "Pronouns_ourselves": 0.02857142857142857, "Pronouns_them": 0.02857142857142857, "Pronouns_themselves": 0.02857142857142857, "Pronouns_they": 0.02857142857142857, "Pronouns_you": 0.2}
+TUR_155724.txt	{"Pronouns_he": 0.5, "Pronouns_me": 0.25, "Pronouns_them": 0.25}
+TEL_1558185.txt	{"Pronouns_i": 0.16666666666666666, "Pronouns_it": 0.3333333333333333, "Pronouns_one": 0.5}
+GER_1560468.txt	{"Pronouns_he": 0.03225806451612903, "Pronouns_it": 0.25806451612903225, "Pronouns_she": 0.03225806451612903, "Pronouns_them": 0.12903225806451613, "Pronouns_they": 0.22580645161290322, "Pronouns_us": 0.06451612903225806, "Pronouns_we": 0.0967741935483871, "Pronouns_you": 0.16129032258064516}
+CHI_1561226.txt	{"Pronouns_it": 0.24, "Pronouns_one": 0.04, "Pronouns_oneself": 0.04, "Pronouns_them": 0.04, "Pronouns_they": 0.2, "Pronouns_us": 0.12, "Pronouns_we": 0.28, "Pronouns_you": 0.04}
+ITA_1561744.txt	{"Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.2857142857142857, "Pronouns_they": 0.14285714285714285, "Pronouns_we": 0.42857142857142855}
+ARA_1563774.txt	{"Pronouns_her": 0.041666666666666664, "Pronouns_i": 0.041666666666666664, "Pronouns_it": 0.25, "Pronouns_me": 0.08333333333333333, "Pronouns_one": 0.041666666666666664, "Pronouns_she": 0.16666666666666666, "Pronouns_them": 0.125, "Pronouns_they": 0.08333333333333333, "Pronouns_we": 0.125, "Pronouns_you": 0.041666666666666664}
+JPN_1567259.txt	{"Pronouns_it": 0.15384615384615385, "Pronouns_one": 0.15384615384615385, "Pronouns_they": 0.23076923076923078, "Pronouns_we": 0.46153846153846156}
+ITA_1568335.txt	{"Pronouns_he": 0.09523809523809523, "Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.047619047619047616, "Pronouns_them": 0.047619047619047616, "Pronouns_they": 0.2857142857142857, "Pronouns_us": 0.047619047619047616, "Pronouns_we": 0.14285714285714285, "Pronouns_you": 0.19047619047619047}
+HIN_1569422.txt	{"Pronouns_it": 0.10526315789473684, "Pronouns_one": 0.05263157894736842, "Pronouns_them": 0.10526315789473684, "Pronouns_themselves": 0.05263157894736842, "Pronouns_they": 0.5263157894736842, "Pronouns_we": 0.15789473684210525}
+ITA_157059.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.3333333333333333, "Pronouns_we": 0.5}
+ITA_1571554.txt	{"Pronouns_it": 0.6, "Pronouns_me": 0.4}
+FRE_1573044.txt	{"Pronouns_it": 0.14285714285714285, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.2857142857142857, "Pronouns_we": 0.42857142857142855}
+GER_1574734.txt	{"Pronouns_it": 0.2727272727272727, "Pronouns_one": 0.09090909090909091, "Pronouns_they": 0.5454545454545454, "Pronouns_you": 0.09090909090909091}
+CHI_1575943.txt	{"Pronouns_it": 0.64, "Pronouns_they": 0.2, "Pronouns_you": 0.16}
+SPA_1577382.txt	{"Pronouns_i": 0.09375, "Pronouns_it": 0.03125, "Pronouns_one": 0.34375, "Pronouns_they": 0.03125, "Pronouns_we": 0.15625, "Pronouns_you": 0.3125, "Pronouns_yourself": 0.03125}
+JPN_1580373.txt	{"Pronouns_her": 0.0625, "Pronouns_him": 0.0625, "Pronouns_it": 0.125, "Pronouns_me": 0.25, "Pronouns_us": 0.0625, "Pronouns_you": 0.4375}
+TEL_158423.txt	{"Pronouns_it": 0.2, "Pronouns_one": 0.3, "Pronouns_they": 0.2, "Pronouns_we": 0.3}
+SPA_1591352.txt	{"Pronouns_i": 0.2857142857142857, "Pronouns_you": 0.7142857142857143}
+ITA_1591602.txt	{"Pronouns_he": 0.21739130434782608, "Pronouns_him": 0.13043478260869565, "Pronouns_i": 0.2608695652173913, "Pronouns_it": 0.043478260869565216, "Pronouns_one": 0.21739130434782608, "Pronouns_they": 0.08695652173913043, "Pronouns_you": 0.043478260869565216}
+CHI_1591671.txt	{"Pronouns_it": 0.038461538461538464, "Pronouns_me": 0.038461538461538464, "Pronouns_one": 0.11538461538461539, "Pronouns_them": 0.19230769230769232, "Pronouns_themselves": 0.038461538461538464, "Pronouns_they": 0.2692307692307692, "Pronouns_you": 0.3076923076923077}
+FRE_1593456.txt	{"Pronouns_it": 0.2, "Pronouns_one": 0.03333333333333333, "Pronouns_they": 0.6, "Pronouns_we": 0.06666666666666667, "Pronouns_you": 0.1}
+HIN_1593764.txt	{"Pronouns_her": 0.3, "Pronouns_me": 0.1, "Pronouns_she": 0.1, "Pronouns_them": 0.2, "Pronouns_they": 0.2, "Pronouns_you": 0.1}
+GER_1594465.txt	{"Pronouns_it": 0.2777777777777778, "Pronouns_one": 0.05555555555555555, "Pronouns_they": 0.4444444444444444, "Pronouns_you": 0.2222222222222222}
+FRE_1596015.txt	{"Pronouns_it": 0.30434782608695654, "Pronouns_they": 0.08695652173913043, "Pronouns_we": 0.13043478260869565, "Pronouns_you": 0.43478260869565216, "Pronouns_yourself": 0.043478260869565216}
+SPA_159607.txt	{"Pronouns_it": 1.0}
+TUR_1596937.txt	{"Pronouns_it": 0.15384615384615385, "Pronouns_me": 0.07692307692307693, "Pronouns_them": 0.15384615384615385, "Pronouns_they": 0.6153846153846154}
+FRE_1598574.txt	{"Pronouns_them": 0.375, "Pronouns_they": 0.625}
+GER_1599482.txt	{"Pronouns_it": 0.13636363636363635, "Pronouns_one": 0.4090909090909091, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.2727272727272727, "Pronouns_you": 0.09090909090909091}
+JPN_1599863.txt	{"Pronouns_them": 0.2857142857142857, "Pronouns_they": 0.7142857142857143}
+JPN_1602223.txt	{"Pronouns_it": 0.2631578947368421, "Pronouns_one": 0.05263157894736842, "Pronouns_them": 0.05263157894736842, "Pronouns_they": 0.15789473684210525, "Pronouns_us": 0.05263157894736842, "Pronouns_we": 0.2631578947368421, "Pronouns_you": 0.15789473684210525}
+KOR_1603029.txt	{"Pronouns_it": 0.22580645161290322, "Pronouns_she": 0.2903225806451613, "Pronouns_them": 0.03225806451612903, "Pronouns_we": 0.45161290322580644}
+CHI_1603663.txt	{"Pronouns_themselves": 0.4, "Pronouns_they": 0.4, "Pronouns_we": 0.2}
+SPA_16038.txt	{"Pronouns_i": 0.5, "Pronouns_they": 0.3333333333333333, "Pronouns_we": 0.16666666666666666}
+TUR_1604202.txt	{"Pronouns_it": 0.09090909090909091, "Pronouns_myself": 0.045454545454545456, "Pronouns_one": 0.4090909090909091, "Pronouns_themselves": 0.045454545454545456, "Pronouns_we": 0.13636363636363635, "Pronouns_you": 0.22727272727272727, "Pronouns_yourself": 0.045454545454545456}
+JPN_1604615.txt	{"Pronouns_they": 1.0}
+HIN_1607000.txt	{"Pronouns_he": 0.16666666666666666, "Pronouns_him": 0.08333333333333333, "Pronouns_himself": 0.08333333333333333, "Pronouns_it": 0.3333333333333333, "Pronouns_them": 0.08333333333333333, "Pronouns_you": 0.25}
+ARA_160704.txt	{"Pronouns_i": 0.2222222222222222, "Pronouns_me": 0.1111111111111111, "Pronouns_one": 0.3333333333333333, "Pronouns_they": 0.1111111111111111, "Pronouns_you": 0.2222222222222222}
+ITA_1607315.txt	{"Pronouns_i": 0.2, "Pronouns_one": 0.6, "Pronouns_we": 0.2}
+ITA_1609648.txt	{"Pronouns_he": 0.07142857142857142, "Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_she": 0.07142857142857142, "Pronouns_them": 0.35714285714285715, "Pronouns_they": 0.14285714285714285, "Pronouns_us": 0.07142857142857142}
+SPA_1612.txt	{"Pronouns_he": 0.023809523809523808, "Pronouns_i": 0.023809523809523808, "Pronouns_it": 0.07142857142857142, "Pronouns_one": 0.023809523809523808, "Pronouns_them": 0.023809523809523808, "Pronouns_they": 0.023809523809523808, "Pronouns_you": 0.8095238095238095}
+SPA_1613828.txt	{"Pronouns_he": 0.1, "Pronouns_herself": 0.05, "Pronouns_him": 0.05, "Pronouns_it": 0.25, "Pronouns_one": 0.25, "Pronouns_she": 0.1, "Pronouns_they": 0.15, "Pronouns_you": 0.05}
+TEL_1614935.txt	{"Pronouns_i": 0.5, "Pronouns_they": 0.5}
+ITA_1616597.txt	{"Pronouns_it": 0.09523809523809523, "Pronouns_one": 0.23809523809523808, "Pronouns_they": 0.047619047619047616, "Pronouns_you": 0.6190476190476191}
+TEL_1620341.txt	{"Pronouns_me": 0.1111111111111111, "Pronouns_one": 0.1111111111111111, "Pronouns_them": 0.2222222222222222, "Pronouns_they": 0.4444444444444444, "Pronouns_we": 0.1111111111111111}
+JPN_1621287.txt	{"Pronouns_me": 0.08333333333333333, "Pronouns_one": 0.5833333333333334, "Pronouns_they": 0.3333333333333333}
+TUR_1621418.txt	{"Pronouns_it": 0.2, "Pronouns_itself": 0.06666666666666667, "Pronouns_one": 0.06666666666666667, "Pronouns_they": 0.26666666666666666, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.3333333333333333}
+HIN_1622334.txt	{"Pronouns_ourselves": 0.09090909090909091, "Pronouns_they": 0.2727272727272727, "Pronouns_us": 0.09090909090909091, "Pronouns_we": 0.5454545454545454}
+KOR_1622707.txt	{"Pronouns_it": 0.7142857142857143, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.14285714285714285}
+SPA_1625914.txt	{"Pronouns_i": 0.15, "Pronouns_it": 0.15, "Pronouns_me": 0.3, "Pronouns_they": 0.35, "Pronouns_you": 0.05}
+CHI_162639.txt	{"Pronouns_it": 0.05263157894736842, "Pronouns_one": 0.05263157894736842, "Pronouns_oneself": 0.05263157894736842, "Pronouns_them": 0.42105263157894735, "Pronouns_themselves": 0.05263157894736842, "Pronouns_they": 0.3157894736842105, "Pronouns_you": 0.05263157894736842}
+JPN_1626417.txt	{"Pronouns_they": 1.0}
+KOR_1632122.txt	{"Pronouns_it": 0.1, "Pronouns_me": 0.1, "Pronouns_one": 0.1, "Pronouns_they": 0.1, "Pronouns_we": 0.6}
+ITA_1632824.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_we": 0.8333333333333334}
+CHI_1634341.txt	{"Pronouns_he": 0.3333333333333333, "Pronouns_him": 0.06666666666666667, "Pronouns_me": 0.06666666666666667, "Pronouns_one": 0.06666666666666667, "Pronouns_them": 0.06666666666666667, "Pronouns_they": 0.06666666666666667, "Pronouns_us": 0.26666666666666666, "Pronouns_we": 0.06666666666666667}
+SPA_1636648.txt	{"Pronouns_i": 0.1, "Pronouns_it": 0.6, "Pronouns_them": 0.2, "Pronouns_you": 0.1}
+HIN_1637734.txt	{"Pronouns_them": 0.125, "Pronouns_themselves": 0.25, "Pronouns_they": 0.375, "Pronouns_we": 0.25}
+GER_1639128.txt	{"Pronouns_it": 0.5, "Pronouns_them": 0.3333333333333333, "Pronouns_themselves": 0.16666666666666666}
+GER_1640565.txt	{"Pronouns_me": 0.05263157894736842, "Pronouns_them": 0.05263157894736842, "Pronouns_they": 0.3157894736842105, "Pronouns_you": 0.5789473684210527}
+ARA_164538.txt	{"Pronouns_i": 0.20833333333333334, "Pronouns_it": 0.4166666666666667, "Pronouns_them": 0.041666666666666664, "Pronouns_they": 0.20833333333333334, "Pronouns_us": 0.041666666666666664, "Pronouns_we": 0.041666666666666664, "Pronouns_you": 0.041666666666666664}
+GER_1646354.txt	{"Pronouns_he": 0.20833333333333334, "Pronouns_it": 0.375, "Pronouns_one": 0.08333333333333333, "Pronouns_you": 0.3333333333333333}
+SPA_1646509.txt	{"Pronouns_i": 0.021739130434782608, "Pronouns_it": 0.21739130434782608, "Pronouns_them": 0.06521739130434782, "Pronouns_they": 0.1956521739130435, "Pronouns_us": 0.06521739130434782, "Pronouns_we": 0.21739130434782608, "Pronouns_you": 0.21739130434782608}
+FRE_1648010.txt	{"Pronouns_he": 0.06666666666666667, "Pronouns_it": 0.4666666666666667, "Pronouns_one": 0.13333333333333333, "Pronouns_them": 0.2, "Pronouns_they": 0.06666666666666667, "Pronouns_us": 0.06666666666666667}
+HIN_1651725.txt	{"Pronouns_i": 0.14285714285714285, "Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.42857142857142855}
+ITA_1657333.txt	{"Pronouns_i": 0.375, "Pronouns_it": 0.0625, "Pronouns_me": 0.1875, "Pronouns_one": 0.25, "Pronouns_you": 0.125}
+ARA_1658329.txt	{"Pronouns_her": 0.037037037037037035, "Pronouns_i": 0.14814814814814814, "Pronouns_it": 0.4074074074074074, "Pronouns_me": 0.037037037037037035, "Pronouns_them": 0.14814814814814814, "Pronouns_they": 0.037037037037037035, "Pronouns_we": 0.037037037037037035, "Pronouns_you": 0.14814814814814814}
+GER_1659416.txt	{"Pronouns_it": 0.13043478260869565, "Pronouns_me": 0.043478260869565216, "Pronouns_one": 0.043478260869565216, "Pronouns_them": 0.043478260869565216, "Pronouns_themselves": 0.043478260869565216, "Pronouns_they": 0.043478260869565216, "Pronouns_you": 0.6521739130434783}
+ITA_1659607.txt	{"Pronouns_he": 0.08333333333333333, "Pronouns_i": 0.625, "Pronouns_it": 0.16666666666666666, "Pronouns_they": 0.125}
+SPA_1660055.txt	{"Pronouns_i": 0.23529411764705882, "Pronouns_it": 0.11764705882352941, "Pronouns_me": 0.23529411764705882, "Pronouns_one": 0.11764705882352941, "Pronouns_us": 0.11764705882352941, "Pronouns_we": 0.11764705882352941, "Pronouns_you": 0.058823529411764705}
+TUR_1661694.txt	{"Pronouns_it": 0.18181818181818182, "Pronouns_they": 0.45454545454545453, "Pronouns_you": 0.36363636363636365}
+CHI_1664388.txt	{"Pronouns_it": 0.08, "Pronouns_they": 0.04, "Pronouns_you": 0.8, "Pronouns_yourself": 0.08}
+TUR_1664661.txt	{"Pronouns_i": 0.16666666666666666, "Pronouns_it": 0.4444444444444444, "Pronouns_one": 0.05555555555555555, "Pronouns_they": 0.16666666666666666, "Pronouns_us": 0.05555555555555555, "Pronouns_we": 0.1111111111111111}
+ITA_1665345.txt	{"Pronouns_i": 0.23076923076923078, "Pronouns_me": 0.07692307692307693, "Pronouns_themselves": 0.07692307692307693, "Pronouns_they": 0.23076923076923078, "Pronouns_we": 0.23076923076923078, "Pronouns_you": 0.15384615384615385}
+SPA_166730.txt	{"Pronouns_it": 0.15, "Pronouns_one": 0.05, "Pronouns_they": 0.1, "Pronouns_us": 0.1, "Pronouns_we": 0.35, "Pronouns_you": 0.25}
+KOR_1668419.txt	{"Pronouns_it": 0.625, "Pronouns_one": 0.125, "Pronouns_them": 0.0625, "Pronouns_they": 0.0625, "Pronouns_you": 0.125}
+TUR_1668524.txt	{"Pronouns_it": 0.2631578947368421, "Pronouns_them": 0.21052631578947367, "Pronouns_themselves": 0.05263157894736842, "Pronouns_they": 0.47368421052631576}
+KOR_1669009.txt	{"Pronouns_me": 0.25, "Pronouns_them": 0.25, "Pronouns_they": 0.25, "Pronouns_us": 0.25}
+ARA_1669189.txt	{"Pronouns_i": 0.42857142857142855, "Pronouns_they": 0.42857142857142855, "Pronouns_we": 0.14285714285714285}
+SPA_1669707.txt	{"Pronouns_it": 0.21739130434782608, "Pronouns_you": 0.6956521739130435, "Pronouns_yourself": 0.08695652173913043}
+TUR_1671616.txt	{"Pronouns_i": 0.06666666666666667, "Pronouns_it": 0.06666666666666667, "Pronouns_them": 0.13333333333333333, "Pronouns_they": 0.4666666666666667, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.2}
+ARA_1671716.txt	{"Pronouns_me": 0.125, "Pronouns_them": 0.25, "Pronouns_you": 0.625}
+GER_1671891.txt	{"Pronouns_her": 0.034482758620689655, "Pronouns_it": 0.13793103448275862, "Pronouns_one": 0.20689655172413793, "Pronouns_we": 0.034482758620689655, "Pronouns_you": 0.4482758620689655, "Pronouns_yourself": 0.13793103448275862}
+FRE_1678849.txt	{"Pronouns_it": 0.18181818181818182, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.5454545454545454, "Pronouns_we": 0.18181818181818182}
+GER_1682104.txt	{"Pronouns_it": 0.03125, "Pronouns_one": 0.03125, "Pronouns_them": 0.15625, "Pronouns_they": 0.28125, "Pronouns_we": 0.5}
+ITA_1684107.txt	{"Pronouns_it": 0.2, "Pronouns_me": 0.06666666666666667, "Pronouns_one": 0.2, "Pronouns_them": 0.06666666666666667, "Pronouns_they": 0.13333333333333333, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.26666666666666666}
+TUR_168751.txt	{"Pronouns_it": 0.45454545454545453, "Pronouns_me": 0.09090909090909091, "Pronouns_one": 0.2727272727272727, "Pronouns_we": 0.18181818181818182}
+ITA_1692529.txt	{"Pronouns_he": 0.125, "Pronouns_it": 0.125, "Pronouns_me": 0.1875, "Pronouns_one": 0.3125, "Pronouns_she": 0.0625, "Pronouns_them": 0.0625, "Pronouns_they": 0.0625, "Pronouns_we": 0.0625}
+GER_1694586.txt	{"Pronouns_one": 0.18181818181818182, "Pronouns_them": 0.09090909090909091, "Pronouns_themselves": 0.09090909090909091, "Pronouns_they": 0.36363636363636365, "Pronouns_us": 0.09090909090909091, "Pronouns_you": 0.18181818181818182}
+CHI_169720.txt	{"Pronouns_he": 0.1111111111111111, "Pronouns_it": 0.05555555555555555, "Pronouns_me": 0.16666666666666666, "Pronouns_one": 0.05555555555555555, "Pronouns_they": 0.05555555555555555, "Pronouns_we": 0.2222222222222222, "Pronouns_you": 0.3333333333333333}
+TUR_1699254.txt	{"Pronouns_it": 0.35294117647058826, "Pronouns_itself": 0.058823529411764705, "Pronouns_me": 0.058823529411764705, "Pronouns_we": 0.058823529411764705, "Pronouns_you": 0.47058823529411764}
+TEL_1702221.txt	{"Pronouns_it": 0.125, "Pronouns_ourselves": 0.125, "Pronouns_them": 0.125, "Pronouns_themselves": 0.125, "Pronouns_they": 0.125, "Pronouns_we": 0.375}
+KOR_1703144.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_me": 0.3333333333333333, "Pronouns_one": 0.3333333333333333}
+KOR_1706014.txt	{"Pronouns_one": 0.45454545454545453, "Pronouns_them": 0.045454545454545456, "Pronouns_they": 0.5}
+HIN_1711398.txt	{"Pronouns_he": 0.25, "Pronouns_him": 0.0625, "Pronouns_it": 0.25, "Pronouns_one": 0.0625, "Pronouns_them": 0.125, "Pronouns_they": 0.1875, "Pronouns_we": 0.0625}
+SPA_1711897.txt	{"Pronouns_it": 0.15517241379310345, "Pronouns_one": 0.13793103448275862, "Pronouns_them": 0.017241379310344827, "Pronouns_they": 0.1206896551724138, "Pronouns_we": 0.10344827586206896, "Pronouns_you": 0.46551724137931033}
+FRE_1712244.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_one": 0.16666666666666666, "Pronouns_they": 0.3333333333333333, "Pronouns_we": 0.16666666666666666}
+FRE_1712367.txt	{"Pronouns_it": 0.35, "Pronouns_them": 0.05, "Pronouns_they": 0.05, "Pronouns_us": 0.15, "Pronouns_we": 0.2, "Pronouns_you": 0.2}
+ARA_1712457.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_them": 0.16666666666666666, "Pronouns_us": 0.16666666666666666, "Pronouns_we": 0.5}
+GER_1712938.txt	{"Pronouns_it": 0.25, "Pronouns_they": 0.16666666666666666, "Pronouns_you": 0.5833333333333334}
+ARA_1714984.txt	{"Pronouns_i": 0.25, "Pronouns_us": 0.375, "Pronouns_we": 0.375}
+ITA_1716667.txt	{"Pronouns_it": 0.36, "Pronouns_ourselves": 0.04, "Pronouns_them": 0.08, "Pronouns_themselves": 0.04, "Pronouns_they": 0.32, "Pronouns_us": 0.08, "Pronouns_we": 0.08}
+HIN_1718476.txt	{"Pronouns_it": 0.058823529411764705, "Pronouns_them": 0.29411764705882354, "Pronouns_they": 0.5882352941176471, "Pronouns_we": 0.058823529411764705}
+TEL_1718628.txt	{"Pronouns_he": 0.2777777777777778, "Pronouns_i": 0.05555555555555555, "Pronouns_it": 0.1111111111111111, "Pronouns_me": 0.05555555555555555, "Pronouns_one": 0.1111111111111111, "Pronouns_them": 0.1111111111111111, "Pronouns_they": 0.2777777777777778}
+HIN_1720702.txt	{"Pronouns_he": 0.13513513513513514, "Pronouns_him": 0.02702702702702703, "Pronouns_i": 0.05405405405405406, "Pronouns_it": 0.05405405405405406, "Pronouns_me": 0.02702702702702703, "Pronouns_one": 0.16216216216216217, "Pronouns_them": 0.05405405405405406, "Pronouns_you": 0.4594594594594595, "Pronouns_yourself": 0.02702702702702703}
+ARA_1721707.txt	{"Pronouns_he": 0.2, "Pronouns_i": 0.2, "Pronouns_it": 0.2, "Pronouns_you": 0.4}
+SPA_1722916.txt	{"Pronouns_it": 0.3684210526315789, "Pronouns_me": 0.05263157894736842, "Pronouns_myself": 0.05263157894736842, "Pronouns_they": 0.15789473684210525, "Pronouns_we": 0.05263157894736842, "Pronouns_you": 0.3157894736842105}
+TUR_1723232.txt	{"Pronouns_he": 0.16666666666666666, "Pronouns_one": 0.4166666666666667, "Pronouns_them": 0.16666666666666666, "Pronouns_we": 0.25}
+ITA_1727273.txt	{"Pronouns_he": 0.6363636363636364, "Pronouns_it": 0.09090909090909091, "Pronouns_me": 0.09090909090909091, "Pronouns_one": 0.18181818181818182}
+HIN_1727472.txt	{"Pronouns_he": 0.15789473684210525, "Pronouns_him": 0.05263157894736842, "Pronouns_it": 0.05263157894736842, "Pronouns_me": 0.10526315789473684, "Pronouns_one": 0.05263157894736842, "Pronouns_them": 0.10526315789473684, "Pronouns_they": 0.3684210526315789, "Pronouns_you": 0.10526315789473684}
+HIN_1728275.txt	{"Pronouns_it": 0.2857142857142857, "Pronouns_itself": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_they": 0.42857142857142855}
+TUR_1728651.txt	{"Pronouns_i": 0.5, "Pronouns_it": 0.1, "Pronouns_one": 0.2, "Pronouns_them": 0.2}
+CHI_1729641.txt	{"Pronouns_he": 0.037037037037037035, "Pronouns_him": 0.037037037037037035, "Pronouns_it": 0.37037037037037035, "Pronouns_me": 0.037037037037037035, "Pronouns_one": 0.07407407407407407, "Pronouns_ourselves": 0.07407407407407407, "Pronouns_them": 0.037037037037037035, "Pronouns_they": 0.14814814814814814, "Pronouns_us": 0.07407407407407407, "Pronouns_we": 0.1111111111111111}
+ARA_1733852.txt	{"Pronouns_it": 0.2222222222222222, "Pronouns_me": 0.3333333333333333, "Pronouns_them": 0.1111111111111111, "Pronouns_you": 0.3333333333333333}
+KOR_1736173.txt	{"Pronouns_it": 0.10526315789473684, "Pronouns_they": 0.5263157894736842, "Pronouns_we": 0.21052631578947367, "Pronouns_you": 0.15789473684210525}
+JPN_1739586.txt	{"Pronouns_he": 0.4, "Pronouns_it": 0.2, "Pronouns_me": 0.06666666666666667, "Pronouns_one": 0.06666666666666667, "Pronouns_they": 0.2, "Pronouns_we": 0.06666666666666667}
+JPN_1742951.txt	{"Pronouns_myself": 0.18181818181818182, "Pronouns_one": 0.09090909090909091, "Pronouns_ourselves": 0.18181818181818182, "Pronouns_we": 0.5454545454545454}
+ITA_1744481.txt	{"Pronouns_i": 0.3, "Pronouns_it": 0.4, "Pronouns_one": 0.2, "Pronouns_we": 0.1}
+FRE_1744695.txt	{"Pronouns_he": 0.6666666666666666, "Pronouns_one": 0.1111111111111111, "Pronouns_they": 0.2222222222222222}
+CHI_1745000.txt	{"Pronouns_it": 0.15, "Pronouns_them": 0.05, "Pronouns_they": 0.25, "Pronouns_us": 0.05, "Pronouns_we": 0.3, "Pronouns_you": 0.15, "Pronouns_yourself": 0.05}
+FRE_1746142.txt	{"Pronouns_he": 0.2777777777777778, "Pronouns_it": 0.2777777777777778, "Pronouns_itself": 0.05555555555555555, "Pronouns_one": 0.05555555555555555, "Pronouns_they": 0.05555555555555555, "Pronouns_we": 0.1111111111111111, "Pronouns_you": 0.16666666666666666}
+TUR_1747190.txt	{"Pronouns_you": 1.0}
+JPN_1751590.txt	{"Pronouns_it": 0.07142857142857142, "Pronouns_they": 0.5, "Pronouns_us": 0.14285714285714285, "Pronouns_we": 0.2857142857142857}
+FRE_1752641.txt	{"Pronouns_he": 0.2631578947368421, "Pronouns_i": 0.10526315789473684, "Pronouns_it": 0.10526315789473684, "Pronouns_myself": 0.05263157894736842, "Pronouns_one": 0.10526315789473684, "Pronouns_them": 0.05263157894736842, "Pronouns_they": 0.10526315789473684, "Pronouns_you": 0.15789473684210525, "Pronouns_yourself": 0.05263157894736842}
+JPN_1754479.txt	{"Pronouns_one": 0.25, "Pronouns_we": 0.375, "Pronouns_you": 0.375}
+TEL_1755827.txt	{"Pronouns_he": 0.375, "Pronouns_himself": 0.041666666666666664, "Pronouns_i": 0.08333333333333333, "Pronouns_one": 0.08333333333333333, "Pronouns_them": 0.041666666666666664, "Pronouns_they": 0.375}
+HIN_1756791.txt	{"Pronouns_he": 0.21428571428571427, "Pronouns_him": 0.07142857142857142, "Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.5, "Pronouns_we": 0.07142857142857142}
+HIN_1758722.txt	{"Pronouns_he": 0.29411764705882354, "Pronouns_him": 0.11764705882352941, "Pronouns_i": 0.058823529411764705, "Pronouns_it": 0.29411764705882354, "Pronouns_itself": 0.058823529411764705, "Pronouns_one": 0.058823529411764705, "Pronouns_they": 0.058823529411764705, "Pronouns_us": 0.058823529411764705}
+SPA_1761100.txt	{"Pronouns_it": 0.1111111111111111, "Pronouns_them": 0.2777777777777778, "Pronouns_they": 0.5555555555555556, "Pronouns_you": 0.05555555555555555}
+GER_1765252.txt	{"Pronouns_he": 0.06666666666666667, "Pronouns_it": 0.6, "Pronouns_me": 0.06666666666666667, "Pronouns_they": 0.26666666666666666}
+FRE_1765698.txt	{"Pronouns_i": 0.0625, "Pronouns_it": 0.4375, "Pronouns_them": 0.0625, "Pronouns_themselves": 0.0625, "Pronouns_they": 0.0625, "Pronouns_we": 0.25, "Pronouns_you": 0.0625}
+GER_1771300.txt	{"Pronouns_it": 0.2727272727272727, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.2727272727272727, "Pronouns_we": 0.18181818181818182, "Pronouns_you": 0.18181818181818182}
+KOR_1773871.txt	{"Pronouns_he": 0.42857142857142855, "Pronouns_they": 0.5714285714285714}
+FRE_1776912.txt	{"Pronouns_him": 0.05263157894736842, "Pronouns_i": 0.05263157894736842, "Pronouns_it": 0.2631578947368421, "Pronouns_them": 0.05263157894736842, "Pronouns_they": 0.05263157894736842, "Pronouns_we": 0.05263157894736842, "Pronouns_you": 0.47368421052631576}
+GER_1780920.txt	{"Pronouns_i": 0.034482758620689655, "Pronouns_it": 0.27586206896551724, "Pronouns_me": 0.06896551724137931, "Pronouns_myself": 0.06896551724137931, "Pronouns_one": 0.13793103448275862, "Pronouns_themselves": 0.034482758620689655, "Pronouns_they": 0.06896551724137931, "Pronouns_we": 0.034482758620689655, "Pronouns_you": 0.27586206896551724}
+KOR_1787908.txt	{"Pronouns_it": 0.2631578947368421, "Pronouns_them": 0.10526315789473684, "Pronouns_they": 0.5789473684210527, "Pronouns_we": 0.05263157894736842}
+CHI_1789981.txt	{"Pronouns_he": 0.2222222222222222, "Pronouns_himself": 0.05555555555555555, "Pronouns_i": 0.05555555555555555, "Pronouns_one": 0.05555555555555555, "Pronouns_them": 0.05555555555555555, "Pronouns_they": 0.3333333333333333, "Pronouns_you": 0.16666666666666666, "Pronouns_yourself": 0.05555555555555555}
+HIN_1792269.txt	{"Pronouns_he": 0.041666666666666664, "Pronouns_i": 0.041666666666666664, "Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.125, "Pronouns_ourselves": 0.041666666666666664, "Pronouns_us": 0.125, "Pronouns_we": 0.3333333333333333, "Pronouns_you": 0.125}
+GER_1797008.txt	{"Pronouns_he": 0.14285714285714285, "Pronouns_it": 0.14285714285714285, "Pronouns_she": 0.14285714285714285, "Pronouns_them": 0.2857142857142857, "Pronouns_themselves": 0.14285714285714285, "Pronouns_they": 0.14285714285714285}
+GER_1798472.txt	{"Pronouns_i": 0.22580645161290322, "Pronouns_it": 0.3225806451612903, "Pronouns_me": 0.03225806451612903, "Pronouns_them": 0.12903225806451613, "Pronouns_you": 0.2903225806451613}
+KOR_1798758.txt	{"Pronouns_themselves": 0.25, "Pronouns_they": 0.75}
+CHI_1799981.txt	{"Pronouns_it": 0.06666666666666667, "Pronouns_one": 0.4, "Pronouns_them": 0.06666666666666667, "Pronouns_they": 0.13333333333333333, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.26666666666666666}
+ITA_1801465.txt	{"Pronouns_he": 0.5, "Pronouns_one": 0.25, "Pronouns_they": 0.25}
+ARA_1804641.txt	{"Pronouns_it": 0.5714285714285714, "Pronouns_them": 0.14285714285714285, "Pronouns_we": 0.2857142857142857}
+JPN_180494.txt	{"Pronouns_it": 0.25, "Pronouns_one": 0.08333333333333333, "Pronouns_them": 0.16666666666666666, "Pronouns_themselves": 0.08333333333333333, "Pronouns_they": 0.4166666666666667}
+KOR_1809613.txt	{"Pronouns_it": 0.2857142857142857, "Pronouns_me": 0.14285714285714285, "Pronouns_we": 0.42857142857142855, "Pronouns_you": 0.14285714285714285}
+TEL_1810200.txt	{"Pronouns_he": 0.42105263157894735, "Pronouns_him": 0.05263157894736842, "Pronouns_i": 0.05263157894736842, "Pronouns_it": 0.21052631578947367, "Pronouns_them": 0.05263157894736842, "Pronouns_they": 0.10526315789473684, "Pronouns_you": 0.10526315789473684}
+FRE_1810508.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_me": 0.08333333333333333, "Pronouns_myself": 0.08333333333333333, "Pronouns_them": 0.25, "Pronouns_they": 0.25}
+ARA_181730.txt	{"Pronouns_her": 0.02564102564102564, "Pronouns_i": 0.1282051282051282, "Pronouns_it": 0.2564102564102564, "Pronouns_one": 0.23076923076923078, "Pronouns_oneself": 0.02564102564102564, "Pronouns_them": 0.10256410256410256, "Pronouns_they": 0.23076923076923078}
+SPA_1818104.txt	{"Pronouns_her": 0.03333333333333333, "Pronouns_it": 0.3, "Pronouns_them": 0.13333333333333333, "Pronouns_themselves": 0.03333333333333333, "Pronouns_they": 0.5}
+SPA_1818241.txt	{"Pronouns_it": 0.125, "Pronouns_them": 0.0625, "Pronouns_they": 0.1875, "Pronouns_you": 0.5625, "Pronouns_yourself": 0.0625}
+JPN_1821109.txt	{"Pronouns_he": 0.06666666666666667, "Pronouns_it": 0.13333333333333333, "Pronouns_us": 0.06666666666666667, "Pronouns_you": 0.6666666666666666, "Pronouns_yourself": 0.06666666666666667}
+TUR_1824786.txt	{}
+GER_1826949.txt	{"Pronouns_it": 0.6, "Pronouns_me": 0.2, "Pronouns_one": 0.2}
+TUR_1827048.txt	{"Pronouns_he": 0.2222222222222222, "Pronouns_it": 0.05555555555555555, "Pronouns_myself": 0.05555555555555555, "Pronouns_one": 0.16666666666666666, "Pronouns_them": 0.05555555555555555, "Pronouns_we": 0.2777777777777778, "Pronouns_you": 0.16666666666666666}
+JPN_1827810.txt	{"Pronouns_it": 0.125, "Pronouns_them": 0.125, "Pronouns_they": 0.75}
+FRE_1828271.txt	{"Pronouns_it": 0.15384615384615385, "Pronouns_them": 0.15384615384615385, "Pronouns_they": 0.46153846153846156, "Pronouns_you": 0.23076923076923078}
+TUR_1832944.txt	{"Pronouns_i": 0.07692307692307693, "Pronouns_it": 0.11538461538461539, "Pronouns_one": 0.07692307692307693, "Pronouns_they": 0.038461538461538464, "Pronouns_us": 0.19230769230769232, "Pronouns_we": 0.5}
+KOR_1835952.txt	{"Pronouns_them": 0.1111111111111111, "Pronouns_they": 0.7777777777777778, "Pronouns_you": 0.1111111111111111}
+CHI_1838160.txt	{"Pronouns_i": 0.0625, "Pronouns_it": 0.1875, "Pronouns_me": 0.0625, "Pronouns_one": 0.125, "Pronouns_them": 0.0625, "Pronouns_they": 0.1875, "Pronouns_we": 0.25, "Pronouns_you": 0.0625}
+CHI_1838709.txt	{"Pronouns_it": 0.4166666666666667, "Pronouns_me": 0.08333333333333333, "Pronouns_one": 0.08333333333333333, "Pronouns_them": 0.041666666666666664, "Pronouns_they": 0.2916666666666667, "Pronouns_we": 0.041666666666666664, "Pronouns_you": 0.041666666666666664}
+KOR_1838789.txt	{"Pronouns_he": 0.38095238095238093, "Pronouns_it": 0.19047619047619047, "Pronouns_one": 0.047619047619047616, "Pronouns_she": 0.047619047619047616, "Pronouns_they": 0.2857142857142857, "Pronouns_we": 0.047619047619047616}
+ITA_1839756.txt	{"Pronouns_he": 0.14285714285714285, "Pronouns_him": 0.02857142857142857, "Pronouns_himself": 0.02857142857142857, "Pronouns_it": 0.11428571428571428, "Pronouns_one": 0.08571428571428572, "Pronouns_ourselves": 0.02857142857142857, "Pronouns_them": 0.08571428571428572, "Pronouns_they": 0.11428571428571428, "Pronouns_you": 0.37142857142857144}
+TEL_1840823.txt	{"Pronouns_he": 0.23809523809523808, "Pronouns_him": 0.14285714285714285, "Pronouns_i": 0.047619047619047616, "Pronouns_it": 0.2857142857142857, "Pronouns_one": 0.19047619047619047, "Pronouns_them": 0.09523809523809523}
+KOR_184433.txt	{"Pronouns_he": 0.23076923076923078, "Pronouns_him": 0.15384615384615385, "Pronouns_it": 0.23076923076923078, "Pronouns_one": 0.15384615384615385, "Pronouns_she": 0.15384615384615385, "Pronouns_they": 0.07692307692307693}
+TUR_1844817.txt	{"Pronouns_he": 0.13793103448275862, "Pronouns_it": 0.06896551724137931, "Pronouns_me": 0.06896551724137931, "Pronouns_them": 0.20689655172413793, "Pronouns_they": 0.41379310344827586, "Pronouns_we": 0.10344827586206896}
+CHI_1846289.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_me": 0.08333333333333333, "Pronouns_one": 0.08333333333333333, "Pronouns_them": 0.25, "Pronouns_they": 0.16666666666666666, "Pronouns_we": 0.08333333333333333}
+ARA_1850554.txt	{"Pronouns_he": 0.14285714285714285, "Pronouns_him": 0.05714285714285714, "Pronouns_they": 0.5428571428571428, "Pronouns_you": 0.2571428571428571}
+ITA_1851482.txt	{"Pronouns_he": 0.16666666666666666, "Pronouns_i": 0.25, "Pronouns_it": 0.08333333333333333, "Pronouns_one": 0.08333333333333333, "Pronouns_them": 0.08333333333333333, "Pronouns_they": 0.16666666666666666, "Pronouns_you": 0.16666666666666666}
+TEL_1855151.txt	{"Pronouns_i": 0.25, "Pronouns_it": 0.25, "Pronouns_them": 0.25, "Pronouns_they": 0.25}
+JPN_1863661.txt	{"Pronouns_they": 0.6923076923076923, "Pronouns_we": 0.3076923076923077}
+FRE_1863861.txt	{"Pronouns_he": 0.034482758620689655, "Pronouns_it": 0.2413793103448276, "Pronouns_them": 0.06896551724137931, "Pronouns_they": 0.5517241379310345, "Pronouns_we": 0.10344827586206896}
+ARA_1867713.txt	{"Pronouns_it": 0.6666666666666666, "Pronouns_me": 0.2, "Pronouns_they": 0.06666666666666667, "Pronouns_you": 0.06666666666666667}
+TEL_1871420.txt	{"Pronouns_it": 0.1, "Pronouns_them": 0.25, "Pronouns_themselves": 0.05, "Pronouns_they": 0.6}
+HIN_1872373.txt	{"Pronouns_he": 0.1, "Pronouns_her": 0.05, "Pronouns_himself": 0.05, "Pronouns_it": 0.4, "Pronouns_one": 0.05, "Pronouns_them": 0.1, "Pronouns_they": 0.1, "Pronouns_you": 0.15}
+CHI_1872486.txt	{"Pronouns_i": 0.03571428571428571, "Pronouns_it": 0.17857142857142858, "Pronouns_one": 0.03571428571428571, "Pronouns_them": 0.21428571428571427, "Pronouns_they": 0.14285714285714285, "Pronouns_you": 0.39285714285714285}
+ITA_1872542.txt	{"Pronouns_them": 0.1111111111111111, "Pronouns_themselves": 0.2222222222222222, "Pronouns_they": 0.6666666666666666}
+ITA_1874010.txt	{"Pronouns_he": 0.2857142857142857, "Pronouns_it": 0.19047619047619047, "Pronouns_one": 0.047619047619047616, "Pronouns_them": 0.047619047619047616, "Pronouns_we": 0.09523809523809523, "Pronouns_you": 0.3333333333333333}
+SPA_1874897.txt	{"Pronouns_it": 0.26666666666666666, "Pronouns_them": 0.03333333333333333, "Pronouns_they": 0.2, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.43333333333333335}
+TEL_1875730.txt	{"Pronouns_he": 0.2, "Pronouns_it": 0.12, "Pronouns_one": 0.24, "Pronouns_them": 0.04, "Pronouns_they": 0.4}
+JPN_1877041.txt	{"Pronouns_it": 0.125, "Pronouns_them": 0.125, "Pronouns_they": 0.75}
+FRE_1877943.txt	{"Pronouns_he": 0.05263157894736842, "Pronouns_i": 0.05263157894736842, "Pronouns_it": 0.15789473684210525, "Pronouns_one": 0.05263157894736842, "Pronouns_us": 0.10526315789473684, "Pronouns_we": 0.3157894736842105, "Pronouns_you": 0.2631578947368421}
+JPN_18783.txt	{"Pronouns_he": 0.2857142857142857, "Pronouns_it": 0.42857142857142855, "Pronouns_they": 0.2857142857142857}
+FRE_1878331.txt	{"Pronouns_he": 0.08, "Pronouns_him": 0.12, "Pronouns_himself": 0.08, "Pronouns_it": 0.2, "Pronouns_them": 0.12, "Pronouns_they": 0.24, "Pronouns_we": 0.12, "Pronouns_you": 0.04}
+CHI_1881024.txt	{"Pronouns_him": 0.2, "Pronouns_it": 0.4, "Pronouns_one": 0.4}
+CHI_1881835.txt	{"Pronouns_it": 0.3548387096774194, "Pronouns_them": 0.0967741935483871, "Pronouns_us": 0.06451612903225806, "Pronouns_we": 0.4838709677419355}
+GER_1884430.txt	{"Pronouns_he": 0.15789473684210525, "Pronouns_him": 0.05263157894736842, "Pronouns_i": 0.21052631578947367, "Pronouns_it": 0.15789473684210525, "Pronouns_one": 0.15789473684210525, "Pronouns_they": 0.05263157894736842, "Pronouns_you": 0.21052631578947367}
+TUR_1885032.txt	{"Pronouns_her": 0.037037037037037035, "Pronouns_i": 0.25925925925925924, "Pronouns_it": 0.25925925925925924, "Pronouns_me": 0.037037037037037035, "Pronouns_they": 0.18518518518518517, "Pronouns_we": 0.2222222222222222}
+GER_1886800.txt	{"Pronouns_it": 0.23076923076923078, "Pronouns_me": 0.07692307692307693, "Pronouns_them": 0.15384615384615385, "Pronouns_they": 0.5384615384615384}
+CHI_1886837.txt	{"Pronouns_they": 0.4, "Pronouns_we": 0.6}
+ARA_188994.txt	{"Pronouns_he": 0.36363636363636365, "Pronouns_me": 0.045454545454545456, "Pronouns_mine": 0.045454545454545456, "Pronouns_one": 0.09090909090909091, "Pronouns_you": 0.45454545454545453}
+FRE_1891105.txt	{"Pronouns_it": 0.25, "Pronouns_me": 0.5, "Pronouns_them": 0.25}
+FRE_1895805.txt	{"Pronouns_it": 0.21428571428571427, "Pronouns_me": 0.07142857142857142, "Pronouns_myself": 0.07142857142857142, "Pronouns_them": 0.07142857142857142, "Pronouns_they": 0.2857142857142857, "Pronouns_us": 0.07142857142857142, "Pronouns_we": 0.21428571428571427}
+SPA_1899095.txt	{"Pronouns_them": 0.05263157894736842, "Pronouns_they": 0.6842105263157895, "Pronouns_we": 0.2631578947368421}
+TUR_1899178.txt	{"Pronouns_it": 0.18181818181818182, "Pronouns_one": 0.2727272727272727, "Pronouns_them": 0.2727272727272727, "Pronouns_they": 0.18181818181818182, "Pronouns_us": 0.09090909090909091}
+CHI_1900348.txt	{"Pronouns_i": 0.16666666666666666, "Pronouns_it": 0.16666666666666666, "Pronouns_themselves": 0.08333333333333333, "Pronouns_they": 0.3333333333333333, "Pronouns_we": 0.25}
+JPN_1900495.txt	{"Pronouns_it": 0.07692307692307693, "Pronouns_them": 0.15384615384615385, "Pronouns_themselves": 0.07692307692307693, "Pronouns_they": 0.6923076923076923}
+JPN_1901524.txt	{"Pronouns_i": 0.2413793103448276, "Pronouns_it": 0.10344827586206896, "Pronouns_itself": 0.034482758620689655, "Pronouns_them": 0.034482758620689655, "Pronouns_themselves": 0.034482758620689655, "Pronouns_they": 0.4482758620689655, "Pronouns_we": 0.10344827586206896}
+GER_1905218.txt	{"Pronouns_it": 0.5555555555555556, "Pronouns_one": 0.1111111111111111, "Pronouns_we": 0.3333333333333333}
+KOR_1906876.txt	{"Pronouns_me": 0.25, "Pronouns_they": 0.25, "Pronouns_you": 0.5}
+KOR_1911738.txt	{"Pronouns_her": 0.058823529411764705, "Pronouns_it": 0.29411764705882354, "Pronouns_one": 0.29411764705882354, "Pronouns_they": 0.17647058823529413, "Pronouns_us": 0.058823529411764705, "Pronouns_we": 0.11764705882352941}
+KOR_1913238.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_one": 0.16666666666666666, "Pronouns_them": 0.16666666666666666, "Pronouns_they": 0.3333333333333333}
+FRE_1913808.txt	{"Pronouns_it": 0.6, "Pronouns_they": 0.2, "Pronouns_us": 0.1, "Pronouns_we": 0.1}
+KOR_1914658.txt	{"Pronouns_it": 0.11538461538461539, "Pronouns_them": 0.23076923076923078, "Pronouns_they": 0.5384615384615384, "Pronouns_us": 0.038461538461538464, "Pronouns_we": 0.07692307692307693}
+TUR_1915926.txt	{"Pronouns_i": 0.1111111111111111, "Pronouns_it": 0.2222222222222222, "Pronouns_one": 0.1111111111111111, "Pronouns_we": 0.5555555555555556}
+SPA_1916088.txt	{"Pronouns_it": 0.1875, "Pronouns_one": 0.0625, "Pronouns_they": 0.25, "Pronouns_us": 0.125, "Pronouns_we": 0.03125, "Pronouns_you": 0.34375}
+ARA_191928.txt	{"Pronouns_he": 0.3103448275862069, "Pronouns_him": 0.13793103448275862, "Pronouns_it": 0.3103448275862069, "Pronouns_me": 0.034482758620689655, "Pronouns_them": 0.06896551724137931, "Pronouns_they": 0.034482758620689655, "Pronouns_us": 0.034482758620689655, "Pronouns_we": 0.034482758620689655, "Pronouns_you": 0.034482758620689655}
+HIN_1920091.txt	{"Pronouns_he": 0.08695652173913043, "Pronouns_i": 0.043478260869565216, "Pronouns_it": 0.2608695652173913, "Pronouns_me": 0.08695652173913043, "Pronouns_them": 0.043478260869565216, "Pronouns_they": 0.21739130434782608, "Pronouns_us": 0.17391304347826086, "Pronouns_we": 0.043478260869565216, "Pronouns_you": 0.043478260869565216}
+GER_1924275.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_one": 0.16666666666666666, "Pronouns_them": 0.041666666666666664, "Pronouns_themselves": 0.041666666666666664, "Pronouns_they": 0.041666666666666664, "Pronouns_you": 0.375}
+ITA_1924395.txt	{"Pronouns_it": 0.25, "Pronouns_me": 0.25, "Pronouns_one": 0.25, "Pronouns_they": 0.25}
+TUR_192477.txt	{"Pronouns_it": 0.42857142857142855, "Pronouns_me": 0.14285714285714285, "Pronouns_us": 0.14285714285714285, "Pronouns_we": 0.14285714285714285, "Pronouns_you": 0.14285714285714285}
+TUR_1925678.txt	{"Pronouns_he": 0.05555555555555555, "Pronouns_it": 0.05555555555555555, "Pronouns_one": 0.05555555555555555, "Pronouns_we": 0.2777777777777778, "Pronouns_you": 0.5555555555555556}
+CHI_1926264.txt	{"Pronouns_he": 0.36363636363636365, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.36363636363636365, "Pronouns_you": 0.18181818181818182}
+GER_19280.txt	{"Pronouns_he": 0.47058823529411764, "Pronouns_it": 0.11764705882352941, "Pronouns_she": 0.058823529411764705, "Pronouns_them": 0.17647058823529413, "Pronouns_they": 0.17647058823529413}
+TUR_1931946.txt	{"Pronouns_one": 0.07142857142857142, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.6428571428571429, "Pronouns_you": 0.14285714285714285}
+KOR_1932266.txt	{"Pronouns_it": 0.25, "Pronouns_one": 0.25, "Pronouns_they": 0.25, "Pronouns_we": 0.25}
+TUR_1933524.txt	{"Pronouns_he": 0.07142857142857142, "Pronouns_it": 0.21428571428571427, "Pronouns_they": 0.21428571428571427, "Pronouns_us": 0.14285714285714285, "Pronouns_we": 0.07142857142857142, "Pronouns_you": 0.2857142857142857}
+CHI_1933790.txt	{"Pronouns_it": 0.16, "Pronouns_one": 0.24, "Pronouns_they": 0.2, "Pronouns_us": 0.08, "Pronouns_we": 0.28, "Pronouns_you": 0.04}
+JPN_1934148.txt	{"Pronouns_it": 0.2, "Pronouns_me": 0.1, "Pronouns_one": 0.1, "Pronouns_we": 0.6}
+ARA_1936333.txt	{"Pronouns_it": 0.6666666666666666, "Pronouns_itself": 0.16666666666666666, "Pronouns_they": 0.16666666666666666}
+ITA_1936906.txt	{"Pronouns_it": 0.5, "Pronouns_us": 0.5}
+TEL_1937630.txt	{"Pronouns_i": 0.15789473684210525, "Pronouns_me": 0.05263157894736842, "Pronouns_one": 0.15789473684210525, "Pronouns_we": 0.631578947368421}
+SPA_1937949.txt	{"Pronouns_he": 0.125, "Pronouns_itself": 0.125, "Pronouns_one": 0.125, "Pronouns_she": 0.125, "Pronouns_them": 0.125, "Pronouns_themselves": 0.125, "Pronouns_they": 0.25}
+CHI_1941006.txt	{"Pronouns_it": 0.5384615384615384, "Pronouns_they": 0.23076923076923078, "Pronouns_we": 0.23076923076923078}
+GER_1942590.txt	{"Pronouns_he": 0.05555555555555555, "Pronouns_i": 0.1111111111111111, "Pronouns_it": 0.6666666666666666, "Pronouns_they": 0.1111111111111111, "Pronouns_you": 0.05555555555555555}
+TUR_1945072.txt	{"Pronouns_her": 0.14285714285714285, "Pronouns_it": 0.5714285714285714, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.14285714285714285}
+ARA_1947629.txt	{"Pronouns_it": 0.2727272727272727, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.09090909090909091, "Pronouns_us": 0.09090909090909091, "Pronouns_we": 0.45454545454545453}
+GER_1953039.txt	{"Pronouns_it": 0.125, "Pronouns_one": 0.25, "Pronouns_they": 0.5, "Pronouns_we": 0.125}
+FRE_1957836.txt	{"Pronouns_he": 0.1, "Pronouns_it": 0.5, "Pronouns_me": 0.05, "Pronouns_one": 0.05, "Pronouns_you": 0.3}
+GER_1959206.txt	{"Pronouns_her": 0.07692307692307693, "Pronouns_it": 0.15384615384615385, "Pronouns_me": 0.07692307692307693, "Pronouns_myself": 0.07692307692307693, "Pronouns_she": 0.15384615384615385, "Pronouns_them": 0.15384615384615385, "Pronouns_they": 0.07692307692307693, "Pronouns_you": 0.23076923076923078}
+JPN_1960837.txt	{"Pronouns_it": 0.26666666666666666, "Pronouns_themselves": 0.13333333333333333, "Pronouns_they": 0.6}
+TUR_1962514.txt	{"Pronouns_he": 0.03571428571428571, "Pronouns_i": 0.03571428571428571, "Pronouns_it": 0.17857142857142858, "Pronouns_itself": 0.03571428571428571, "Pronouns_one": 0.14285714285714285, "Pronouns_she": 0.03571428571428571, "Pronouns_them": 0.07142857142857142, "Pronouns_they": 0.14285714285714285, "Pronouns_we": 0.32142857142857145}
+ARA_1966802.txt	{"Pronouns_i": 0.14285714285714285, "Pronouns_it": 0.07142857142857142, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.2857142857142857, "Pronouns_us": 0.14285714285714285, "Pronouns_we": 0.21428571428571427}
+ARA_1969304.txt	{"Pronouns_i": 0.045454545454545456, "Pronouns_it": 0.09090909090909091, "Pronouns_them": 0.22727272727272727, "Pronouns_they": 0.6363636363636364}
+HIN_197371.txt	{"Pronouns_him": 0.08333333333333333, "Pronouns_it": 0.25, "Pronouns_one": 0.08333333333333333, "Pronouns_them": 0.08333333333333333, "Pronouns_they": 0.3333333333333333, "Pronouns_we": 0.16666666666666666}
+CHI_1974614.txt	{"Pronouns_it": 0.038461538461538464, "Pronouns_them": 0.19230769230769232, "Pronouns_they": 0.5384615384615384, "Pronouns_we": 0.11538461538461539, "Pronouns_you": 0.11538461538461539}
+GER_1974703.txt	{"Pronouns_her": 0.125, "Pronouns_it": 0.25, "Pronouns_one": 0.125, "Pronouns_themselves": 0.125, "Pronouns_they": 0.125, "Pronouns_we": 0.125, "Pronouns_yourself": 0.125}
+HIN_1974800.txt	{"Pronouns_it": 0.2, "Pronouns_one": 0.2, "Pronouns_they": 0.2, "Pronouns_we": 0.4}
+TEL_1977368.txt	{"Pronouns_it": 0.25, "Pronouns_us": 0.25, "Pronouns_we": 0.5}
+TEL_1982981.txt	{"Pronouns_i": 0.043478260869565216, "Pronouns_it": 0.13043478260869565, "Pronouns_one": 0.08695652173913043, "Pronouns_they": 0.6956521739130435, "Pronouns_we": 0.043478260869565216}
+TUR_1990536.txt	{"Pronouns_it": 0.09090909090909091, "Pronouns_one": 0.18181818181818182, "Pronouns_we": 0.18181818181818182, "Pronouns_you": 0.5454545454545454}
+ITA_1990873.txt	{"Pronouns_he": 0.2222222222222222, "Pronouns_it": 0.1111111111111111, "Pronouns_they": 0.6666666666666666}
+HIN_1995325.txt	{"Pronouns_he": 0.03333333333333333, "Pronouns_him": 0.06666666666666667, "Pronouns_it": 0.26666666666666666, "Pronouns_one": 0.4666666666666667, "Pronouns_them": 0.03333333333333333, "Pronouns_us": 0.03333333333333333, "Pronouns_we": 0.06666666666666667, "Pronouns_you": 0.03333333333333333}
+ITA_199662.txt	{"Pronouns_he": 0.2222222222222222, "Pronouns_her": 0.1111111111111111, "Pronouns_him": 0.2222222222222222, "Pronouns_they": 0.1111111111111111, "Pronouns_us": 0.1111111111111111, "Pronouns_we": 0.2222222222222222}
+CHI_203098.txt	{"Pronouns_he": 0.06896551724137931, "Pronouns_i": 0.5862068965517241, "Pronouns_it": 0.034482758620689655, "Pronouns_me": 0.034482758620689655, "Pronouns_one": 0.1724137931034483, "Pronouns_they": 0.034482758620689655, "Pronouns_we": 0.06896551724137931}
+ARA_203860.txt	{"Pronouns_it": 0.17391304347826086, "Pronouns_one": 0.043478260869565216, "Pronouns_themselves": 0.043478260869565216, "Pronouns_they": 0.043478260869565216, "Pronouns_you": 0.6956521739130435}
+KOR_208020.txt	{"Pronouns_it": 0.030303030303030304, "Pronouns_myself": 0.030303030303030304, "Pronouns_they": 0.06060606060606061, "Pronouns_you": 0.8787878787878788}
+TUR_209198.txt	{"Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.42857142857142855, "Pronouns_we": 0.42857142857142855}
+FRE_222001.txt	{"Pronouns_it": 0.5, "Pronouns_me": 0.07142857142857142, "Pronouns_them": 0.07142857142857142, "Pronouns_you": 0.2857142857142857, "Pronouns_yourself": 0.07142857142857142}
+CHI_224597.txt	{"Pronouns_it": 0.1111111111111111, "Pronouns_they": 0.2222222222222222, "Pronouns_we": 0.2222222222222222, "Pronouns_you": 0.4444444444444444}
+HIN_22549.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.08333333333333333, "Pronouns_they": 0.16666666666666666, "Pronouns_us": 0.08333333333333333, "Pronouns_you": 0.5}
+SPA_228843.txt	{"Pronouns_himself": 0.05, "Pronouns_it": 0.3, "Pronouns_one": 0.15, "Pronouns_them": 0.05, "Pronouns_they": 0.1, "Pronouns_us": 0.05, "Pronouns_you": 0.3}
+TUR_230324.txt	{"Pronouns_it": 0.15, "Pronouns_ourselves": 0.05, "Pronouns_them": 0.05, "Pronouns_themselves": 0.1, "Pronouns_they": 0.3, "Pronouns_we": 0.35}
+ITA_230995.txt	{"Pronouns_it": 0.2, "Pronouns_one": 0.3, "Pronouns_them": 0.3, "Pronouns_they": 0.1, "Pronouns_we": 0.1}
+GER_231071.txt	{"Pronouns_it": 0.2222222222222222, "Pronouns_one": 0.05555555555555555, "Pronouns_they": 0.2777777777777778, "Pronouns_you": 0.4444444444444444}
+GER_232918.txt	{"Pronouns_her": 0.125, "Pronouns_him": 0.125, "Pronouns_it": 0.125, "Pronouns_one": 0.125, "Pronouns_them": 0.125, "Pronouns_they": 0.125, "Pronouns_we": 0.25}
+CHI_233980.txt	{"Pronouns_i": 0.21739130434782608, "Pronouns_it": 0.30434782608695654, "Pronouns_me": 0.08695652173913043, "Pronouns_one": 0.043478260869565216, "Pronouns_them": 0.08695652173913043, "Pronouns_we": 0.2608695652173913}
+CHI_239247.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_them": 0.08333333333333333, "Pronouns_themselves": 0.16666666666666666, "Pronouns_they": 0.5833333333333334}
+ARA_242530.txt	{"Pronouns_he": 0.03571428571428571, "Pronouns_it": 0.07142857142857142, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.5714285714285714, "Pronouns_you": 0.17857142857142858}
+CHI_24312.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_me": 0.06666666666666667, "Pronouns_one": 0.03333333333333333, "Pronouns_she": 0.03333333333333333, "Pronouns_them": 0.03333333333333333, "Pronouns_they": 0.2, "Pronouns_we": 0.1, "Pronouns_you": 0.2}
+CHI_243351.txt	{"Pronouns_he": 0.25, "Pronouns_it": 0.125, "Pronouns_me": 0.125, "Pronouns_one": 0.125, "Pronouns_they": 0.20833333333333334, "Pronouns_you": 0.16666666666666666}
+KOR_246408.txt	{"Pronouns_one": 0.14285714285714285, "Pronouns_they": 0.8571428571428571}
+TEL_248869.txt	{"Pronouns_he": 0.14285714285714285, "Pronouns_i": 0.5714285714285714, "Pronouns_it": 0.14285714285714285, "Pronouns_myself": 0.047619047619047616, "Pronouns_them": 0.047619047619047616, "Pronouns_they": 0.047619047619047616}
+TEL_249979.txt	{"Pronouns_it": 0.05263157894736842, "Pronouns_itself": 0.05263157894736842, "Pronouns_one": 0.05263157894736842, "Pronouns_them": 0.10526315789473684, "Pronouns_they": 0.7368421052631579}
+GER_250152.txt	{"Pronouns_he": 0.23529411764705882, "Pronouns_it": 0.29411764705882354, "Pronouns_me": 0.11764705882352941, "Pronouns_one": 0.058823529411764705, "Pronouns_they": 0.23529411764705882, "Pronouns_you": 0.058823529411764705}
+ITA_250580.txt	{"Pronouns_it": 0.5, "Pronouns_one": 0.25, "Pronouns_they": 0.08333333333333333, "Pronouns_you": 0.16666666666666666}
+TEL_251380.txt	{"Pronouns_he": 0.23529411764705882, "Pronouns_her": 0.058823529411764705, "Pronouns_i": 0.058823529411764705, "Pronouns_she": 0.47058823529411764, "Pronouns_them": 0.058823529411764705, "Pronouns_they": 0.058823529411764705, "Pronouns_we": 0.058823529411764705}
+SPA_252942.txt	{"Pronouns_he": 0.06666666666666667, "Pronouns_him": 0.06666666666666667, "Pronouns_me": 0.13333333333333333, "Pronouns_myself": 0.13333333333333333, "Pronouns_one": 0.06666666666666667, "Pronouns_them": 0.13333333333333333, "Pronouns_themselves": 0.06666666666666667, "Pronouns_they": 0.06666666666666667, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.06666666666666667, "Pronouns_you": 0.13333333333333333}
+CHI_255543.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.1111111111111111, "Pronouns_them": 0.05555555555555555, "Pronouns_they": 0.05555555555555555, "Pronouns_us": 0.3333333333333333, "Pronouns_we": 0.2777777777777778}
+CHI_256147.txt	{"Pronouns_i": 0.0847457627118644, "Pronouns_it": 0.3898305084745763, "Pronouns_them": 0.03389830508474576, "Pronouns_they": 0.1016949152542373, "Pronouns_you": 0.3898305084745763}
+GER_256269.txt	{"Pronouns_it": 0.23529411764705882, "Pronouns_one": 0.058823529411764705, "Pronouns_them": 0.058823529411764705, "Pronouns_they": 0.058823529411764705, "Pronouns_us": 0.058823529411764705, "Pronouns_we": 0.058823529411764705, "Pronouns_you": 0.47058823529411764}
+FRE_25948.txt	{"Pronouns_he": 0.07142857142857142, "Pronouns_him": 0.07142857142857142, "Pronouns_i": 0.07142857142857142, "Pronouns_me": 0.07142857142857142, "Pronouns_mine": 0.07142857142857142, "Pronouns_myself": 0.14285714285714285, "Pronouns_they": 0.2857142857142857, "Pronouns_you": 0.21428571428571427}
+HIN_262595.txt	{"Pronouns_it": 0.45454545454545453, "Pronouns_me": 0.09090909090909091, "Pronouns_they": 0.2727272727272727, "Pronouns_us": 0.09090909090909091, "Pronouns_we": 0.09090909090909091}
+ARA_264000.txt	{"Pronouns_he": 0.08695652173913043, "Pronouns_it": 0.17391304347826086, "Pronouns_me": 0.043478260869565216, "Pronouns_them": 0.08695652173913043, "Pronouns_themselves": 0.043478260869565216, "Pronouns_they": 0.43478260869565216, "Pronouns_we": 0.043478260869565216, "Pronouns_you": 0.08695652173913043}
+TUR_265349.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.3333333333333333, "Pronouns_they": 0.5}
+ARA_266989.txt	{"Pronouns_he": 0.21739130434782608, "Pronouns_him": 0.08695652173913043, "Pronouns_it": 0.2608695652173913, "Pronouns_me": 0.043478260869565216, "Pronouns_one": 0.08695652173913043, "Pronouns_they": 0.08695652173913043, "Pronouns_you": 0.21739130434782608}
+KOR_266990.txt	{"Pronouns_he": 0.03333333333333333, "Pronouns_her": 0.03333333333333333, "Pronouns_i": 0.06666666666666667, "Pronouns_it": 0.3, "Pronouns_one": 0.16666666666666666, "Pronouns_she": 0.03333333333333333, "Pronouns_them": 0.06666666666666667, "Pronouns_themselves": 0.03333333333333333, "Pronouns_they": 0.03333333333333333, "Pronouns_we": 0.2, "Pronouns_you": 0.03333333333333333}
+CHI_268700.txt	{"Pronouns_him": 0.041666666666666664, "Pronouns_it": 0.25, "Pronouns_mine": 0.041666666666666664, "Pronouns_one": 0.125, "Pronouns_ourselves": 0.041666666666666664, "Pronouns_them": 0.041666666666666664, "Pronouns_they": 0.041666666666666664, "Pronouns_we": 0.4166666666666667}
+KOR_271901.txt	{"Pronouns_it": 0.42857142857142855, "Pronouns_they": 0.14285714285714285, "Pronouns_we": 0.14285714285714285, "Pronouns_you": 0.2857142857142857}
+KOR_274657.txt	{"Pronouns_it": 0.4, "Pronouns_me": 0.1, "Pronouns_them": 0.1, "Pronouns_they": 0.2, "Pronouns_you": 0.2}
+FRE_277789.txt	{"Pronouns_it": 0.47058823529411764, "Pronouns_they": 0.058823529411764705, "Pronouns_us": 0.058823529411764705, "Pronouns_we": 0.058823529411764705, "Pronouns_you": 0.35294117647058826}
+FRE_279504.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.05555555555555555, "Pronouns_they": 0.2222222222222222, "Pronouns_you": 0.5555555555555556}
+GER_280553.txt	{"Pronouns_he": 0.13333333333333333, "Pronouns_her": 0.06666666666666667, "Pronouns_it": 0.4, "Pronouns_one": 0.06666666666666667, "Pronouns_she": 0.13333333333333333, "Pronouns_them": 0.13333333333333333, "Pronouns_they": 0.06666666666666667}
+GER_282386.txt	{"Pronouns_him": 0.05263157894736842, "Pronouns_it": 0.21052631578947367, "Pronouns_one": 0.5263157894736842, "Pronouns_you": 0.21052631578947367}
+TUR_283858.txt	{"Pronouns_them": 0.25, "Pronouns_they": 0.625, "Pronouns_you": 0.125}
+CHI_286058.txt	{"Pronouns_he": 0.037037037037037035, "Pronouns_it": 0.1111111111111111, "Pronouns_one": 0.07407407407407407, "Pronouns_you": 0.7777777777777778}
+CHI_286693.txt	{"Pronouns_me": 0.125, "Pronouns_one": 0.0625, "Pronouns_them": 0.125, "Pronouns_they": 0.0625, "Pronouns_we": 0.5, "Pronouns_you": 0.0625, "Pronouns_yourself": 0.0625}
+TUR_28789.txt	{"Pronouns_it": 0.2, "Pronouns_me": 0.1, "Pronouns_she": 0.1, "Pronouns_we": 0.4, "Pronouns_you": 0.2}
+SPA_295607.txt	{"Pronouns_he": 0.14285714285714285, "Pronouns_her": 0.07142857142857142, "Pronouns_it": 0.42857142857142855, "Pronouns_she": 0.14285714285714285, "Pronouns_they": 0.21428571428571427}
+TUR_297988.txt	{"Pronouns_i": 0.06451612903225806, "Pronouns_it": 0.12903225806451613, "Pronouns_one": 0.06451612903225806, "Pronouns_they": 0.03225806451612903, "Pronouns_you": 0.7096774193548387}
+SPA_298202.txt	{"Pronouns_it": 0.125, "Pronouns_them": 0.125, "Pronouns_themselves": 0.0625, "Pronouns_they": 0.625, "Pronouns_us": 0.0625}
+TEL_302222.txt	{"Pronouns_he": 0.25, "Pronouns_i": 0.08333333333333333, "Pronouns_it": 0.08333333333333333, "Pronouns_them": 0.08333333333333333, "Pronouns_they": 0.5}
+HIN_302739.txt	{"Pronouns_it": 0.18181818181818182, "Pronouns_they": 0.45454545454545453, "Pronouns_us": 0.18181818181818182, "Pronouns_we": 0.18181818181818182}
+JPN_305436.txt	{"Pronouns_it": 0.21428571428571427, "Pronouns_they": 0.2857142857142857, "Pronouns_we": 0.07142857142857142, "Pronouns_you": 0.42857142857142855}
+TEL_306419.txt	{"Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.5454545454545454, "Pronouns_us": 0.2727272727272727, "Pronouns_we": 0.09090909090909091}
+TUR_307077.txt	{"Pronouns_he": 0.1, "Pronouns_it": 0.4, "Pronouns_itself": 0.1, "Pronouns_me": 0.3, "Pronouns_she": 0.1}
+HIN_310495.txt	{"Pronouns_it": 0.09090909090909091, "Pronouns_one": 0.18181818181818182, "Pronouns_they": 0.36363636363636365, "Pronouns_we": 0.36363636363636365}
+TEL_313445.txt	{"Pronouns_it": 0.2222222222222222, "Pronouns_one": 0.1111111111111111, "Pronouns_they": 0.1111111111111111, "Pronouns_us": 0.1111111111111111, "Pronouns_we": 0.4444444444444444}
+KOR_315042.txt	{"Pronouns_it": 0.1875, "Pronouns_one": 0.1875, "Pronouns_them": 0.3125, "Pronouns_they": 0.3125}
+ITA_316246.txt	{"Pronouns_he": 0.3125, "Pronouns_i": 0.0625, "Pronouns_it": 0.125, "Pronouns_one": 0.1875, "Pronouns_them": 0.0625, "Pronouns_themselves": 0.0625, "Pronouns_they": 0.1875}
+ITA_316488.txt	{"Pronouns_he": 0.3125, "Pronouns_her": 0.125, "Pronouns_it": 0.1875, "Pronouns_mine": 0.0625, "Pronouns_she": 0.3125}
+FRE_317607.txt	{"Pronouns_i": 0.043478260869565216, "Pronouns_it": 0.2608695652173913, "Pronouns_them": 0.043478260869565216, "Pronouns_themselves": 0.08695652173913043, "Pronouns_they": 0.4782608695652174, "Pronouns_we": 0.043478260869565216, "Pronouns_you": 0.043478260869565216}
+FRE_320310.txt	{"Pronouns_it": 0.15384615384615385, "Pronouns_one": 0.07692307692307693, "Pronouns_they": 0.15384615384615385, "Pronouns_we": 0.5384615384615384, "Pronouns_you": 0.07692307692307693}
+TUR_321193.txt	{}
+TEL_324238.txt	{"Pronouns_he": 0.3125, "Pronouns_it": 0.0625, "Pronouns_one": 0.0625, "Pronouns_them": 0.0625, "Pronouns_they": 0.1875, "Pronouns_us": 0.0625, "Pronouns_we": 0.125, "Pronouns_you": 0.125}
+FRE_324828.txt	{"Pronouns_it": 0.5384615384615384, "Pronouns_me": 0.07692307692307693, "Pronouns_they": 0.07692307692307693, "Pronouns_us": 0.07692307692307693, "Pronouns_you": 0.23076923076923078}
+ITA_325413.txt	{"Pronouns_he": 0.06666666666666667, "Pronouns_him": 0.06666666666666667, "Pronouns_they": 0.13333333333333333, "Pronouns_we": 0.13333333333333333, "Pronouns_you": 0.6}
+HIN_327221.txt	{"Pronouns_he": 0.75, "Pronouns_them": 0.08333333333333333, "Pronouns_us": 0.08333333333333333, "Pronouns_we": 0.08333333333333333}
+ARA_328114.txt	{"Pronouns_he": 0.2857142857142857, "Pronouns_him": 0.14285714285714285, "Pronouns_it": 0.14285714285714285, "Pronouns_they": 0.2857142857142857, "Pronouns_we": 0.14285714285714285}
+ITA_328129.txt	{"Pronouns_it": 0.4, "Pronouns_one": 0.1, "Pronouns_them": 0.3, "Pronouns_they": 0.2}
+SPA_333391.txt	{"Pronouns_they": 0.3076923076923077, "Pronouns_we": 0.23076923076923078, "Pronouns_you": 0.46153846153846156}
+KOR_335286.txt	{"Pronouns_i": 0.2, "Pronouns_it": 0.3, "Pronouns_me": 0.1, "Pronouns_them": 0.1, "Pronouns_they": 0.3}
+KOR_337831.txt	{"Pronouns_they": 0.09090909090909091, "Pronouns_you": 0.9090909090909091}
+HIN_33811.txt	{"Pronouns_it": 0.19047619047619047, "Pronouns_them": 0.19047619047619047, "Pronouns_us": 0.047619047619047616, "Pronouns_we": 0.5714285714285714}
+GER_339507.txt	{"Pronouns_he": 0.041666666666666664, "Pronouns_i": 0.16666666666666666, "Pronouns_it": 0.25, "Pronouns_me": 0.041666666666666664, "Pronouns_she": 0.041666666666666664, "Pronouns_them": 0.041666666666666664, "Pronouns_they": 0.125, "Pronouns_we": 0.25, "Pronouns_you": 0.041666666666666664}
+KOR_33973.txt	{"Pronouns_he": 0.1, "Pronouns_oneself": 0.1, "Pronouns_themselves": 0.1, "Pronouns_they": 0.7}
+KOR_342471.txt	{"Pronouns_it": 0.125, "Pronouns_them": 0.125, "Pronouns_themselves": 0.125, "Pronouns_they": 0.625}
+JPN_343891.txt	{"Pronouns_it": 0.1111111111111111, "Pronouns_ourselves": 0.037037037037037035, "Pronouns_them": 0.037037037037037035, "Pronouns_us": 0.07407407407407407, "Pronouns_we": 0.4074074074074074, "Pronouns_you": 0.25925925925925924, "Pronouns_yourself": 0.07407407407407407}
+CHI_34393.txt	{"Pronouns_he": 0.05, "Pronouns_it": 0.1, "Pronouns_itself": 0.05, "Pronouns_them": 0.1, "Pronouns_they": 0.05, "Pronouns_we": 0.2, "Pronouns_you": 0.45}
+SPA_347124.txt	{"Pronouns_her": 0.06666666666666667, "Pronouns_it": 0.26666666666666666, "Pronouns_one": 0.13333333333333333, "Pronouns_they": 0.3333333333333333, "Pronouns_we": 0.13333333333333333, "Pronouns_you": 0.06666666666666667}
+TUR_348.txt	{"Pronouns_he": 0.05, "Pronouns_i": 0.05, "Pronouns_it": 0.15, "Pronouns_me": 0.05, "Pronouns_one": 0.4, "Pronouns_they": 0.1, "Pronouns_us": 0.05, "Pronouns_we": 0.15}
+KOR_348814.txt	{"Pronouns_it": 0.38461538461538464, "Pronouns_them": 0.3076923076923077, "Pronouns_they": 0.23076923076923078, "Pronouns_we": 0.07692307692307693}
+GER_351720.txt	{"Pronouns_her": 0.1, "Pronouns_it": 0.2, "Pronouns_me": 0.1, "Pronouns_one": 0.1, "Pronouns_them": 0.2, "Pronouns_they": 0.3}
+KOR_351967.txt	{"Pronouns_i": 0.6666666666666666, "Pronouns_it": 0.041666666666666664, "Pronouns_myself": 0.08333333333333333, "Pronouns_we": 0.041666666666666664, "Pronouns_you": 0.16666666666666666}
+HIN_354293.txt	{"Pronouns_he": 0.08333333333333333, "Pronouns_i": 0.08333333333333333, "Pronouns_it": 0.08333333333333333, "Pronouns_me": 0.3333333333333333, "Pronouns_one": 0.16666666666666666, "Pronouns_they": 0.08333333333333333, "Pronouns_you": 0.16666666666666666}
+TUR_354904.txt	{"Pronouns_he": 0.2, "Pronouns_one": 0.1, "Pronouns_we": 0.2, "Pronouns_you": 0.5}
+GER_358345.txt	{"Pronouns_he": 0.09090909090909091, "Pronouns_it": 0.18181818181818182, "Pronouns_one": 0.18181818181818182, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.36363636363636365, "Pronouns_us": 0.09090909090909091}
+TEL_361975.txt	{"Pronouns_he": 0.6666666666666666, "Pronouns_us": 0.3333333333333333}
+TEL_368264.txt	{"Pronouns_they": 0.8333333333333334, "Pronouns_we": 0.16666666666666666}
+HIN_368806.txt	{"Pronouns_he": 0.05555555555555555, "Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.05555555555555555, "Pronouns_them": 0.05555555555555555, "Pronouns_themselves": 0.05555555555555555, "Pronouns_they": 0.6111111111111112}
+GER_370538.txt	{"Pronouns_he": 0.10344827586206896, "Pronouns_it": 0.20689655172413793, "Pronouns_me": 0.06896551724137931, "Pronouns_one": 0.034482758620689655, "Pronouns_they": 0.13793103448275862, "Pronouns_us": 0.034482758620689655, "Pronouns_we": 0.034482758620689655, "Pronouns_you": 0.3793103448275862}
+JPN_371940.txt	{"Pronouns_it": 0.5555555555555556, "Pronouns_me": 0.2222222222222222, "Pronouns_myself": 0.2222222222222222}
+ARA_372592.txt	{"Pronouns_he": 0.2, "Pronouns_it": 0.2, "Pronouns_they": 0.2, "Pronouns_us": 0.4}
+TUR_372715.txt	{"Pronouns_i": 0.1111111111111111, "Pronouns_it": 0.16666666666666666, "Pronouns_me": 0.05555555555555555, "Pronouns_one": 0.3888888888888889, "Pronouns_them": 0.1111111111111111, "Pronouns_we": 0.1111111111111111, "Pronouns_you": 0.05555555555555555}
+GER_37662.txt	{"Pronouns_one": 0.3333333333333333, "Pronouns_they": 0.3333333333333333, "Pronouns_we": 0.3333333333333333}
+GER_379130.txt	{"Pronouns_it": 0.23076923076923078, "Pronouns_you": 0.7692307692307693}
+FRE_381916.txt	{"Pronouns_it": 0.058823529411764705, "Pronouns_one": 0.11764705882352941, "Pronouns_they": 0.29411764705882354, "Pronouns_you": 0.5294117647058824}
+TEL_385963.txt	{"Pronouns_he": 0.09523809523809523, "Pronouns_i": 0.047619047619047616, "Pronouns_it": 0.09523809523809523, "Pronouns_me": 0.047619047619047616, "Pronouns_one": 0.14285714285714285, "Pronouns_they": 0.38095238095238093, "Pronouns_us": 0.047619047619047616, "Pronouns_we": 0.14285714285714285}
+GER_388047.txt	{"Pronouns_it": 0.058823529411764705, "Pronouns_them": 0.058823529411764705, "Pronouns_themselves": 0.058823529411764705, "Pronouns_they": 0.7058823529411765, "Pronouns_you": 0.11764705882352941}
+ITA_388214.txt	{"Pronouns_it": 0.23076923076923078, "Pronouns_one": 0.07692307692307693, "Pronouns_you": 0.6923076923076923}
+ITA_39030.txt	{"Pronouns_it": 0.1, "Pronouns_us": 0.1, "Pronouns_we": 0.8}
+ARA_390852.txt	{"Pronouns_he": 0.07142857142857142, "Pronouns_himself": 0.07142857142857142, "Pronouns_it": 0.21428571428571427, "Pronouns_one": 0.14285714285714285, "Pronouns_them": 0.07142857142857142, "Pronouns_they": 0.21428571428571427, "Pronouns_us": 0.07142857142857142, "Pronouns_we": 0.14285714285714285}
+ITA_391270.txt	{"Pronouns_he": 0.027777777777777776, "Pronouns_it": 0.027777777777777776, "Pronouns_me": 0.05555555555555555, "Pronouns_myself": 0.027777777777777776, "Pronouns_she": 0.027777777777777776, "Pronouns_them": 0.05555555555555555, "Pronouns_they": 0.027777777777777776, "Pronouns_you": 0.75}
+TUR_394918.txt	{"Pronouns_her": 0.17647058823529413, "Pronouns_it": 0.11764705882352941, "Pronouns_me": 0.11764705882352941, "Pronouns_one": 0.17647058823529413, "Pronouns_she": 0.23529411764705882, "Pronouns_them": 0.058823529411764705, "Pronouns_they": 0.058823529411764705, "Pronouns_we": 0.058823529411764705}
+TUR_395429.txt	{"Pronouns_her": 0.03125, "Pronouns_him": 0.0625, "Pronouns_it": 0.03125, "Pronouns_me": 0.0625, "Pronouns_one": 0.03125, "Pronouns_you": 0.71875, "Pronouns_yourself": 0.0625}
+KOR_396748.txt	{"Pronouns_me": 0.25, "Pronouns_they": 0.75}
+TUR_397753.txt	{"Pronouns_he": 0.125, "Pronouns_her": 0.0625, "Pronouns_him": 0.125, "Pronouns_me": 0.0625, "Pronouns_one": 0.125, "Pronouns_she": 0.0625, "Pronouns_them": 0.0625, "Pronouns_themselves": 0.0625, "Pronouns_they": 0.125, "Pronouns_us": 0.0625, "Pronouns_we": 0.125}
+SPA_399603.txt	{"Pronouns_it": 0.23529411764705882, "Pronouns_one": 0.029411764705882353, "Pronouns_them": 0.058823529411764705, "Pronouns_they": 0.058823529411764705, "Pronouns_you": 0.6176470588235294}
+TUR_402513.txt	{"Pronouns_he": 0.2, "Pronouns_i": 0.05, "Pronouns_it": 0.15, "Pronouns_them": 0.05, "Pronouns_themselves": 0.05, "Pronouns_they": 0.45, "Pronouns_you": 0.05}
+TUR_403467.txt	{"Pronouns_one": 0.75, "Pronouns_them": 0.25}
+KOR_403847.txt	{"Pronouns_he": 0.03333333333333333, "Pronouns_it": 0.23333333333333334, "Pronouns_me": 0.06666666666666667, "Pronouns_myself": 0.03333333333333333, "Pronouns_one": 0.03333333333333333, "Pronouns_we": 0.06666666666666667, "Pronouns_you": 0.5333333333333333}
+KOR_404436.txt	{"Pronouns_it": 0.25, "Pronouns_they": 0.75}
+ITA_405894.txt	{"Pronouns_it": 0.5555555555555556, "Pronouns_me": 0.1111111111111111, "Pronouns_myself": 0.2222222222222222, "Pronouns_they": 0.1111111111111111}
+FRE_406669.txt	{"Pronouns_he": 0.36, "Pronouns_her": 0.04, "Pronouns_it": 0.04, "Pronouns_one": 0.04, "Pronouns_them": 0.04, "Pronouns_they": 0.08, "Pronouns_you": 0.4}
+SPA_409695.txt	{"Pronouns_i": 0.14285714285714285, "Pronouns_it": 0.5, "Pronouns_one": 0.07142857142857142, "Pronouns_them": 0.07142857142857142, "Pronouns_they": 0.07142857142857142, "Pronouns_we": 0.14285714285714285}
+ARA_409820.txt	{"Pronouns_it": 0.18181818181818182, "Pronouns_them": 0.18181818181818182, "Pronouns_they": 0.5454545454545454, "Pronouns_we": 0.09090909090909091}
+HIN_413422.txt	{"Pronouns_he": 0.13513513513513514, "Pronouns_him": 0.10810810810810811, "Pronouns_i": 0.02702702702702703, "Pronouns_it": 0.08108108108108109, "Pronouns_me": 0.02702702702702703, "Pronouns_one": 0.05405405405405406, "Pronouns_them": 0.13513513513513514, "Pronouns_they": 0.35135135135135137, "Pronouns_us": 0.02702702702702703, "Pronouns_you": 0.05405405405405406}
+JPN_41427.txt	{"Pronouns_he": 0.1951219512195122, "Pronouns_her": 0.1951219512195122, "Pronouns_him": 0.024390243902439025, "Pronouns_it": 0.024390243902439025, "Pronouns_me": 0.024390243902439025, "Pronouns_one": 0.024390243902439025, "Pronouns_she": 0.1951219512195122, "Pronouns_them": 0.07317073170731707, "Pronouns_they": 0.24390243902439024}
+ARA_414694.txt	{"Pronouns_i": 0.4, "Pronouns_it": 0.26666666666666666, "Pronouns_one": 0.13333333333333333, "Pronouns_them": 0.06666666666666667, "Pronouns_we": 0.13333333333333333}
+TUR_419091.txt	{"Pronouns_it": 0.18181818181818182, "Pronouns_one": 0.045454545454545456, "Pronouns_they": 0.045454545454545456, "Pronouns_you": 0.7272727272727273}
+FRE_425849.txt	{"Pronouns_i": 0.13953488372093023, "Pronouns_it": 0.3023255813953488, "Pronouns_one": 0.023255813953488372, "Pronouns_they": 0.046511627906976744, "Pronouns_us": 0.09302325581395349, "Pronouns_we": 0.13953488372093023, "Pronouns_you": 0.2558139534883721}
+CHI_428625.txt	{"Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.2857142857142857, "Pronouns_us": 0.2857142857142857}
+HIN_428945.txt	{"Pronouns_it": 0.38461538461538464, "Pronouns_them": 0.07692307692307693, "Pronouns_they": 0.46153846153846156, "Pronouns_you": 0.07692307692307693}
+KOR_429993.txt	{"Pronouns_her": 0.125, "Pronouns_it": 0.1875, "Pronouns_she": 0.25, "Pronouns_them": 0.125, "Pronouns_themselves": 0.0625, "Pronouns_they": 0.25}
+SPA_431670.txt	{"Pronouns_it": 0.25, "Pronouns_me": 0.125, "Pronouns_one": 0.25, "Pronouns_them": 0.125, "Pronouns_we": 0.125, "Pronouns_you": 0.125}
+FRE_432564.txt	{"Pronouns_one": 0.2631578947368421, "Pronouns_they": 0.10526315789473684, "Pronouns_us": 0.10526315789473684, "Pronouns_we": 0.47368421052631576, "Pronouns_you": 0.05263157894736842}
+KOR_434670.txt	{"Pronouns_he": 0.047619047619047616, "Pronouns_it": 0.19047619047619047, "Pronouns_itself": 0.047619047619047616, "Pronouns_one": 0.09523809523809523, "Pronouns_she": 0.14285714285714285, "Pronouns_they": 0.047619047619047616, "Pronouns_us": 0.047619047619047616, "Pronouns_we": 0.38095238095238093}
+SPA_434883.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_me": 0.03333333333333333, "Pronouns_ourselves": 0.03333333333333333, "Pronouns_them": 0.03333333333333333, "Pronouns_they": 0.1, "Pronouns_us": 0.1, "Pronouns_we": 0.36666666666666664, "Pronouns_you": 0.16666666666666666}
+KOR_435837.txt	{"Pronouns_it": 0.35714285714285715, "Pronouns_one": 0.14285714285714285, "Pronouns_them": 0.07142857142857142, "Pronouns_they": 0.07142857142857142, "Pronouns_we": 0.35714285714285715}
+CHI_437953.txt	{"Pronouns_it": 0.36363636363636365, "Pronouns_me": 0.09090909090909091, "Pronouns_one": 0.18181818181818182, "Pronouns_them": 0.18181818181818182, "Pronouns_we": 0.18181818181818182}
+JPN_439202.txt	{"Pronouns_me": 0.7272727272727273, "Pronouns_one": 0.18181818181818182, "Pronouns_us": 0.09090909090909091}
+HIN_443398.txt	{"Pronouns_he": 0.2727272727272727, "Pronouns_him": 0.09090909090909091, "Pronouns_one": 0.09090909090909091, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.09090909090909091, "Pronouns_we": 0.36363636363636365}
+SPA_445365.txt	{"Pronouns_it": 0.4444444444444444, "Pronouns_one": 0.2222222222222222, "Pronouns_they": 0.1111111111111111, "Pronouns_we": 0.1111111111111111, "Pronouns_you": 0.1111111111111111}
+SPA_44961.txt	{"Pronouns_i": 0.29411764705882354, "Pronouns_it": 0.11764705882352941, "Pronouns_me": 0.058823529411764705, "Pronouns_they": 0.058823529411764705, "Pronouns_us": 0.058823529411764705, "Pronouns_we": 0.35294117647058826, "Pronouns_you": 0.058823529411764705}
+GER_450073.txt	{"Pronouns_one": 0.5, "Pronouns_they": 0.5}
+ITA_451733.txt	{"Pronouns_it": 0.08333333333333333, "Pronouns_itself": 0.16666666666666666, "Pronouns_them": 0.16666666666666666, "Pronouns_they": 0.16666666666666666, "Pronouns_you": 0.4166666666666667}
+FRE_455160.txt	{"Pronouns_it": 0.5625, "Pronouns_them": 0.125, "Pronouns_they": 0.125, "Pronouns_us": 0.0625, "Pronouns_we": 0.0625, "Pronouns_you": 0.0625}
+CHI_455835.txt	{"Pronouns_he": 0.047619047619047616, "Pronouns_him": 0.047619047619047616, "Pronouns_it": 0.19047619047619047, "Pronouns_ours": 0.047619047619047616, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.14285714285714285, "Pronouns_we": 0.3333333333333333, "Pronouns_you": 0.047619047619047616}
+KOR_457970.txt	{"Pronouns_it": 0.07407407407407407, "Pronouns_me": 0.037037037037037035, "Pronouns_one": 0.07407407407407407, "Pronouns_them": 0.25925925925925924, "Pronouns_they": 0.3333333333333333, "Pronouns_we": 0.037037037037037035, "Pronouns_you": 0.18518518518518517}
+ITA_460344.txt	{"Pronouns_mine": 0.16666666666666666, "Pronouns_one": 0.16666666666666666, "Pronouns_we": 0.5, "Pronouns_you": 0.16666666666666666}
+GER_462374.txt	{"Pronouns_he": 0.07692307692307693, "Pronouns_one": 0.038461538461538464, "Pronouns_them": 0.038461538461538464, "Pronouns_they": 0.46153846153846156, "Pronouns_you": 0.38461538461538464}
+TEL_464269.txt	{"Pronouns_he": 0.3125, "Pronouns_him": 0.125, "Pronouns_it": 0.125, "Pronouns_me": 0.1875, "Pronouns_mine": 0.125, "Pronouns_myself": 0.0625, "Pronouns_us": 0.0625}
+TUR_464654.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_one": 0.3333333333333333, "Pronouns_them": 0.16666666666666666, "Pronouns_they": 0.16666666666666666}
+TUR_466034.txt	{"Pronouns_i": 0.09375, "Pronouns_it": 0.3125, "Pronouns_me": 0.03125, "Pronouns_them": 0.09375, "Pronouns_themselves": 0.03125, "Pronouns_we": 0.15625, "Pronouns_you": 0.25, "Pronouns_yourself": 0.03125}
+CHI_466186.txt	{"Pronouns_it": 0.21428571428571427, "Pronouns_one": 0.14285714285714285, "Pronouns_them": 0.14285714285714285, "Pronouns_themselves": 0.07142857142857142, "Pronouns_they": 0.14285714285714285, "Pronouns_us": 0.14285714285714285, "Pronouns_we": 0.14285714285714285}
+ARA_466340.txt	{"Pronouns_it": 0.08, "Pronouns_one": 0.08, "Pronouns_them": 0.04, "Pronouns_they": 0.08, "Pronouns_us": 0.04, "Pronouns_we": 0.24, "Pronouns_you": 0.44}
+GER_469521.txt	{"Pronouns_i": 0.038461538461538464, "Pronouns_it": 0.038461538461538464, "Pronouns_me": 0.038461538461538464, "Pronouns_one": 0.038461538461538464, "Pronouns_them": 0.19230769230769232, "Pronouns_they": 0.11538461538461539, "Pronouns_us": 0.11538461538461539, "Pronouns_we": 0.4230769230769231}
+TEL_471184.txt	{"Pronouns_he": 0.05, "Pronouns_her": 0.15, "Pronouns_one": 0.3, "Pronouns_she": 0.1, "Pronouns_they": 0.1, "Pronouns_we": 0.3}
+TEL_473551.txt	{"Pronouns_he": 0.06666666666666667, "Pronouns_i": 0.06666666666666667, "Pronouns_it": 0.2, "Pronouns_one": 0.26666666666666666, "Pronouns_she": 0.06666666666666667, "Pronouns_them": 0.06666666666666667, "Pronouns_we": 0.06666666666666667, "Pronouns_you": 0.2}
+TUR_477043.txt	{"Pronouns_he": 0.3125, "Pronouns_they": 0.1875, "Pronouns_us": 0.0625, "Pronouns_we": 0.4375}
+SPA_477516.txt	{"Pronouns_he": 0.09090909090909091, "Pronouns_it": 0.5454545454545454, "Pronouns_one": 0.18181818181818182, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.09090909090909091}
+TUR_478082.txt	{"Pronouns_them": 0.375, "Pronouns_they": 0.625}
+KOR_482413.txt	{"Pronouns_it": 0.3125, "Pronouns_one": 0.25, "Pronouns_they": 0.0625, "Pronouns_we": 0.375}
+JPN_482686.txt	{"Pronouns_her": 0.08695652173913043, "Pronouns_one": 0.08695652173913043, "Pronouns_she": 0.21739130434782608, "Pronouns_they": 0.08695652173913043, "Pronouns_us": 0.17391304347826086, "Pronouns_we": 0.30434782608695654, "Pronouns_you": 0.043478260869565216}
+KOR_489857.txt	{"Pronouns_he": 0.1388888888888889, "Pronouns_her": 0.08333333333333333, "Pronouns_it": 0.2777777777777778, "Pronouns_she": 0.1111111111111111, "Pronouns_they": 0.2777777777777778, "Pronouns_you": 0.1111111111111111}
+HIN_492111.txt	{"Pronouns_he": 0.13333333333333333, "Pronouns_him": 0.06666666666666667, "Pronouns_himself": 0.06666666666666667, "Pronouns_i": 0.06666666666666667, "Pronouns_it": 0.4, "Pronouns_myself": 0.06666666666666667, "Pronouns_one": 0.2}
+KOR_493293.txt	{"Pronouns_i": 0.25, "Pronouns_it": 0.25, "Pronouns_one": 0.125, "Pronouns_them": 0.125, "Pronouns_they": 0.25}
+SPA_494639.txt	{"Pronouns_he": 0.3684210526315789, "Pronouns_him": 0.05263157894736842, "Pronouns_himself": 0.05263157894736842, "Pronouns_it": 0.2631578947368421, "Pronouns_themselves": 0.05263157894736842, "Pronouns_they": 0.21052631578947367}
+ARA_494841.txt	{"Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.7142857142857143, "Pronouns_you": 0.14285714285714285}
+CHI_494935.txt	{"Pronouns_them": 0.3, "Pronouns_they": 0.6, "Pronouns_we": 0.1}
+GER_495532.txt	{"Pronouns_it": 0.17391304347826086, "Pronouns_me": 0.043478260869565216, "Pronouns_they": 0.043478260869565216, "Pronouns_you": 0.6086956521739131, "Pronouns_yourself": 0.13043478260869565}
+KOR_499483.txt	{"Pronouns_he": 0.38461538461538464, "Pronouns_it": 0.07692307692307693, "Pronouns_one": 0.23076923076923078, "Pronouns_they": 0.23076923076923078, "Pronouns_us": 0.07692307692307693}
+SPA_500691.txt	{"Pronouns_it": 0.06896551724137931, "Pronouns_one": 0.1724137931034483, "Pronouns_they": 0.034482758620689655, "Pronouns_us": 0.034482758620689655, "Pronouns_we": 0.034482758620689655, "Pronouns_you": 0.6206896551724138, "Pronouns_yourself": 0.034482758620689655}
+FRE_501459.txt	{"Pronouns_it": 0.2857142857142857, "Pronouns_them": 0.10714285714285714, "Pronouns_you": 0.6071428571428571}
+TEL_502460.txt	{"Pronouns_he": 0.6153846153846154, "Pronouns_him": 0.15384615384615385, "Pronouns_it": 0.15384615384615385, "Pronouns_one": 0.07692307692307693}
+FRE_503439.txt	{"Pronouns_he": 0.10714285714285714, "Pronouns_him": 0.03571428571428571, "Pronouns_it": 0.39285714285714285, "Pronouns_one": 0.07142857142857142, "Pronouns_them": 0.07142857142857142, "Pronouns_they": 0.2857142857142857, "Pronouns_us": 0.03571428571428571}
+FRE_505321.txt	{"Pronouns_it": 0.6666666666666666, "Pronouns_we": 0.3333333333333333}
+ITA_50865.txt	{"Pronouns_i": 0.47619047619047616, "Pronouns_it": 0.14285714285714285, "Pronouns_me": 0.047619047619047616, "Pronouns_they": 0.3333333333333333}
+TEL_508915.txt	{"Pronouns_he": 0.17647058823529413, "Pronouns_one": 0.17647058823529413, "Pronouns_they": 0.058823529411764705, "Pronouns_we": 0.47058823529411764, "Pronouns_you": 0.11764705882352941}
+JPN_511331.txt	{"Pronouns_it": 0.1111111111111111, "Pronouns_me": 0.1111111111111111, "Pronouns_one": 0.1111111111111111, "Pronouns_ourselves": 0.05555555555555555, "Pronouns_we": 0.5555555555555556, "Pronouns_you": 0.05555555555555555}
+TEL_513615.txt	{"Pronouns_he": 0.4666666666666667, "Pronouns_him": 0.1, "Pronouns_i": 0.03333333333333333, "Pronouns_it": 0.13333333333333333, "Pronouns_one": 0.03333333333333333, "Pronouns_them": 0.03333333333333333, "Pronouns_they": 0.2}
+FRE_516497.txt	{"Pronouns_himself": 0.022727272727272728, "Pronouns_it": 0.29545454545454547, "Pronouns_one": 0.045454545454545456, "Pronouns_us": 0.06818181818181818, "Pronouns_we": 0.11363636363636363, "Pronouns_you": 0.45454545454545453}
+ARA_517456.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_them": 0.16666666666666666, "Pronouns_they": 0.3333333333333333, "Pronouns_you": 0.3333333333333333}
+SPA_517530.txt	{"Pronouns_it": 0.20689655172413793, "Pronouns_me": 0.10344827586206896, "Pronouns_them": 0.06896551724137931, "Pronouns_they": 0.10344827586206896, "Pronouns_we": 0.2413793103448276, "Pronouns_you": 0.27586206896551724}
+ARA_521295.txt	{"Pronouns_i": 0.125, "Pronouns_it": 0.125, "Pronouns_one": 0.0625, "Pronouns_them": 0.0625, "Pronouns_they": 0.1875, "Pronouns_us": 0.0625, "Pronouns_you": 0.3125, "Pronouns_yourself": 0.0625}
+TUR_522501.txt	{"Pronouns_he": 0.10526315789473684, "Pronouns_her": 0.05263157894736842, "Pronouns_it": 0.21052631578947367, "Pronouns_me": 0.05263157894736842, "Pronouns_one": 0.15789473684210525, "Pronouns_them": 0.15789473684210525, "Pronouns_they": 0.2631578947368421}
+ARA_525628.txt	{"Pronouns_it": 0.5, "Pronouns_me": 0.25, "Pronouns_them": 0.0625, "Pronouns_they": 0.1875}
+SPA_526195.txt	{"Pronouns_i": 0.034482758620689655, "Pronouns_it": 0.034482758620689655, "Pronouns_one": 0.034482758620689655, "Pronouns_they": 0.034482758620689655, "Pronouns_you": 0.7586206896551724, "Pronouns_yourself": 0.10344827586206896}
+CHI_52674.txt	{"Pronouns_it": 0.5, "Pronouns_we": 0.5}
+HIN_527085.txt	{"Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_they": 0.7142857142857143}
+TUR_527360.txt	{"Pronouns_he": 0.3157894736842105, "Pronouns_it": 0.10526315789473684, "Pronouns_one": 0.05263157894736842, "Pronouns_them": 0.05263157894736842, "Pronouns_themselves": 0.05263157894736842, "Pronouns_they": 0.15789473684210525, "Pronouns_we": 0.2631578947368421}
+KOR_527830.txt	{"Pronouns_he": 0.2727272727272727, "Pronouns_one": 0.13636363636363635, "Pronouns_they": 0.4090909090909091, "Pronouns_you": 0.18181818181818182}
+CHI_527911.txt	{"Pronouns_he": 0.047619047619047616, "Pronouns_it": 0.19047619047619047, "Pronouns_one": 0.047619047619047616, "Pronouns_she": 0.047619047619047616, "Pronouns_they": 0.23809523809523808, "Pronouns_we": 0.14285714285714285, "Pronouns_you": 0.2857142857142857}
+JPN_528462.txt	{"Pronouns_it": 0.20689655172413793, "Pronouns_one": 0.06896551724137931, "Pronouns_them": 0.034482758620689655, "Pronouns_they": 0.034482758620689655, "Pronouns_you": 0.6551724137931034}
+HIN_528486.txt	{"Pronouns_he": 0.25, "Pronouns_him": 0.05, "Pronouns_it": 0.2, "Pronouns_one": 0.15, "Pronouns_she": 0.05, "Pronouns_them": 0.05, "Pronouns_they": 0.05, "Pronouns_you": 0.2}
+CHI_530123.txt	{"Pronouns_it": 0.125, "Pronouns_one": 0.3125, "Pronouns_them": 0.1875, "Pronouns_they": 0.125, "Pronouns_us": 0.0625, "Pronouns_we": 0.1875}
+ITA_535048.txt	{"Pronouns_he": 0.045454545454545456, "Pronouns_himself": 0.045454545454545456, "Pronouns_it": 0.22727272727272727, "Pronouns_itself": 0.045454545454545456, "Pronouns_mine": 0.045454545454545456, "Pronouns_myself": 0.09090909090909091, "Pronouns_themselves": 0.045454545454545456, "Pronouns_they": 0.36363636363636365, "Pronouns_you": 0.09090909090909091}
+HIN_536899.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.16666666666666666, "Pronouns_they": 0.16666666666666666, "Pronouns_us": 0.3333333333333333, "Pronouns_we": 0.16666666666666666}
+GER_537084.txt	{"Pronouns_he": 0.2, "Pronouns_it": 0.32, "Pronouns_she": 0.08, "Pronouns_them": 0.24, "Pronouns_they": 0.16}
+TEL_54026.txt	{"Pronouns_he": 0.13333333333333333, "Pronouns_i": 0.26666666666666666, "Pronouns_it": 0.06666666666666667, "Pronouns_me": 0.06666666666666667, "Pronouns_them": 0.13333333333333333, "Pronouns_they": 0.06666666666666667, "Pronouns_we": 0.26666666666666666}
+TUR_541271.txt	{"Pronouns_he": 0.11764705882352941, "Pronouns_herself": 0.058823529411764705, "Pronouns_himself": 0.058823529411764705, "Pronouns_it": 0.17647058823529413, "Pronouns_she": 0.058823529411764705, "Pronouns_them": 0.058823529411764705, "Pronouns_they": 0.29411764705882354, "Pronouns_us": 0.058823529411764705, "Pronouns_you": 0.11764705882352941}
+ITA_541420.txt	{"Pronouns_i": 0.25, "Pronouns_it": 0.25, "Pronouns_they": 0.125, "Pronouns_we": 0.375}
+SPA_542477.txt	{"Pronouns_he": 0.25, "Pronouns_it": 0.08333333333333333, "Pronouns_one": 0.16666666666666666, "Pronouns_they": 0.16666666666666666, "Pronouns_we": 0.08333333333333333, "Pronouns_you": 0.25}
+JPN_546070.txt	{"Pronouns_her": 0.0625, "Pronouns_it": 0.125, "Pronouns_me": 0.0625, "Pronouns_ourselves": 0.0625, "Pronouns_they": 0.375, "Pronouns_us": 0.0625, "Pronouns_we": 0.25}
+JPN_546354.txt	{"Pronouns_it": 0.1111111111111111, "Pronouns_me": 0.1111111111111111, "Pronouns_myself": 0.2222222222222222, "Pronouns_we": 0.5555555555555556}
+CHI_549045.txt	{"Pronouns_i": 0.2, "Pronouns_it": 0.2, "Pronouns_them": 0.2, "Pronouns_they": 0.2, "Pronouns_we": 0.2}
+FRE_549466.txt	{"Pronouns_it": 0.125, "Pronouns_them": 0.2916666666666667, "Pronouns_they": 0.5833333333333334}
+FRE_549479.txt	{"Pronouns_i": 0.09090909090909091, "Pronouns_it": 0.2727272727272727, "Pronouns_them": 0.18181818181818182, "Pronouns_they": 0.18181818181818182, "Pronouns_we": 0.2727272727272727}
+ITA_5497.txt	{"Pronouns_i": 0.09090909090909091, "Pronouns_it": 0.18181818181818182, "Pronouns_they": 0.5454545454545454, "Pronouns_us": 0.09090909090909091, "Pronouns_we": 0.09090909090909091}
+TEL_549793.txt	{"Pronouns_i": 0.2, "Pronouns_they": 0.7, "Pronouns_we": 0.1}
+HIN_55034.txt	{"Pronouns_he": 0.3, "Pronouns_him": 0.1, "Pronouns_i": 0.25, "Pronouns_it": 0.1, "Pronouns_one": 0.25}
+FRE_551815.txt	{"Pronouns_it": 0.32, "Pronouns_one": 0.12, "Pronouns_they": 0.2, "Pronouns_we": 0.04, "Pronouns_you": 0.32}
+JPN_552307.txt	{"Pronouns_it": 0.6363636363636364, "Pronouns_one": 0.09090909090909091, "Pronouns_they": 0.18181818181818182, "Pronouns_we": 0.09090909090909091}
+JPN_552573.txt	{"Pronouns_it": 0.23529411764705882, "Pronouns_myself": 0.058823529411764705, "Pronouns_you": 0.6470588235294118, "Pronouns_yourself": 0.058823529411764705}
+JPN_553903.txt	{"Pronouns_it": 0.17647058823529413, "Pronouns_me": 0.058823529411764705, "Pronouns_myself": 0.058823529411764705, "Pronouns_them": 0.058823529411764705, "Pronouns_they": 0.6470588235294118}
+ITA_556131.txt	{"Pronouns_he": 0.07142857142857142, "Pronouns_it": 0.07142857142857142, "Pronouns_me": 0.07142857142857142, "Pronouns_them": 0.21428571428571427, "Pronouns_they": 0.21428571428571427, "Pronouns_you": 0.35714285714285715}
+JPN_556175.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_one": 0.1111111111111111, "Pronouns_them": 0.1111111111111111, "Pronouns_themselves": 0.1111111111111111, "Pronouns_they": 0.3333333333333333}
+TUR_5565.txt	{"Pronouns_it": 0.125, "Pronouns_them": 0.25, "Pronouns_themselves": 0.25, "Pronouns_they": 0.375}
+ARA_559207.txt	{"Pronouns_it": 0.5714285714285714, "Pronouns_me": 0.14285714285714285, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.14285714285714285}
+TUR_561845.txt	{"Pronouns_i": 0.058823529411764705, "Pronouns_it": 0.058823529411764705, "Pronouns_one": 0.058823529411764705, "Pronouns_ours": 0.058823529411764705, "Pronouns_ourselves": 0.058823529411764705, "Pronouns_themselves": 0.058823529411764705, "Pronouns_they": 0.058823529411764705, "Pronouns_we": 0.4117647058823529, "Pronouns_you": 0.17647058823529413}
+ITA_56282.txt	{"Pronouns_i": 1.0}
+TUR_563622.txt	{"Pronouns_them": 0.2, "Pronouns_they": 0.4, "Pronouns_we": 0.4}
+HIN_567637.txt	{"Pronouns_it": 0.42857142857142855, "Pronouns_they": 0.14285714285714285, "Pronouns_we": 0.42857142857142855}
+FRE_567945.txt	{"Pronouns_it": 0.6666666666666666, "Pronouns_them": 0.041666666666666664, "Pronouns_they": 0.16666666666666666, "Pronouns_you": 0.125}
+ARA_568928.txt	{"Pronouns_he": 0.4444444444444444, "Pronouns_her": 0.1111111111111111, "Pronouns_they": 0.4444444444444444}
+JPN_569370.txt	{"Pronouns_her": 0.038461538461538464, "Pronouns_i": 0.34615384615384615, "Pronouns_it": 0.07692307692307693, "Pronouns_one": 0.038461538461538464, "Pronouns_them": 0.038461538461538464, "Pronouns_we": 0.4230769230769231, "Pronouns_you": 0.038461538461538464}
+FRE_573227.txt	{"Pronouns_it": 0.2, "Pronouns_ours": 0.2, "Pronouns_they": 0.2, "Pronouns_we": 0.4}
+TEL_576816.txt	{"Pronouns_he": 0.25, "Pronouns_one": 0.75}
+SPA_57752.txt	{"Pronouns_it": 0.23809523809523808, "Pronouns_ourselves": 0.047619047619047616, "Pronouns_them": 0.047619047619047616, "Pronouns_themselves": 0.047619047619047616, "Pronouns_you": 0.5238095238095238, "Pronouns_yourself": 0.09523809523809523}
+SPA_581396.txt	{"Pronouns_it": 0.4, "Pronouns_one": 0.4, "Pronouns_they": 0.2}
+JPN_581586.txt	{"Pronouns_it": 0.25, "Pronouns_one": 0.25, "Pronouns_them": 0.25, "Pronouns_they": 0.25}
+SPA_583877.txt	{"Pronouns_it": 0.3, "Pronouns_one": 0.1, "Pronouns_them": 0.2, "Pronouns_we": 0.2, "Pronouns_you": 0.2}
+GER_584412.txt	{"Pronouns_it": 0.13333333333333333, "Pronouns_they": 0.26666666666666666, "Pronouns_you": 0.6}
+SPA_585555.txt	{"Pronouns_he": 0.43478260869565216, "Pronouns_it": 0.043478260869565216, "Pronouns_them": 0.043478260869565216, "Pronouns_they": 0.391304347826087, "Pronouns_we": 0.043478260869565216, "Pronouns_you": 0.043478260869565216}
+ITA_586048.txt	{"Pronouns_i": 0.09090909090909091, "Pronouns_it": 0.09090909090909091, "Pronouns_one": 0.09090909090909091, "Pronouns_them": 0.2727272727272727, "Pronouns_they": 0.2727272727272727, "Pronouns_you": 0.18181818181818182}
+CHI_586292.txt	{"Pronouns_he": 0.18181818181818182, "Pronouns_it": 0.09090909090909091, "Pronouns_one": 0.09090909090909091, "Pronouns_they": 0.36363636363636365, "Pronouns_you": 0.22727272727272727, "Pronouns_yourself": 0.045454545454545456}
+TUR_589124.txt	{"Pronouns_he": 0.30303030303030304, "Pronouns_i": 0.18181818181818182, "Pronouns_it": 0.06060606060606061, "Pronouns_one": 0.030303030303030304, "Pronouns_them": 0.030303030303030304, "Pronouns_they": 0.09090909090909091, "Pronouns_we": 0.15151515151515152, "Pronouns_you": 0.15151515151515152}
+ARA_591239.txt	{"Pronouns_he": 0.125, "Pronouns_it": 0.125, "Pronouns_one": 0.1875, "Pronouns_they": 0.5, "Pronouns_you": 0.0625}
+CHI_594483.txt	{"Pronouns_he": 0.15789473684210525, "Pronouns_it": 0.21052631578947367, "Pronouns_one": 0.47368421052631576, "Pronouns_they": 0.05263157894736842, "Pronouns_we": 0.10526315789473684}
+CHI_596040.txt	{"Pronouns_it": 0.2857142857142857, "Pronouns_they": 0.42857142857142855, "Pronouns_we": 0.2857142857142857}
+JPN_597186.txt	{"Pronouns_it": 0.29411764705882354, "Pronouns_they": 0.47058823529411764, "Pronouns_you": 0.23529411764705882}
+TUR_597753.txt	{"Pronouns_it": 0.2222222222222222, "Pronouns_one": 0.1111111111111111, "Pronouns_they": 0.1111111111111111, "Pronouns_you": 0.5555555555555556}
+CHI_600252.txt	{"Pronouns_it": 0.10526315789473684, "Pronouns_they": 0.10526315789473684, "Pronouns_we": 0.3157894736842105, "Pronouns_you": 0.47368421052631576}
+GER_603420.txt	{"Pronouns_it": 0.23076923076923078, "Pronouns_one": 0.23076923076923078, "Pronouns_themselves": 0.07692307692307693, "Pronouns_they": 0.38461538461538464, "Pronouns_us": 0.07692307692307693}
+ARA_603888.txt	{"Pronouns_i": 0.3333333333333333, "Pronouns_it": 0.30303030303030304, "Pronouns_one": 0.06060606060606061, "Pronouns_they": 0.030303030303030304, "Pronouns_us": 0.030303030303030304, "Pronouns_we": 0.24242424242424243}
+KOR_604241.txt	{"Pronouns_he": 0.21052631578947367, "Pronouns_it": 0.15789473684210525, "Pronouns_me": 0.05263157894736842, "Pronouns_one": 0.2631578947368421, "Pronouns_we": 0.3157894736842105}
+ITA_605644.txt	{"Pronouns_he": 0.375, "Pronouns_it": 0.125, "Pronouns_them": 0.125, "Pronouns_themselves": 0.25, "Pronouns_they": 0.125}
+TUR_605807.txt	{"Pronouns_it": 0.36, "Pronouns_them": 0.12, "Pronouns_they": 0.12, "Pronouns_you": 0.36, "Pronouns_yourself": 0.04}
+JPN_60595.txt	{"Pronouns_her": 0.18181818181818182, "Pronouns_it": 0.2727272727272727, "Pronouns_one": 0.09090909090909091, "Pronouns_she": 0.2727272727272727, "Pronouns_you": 0.18181818181818182}
+JPN_606951.txt	{"Pronouns_it": 0.14285714285714285, "Pronouns_myself": 0.5714285714285714, "Pronouns_they": 0.14285714285714285, "Pronouns_we": 0.14285714285714285}
+GER_612619.txt	{"Pronouns_he": 0.1111111111111111, "Pronouns_one": 0.5555555555555556, "Pronouns_we": 0.3333333333333333}
+TEL_613865.txt	{"Pronouns_he": 0.06666666666666667, "Pronouns_it": 0.2, "Pronouns_them": 0.26666666666666666, "Pronouns_they": 0.3333333333333333, "Pronouns_we": 0.13333333333333333}
+TUR_614614.txt	{"Pronouns_him": 0.08333333333333333, "Pronouns_it": 0.5, "Pronouns_they": 0.3333333333333333, "Pronouns_us": 0.08333333333333333}
+SPA_614988.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_me": 0.1111111111111111, "Pronouns_one": 0.2222222222222222, "Pronouns_they": 0.2222222222222222, "Pronouns_us": 0.1111111111111111}
+CHI_619171.txt	{"Pronouns_one": 0.6, "Pronouns_us": 0.2, "Pronouns_we": 0.2}
+GER_620899.txt	{"Pronouns_it": 0.09090909090909091, "Pronouns_one": 0.09090909090909091, "Pronouns_them": 0.18181818181818182, "Pronouns_they": 0.09090909090909091, "Pronouns_you": 0.45454545454545453, "Pronouns_yourself": 0.09090909090909091}
+SPA_626354.txt	{"Pronouns_it": 0.23529411764705882, "Pronouns_them": 0.058823529411764705, "Pronouns_themselves": 0.058823529411764705, "Pronouns_they": 0.17647058823529413, "Pronouns_us": 0.058823529411764705, "Pronouns_we": 0.35294117647058826, "Pronouns_you": 0.058823529411764705}
+ITA_627548.txt	{"Pronouns_it": 0.5, "Pronouns_one": 0.5}
+TEL_628980.txt	{"Pronouns_he": 0.125, "Pronouns_him": 0.125, "Pronouns_it": 0.125, "Pronouns_they": 0.625}
+ITA_63040.txt	{"Pronouns_it": 0.26666666666666666, "Pronouns_one": 0.2, "Pronouns_they": 0.26666666666666666, "Pronouns_we": 0.26666666666666666}
+TEL_6324.txt	{"Pronouns_i": 0.3, "Pronouns_it": 0.1, "Pronouns_one": 0.2, "Pronouns_them": 0.2, "Pronouns_we": 0.2}
+GER_634386.txt	{"Pronouns_him": 0.02857142857142857, "Pronouns_it": 0.02857142857142857, "Pronouns_they": 0.14285714285714285, "Pronouns_you": 0.8}
+KOR_63578.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_we": 0.6666666666666666}
+FRE_636603.txt	{"Pronouns_her": 0.2, "Pronouns_one": 0.4, "Pronouns_them": 0.2, "Pronouns_they": 0.2}
+HIN_63719.txt	{"Pronouns_i": 0.047619047619047616, "Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.16666666666666666, "Pronouns_ourselves": 0.023809523809523808, "Pronouns_us": 0.047619047619047616, "Pronouns_we": 0.38095238095238093, "Pronouns_you": 0.16666666666666666}
+ITA_638389.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.08333333333333333, "Pronouns_they": 0.16666666666666666, "Pronouns_us": 0.16666666666666666, "Pronouns_we": 0.3333333333333333, "Pronouns_you": 0.08333333333333333}
+CHI_640775.txt	{"Pronouns_it": 0.06896551724137931, "Pronouns_one": 0.10344827586206896, "Pronouns_them": 0.034482758620689655, "Pronouns_we": 0.13793103448275862, "Pronouns_you": 0.6551724137931034}
+GER_642225.txt	{"Pronouns_i": 0.13333333333333333, "Pronouns_it": 0.3333333333333333, "Pronouns_me": 0.2, "Pronouns_myself": 0.06666666666666667, "Pronouns_them": 0.13333333333333333, "Pronouns_you": 0.13333333333333333}
+ARA_644250.txt	{"Pronouns_i": 0.1, "Pronouns_it": 0.3, "Pronouns_mine": 0.1, "Pronouns_they": 0.2, "Pronouns_we": 0.1, "Pronouns_you": 0.2}
+ITA_645530.txt	{"Pronouns_i": 0.058823529411764705, "Pronouns_me": 0.11764705882352941, "Pronouns_them": 0.058823529411764705, "Pronouns_we": 0.35294117647058826, "Pronouns_you": 0.4117647058823529}
+FRE_647135.txt	{"Pronouns_he": 0.17647058823529413, "Pronouns_it": 0.23529411764705882, "Pronouns_they": 0.35294117647058826, "Pronouns_we": 0.17647058823529413, "Pronouns_you": 0.058823529411764705}
+KOR_648642.txt	{"Pronouns_it": 0.041666666666666664, "Pronouns_themselves": 0.041666666666666664, "Pronouns_they": 0.041666666666666664, "Pronouns_us": 0.041666666666666664, "Pronouns_you": 0.8333333333333334}
+ITA_651200.txt	{"Pronouns_he": 0.034482758620689655, "Pronouns_it": 0.41379310344827586, "Pronouns_me": 0.06896551724137931, "Pronouns_one": 0.034482758620689655, "Pronouns_them": 0.06896551724137931, "Pronouns_we": 0.3103448275862069, "Pronouns_you": 0.06896551724137931}
+TUR_657122.txt	{"Pronouns_it": 0.2, "Pronouns_one": 0.2, "Pronouns_them": 0.1, "Pronouns_they": 0.5}
+SPA_658148.txt	{"Pronouns_he": 0.10714285714285714, "Pronouns_it": 0.25, "Pronouns_one": 0.03571428571428571, "Pronouns_them": 0.03571428571428571, "Pronouns_they": 0.10714285714285714, "Pronouns_us": 0.10714285714285714, "Pronouns_we": 0.07142857142857142, "Pronouns_you": 0.21428571428571427, "Pronouns_yourself": 0.07142857142857142}
+SPA_6614.txt	{"Pronouns_i": 0.07142857142857142, "Pronouns_it": 0.5714285714285714, "Pronouns_me": 0.07142857142857142, "Pronouns_them": 0.07142857142857142, "Pronouns_they": 0.14285714285714285, "Pronouns_you": 0.07142857142857142}
+HIN_662208.txt	{"Pronouns_he": 0.21428571428571427, "Pronouns_him": 0.03571428571428571, "Pronouns_i": 0.07142857142857142, "Pronouns_it": 0.32142857142857145, "Pronouns_them": 0.10714285714285714, "Pronouns_they": 0.10714285714285714, "Pronouns_we": 0.10714285714285714, "Pronouns_you": 0.03571428571428571}
+FRE_666651.txt	{"Pronouns_he": 0.125, "Pronouns_her": 0.20833333333333334, "Pronouns_herself": 0.08333333333333333, "Pronouns_it": 0.16666666666666666, "Pronouns_she": 0.20833333333333334, "Pronouns_them": 0.041666666666666664, "Pronouns_themselves": 0.041666666666666664, "Pronouns_they": 0.08333333333333333, "Pronouns_we": 0.041666666666666664}
+HIN_666736.txt	{"Pronouns_he": 0.3333333333333333, "Pronouns_himself": 0.3333333333333333, "Pronouns_they": 0.3333333333333333}
+ITA_668241.txt	{"Pronouns_i": 0.2222222222222222, "Pronouns_it": 0.3333333333333333, "Pronouns_me": 0.1111111111111111, "Pronouns_she": 0.2222222222222222, "Pronouns_we": 0.1111111111111111}
+KOR_669962.txt	{"Pronouns_it": 0.15, "Pronouns_one": 0.05, "Pronouns_they": 0.4, "Pronouns_we": 0.25, "Pronouns_you": 0.15}
+ITA_670986.txt	{"Pronouns_he": 0.13636363636363635, "Pronouns_i": 0.4090909090909091, "Pronouns_it": 0.045454545454545456, "Pronouns_me": 0.09090909090909091, "Pronouns_myself": 0.045454545454545456, "Pronouns_one": 0.09090909090909091, "Pronouns_they": 0.045454545454545456, "Pronouns_us": 0.045454545454545456, "Pronouns_we": 0.09090909090909091}
+ITA_674795.txt	{"Pronouns_it": 0.32, "Pronouns_them": 0.08, "Pronouns_they": 0.12, "Pronouns_we": 0.12, "Pronouns_you": 0.36}
+KOR_675124.txt	{"Pronouns_it": 0.1875, "Pronouns_them": 0.1875, "Pronouns_they": 0.625}
+GER_676296.txt	{"Pronouns_it": 0.25, "Pronouns_one": 0.25, "Pronouns_them": 0.125, "Pronouns_they": 0.125, "Pronouns_you": 0.25}
+ITA_681442.txt	{"Pronouns_he": 0.047619047619047616, "Pronouns_her": 0.047619047619047616, "Pronouns_him": 0.047619047619047616, "Pronouns_it": 0.09523809523809523, "Pronouns_me": 0.047619047619047616, "Pronouns_one": 0.047619047619047616, "Pronouns_she": 0.047619047619047616, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.47619047619047616}
+TUR_683925.txt	{"Pronouns_he": 0.30434782608695654, "Pronouns_her": 0.043478260869565216, "Pronouns_him": 0.13043478260869565, "Pronouns_himself": 0.043478260869565216, "Pronouns_it": 0.30434782608695654, "Pronouns_they": 0.043478260869565216, "Pronouns_you": 0.13043478260869565}
+SPA_685111.txt	{"Pronouns_it": 0.14814814814814814, "Pronouns_one": 0.037037037037037035, "Pronouns_themselves": 0.037037037037037035, "Pronouns_they": 0.2962962962962963, "Pronouns_us": 0.037037037037037035, "Pronouns_we": 0.2222222222222222, "Pronouns_you": 0.2222222222222222}
+HIN_687315.txt	{"Pronouns_he": 0.16666666666666666, "Pronouns_him": 0.125, "Pronouns_himself": 0.041666666666666664, "Pronouns_it": 0.125, "Pronouns_one": 0.20833333333333334, "Pronouns_them": 0.08333333333333333, "Pronouns_themselves": 0.041666666666666664, "Pronouns_they": 0.16666666666666666, "Pronouns_we": 0.041666666666666664}
+ARA_689143.txt	{"Pronouns_he": 0.05555555555555555, "Pronouns_i": 0.3333333333333333, "Pronouns_me": 0.1111111111111111, "Pronouns_one": 0.16666666666666666, "Pronouns_them": 0.1111111111111111, "Pronouns_they": 0.2222222222222222}
+CHI_69177.txt	{"Pronouns_he": 0.05555555555555555, "Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.1111111111111111, "Pronouns_she": 0.05555555555555555, "Pronouns_we": 0.16666666666666666, "Pronouns_you": 0.4444444444444444}
+TUR_695568.txt	{"Pronouns_he": 0.2727272727272727, "Pronouns_themselves": 0.09090909090909091, "Pronouns_they": 0.6363636363636364}
+TUR_696184.txt	{"Pronouns_it": 0.13333333333333333, "Pronouns_me": 0.2, "Pronouns_one": 0.26666666666666666, "Pronouns_them": 0.2, "Pronouns_they": 0.2}
+GER_698315.txt	{"Pronouns_himself": 0.058823529411764705, "Pronouns_it": 0.23529411764705882, "Pronouns_one": 0.058823529411764705, "Pronouns_them": 0.058823529411764705, "Pronouns_they": 0.29411764705882354, "Pronouns_you": 0.29411764705882354}
+FRE_699624.txt	{"Pronouns_it": 0.4117647058823529, "Pronouns_one": 0.058823529411764705, "Pronouns_them": 0.058823529411764705, "Pronouns_themselves": 0.058823529411764705, "Pronouns_they": 0.29411764705882354, "Pronouns_we": 0.11764705882352941}
+TEL_700786.txt	{"Pronouns_i": 0.16666666666666666, "Pronouns_they": 0.6666666666666666, "Pronouns_us": 0.16666666666666666}
+JPN_701449.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_they": 0.8333333333333334}
+FRE_706325.txt	{"Pronouns_he": 0.1, "Pronouns_himself": 0.05, "Pronouns_it": 0.2, "Pronouns_itself": 0.05, "Pronouns_one": 0.45, "Pronouns_them": 0.05, "Pronouns_they": 0.05, "Pronouns_us": 0.05}
+GER_706586.txt	{"Pronouns_he": 0.15384615384615385, "Pronouns_it": 0.23076923076923078, "Pronouns_me": 0.07692307692307693, "Pronouns_one": 0.07692307692307693, "Pronouns_she": 0.15384615384615385, "Pronouns_themselves": 0.07692307692307693, "Pronouns_you": 0.23076923076923078}
+HIN_708119.txt	{"Pronouns_i": 0.08333333333333333, "Pronouns_it": 0.08333333333333333, "Pronouns_them": 0.25, "Pronouns_themselves": 0.08333333333333333, "Pronouns_they": 0.5}
+SPA_709122.txt	{"Pronouns_he": 0.058823529411764705, "Pronouns_me": 0.17647058823529413, "Pronouns_them": 0.058823529411764705, "Pronouns_we": 0.058823529411764705, "Pronouns_you": 0.6470588235294118}
+SPA_709871.txt	{"Pronouns_he": 0.08333333333333333, "Pronouns_her": 0.08333333333333333, "Pronouns_it": 0.3333333333333333, "Pronouns_one": 0.08333333333333333, "Pronouns_she": 0.08333333333333333, "Pronouns_them": 0.08333333333333333, "Pronouns_they": 0.16666666666666666, "Pronouns_we": 0.08333333333333333}
+CHI_711824.txt	{"Pronouns_it": 0.09090909090909091, "Pronouns_them": 0.18181818181818182, "Pronouns_they": 0.7272727272727273}
+JPN_714336.txt	{"Pronouns_it": 0.25, "Pronouns_they": 0.75}
+CHI_718508.txt	{"Pronouns_them": 0.5, "Pronouns_themselves": 0.125, "Pronouns_they": 0.125, "Pronouns_we": 0.25}
+KOR_718921.txt	{"Pronouns_him": 0.03571428571428571, "Pronouns_i": 0.07142857142857142, "Pronouns_it": 0.39285714285714285, "Pronouns_one": 0.03571428571428571, "Pronouns_ourselves": 0.07142857142857142, "Pronouns_them": 0.03571428571428571, "Pronouns_they": 0.07142857142857142, "Pronouns_we": 0.2857142857142857}
+JPN_721116.txt	{"Pronouns_it": 0.10526315789473684, "Pronouns_they": 0.15789473684210525, "Pronouns_you": 0.7368421052631579}
+ITA_724294.txt	{"Pronouns_i": 0.1, "Pronouns_it": 0.4, "Pronouns_one": 0.2, "Pronouns_we": 0.3}
+GER_726729.txt	{"Pronouns_her": 0.14285714285714285, "Pronouns_one": 0.2857142857142857, "Pronouns_oneself": 0.14285714285714285, "Pronouns_they": 0.42857142857142855}
+GER_727446.txt	{"Pronouns_he": 0.1111111111111111, "Pronouns_it": 0.1111111111111111, "Pronouns_one": 0.2222222222222222, "Pronouns_them": 0.2222222222222222, "Pronouns_they": 0.3333333333333333}
+JPN_734384.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_they": 0.8333333333333334}
+CHI_741780.txt	{"Pronouns_it": 0.42857142857142855, "Pronouns_they": 0.2857142857142857, "Pronouns_we": 0.2857142857142857}
+KOR_742166.txt	{"Pronouns_he": 0.0625, "Pronouns_it": 0.0625, "Pronouns_me": 0.1875, "Pronouns_them": 0.0625, "Pronouns_they": 0.625}
+FRE_74452.txt	{"Pronouns_he": 0.038461538461538464, "Pronouns_it": 0.46153846153846156, "Pronouns_one": 0.07692307692307693, "Pronouns_them": 0.07692307692307693, "Pronouns_they": 0.11538461538461539, "Pronouns_us": 0.038461538461538464, "Pronouns_we": 0.07692307692307693, "Pronouns_you": 0.11538461538461539}
+HIN_745272.txt	{"Pronouns_he": 0.07142857142857142, "Pronouns_i": 0.42857142857142855, "Pronouns_it": 0.21428571428571427, "Pronouns_me": 0.14285714285714285, "Pronouns_one": 0.07142857142857142, "Pronouns_them": 0.07142857142857142}
+ARA_746257.txt	{"Pronouns_them": 0.25, "Pronouns_they": 0.75}
+CHI_746338.txt	{"Pronouns_he": 0.13333333333333333, "Pronouns_him": 0.13333333333333333, "Pronouns_it": 0.13333333333333333, "Pronouns_me": 0.06666666666666667, "Pronouns_them": 0.06666666666666667, "Pronouns_themselves": 0.06666666666666667, "Pronouns_they": 0.26666666666666666, "Pronouns_we": 0.13333333333333333}
+ITA_751831.txt	{"Pronouns_he": 0.07142857142857142, "Pronouns_i": 0.07142857142857142, "Pronouns_it": 0.14285714285714285, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.42857142857142855, "Pronouns_we": 0.14285714285714285}
+HIN_753528.txt	{"Pronouns_he": 0.16666666666666666, "Pronouns_it": 0.16666666666666666, "Pronouns_themselves": 0.16666666666666666, "Pronouns_they": 0.5}
+FRE_753920.txt	{"Pronouns_he": 0.047619047619047616, "Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.047619047619047616, "Pronouns_them": 0.09523809523809523, "Pronouns_they": 0.42857142857142855, "Pronouns_we": 0.14285714285714285, "Pronouns_you": 0.09523809523809523}
+ARA_754914.txt	{"Pronouns_her": 0.09090909090909091, "Pronouns_it": 0.18181818181818182, "Pronouns_she": 0.09090909090909091, "Pronouns_them": 0.18181818181818182, "Pronouns_you": 0.45454545454545453}
+ARA_755966.txt	{"Pronouns_i": 0.047619047619047616, "Pronouns_it": 0.047619047619047616, "Pronouns_one": 0.047619047619047616, "Pronouns_them": 0.09523809523809523, "Pronouns_they": 0.7142857142857143, "Pronouns_you": 0.047619047619047616}
+HIN_756896.txt	{"Pronouns_he": 0.08695652173913043, "Pronouns_him": 0.043478260869565216, "Pronouns_i": 0.043478260869565216, "Pronouns_it": 0.13043478260869565, "Pronouns_one": 0.08695652173913043, "Pronouns_them": 0.08695652173913043, "Pronouns_they": 0.30434782608695654, "Pronouns_we": 0.13043478260869565, "Pronouns_you": 0.08695652173913043}
+FRE_756946.txt	{"Pronouns_he": 0.2777777777777778, "Pronouns_it": 0.05555555555555555, "Pronouns_one": 0.05555555555555555, "Pronouns_them": 0.1111111111111111, "Pronouns_themselves": 0.05555555555555555, "Pronouns_they": 0.4444444444444444}
+JPN_757934.txt	{"Pronouns_it": 0.375, "Pronouns_them": 0.125, "Pronouns_they": 0.375, "Pronouns_us": 0.125}
+JPN_760937.txt	{"Pronouns_it": 0.15789473684210525, "Pronouns_me": 0.21052631578947367, "Pronouns_myself": 0.05263157894736842, "Pronouns_one": 0.15789473684210525, "Pronouns_us": 0.10526315789473684, "Pronouns_we": 0.2631578947368421, "Pronouns_you": 0.05263157894736842}
+CHI_761737.txt	{"Pronouns_me": 0.09090909090909091, "Pronouns_we": 0.7272727272727273, "Pronouns_you": 0.18181818181818182}
+FRE_762901.txt	{"Pronouns_it": 0.5454545454545454, "Pronouns_they": 0.45454545454545453}
+TEL_765258.txt	{"Pronouns_he": 0.23076923076923078, "Pronouns_it": 0.07692307692307693, "Pronouns_one": 0.23076923076923078, "Pronouns_they": 0.15384615384615385, "Pronouns_we": 0.3076923076923077}
+TUR_766292.txt	{"Pronouns_i": 0.09523809523809523, "Pronouns_it": 0.09523809523809523, "Pronouns_one": 0.09523809523809523, "Pronouns_them": 0.047619047619047616, "Pronouns_they": 0.2857142857142857, "Pronouns_you": 0.2857142857142857, "Pronouns_yourself": 0.09523809523809523}
+TEL_767091.txt	{"Pronouns_he": 0.038461538461538464, "Pronouns_him": 0.11538461538461539, "Pronouns_it": 0.3076923076923077, "Pronouns_them": 0.19230769230769232, "Pronouns_they": 0.3076923076923077, "Pronouns_we": 0.038461538461538464}
+CHI_777202.txt	{"Pronouns_he": 0.3333333333333333, "Pronouns_it": 0.16666666666666666, "Pronouns_one": 0.08333333333333333, "Pronouns_them": 0.08333333333333333, "Pronouns_they": 0.16666666666666666, "Pronouns_we": 0.08333333333333333, "Pronouns_you": 0.08333333333333333}
+ARA_779231.txt	{"Pronouns_he": 0.3076923076923077, "Pronouns_himself": 0.15384615384615385, "Pronouns_one": 0.07692307692307693, "Pronouns_we": 0.46153846153846156}
+FRE_779862.txt	{"Pronouns_i": 0.05, "Pronouns_it": 0.25, "Pronouns_theirs": 0.05, "Pronouns_they": 0.25, "Pronouns_you": 0.4}
+GER_782773.txt	{"Pronouns_i": 0.17391304347826086, "Pronouns_one": 0.08695652173913043, "Pronouns_them": 0.043478260869565216, "Pronouns_you": 0.6956521739130435}
+SPA_782802.txt	{"Pronouns_it": 0.2222222222222222, "Pronouns_me": 0.1111111111111111, "Pronouns_one": 0.3333333333333333, "Pronouns_you": 0.3333333333333333}
+HIN_785621.txt	{"Pronouns_i": 0.3, "Pronouns_it": 0.2, "Pronouns_them": 0.2, "Pronouns_they": 0.3}
+KOR_785719.txt	{"Pronouns_it": 0.5, "Pronouns_me": 0.07142857142857142, "Pronouns_one": 0.14285714285714285, "Pronouns_them": 0.07142857142857142, "Pronouns_they": 0.07142857142857142, "Pronouns_you": 0.14285714285714285}
+HIN_788664.txt	{"Pronouns_he": 0.06666666666666667, "Pronouns_i": 0.06666666666666667, "Pronouns_it": 0.06666666666666667, "Pronouns_me": 0.06666666666666667, "Pronouns_one": 0.1, "Pronouns_they": 0.03333333333333333, "Pronouns_us": 0.03333333333333333, "Pronouns_we": 0.03333333333333333, "Pronouns_you": 0.5333333333333333}
+ITA_790230.txt	{"Pronouns_he": 0.1111111111111111, "Pronouns_it": 0.1111111111111111, "Pronouns_one": 0.3333333333333333, "Pronouns_them": 0.2222222222222222, "Pronouns_themselves": 0.1111111111111111, "Pronouns_they": 0.1111111111111111}
+KOR_790497.txt	{"Pronouns_he": 0.06666666666666667, "Pronouns_it": 0.2, "Pronouns_me": 0.13333333333333333, "Pronouns_themselves": 0.06666666666666667, "Pronouns_they": 0.06666666666666667, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.4}
+KOR_792169.txt	{"Pronouns_i": 0.07142857142857142, "Pronouns_it": 0.35714285714285715, "Pronouns_me": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.14285714285714285}
+FRE_792314.txt	{"Pronouns_he": 0.041666666666666664, "Pronouns_him": 0.041666666666666664, "Pronouns_it": 0.20833333333333334, "Pronouns_me": 0.041666666666666664, "Pronouns_one": 0.041666666666666664, "Pronouns_them": 0.08333333333333333, "Pronouns_themselves": 0.041666666666666664, "Pronouns_they": 0.4583333333333333, "Pronouns_we": 0.041666666666666664}
+ITA_794752.txt	{"Pronouns_he": 0.625, "Pronouns_him": 0.125, "Pronouns_it": 0.125, "Pronouns_them": 0.125}
+FRE_797943.txt	{"Pronouns_he": 0.07142857142857142, "Pronouns_it": 0.14285714285714285, "Pronouns_them": 0.07142857142857142, "Pronouns_you": 0.6428571428571429, "Pronouns_yourself": 0.07142857142857142}
+ARA_802748.txt	{"Pronouns_it": 0.6666666666666666, "Pronouns_them": 0.16666666666666666, "Pronouns_they": 0.16666666666666666}
+ITA_806999.txt	{"Pronouns_it": 0.2727272727272727, "Pronouns_me": 0.09090909090909091, "Pronouns_one": 0.09090909090909091, "Pronouns_them": 0.2727272727272727, "Pronouns_they": 0.2727272727272727}
+TUR_807780.txt	{"Pronouns_he": 0.15384615384615385, "Pronouns_it": 0.34615384615384615, "Pronouns_them": 0.19230769230769232, "Pronouns_themselves": 0.038461538461538464, "Pronouns_they": 0.19230769230769232, "Pronouns_we": 0.07692307692307693}
+FRE_808693.txt	{"Pronouns_her": 0.043478260869565216, "Pronouns_it": 0.13043478260869565, "Pronouns_me": 0.043478260869565216, "Pronouns_myself": 0.043478260869565216, "Pronouns_one": 0.2608695652173913, "Pronouns_oneself": 0.043478260869565216, "Pronouns_they": 0.043478260869565216, "Pronouns_we": 0.08695652173913043, "Pronouns_you": 0.30434782608695654}
+TUR_809715.txt	{"Pronouns_he": 0.625, "Pronouns_him": 0.125, "Pronouns_it": 0.125, "Pronouns_they": 0.125}
+JPN_810984.txt	{"Pronouns_them": 0.3333333333333333, "Pronouns_they": 0.5, "Pronouns_we": 0.16666666666666666}
+TUR_815021.txt	{"Pronouns_he": 0.5625, "Pronouns_it": 0.1875, "Pronouns_they": 0.0625, "Pronouns_we": 0.0625, "Pronouns_you": 0.125}
+TEL_817301.txt	{"Pronouns_her": 0.38461538461538464, "Pronouns_i": 0.07692307692307693, "Pronouns_it": 0.15384615384615385, "Pronouns_me": 0.07692307692307693, "Pronouns_one": 0.23076923076923078, "Pronouns_us": 0.07692307692307693}
+SPA_817396.txt	{"Pronouns_he": 0.2, "Pronouns_him": 0.06666666666666667, "Pronouns_it": 0.2, "Pronouns_them": 0.06666666666666667, "Pronouns_they": 0.3333333333333333, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.06666666666666667}
+FRE_821471.txt	{"Pronouns_he": 0.14285714285714285, "Pronouns_himself": 0.047619047619047616, "Pronouns_it": 0.2857142857142857, "Pronouns_one": 0.2857142857142857, "Pronouns_you": 0.19047619047619047, "Pronouns_yourself": 0.047619047619047616}
+ARA_823223.txt	{"Pronouns_i": 0.2, "Pronouns_it": 0.24, "Pronouns_one": 0.08, "Pronouns_they": 0.04, "Pronouns_we": 0.04, "Pronouns_you": 0.4}
+KOR_823461.txt	{"Pronouns_he": 0.05263157894736842, "Pronouns_it": 0.2631578947368421, "Pronouns_me": 0.15789473684210525, "Pronouns_she": 0.05263157894736842, "Pronouns_them": 0.10526315789473684, "Pronouns_they": 0.05263157894736842, "Pronouns_we": 0.3157894736842105}
+JPN_823641.txt	{"Pronouns_he": 0.0625, "Pronouns_her": 0.0625, "Pronouns_it": 0.1875, "Pronouns_one": 0.25, "Pronouns_she": 0.0625, "Pronouns_us": 0.0625, "Pronouns_we": 0.3125}
+JPN_825024.txt	{"Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_them": 0.2857142857142857, "Pronouns_we": 0.42857142857142855}
+TUR_829878.txt	{"Pronouns_it": 0.2, "Pronouns_one": 0.2, "Pronouns_them": 0.2, "Pronouns_they": 0.4}
+FRE_835620.txt	{"Pronouns_he": 0.125, "Pronouns_him": 0.125, "Pronouns_it": 0.375, "Pronouns_me": 0.125, "Pronouns_one": 0.125, "Pronouns_them": 0.125}
+GER_84002.txt	{"Pronouns_it": 0.3125, "Pronouns_one": 0.25, "Pronouns_them": 0.125, "Pronouns_they": 0.3125}
+ARA_840632.txt	{"Pronouns_i": 0.25, "Pronouns_it": 0.08333333333333333, "Pronouns_one": 0.16666666666666666, "Pronouns_they": 0.5}
+JPN_843007.txt	{"Pronouns_it": 0.08333333333333333, "Pronouns_mine": 0.08333333333333333, "Pronouns_one": 0.08333333333333333, "Pronouns_us": 0.25, "Pronouns_we": 0.4166666666666667, "Pronouns_you": 0.08333333333333333}
+GER_843242.txt	{"Pronouns_it": 0.2, "Pronouns_them": 0.4666666666666667, "Pronouns_they": 0.26666666666666666, "Pronouns_we": 0.06666666666666667}
+HIN_843939.txt	{"Pronouns_he": 0.14285714285714285, "Pronouns_himself": 0.14285714285714285, "Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_them": 0.2857142857142857, "Pronouns_we": 0.14285714285714285}
+GER_844490.txt	{"Pronouns_he": 0.09523809523809523, "Pronouns_it": 0.38095238095238093, "Pronouns_me": 0.047619047619047616, "Pronouns_them": 0.09523809523809523, "Pronouns_you": 0.38095238095238093}
+KOR_844658.txt	{"Pronouns_it": 0.125, "Pronouns_one": 0.125, "Pronouns_us": 0.125, "Pronouns_we": 0.625}
+SPA_845072.txt	{"Pronouns_he": 0.15384615384615385, "Pronouns_one": 0.15384615384615385, "Pronouns_they": 0.038461538461538464, "Pronouns_we": 0.07692307692307693, "Pronouns_you": 0.5769230769230769}
+FRE_846169.txt	{"Pronouns_he": 0.09090909090909091, "Pronouns_it": 0.09090909090909091, "Pronouns_me": 0.09090909090909091, "Pronouns_one": 0.18181818181818182, "Pronouns_ourselves": 0.09090909090909091, "Pronouns_them": 0.09090909090909091, "Pronouns_they": 0.2727272727272727, "Pronouns_we": 0.09090909090909091}
+CHI_847521.txt	{"Pronouns_it": 0.375, "Pronouns_one": 0.25, "Pronouns_them": 0.125, "Pronouns_they": 0.25}
+CHI_850865.txt	{"Pronouns_he": 0.07692307692307693, "Pronouns_her": 0.038461538461538464, "Pronouns_him": 0.038461538461538464, "Pronouns_it": 0.3076923076923077, "Pronouns_me": 0.038461538461538464, "Pronouns_she": 0.23076923076923078, "Pronouns_them": 0.038461538461538464, "Pronouns_they": 0.15384615384615385, "Pronouns_we": 0.07692307692307693}
+FRE_852654.txt	{"Pronouns_he": 0.3, "Pronouns_her": 0.05, "Pronouns_it": 0.25, "Pronouns_them": 0.05, "Pronouns_we": 0.05, "Pronouns_you": 0.2, "Pronouns_yourself": 0.1}
+FRE_853979.txt	{"Pronouns_it": 0.5, "Pronouns_they": 0.3333333333333333, "Pronouns_you": 0.16666666666666666}
+GER_860162.txt	{"Pronouns_it": 0.375, "Pronouns_one": 0.25, "Pronouns_you": 0.375}
+CHI_861537.txt	{"Pronouns_her": 0.058823529411764705, "Pronouns_it": 0.35294117647058826, "Pronouns_me": 0.058823529411764705, "Pronouns_one": 0.11764705882352941, "Pronouns_them": 0.17647058823529413, "Pronouns_they": 0.23529411764705882}
+CHI_864046.txt	{"Pronouns_it": 0.125, "Pronouns_them": 0.125, "Pronouns_themselves": 0.25, "Pronouns_they": 0.375, "Pronouns_we": 0.125}
+GER_866082.txt	{"Pronouns_it": 0.75, "Pronouns_they": 0.25}
+JPN_8677.txt	{"Pronouns_one": 0.2, "Pronouns_we": 0.8}
+GER_868072.txt	{"Pronouns_he": 0.1111111111111111, "Pronouns_it": 0.2777777777777778, "Pronouns_they": 0.2222222222222222, "Pronouns_you": 0.3888888888888889}
+GER_868191.txt	{"Pronouns_them": 0.125, "Pronouns_we": 0.875}
+ARA_86821.txt	{"Pronouns_i": 0.13043478260869565, "Pronouns_it": 0.391304347826087, "Pronouns_one": 0.043478260869565216, "Pronouns_them": 0.043478260869565216, "Pronouns_they": 0.2608695652173913, "Pronouns_us": 0.043478260869565216, "Pronouns_you": 0.08695652173913043}
+HIN_869752.txt	{"Pronouns_he": 0.4, "Pronouns_him": 0.4, "Pronouns_it": 0.2}
+GER_869956.txt	{"Pronouns_it": 0.5454545454545454, "Pronouns_one": 0.18181818181818182, "Pronouns_you": 0.2727272727272727}
+KOR_873390.txt	{"Pronouns_i": 0.23529411764705882, "Pronouns_one": 0.11764705882352941, "Pronouns_themselves": 0.058823529411764705, "Pronouns_they": 0.17647058823529413, "Pronouns_we": 0.11764705882352941, "Pronouns_you": 0.29411764705882354}
+KOR_874652.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_one": 0.2222222222222222, "Pronouns_themselves": 0.1111111111111111, "Pronouns_they": 0.3333333333333333}
+ITA_880258.txt	{"Pronouns_he": 0.06666666666666667, "Pronouns_it": 0.13333333333333333, "Pronouns_one": 0.2, "Pronouns_them": 0.2, "Pronouns_they": 0.26666666666666666, "Pronouns_you": 0.13333333333333333}
+FRE_88310.txt	{"Pronouns_it": 0.45, "Pronouns_one": 0.05, "Pronouns_them": 0.1, "Pronouns_they": 0.05, "Pronouns_we": 0.35}
+ARA_887662.txt	{"Pronouns_he": 0.3, "Pronouns_it": 0.1, "Pronouns_me": 0.1, "Pronouns_one": 0.2, "Pronouns_we": 0.3}
+FRE_888013.txt	{"Pronouns_it": 0.21739130434782608, "Pronouns_me": 0.17391304347826086, "Pronouns_mine": 0.043478260869565216, "Pronouns_one": 0.043478260869565216, "Pronouns_us": 0.043478260869565216, "Pronouns_we": 0.043478260869565216, "Pronouns_you": 0.43478260869565216}
+TEL_892633.txt	{"Pronouns_it": 0.25, "Pronouns_one": 0.125, "Pronouns_they": 0.125, "Pronouns_us": 0.125, "Pronouns_we": 0.375}
+SPA_895389.txt	{"Pronouns_me": 0.2857142857142857, "Pronouns_one": 0.14285714285714285, "Pronouns_them": 0.42857142857142855, "Pronouns_they": 0.14285714285714285}
+GER_895433.txt	{"Pronouns_i": 0.2, "Pronouns_it": 0.5, "Pronouns_one": 0.2, "Pronouns_they": 0.1}
+TEL_89547.txt	{"Pronouns_i": 0.17391304347826086, "Pronouns_it": 0.21739130434782608, "Pronouns_me": 0.043478260869565216, "Pronouns_one": 0.21739130434782608, "Pronouns_they": 0.08695652173913043, "Pronouns_we": 0.043478260869565216, "Pronouns_you": 0.21739130434782608}
+KOR_89643.txt	{"Pronouns_he": 0.11764705882352941, "Pronouns_himself": 0.058823529411764705, "Pronouns_it": 0.058823529411764705, "Pronouns_myself": 0.058823529411764705, "Pronouns_them": 0.11764705882352941, "Pronouns_they": 0.058823529411764705, "Pronouns_us": 0.17647058823529413, "Pronouns_we": 0.35294117647058826}
+FRE_900216.txt	{"Pronouns_it": 0.16666666666666666, "Pronouns_them": 0.3333333333333333, "Pronouns_they": 0.5}
+CHI_904416.txt	{"Pronouns_he": 0.16666666666666666, "Pronouns_it": 0.16666666666666666, "Pronouns_me": 0.16666666666666666, "Pronouns_one": 0.25, "Pronouns_us": 0.08333333333333333, "Pronouns_we": 0.16666666666666666}
+ARA_904773.txt	{"Pronouns_her": 0.1111111111111111, "Pronouns_it": 0.16666666666666666, "Pronouns_them": 0.16666666666666666, "Pronouns_they": 0.5, "Pronouns_you": 0.05555555555555555}
+TEL_906591.txt	{"Pronouns_it": 0.28, "Pronouns_they": 0.08, "Pronouns_us": 0.16, "Pronouns_we": 0.44, "Pronouns_you": 0.04}
+KOR_90750.txt	{"Pronouns_he": 0.2222222222222222, "Pronouns_it": 0.1111111111111111, "Pronouns_one": 0.2777777777777778, "Pronouns_them": 0.05555555555555555, "Pronouns_you": 0.3333333333333333}
+KOR_908592.txt	{"Pronouns_one": 0.2222222222222222, "Pronouns_they": 0.6666666666666666, "Pronouns_you": 0.1111111111111111}
+JPN_914772.txt	{"Pronouns_it": 0.15384615384615385, "Pronouns_one": 0.038461538461538464, "Pronouns_them": 0.07692307692307693, "Pronouns_they": 0.19230769230769232, "Pronouns_you": 0.5384615384615384}
+TUR_915713.txt	{"Pronouns_i": 0.3125, "Pronouns_it": 0.1875, "Pronouns_me": 0.125, "Pronouns_one": 0.125, "Pronouns_they": 0.125, "Pronouns_we": 0.125}
+KOR_920346.txt	{"Pronouns_it": 0.3, "Pronouns_them": 0.2, "Pronouns_they": 0.4, "Pronouns_you": 0.1}
+TEL_922132.txt	{"Pronouns_he": 0.18181818181818182, "Pronouns_her": 0.18181818181818182, "Pronouns_she": 0.2727272727272727, "Pronouns_they": 0.36363636363636365}
+HIN_924284.txt	{"Pronouns_i": 0.5, "Pronouns_it": 0.14285714285714285, "Pronouns_me": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_them": 0.07142857142857142}
+CHI_924846.txt	{"Pronouns_it": 0.21428571428571427, "Pronouns_one": 0.07142857142857142, "Pronouns_they": 0.07142857142857142, "Pronouns_us": 0.10714285714285714, "Pronouns_we": 0.5357142857142857}
+CHI_925319.txt	{"Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_them": 0.14285714285714285, "Pronouns_they": 0.42857142857142855, "Pronouns_you": 0.14285714285714285}
+ARA_926727.txt	{"Pronouns_it": 0.5, "Pronouns_them": 0.16666666666666666, "Pronouns_us": 0.16666666666666666, "Pronouns_we": 0.16666666666666666}
+TEL_926814.txt	{"Pronouns_he": 0.08, "Pronouns_himself": 0.04, "Pronouns_i": 0.28, "Pronouns_it": 0.16, "Pronouns_one": 0.12, "Pronouns_them": 0.04, "Pronouns_they": 0.08, "Pronouns_us": 0.04, "Pronouns_we": 0.12, "Pronouns_you": 0.04}
+KOR_926959.txt	{"Pronouns_it": 0.6, "Pronouns_one": 0.2, "Pronouns_them": 0.2}
+KOR_92842.txt	{"Pronouns_they": 0.5, "Pronouns_you": 0.5}
+JPN_931391.txt	{"Pronouns_he": 0.03225806451612903, "Pronouns_it": 0.3225806451612903, "Pronouns_me": 0.03225806451612903, "Pronouns_one": 0.03225806451612903, "Pronouns_them": 0.06451612903225806, "Pronouns_they": 0.4838709677419355, "Pronouns_we": 0.03225806451612903}
+TUR_935066.txt	{"Pronouns_them": 0.0625, "Pronouns_they": 0.3125, "Pronouns_you": 0.625}
+HIN_940473.txt	{"Pronouns_it": 0.047619047619047616, "Pronouns_me": 0.09523809523809523, "Pronouns_one": 0.09523809523809523, "Pronouns_them": 0.047619047619047616, "Pronouns_they": 0.19047619047619047, "Pronouns_us": 0.047619047619047616, "Pronouns_we": 0.3333333333333333, "Pronouns_you": 0.09523809523809523, "Pronouns_yourself": 0.047619047619047616}
+TUR_941555.txt	{"Pronouns_it": 0.13333333333333333, "Pronouns_one": 0.3333333333333333, "Pronouns_we": 0.5333333333333333}
+ITA_942203.txt	{"Pronouns_him": 0.06666666666666667, "Pronouns_it": 0.2, "Pronouns_one": 0.13333333333333333, "Pronouns_them": 0.26666666666666666, "Pronouns_they": 0.06666666666666667, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.2}
+SPA_943687.txt	{"Pronouns_it": 0.17647058823529413, "Pronouns_one": 0.058823529411764705, "Pronouns_them": 0.058823529411764705, "Pronouns_they": 0.11764705882352941, "Pronouns_we": 0.5882352941176471}
+GER_947337.txt	{"Pronouns_it": 0.8571428571428571, "Pronouns_they": 0.14285714285714285}
+JPN_94768.txt	{"Pronouns_it": 0.2, "Pronouns_one": 0.6, "Pronouns_we": 0.2}
+GER_950981.txt	{"Pronouns_he": 0.21212121212121213, "Pronouns_it": 0.09090909090909091, "Pronouns_one": 0.24242424242424243, "Pronouns_them": 0.030303030303030304, "Pronouns_they": 0.2727272727272727, "Pronouns_you": 0.15151515151515152}
+JPN_953587.txt	{"Pronouns_it": 0.38461538461538464, "Pronouns_one": 0.07692307692307693, "Pronouns_themselves": 0.15384615384615385, "Pronouns_they": 0.38461538461538464}
+FRE_954755.txt	{"Pronouns_i": 0.16666666666666666, "Pronouns_it": 0.25, "Pronouns_they": 0.3333333333333333, "Pronouns_we": 0.25}
+TEL_957593.txt	{"Pronouns_he": 0.42857142857142855, "Pronouns_him": 0.047619047619047616, "Pronouns_i": 0.047619047619047616, "Pronouns_they": 0.38095238095238093, "Pronouns_we": 0.09523809523809523}
+SPA_959281.txt	{"Pronouns_her": 0.06666666666666667, "Pronouns_herself": 0.03333333333333333, "Pronouns_it": 0.23333333333333334, "Pronouns_one": 0.03333333333333333, "Pronouns_them": 0.13333333333333333, "Pronouns_themselves": 0.03333333333333333, "Pronouns_they": 0.1, "Pronouns_you": 0.36666666666666664}
+TEL_960814.txt	{"Pronouns_itself": 0.25, "Pronouns_themselves": 0.25, "Pronouns_they": 0.5}
+ITA_964277.txt	{"Pronouns_him": 0.0625, "Pronouns_it": 0.3125, "Pronouns_they": 0.1875, "Pronouns_us": 0.0625, "Pronouns_we": 0.375}
+TEL_964484.txt	{"Pronouns_it": 0.47368421052631576, "Pronouns_me": 0.10526315789473684, "Pronouns_one": 0.10526315789473684, "Pronouns_they": 0.15789473684210525, "Pronouns_we": 0.10526315789473684, "Pronouns_you": 0.05263157894736842}
+FRE_96578.txt	{"Pronouns_it": 0.4, "Pronouns_one": 0.2, "Pronouns_they": 0.2, "Pronouns_we": 0.2}
+FRE_967347.txt	{"Pronouns_i": 0.45454545454545453, "Pronouns_it": 0.2727272727272727, "Pronouns_you": 0.18181818181818182, "Pronouns_yourself": 0.09090909090909091}
+ARA_969692.txt	{"Pronouns_i": 0.08333333333333333, "Pronouns_it": 0.3333333333333333, "Pronouns_them": 0.041666666666666664, "Pronouns_they": 0.041666666666666664, "Pronouns_us": 0.041666666666666664, "Pronouns_we": 0.08333333333333333, "Pronouns_you": 0.375}
+TUR_974841.txt	{"Pronouns_he": 0.1, "Pronouns_it": 0.2, "Pronouns_me": 0.2, "Pronouns_they": 0.4, "Pronouns_you": 0.1}
+TEL_976492.txt	{"Pronouns_he": 0.4, "Pronouns_it": 0.13333333333333333, "Pronouns_one": 0.06666666666666667, "Pronouns_they": 0.13333333333333333, "Pronouns_we": 0.26666666666666666}
+KOR_980862.txt	{"Pronouns_her": 0.09090909090909091, "Pronouns_me": 0.18181818181818182, "Pronouns_she": 0.36363636363636365, "Pronouns_themselves": 0.045454545454545456, "Pronouns_they": 0.3181818181818182}
+FRE_981822.txt	{"Pronouns_it": 0.875, "Pronouns_one": 0.125}
+JPN_982630.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_one": 0.08333333333333333, "Pronouns_they": 0.5833333333333334}
+ITA_983312.txt	{"Pronouns_them": 0.4, "Pronouns_they": 0.4, "Pronouns_we": 0.2}
+TEL_984572.txt	{"Pronouns_i": 0.14285714285714285, "Pronouns_it": 0.14285714285714285, "Pronouns_one": 0.14285714285714285, "Pronouns_they": 0.14285714285714285, "Pronouns_we": 0.42857142857142855}
+HIN_98497.txt	{"Pronouns_he": 0.5833333333333334, "Pronouns_himself": 0.08333333333333333, "Pronouns_it": 0.08333333333333333, "Pronouns_me": 0.08333333333333333, "Pronouns_one": 0.08333333333333333, "Pronouns_they": 0.08333333333333333}
+TEL_988605.txt	{"Pronouns_he": 0.16, "Pronouns_him": 0.08, "Pronouns_it": 0.04, "Pronouns_one": 0.08, "Pronouns_them": 0.04, "Pronouns_they": 0.48, "Pronouns_we": 0.04, "Pronouns_you": 0.08}
+CHI_989614.txt	{"Pronouns_it": 0.5, "Pronouns_me": 0.25, "Pronouns_one": 0.25}
+KOR_993732.txt	{"Pronouns_it": 0.375, "Pronouns_them": 0.0625, "Pronouns_they": 0.5625}
+ARA_994390.txt	{"Pronouns_i": 0.045454545454545456, "Pronouns_it": 0.045454545454545456, "Pronouns_one": 0.18181818181818182, "Pronouns_you": 0.7272727272727273}
+ARA_996607.txt	{"Pronouns_i": 0.14285714285714285, "Pronouns_it": 0.5714285714285714, "Pronouns_they": 0.2857142857142857}
+ITA_997465.txt	{"Pronouns_it": 0.3333333333333333, "Pronouns_me": 0.16666666666666666, "Pronouns_them": 0.16666666666666666, "Pronouns_they": 0.16666666666666666, "Pronouns_we": 0.16666666666666666}
+SPA_999638.txt	{"Pronouns_he": 0.13333333333333333, "Pronouns_her": 0.13333333333333333, "Pronouns_him": 0.06666666666666667, "Pronouns_it": 0.13333333333333333, "Pronouns_itself": 0.06666666666666667, "Pronouns_me": 0.06666666666666667, "Pronouns_myself": 0.06666666666666667, "Pronouns_one": 0.06666666666666667, "Pronouns_them": 0.06666666666666667, "Pronouns_us": 0.06666666666666667, "Pronouns_we": 0.13333333333333333}
+FRE_999667.txt	{"Pronouns_it": 0.25, "Pronouns_one": 0.08333333333333333, "Pronouns_they": 0.16666666666666666, "Pronouns_we": 0.4166666666666667, "Pronouns_you": 0.08333333333333333}
