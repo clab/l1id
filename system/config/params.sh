@@ -2,7 +2,7 @@
 
 # Name of the experiment. This also defines which directory the output will be
 # stored in (under ../data/work/).
-export EXPERIMENT_NAME=mean_word_ranks
+export EXPERIMENT_NAME=most_frequent_words
 
 # Which features should be extracted in this experiment.
 # Set to 1 features you want to be included in this experiment.
@@ -15,7 +15,8 @@ export ADD_PRONOUNS_FEATURES=0
 export ADD_REPETITIONS_FEATURES=0
 export ADD_POSITIONAL_TOKEN_FEATURES=0
 export ADD_RATIO_TO_PASSIVE_VERBS_FEATURES=0
-export ADD_MEAN_WORD_RANKS_FEATURES=1
+export ADD_MEAN_WORD_RANKS_FEATURES=0
+export ADD_MOST_FREQUENT_WORDS_FEATURES=1
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
@@ -73,4 +74,9 @@ fi
 if [ "${ADD_MEAN_WORD_RANKS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_mean_word_ranks_features=True "
 fi
+if [ "${ADD_MOST_FREQUENT_WORDS_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_most_frequent_words_features=True "
+  EXTRACT_FEATURES_PARAMS+="--most_frequent_words_num=10 "
+fi
+
 export EXTRACT_FEATURES_PARAMS

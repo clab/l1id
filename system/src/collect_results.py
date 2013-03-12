@@ -162,7 +162,7 @@ def PrintProfiledResults(predictions, metadata, out_file):
   PrintPrecRecMatrix("language, weighted by level", predictions, out_file, 
   	weights=lambda lang,filename: level_dist[metadata.get((lang, filename), ("unk", "unk"))[1]])
   PrintAccMatrix("prompt", prompt_matrix, out_file)
-  accuracy = correct_count/len(predictions)
+  accuracy = correct_count/len(predictions) if predictions else 0.0
   out_file.write("\n\nTotal accuracy:\t{}\n\n".format(accuracy))
 
 def main(argv):
