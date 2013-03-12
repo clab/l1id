@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import collections
+import math
 import sys
 import gflags
 import feature_extractor
@@ -32,7 +33,7 @@ class CharactersNgramsFeatureExtractor(feature_extractor.FeatureExtractor):
     total = float(len(text.split()))
     # Normalize to probabilities
     for feature, count in counts.iteritems():
-      counts[feature] = count/total
+      counts[feature] = math.log(count + 1)
     return counts
 
 if __name__ == '__main__':
