@@ -2,7 +2,7 @@
 
 # Name of the experiment. This also defines which directory the output will be
 # stored in (under ../data/work/).
-export EXPERIMENT_NAME=positional_token_frequencies
+export EXPERIMENT_NAME=ratio_to_passive_verbs
 
 # Which features should be extracted in this experiment.
 # Set to 1 features you want to be included in this experiment.
@@ -13,7 +13,8 @@ export ADD_CFW_TRIGRAMS_FEATURES=0
 export ADD_CHARACTERS_FEATURES=0
 export ADD_PRONOUNS_FEATURES=0
 export ADD_REPETITIONS_FEATURES=0
-export ADD_POSITIONAL_TOKEN_FEATURES=1
+export ADD_POSITIONAL_TOKEN_FEATURES=0
+export ADD_RATIO_TO_PASSIVE_VERBS_FEATURES=1
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
@@ -64,4 +65,9 @@ fi
 if [ "${ADD_POSITIONAL_TOKEN_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_positional_token_frequencies=True "
 fi
+if [ "${ADD_RATIO_TO_PASSIVE_VERBS_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_ratio_to_passive_verbs=True "
+  EXTRACT_FEATURES_PARAMS+="--pos_tagged_dir_passive_verbs=${POS_TAGGED_DIR} "
+fi
+
 export EXTRACT_FEATURES_PARAMS
