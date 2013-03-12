@@ -36,7 +36,7 @@ task pos : pos_tagger
 	  fi
 	done
     
-    echo "--append_pos_bigrams_features=True --pos_tagged_dir=$posdir" > $flags
+    echo "--pos_tagged_dir_ngrams=$posdir --pos_tagged_dir_cfw_bigrams=$posdir --pos_tagged_dir_cfw_trigrams=$posdir --pos_tagged_dir_repetitions=$posdir --pos_tagged_dir_passive_verbs=$posdir" > $flags
 }
 #task pos : pos_tagger < rawdata=out@rawdata > pos_tagged flags {
 #    java -mx300m -classpath $pos_tagger/stanford-postagger-3.1.4.jar edu.stanford.nlp.tagger.maxent.MaxentTagger -model $pos_tagger/models/english-left3words-distsim.tagger -textFile $rawdata > $pos_tagged
@@ -46,12 +46,21 @@ task pos : pos_tagger
 
 # Creates a file with labels and features
 task extraction : scripts 
-	< tokdir=@ meta=@ posflags=(PosFeatures: 0=$emptyflags@rawdata 1=$flags@pos) 
+	< tokdir=@ meta=@ posdirflags=(PosFeatures: 0=$emptyflags@rawdata 1=$flags@pos) fxnwordslist=../system/data/input/function_words.txt
 	> feats lbls out 
-	:: punctflags=(PunctFeatures: 0="" 1="--append_punctuation_features=True") {
+	:: punctflags=(PunctFeatures: 0="" 1="--append_punctuation_features=True")
+	:: posflags=(PosFeatures: 0="" 1="--append_pos_ngrams_features=True --max_ngrams_order=3")
+	:: cxtfxnflags=(CxtFxnFeatures: 0="" 1="--append_cfw_bigrams_features=True --append_cfw_trigrams_features=True") 
+	:: charflags=(CharFeatures: 0="" 1="--append_characters_ngrams_features=True --characters_max_ngrams_order=3")
+	:: pronflags=(PronFeatures: 0="" 1="--append_pronouns_features=True")
+	:: repflags=(RepFeatures: 0="" 1="--append_repetitions_features=True")
+	:: positionflags=(PositionFeatures: 0="" 1="--append_positional_token_frequencies=True") 
+	:: psvratioflags=(PsvRatioFeatures: 0="" 1="--append_ratio_to_passive_verbs=True")
+	:: wordrankflags=(WordRankFeatures: 0="" 1="--append_mean_word_ranks_features=True")
+	:: freqwordflags=(FreqWordFeatures: 0="" 1="--append_most_frequent_words_features=True --most_frequent_words_num=10") {
     
     $scripts/extract_instances.py --input_dir="$tokdir" --metadata_filename="$meta" \
-  --features_filename=$feats --labels_filename=$lbls `cat $posflags` $punctflags
+  --features_filename=$feats --labels_filename=$lbls `cat $posdirflags` $posflags $punctflags $cxtfxnflags $charflags $pronflags $repflags $positionflags --fw_bigrams_file="$fxnwordslist" --fw_trigrams_file="$fxnwordslist"
   
   	paste $lbls $feats > $out
   
@@ -61,11 +70,12 @@ task trainpredict : creg pyutil
     < train_gold_lbls=$lbls@extraction[Section:train] train_feats=$feats@extraction[Section:train]
     < pred_gold_lbls=$lbls@extraction[Section:dev] pred_feats=$feats@extraction[Section:dev] 
     < pred_tokdir=$tokdir[Section:dev] pred_meta=$meta[Section:dev]
-    	> idPreds preds weights results pred_tokdir_path pred_meta_path {
+    	> idPreds preds weights results pred_tokdir_path pred_meta_path
+    	:: reg=(Regularization: l2_1.0="--l2 1.0" l2_10.0="--l2 0.1" l2_0.5="--l2 0.5" l2_5.0="--l2 5.0" l1_1.0="--l1 1.0") {
 
     # Now run Creg and store the results in a file.
   	# If it fails, see the stderr.
-  	$creg/dist/bin/creg -x $train_feats -y $train_gold_lbls --l1 1.0 --tx $pred_feats > predsAndWeights
+  	$creg/dist/bin/creg -x $train_feats -y $train_gold_lbls $reg --tx $pred_feats > predsAndWeights
     
     NTEST=$(wc -l $pred_gold_lbls | cut -d' ' -f1)
     echo $NTEST
@@ -161,6 +171,12 @@ summary fold_acc {
   }
 }
 
+summary dev_acc {
+  of eval > DevAcc {
+	grep 'Total accuracy:' $results | cut -d' ' -f3 > $DevAcc
+  }
+}
+
 #task aggregate < results=@xval[Fold:*] {
 	# TODO: mean, min, max over all folds? modify collect_results.py?
 	# TODO: breakdown by L1?
@@ -168,5 +184,21 @@ summary fold_acc {
 #}
 
 plan DevAllFeats {
-	reach eval via (PosFeatures: 1) * (PunctFeatures: 1)
+	reach eval via (Regularization: l2_1.0) * (PosFeatures: 1) * (PunctFeatures: 1) 
+		* (CxtFxnFeatures: 1) * (CharFeatures: 1) * (PronFeatures: 1) * (RepFeatures: 1) 
+		* (PositionFeatures: 1) * (PsvRatioFeatures: 1) * (WordRankFeatures: 1) 
+		* (FreqWordFeatures: 1)
+}
+plan DevCharsReg {
+	reach eval via (Regularization: l2_1.0 l2_0.1 l2_0.5 l2_5.0) * (PosFeatures: 0) * (PunctFeatures: 0) 
+		* (CxtFxnFeatures: 0) * (CharFeatures: 1) * (PronFeatures: 0) * (RepFeatures: 0) 
+		* (PositionFeatures: 0) * (WordRankFeatures: 0) 
+		* (FreqWordFeatures: 0)
+		 * (PsvRatioFeatures: 0) # apparently unhelpful
+}
+plan DevIncremental {
+	reach eval via (Regularization: l2_1.0) * (PosFeatures: 1) * (PunctFeatures: 1) 
+		* (CxtFxnFeatures: 1) * (CharFeatures: 0) * (PronFeatures: 1) * 
+		* (PositionFeatures: 1)
+		* (FreqWordFeatures: 0) * (PsvRatioFeatures: 0) * (RepFeatures: 0) * (WordRankFeatures: 0)  # apparently unhelpful
 }
