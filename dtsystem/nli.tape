@@ -71,35 +71,22 @@ task trainpredict : creg pyutil
     < pred_gold_lbls=$lbls@extraction[Section:dev] pred_feats=$feats@extraction[Section:dev] 
     < pred_tokdir=$tokdir[Section:dev] pred_meta=$meta[Section:dev]
     	> idPreds preds weights results pred_tokdir_path pred_meta_path
-    	:: reg=(Regularization: l2_1.0="--l2 1.0" l2_10.0="--l2 0.1" l2_0.5="--l2 0.5" l2_5.0="--l2 5.0" l1_1.0="--l1 1.0") {
+    	:: reg=(Regularization: l2_1.0="--l2 1.0" l2_0="--l2 0" l2_0.001="--l2 0.001" l2_0.01="--l2 0.01" l2_0.05="--l2 0.05" l2_0.1="--l2 0.1" l2_0.5="--l2 0.5" l2_5.0="--l2 5.0" l1_1.0="--l1 1.0") {
 
     # Now run Creg and store the results in a file.
   	# If it fails, see the stderr.
-  	$creg/dist/bin/creg -x $train_feats -y $train_gold_lbls $reg --tx $pred_feats > predsAndWeights
-    
-    NTEST=$(wc -l $pred_gold_lbls | cut -d' ' -f1)
-    echo $NTEST
-    
-    # Separate predictions from weights
-    # (avoid using `head` due to ducttape's handling of early termination)
-    $pyutil/dataformats/distribute.py --align no  --stop $NTEST -n 1 predsAndWeights
-    mv batch000 idPreds
+  	$creg/dist/bin/creg -x $train_feats -y $train_gold_lbls --z $weights $reg --tx $pred_feats > idPreds
     cut -f2 idPreds > preds
     cut -f1 $pred_gold_lbls > ids
     cut -f2 $pred_gold_lbls > golds
-    # TODO: implement --align no option in distribute
-    rm batch000.align
-    $pyutil/dataformats/distribute.py --align no --start $NTEST -n 1 predsAndWeights
-    mv batch000 weights
-    rm batch000.align
-    
+
     # TODO: implement IO scheme in chunkeval
     # Run evaluation script (requires B- to be prefixed to every label)
     paste ids <(sed -E 's/^(.+)$/B-\1/' golds) <(sed -E 's/^(.+)$/B-\1/' preds) > idGoldAndPreds
-	$pyutil/chunkeval.py BIO idGoldAndPreds > results
+	$pyutil/chunkeval.py BIO idGoldAndPreds > $results
 	
-	echo $pred_tokdir > pred_tokdir_path
-	echo $pred_meta > pred_meta_path
+	echo $pred_tokdir > $pred_tokdir_path
+	echo $pred_meta > $pred_meta_path
 }
 
 # Aggregate results over all folds and compute summary statistics
@@ -133,28 +120,15 @@ task xval : creg pyutil < partitions=@partition > idPreds preds weights results 
 	
     # Now run Creg and store the results in a file.
   	# If it fails, see the stderr.
-  	$creg/dist/bin/creg -x train.feats -y train.lbls --l1 1.0 --tx test.feats > predsAndWeights
-    
-    NTEST=$(wc -l $partitions/batch$fold | cut -d' ' -f1)
-    echo $NTEST
-    
-    # Separate predictions from weights
-    # (avoid using `head` due to ducttape's handling of early termination)
-    $pyutil/dataformats/distribute.py --align no  --stop $NTEST -n 1 predsAndWeights
-    mv batch000 idPreds
-    cut -f2 idPreds > preds
+  	$creg/dist/bin/creg -x train.feats -y train.lbls --z $weights --l1 1.0 --tx test.feats > idPreds
+    cut -f2 idPreds > $preds
     cut -f1 test.lbls > ids
     cut -f2 test.lbls > golds
-    # TODO: implement --align no option in distribute
-    rm batch000.align
-    $pyutil/dataformats/distribute.py --align no --start $NTEST -n 1 predsAndWeights
-    mv batch000 weights
-    rm batch000.align
     
     # TODO: implement IO scheme in chunkeval
     # Run evaluation script (requires B- to be prefixed to every label)
     paste ids <(sed -E 's/^(.+)$/B-\1/' golds) <(sed -E 's/^(.+)$/B-\1/' preds) > idGoldAndPreds
-	$pyutil/chunkeval.py BIO idGoldAndPreds > results
+	$pyutil/chunkeval.py BIO idGoldAndPreds > $results
 
 }
 
@@ -173,7 +147,7 @@ summary fold_acc {
 
 summary dev_acc {
   of eval > DevAcc {
-	grep 'Total accuracy:' $results | cut -d' ' -f3 > $DevAcc
+	grep 'Total accuracy:' $results | sed -E 's/\t/ /g' | cut -d' ' -f3 > $DevAcc
   }
 }
 
@@ -190,15 +164,21 @@ plan DevAllFeats {
 		* (FreqWordFeatures: 1)
 }
 plan DevCharsReg {
-	reach eval via (Regularization: l2_1.0 l2_0.1 l2_0.5 l2_5.0) * (PosFeatures: 0) * (PunctFeatures: 0) 
+	reach eval via (Regularization: l2_1.0 l2_0 l2_0.001 l2_0.01 l2_0.05 l2_0.1 l2_0.5 l2_5.0) * (PosFeatures: 0) * (PunctFeatures: 0) 
 		* (CxtFxnFeatures: 0) * (CharFeatures: 1) * (PronFeatures: 0) * (RepFeatures: 0) 
 		* (PositionFeatures: 0) * (WordRankFeatures: 0) 
 		* (FreqWordFeatures: 0)
 		 * (PsvRatioFeatures: 0) # apparently unhelpful
 }
 plan DevIncremental {
-	reach eval via (Regularization: l2_1.0) * (PosFeatures: 1) * (PunctFeatures: 1) 
-		* (CxtFxnFeatures: 1) * (CharFeatures: 0) * (PronFeatures: 1) * 
+	reach eval via (Regularization: l2_0) * (PosFeatures: 1) * (PunctFeatures: 1) 
+		* (CxtFxnFeatures: 1) * (CharFeatures: 1) * (PronFeatures: 1) 
 		* (PositionFeatures: 1)
 		* (FreqWordFeatures: 0) * (PsvRatioFeatures: 0) * (RepFeatures: 0) * (WordRankFeatures: 0)  # apparently unhelpful
+}
+plan DevQuick {
+	reach eval via (Regularization: l2_1.0) * (PosFeatures: 0) * (PunctFeatures: 1) 
+		* (CxtFxnFeatures: 0) * (CharFeatures: 0) * (PronFeatures: 0) * (RepFeatures: 0) 
+		* (PositionFeatures: 0) * (WordRankFeatures: 0) * (FreqWordFeatures: 0)
+		 * (PsvRatioFeatures: 0)
 }
