@@ -15,6 +15,7 @@ for ((i = 0; i < NUM_FOLDS; i++)); do
   TRAIN_LABEL=${OUT_FILE_PREFIX}.train.label
   TEST_FEAT=${OUT_FILE_PREFIX}.test.feat
   TEST_LABEL=${OUT_FILE_PREFIX}.test.label
+  OUT_WEIGHTS=${OUT_FILE_PREFIX}.weights
   PREDICTED_LABELS=${OUT_FILE_PREFIX}.test.predicted
   RESULTS=${OUT_FILE_PREFIX}.results.txt
   # Since Creg needs two separate files for Features and Labels, we run
@@ -27,8 +28,8 @@ for ((i = 0; i < NUM_FOLDS; i++)); do
       --out_train_file=${TRAIN_LABEL} --out_test_file=${TEST_LABEL}
   # Now run Creg and store the results in a file.
   # If it fails, see the ${RESULTS} for error messages.
-  ${CREG_BIN} -x ${TRAIN_FEAT} -y ${TRAIN_LABEL} --l1 1.0 --tx ${TEST_FEAT} \
-      --ty ${TEST_LABEL} -D -W > ${PREDICTED_LABELS} 2> ${RESULTS}
+  ${CREG_BIN} -x ${TRAIN_FEAT} -y ${TRAIN_LABEL} --l2 1.0 --tx ${TEST_FEAT} \
+      --ty ${TEST_LABEL} -D --z ${OUT_WEIGHTS} > ${PREDICTED_LABELS} 2> ${RESULTS}
 done
 
 # Now parse the results files from all the folds, calculate the Mean, Min and
