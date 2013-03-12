@@ -22,7 +22,7 @@ gflags.DEFINE_bool("append_document_length", True,
 """
 class DocumentLengthFeatureExtractor(feature_extractor.FeatureExtractor):
   def ExtractFeaturesFromInstance(self, text, language, filename):
-    return math.log(len(text.split())+1)
+    return { "DocLen_" : math.log(len(text.split())+1) }
    
 if __name__ == '__main__':
   print "This module is a library, not supposed to be executed directly."
