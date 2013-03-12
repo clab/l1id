@@ -8,9 +8,7 @@ import gflags
 import feature_extractor
 import re
 import cPickle as pickle
-#import locale
 import math
-#import decimal
 from decimal import *
 
 FLAGS = gflags.FLAGS
