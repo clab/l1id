@@ -81,7 +81,7 @@ if [ "${ADD_MEAN_WORD_RANKS_FEATURES}" == "1" ] ; then
 fi
 if [ "${ADD_MOST_FREQUENT_WORDS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_most_frequent_words_features=True "
-  EXTRACT_FEATURES_PARAMS+="--most_frequent_words_num=10 "
+  EXTRACT_FEATURES_PARAMS+="--most_frequent_words_num=50 "
 fi
 if [ "${ADD_PMI_AVERAGE_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_pmi_average_features=True "
