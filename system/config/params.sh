@@ -17,7 +17,7 @@ export ADD_POSITIONAL_TOKEN_FEATURES=0
 export ADD_RATIO_TO_PASSIVE_VERBS_FEATURES=0
 export ADD_MEAN_WORD_RANKS_FEATURES=0
 export ADD_MOST_FREQUENT_WORDS_FEATURES=1
-export ADD_PMI_FEATURES=0
+export ADD_PMI_AVERAGE_FEATURES=0
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
@@ -82,12 +82,11 @@ if [ "${ADD_MOST_FREQUENT_WORDS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--most_frequent_words_num=10 "
 fi
 if [ "${ADD_PMI_FEATURES}" == "1" ] ; then
-  EXTRACT_FEATURES_PARAMS+="--append_pmi_features=True "
+  EXTRACT_FEATURES_PARAMS+="--append_pmi_average_features=True "
   EXTRACT_FEATURES_PARAMS+="--pmi_unigrams_dump=${PMI_UNIGRAMS_DUMP} "
   EXTRACT_FEATURES_PARAMS+="--pmi_bigrams_dump=${PMI_BIGRAMS_DUMP} "
   EXTRACT_FEATURES_PARAMS+="--pmi_unigrams_number=1024908267229 "
   EXTRACT_FEATURES_PARAMS+="--pmi_bigrams_number=910868505431 "
-  EXTRACT_FEATURES_PARAMS+="--pmi_threshold=0 "
 fi
 
 export EXTRACT_FEATURES_PARAMS
