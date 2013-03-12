@@ -5,6 +5,7 @@ Punctuation marks are excluded.
 """
 
 import collections
+import math
 import sys
 import gflags
 import feature_extractor
@@ -29,7 +30,7 @@ class MostFrequentWordsFeatureExtractor(feature_extractor.FeatureExtractor):
       total += 1
       if word in counts:
         counts[word] += 1
-    return {"MostFreq_"+word: count/total for (word, count) in counts.items()}
+    return {"MostFreq_"+word: math.log(count + 1) for (word, count) in counts.items()}
 
 if __name__ == '__main__':
   print "This module is a library, not supposed to be executed directly."

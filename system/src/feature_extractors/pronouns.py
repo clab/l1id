@@ -7,6 +7,7 @@ normalized frequency of its occurrences in the chunk.
 """
 
 import collections
+import math
 import sys
 import gflags
 import feature_extractor
@@ -57,7 +58,7 @@ class PronounsFeatureExtractor(feature_extractor.FeatureExtractor):
     total = float(total)
     # Normalize to probabilities
     for feature, count in counts.iteritems():
-      counts[feature] = count/total
+      counts[feature] = math.log(count + 1)
     return counts
    
 if __name__ == '__main__':

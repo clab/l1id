@@ -2,22 +2,23 @@
 
 # Name of the experiment. This also defines which directory the output will be
 # stored in (under ../data/work/).
-export EXPERIMENT_NAME=most_frequent_words
+export EXPERIMENT_NAME=all_features
 
 # Which features should be extracted in this experiment.
 # Set to 1 features you want to be included in this experiment.
-export ADD_POS_FEATURES=0
-export ADD_PUNCTUATION_FEATURES=0
-export ADD_CFW_BIGRAMS_FEATURES=0
-export ADD_CFW_TRIGRAMS_FEATURES=0
-export ADD_CHARACTERS_FEATURES=0
-export ADD_PRONOUNS_FEATURES=0
-export ADD_REPETITIONS_FEATURES=0
-export ADD_POSITIONAL_TOKEN_FEATURES=0
-export ADD_RATIO_TO_PASSIVE_VERBS_FEATURES=0
-export ADD_MEAN_WORD_RANKS_FEATURES=0
+export ADD_POS_FEATURES=1
+export ADD_PUNCTUATION_FEATURES=1
+export ADD_CFW_BIGRAMS_FEATURES=1
+export ADD_CFW_TRIGRAMS_FEATURES=1
+export ADD_CHARACTERS_FEATURES=1
+export ADD_PRONOUNS_FEATURES=1
+export ADD_REPETITIONS_FEATURES=1
+export ADD_POSITIONAL_TOKEN_FEATURES=1
+export ADD_RATIO_TO_PASSIVE_VERBS_FEATURES=1
+export ADD_MEAN_WORD_RANKS_FEATURES=1
 export ADD_MOST_FREQUENT_WORDS_FEATURES=1
 export ADD_PMI_AVERAGE_FEATURES=0
+export ADD_DOCUMENT_LENGTH_FEATURES=1
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
@@ -87,6 +88,9 @@ if [ "${ADD_PMI_AVERAGE_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--pmi_bigrams_dump=${PMI_BIGRAMS_DUMP} "
   EXTRACT_FEATURES_PARAMS+="--pmi_unigrams_number=1024908267229 "
   EXTRACT_FEATURES_PARAMS+="--pmi_bigrams_number=910868505431 "
+fi
+if [ "${ADD_DOCUMENT_LENGTH_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_document_length=True "
 fi
 
 export EXTRACT_FEATURES_PARAMS
