@@ -1,2 +1,4 @@
 Untar the nli-2013-training.tar.bz2 here:
   tar xvjf nli-2013-training.tar.bz2
+
+For the average PMI feature, copy the pickle google 1-grams and 2-grams files here
