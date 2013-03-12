@@ -81,7 +81,7 @@ if [ "${ADD_MOST_FREQUENT_WORDS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_most_frequent_words_features=True "
   EXTRACT_FEATURES_PARAMS+="--most_frequent_words_num=10 "
 fi
-if [ "${ADD_PMI_FEATURES}" == "1" ] ; then
+if [ "${ADD_PMI_AVERAGE_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_pmi_average_features=True "
   EXTRACT_FEATURES_PARAMS+="--pmi_unigrams_dump=${PMI_UNIGRAMS_DUMP} "
   EXTRACT_FEATURES_PARAMS+="--pmi_bigrams_dump=${PMI_BIGRAMS_DUMP} "
