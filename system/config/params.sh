@@ -20,7 +20,7 @@ export ADD_MOST_FREQUENT_WORDS_FEATURES=1
 export ADD_PMI_AVERAGE_FEATURES=0
 export ADD_DOCUMENT_LENGTH_FEATURES=1
 export ADD_COHESIVE_MARKERS_FEATURES=1
-export ADD_MISSPELLINGS_FEATURES=0
+export ADD_MISSPELLINGS_FEATURES=1
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
@@ -56,6 +56,7 @@ if [ "${ADD_CFW_BIGRAMS_FEATURES}" == "1" ] ; then
 fi
 if [ "${ADD_MISSPELLINGS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--misspelling_features=True "
+  EXTRACT_FEATURES_PARAMS+="--misspelling_extractor=${BIN_DIR}/spell-diff.pl "
 fi
 if [ "${ADD_CFW_TRIGRAMS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_cfw_trigrams_features=True "

@@ -25,9 +25,10 @@ class MisspellingsFeatureExtractor(feature_extractor.FeatureExtractor):
     result = {}
     # /home/cdyer/l1id/system/data/input/NLI_2013_Training_Data/tokenized/1054261.txt
     corrected = re.sub(r'/tokenized/', r'/corrected/', filename)
-    for feat in subprocess.check_output([self.cdpath,filename,corrected]).rstrip().split('\n'):
-      (f, val) = feat.split('\t')
-      result[f] = float(val)
+    for feat in subprocess.check_output([self.cdpath,filename,corrected]).split('\n'):
+      if len(feat) > 4:
+        (f, val) = feat.split('\t')
+        result[f] = float(val)
     return result
 
 if __name__ == '__main__':
