@@ -5,15 +5,17 @@ import math
 import sys
 import gflags
 import feature_extractor
+import re
 import os 
+import subprocess
 
 FLAGS = gflags.FLAGS
 
 gflags.DEFINE_bool("misspelling_features", False,
     "Use misspelled words as a source of features")
 
-gflags.DEFINE_string("corrected_document_path", "../corrected",
-   "Path to corrected documents")
+gflags.DEFINE_string("misspelling_extractor", "",
+   "Path to auxilliary feature extractor")
 
 class MisspellingsFeatureExtractor(feature_extractor.FeatureExtractor):
   def __init__(self, cdpath):
@@ -21,7 +23,11 @@ class MisspellingsFeatureExtractor(feature_extractor.FeatureExtractor):
 
   def ExtractFeaturesFromInstance(self, text, language, filename):
     result = {}
-    sys.stderr.write("Filename: %s\n" % filename)
+    # /home/cdyer/l1id/system/data/input/NLI_2013_Training_Data/tokenized/1054261.txt
+    corrected = re.sub(r'/tokenized/', r'/corrected/', filename)
+    for feat in subprocess.check_output([self.cdpath,filename,corrected]).rstrip().split('\n'):
+      (f, val) = feat.split('\t')
+      result[f] = float(val)
     return result
 
 if __name__ == '__main__':
@@ -31,5 +37,5 @@ if __name__ == '__main__':
 def REGISTER_FEATURE_EXTRACTOR():
   if not FLAGS.misspelling_features:
     return None
-  return MisspellingsFeatureExtractor(FLAGS.corrected_document_path)
+  return MisspellingsFeatureExtractor(FLAGS.misspelling_extractor)
 
