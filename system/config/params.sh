@@ -20,6 +20,7 @@ export ADD_MOST_FREQUENT_WORDS_FEATURES=1
 export ADD_PMI_AVERAGE_FEATURES=0
 export ADD_DOCUMENT_LENGTH_FEATURES=1
 export ADD_COHESIVE_MARKERS_FEATURES=1
+export ADD_MISSPELLINGS_FEATURES=1
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
@@ -53,6 +54,10 @@ if [ "${ADD_CFW_BIGRAMS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--pos_tagged_dir_cfw_bigrams=${POS_TAGGED_DIR} "
   EXTRACT_FEATURES_PARAMS+="--fw_bigrams_file=${FW_LIST_FILE} "
 fi
+if [ "${ADD_MISSPELLINGS_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--misspelling_features=True "
+  EXTRACT_FEATURES_PARAMS+="--misspelling_extractor=${BIN_DIR}/spell-diff.pl "
+fi
 if [ "${ADD_CFW_TRIGRAMS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_cfw_trigrams_features=True "
   EXTRACT_FEATURES_PARAMS+="--pos_tagged_dir_cfw_trigrams=${POS_TAGGED_DIR} "
@@ -81,7 +86,7 @@ if [ "${ADD_MEAN_WORD_RANKS_FEATURES}" == "1" ] ; then
 fi
 if [ "${ADD_MOST_FREQUENT_WORDS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_most_frequent_words_features=True "
-  EXTRACT_FEATURES_PARAMS+="--most_frequent_words_num=10 "
+  EXTRACT_FEATURES_PARAMS+="--most_frequent_words_num=50 "
 fi
 if [ "${ADD_PMI_AVERAGE_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_pmi_average_features=True "
