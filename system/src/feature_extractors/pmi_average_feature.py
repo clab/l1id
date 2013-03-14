@@ -41,11 +41,11 @@ class PMIAverageFeatureExtractor(feature_extractor.FeatureExtractor):
   def ExtractFeaturesFromInstance(self, text, language, filename):
     counts = collections.defaultdict(int)
     total = 1
+    pmi_sum=0
     text= re.split('\n', text)
     for line in text:
       line=re.split('\s', line)
       prev=""
-      pmi_sum=0
       pmi=0
       for token in line:
         if prev!="":
