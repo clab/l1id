@@ -2,28 +2,30 @@
 
 # Name of the experiment. This also defines which directory the output will be
 # stored in (under ../data/work/).
-export EXPERIMENT_NAME=all_features
+export EXPERIMENT_NAME=restored_fw
 
 # Which features should be extracted in this experiment.
 # Set to 1 features you want to be included in this experiment.
-export ADD_POS_FEATURES=1
-export ADD_PUNCTUATION_FEATURES=1
-export ADD_CFW_BIGRAMS_FEATURES=1
-export ADD_CFW_TRIGRAMS_FEATURES=1
-export ADD_CHARACTERS_FEATURES=1
-export ADD_PRONOUNS_FEATURES=1
-export ADD_REPETITIONS_FEATURES=1
-export ADD_POSITIONAL_TOKEN_FEATURES=1
-export ADD_RATIO_TO_PASSIVE_VERBS_FEATURES=1
-export ADD_MEAN_WORD_RANKS_FEATURES=1
-export ADD_MOST_FREQUENT_WORDS_FEATURES=1
+export ADD_POS_FEATURES=0
+export ADD_PUNCTUATION_FEATURES=0
+export ADD_CFW_BIGRAMS_FEATURES=0
+export ADD_CFW_TRIGRAMS_FEATURES=0
+export ADD_CHARACTERS_FEATURES=0
+export ADD_PRONOUNS_FEATURES=0
+export ADD_REPETITIONS_FEATURES=0
+export ADD_POSITIONAL_TOKEN_FEATURES=0
+export ADD_RATIO_TO_PASSIVE_VERBS_FEATURES=0
+export ADD_MEAN_WORD_RANKS_FEATURES=0
+export ADD_MOST_FREQUENT_WORDS_FEATURES=0
 export ADD_PMI_AVERAGE_FEATURES=0
-export ADD_DOCUMENT_LENGTH_FEATURES=1
-export ADD_COHESIVE_MARKERS_FEATURES=1
-export ADD_MISSPELLINGS_FEATURES=1
+export ADD_DOCUMENT_LENGTH_FEATURES=0
+export ADD_COHESIVE_MARKERS_FEATURES=0
+export ADD_MISSPELLINGS_FEATURES=0
+export ADD_RESTORED_FW_FEATURES=1
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
+export CORRECTED_DIR=${INPUT_DIR}/NLI_2013_Training_Data/corrected
 export TRAINING_INPUT_INDEX_FILE=${INPUT_DIR}/NLI_2013_Training_Data/index-training.csv
 export EXPERIMENT_DIR=${WORK_DIR}/${EXPERIMENT_NAME}
 export FW_LIST_FILE=${INPUT_DIR}/function_words.txt
@@ -36,6 +38,7 @@ export TURBO_TAGGED_DIR=${EXPERIMENT_DIR}/turbo_tagged
 export TRAIN_FEATURES=${EXPERIMENT_DIR}/train.feat
 export TRAIN_LABELS=${EXPERIMENT_DIR}/train.labels
 export CROSS_VALIDATION_RESULTS=${EXPERIMENT_DIR}/train.results.txt
+export RESTORED_FW_DIR=${EXPERIMENT_DIR}/restored_function_words
 
 # The lines below create the command line parameters for the extract_instances.py
 # based on the parameters above.
@@ -57,6 +60,11 @@ fi
 if [ "${ADD_MISSPELLINGS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--misspelling_features=True "
   EXTRACT_FEATURES_PARAMS+="--misspelling_extractor=${BIN_DIR}/spell-diff.pl "
+fi
+if [ "${ADD_RESTORED_FW_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_restored_function_words_features=True "
+  EXTRACT_FEATURES_PARAMS+="--corrected_dir=${CORRECTED_DIR} "
+  EXTRACT_FEATURES_PARAMS+="--restored_function_words_dir=${RESTORED_FW_DIR} "
 fi
 if [ "${ADD_CFW_TRIGRAMS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_cfw_trigrams_features=True "
