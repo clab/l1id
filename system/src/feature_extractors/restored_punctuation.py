@@ -1,5 +1,5 @@
 #!/usr/bin/python
-""" Counts of restored function words 
+""" Counts of restored punctuation marks 
 (only prepositions and definite/indefinite articles) 
 1) train LM on corrected training data 
 2) create a file with function words 
@@ -16,28 +16,16 @@ import gflags
 import feature_extractor
 import itertools
 import os
-import re
+import re 
 
 FLAGS = gflags.FLAGS
 
-gflags.DEFINE_bool("append_restored_function_words_features", False,
-    "Append counts of restored function words.")
+gflags.DEFINE_bool("append_restored_punctuation_features", False,
+    "Append counts of restored punctuation marks.")
 
-FUNCTION_WORDS =  ["of","in","for","to","with","on","if","as","than","by",
-"because","about","from","at","like","without","after","so","while","since",
-"into","during","through","over","before","between","although","around",
-"though","whether","towards","behind","among","above","under","out","until",
-"whereas","within","against","unless","besides","upon","throughout","once",
-"per","along","despite","across","till","toward","except","beyond","up",
-"outside","inside","near","unlike","beside","off","onto","amongst","beneath",
-"versus","whilst","thoughout","albeit","such","regarding","notwithstanding",
-"here","where","away","vs.","e.g.","i.e.","respecting","insofar","concerning",
-"this","that","these","those","what","where","which","who","whose","and","but",
-"or","either","neither","can","may","will","shall","could","might","would",
-"should","must"]
+FUNCTION_WORDS = [",", "'", "/", '"', "?", "!", ".", ":", ";", "-","(", ")", "[", "]"]
 
-
-class RestoredFunctionWordsFeatureExtractor(feature_extractor.FeatureExtractor):
+class RestoredPunctuationFeatureExtractor(feature_extractor.FeatureExtractor):
   def ExtractFeaturesFromInstance(self, text, language, filename):
     counts = collections.defaultdict(int)
 
@@ -46,7 +34,7 @@ class RestoredFunctionWordsFeatureExtractor(feature_extractor.FeatureExtractor):
     matches = collections.defaultdict(int)
 
     corrected_filename = re.sub(r'/tokenized/', r'/corrected/', filename)
-    predicted_filename = re.sub(r'/tokenized/', r'/restored_function_words/', filename)
+    predicted_filename = re.sub(r'/tokenized/', r'/restored_punctuation/', filename)
 
     for correct, predicted in itertools.izip(open(corrected_filename), open(predicted_filename)):
       correct_tokens = correct.split()
@@ -97,7 +85,7 @@ if __name__ == '__main__':
   sys.exit(1)
 
 def REGISTER_FEATURE_EXTRACTOR():
-  if not FLAGS.append_restored_function_words_features:
+  if not FLAGS.append_restored_punctuation_features:
     return None
-  return RestoredFunctionWordsFeatureExtractor()
+  return RestoredPunctuationFeatureExtractor()
 

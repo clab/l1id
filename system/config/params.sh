@@ -2,7 +2,7 @@
 
 # Name of the experiment. This also defines which directory the output will be
 # stored in (under ../data/work/).
-export EXPERIMENT_NAME=restored_fw
+export EXPERIMENT_NAME=restored_tokens
 
 # Which features should be extracted in this experiment.
 # Set to 1 features you want to be included in this experiment.
@@ -22,6 +22,7 @@ export ADD_DOCUMENT_LENGTH_FEATURES=0
 export ADD_COHESIVE_MARKERS_FEATURES=0
 export ADD_MISSPELLINGS_FEATURES=0
 export ADD_RESTORED_FW_FEATURES=1
+export ADD_RESTORED_PUNCTUATION_FEATURES=1
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
@@ -38,7 +39,6 @@ export TURBO_TAGGED_DIR=${EXPERIMENT_DIR}/turbo_tagged
 export TRAIN_FEATURES=${EXPERIMENT_DIR}/train.feat
 export TRAIN_LABELS=${EXPERIMENT_DIR}/train.labels
 export CROSS_VALIDATION_RESULTS=${EXPERIMENT_DIR}/train.results.txt
-export RESTORED_FW_DIR=${EXPERIMENT_DIR}/restored_function_words
 
 # The lines below create the command line parameters for the extract_instances.py
 # based on the parameters above.
@@ -63,8 +63,9 @@ if [ "${ADD_MISSPELLINGS_FEATURES}" == "1" ] ; then
 fi
 if [ "${ADD_RESTORED_FW_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_restored_function_words_features=True "
-  EXTRACT_FEATURES_PARAMS+="--corrected_dir=${CORRECTED_DIR} "
-  EXTRACT_FEATURES_PARAMS+="--restored_function_words_dir=${RESTORED_FW_DIR} "
+fi
+if [ "${ADD_RESTORED_PUNCTUATION_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_restored_punctuation_features=True "
 fi
 if [ "${ADD_CFW_TRIGRAMS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_cfw_trigrams_features=True "
