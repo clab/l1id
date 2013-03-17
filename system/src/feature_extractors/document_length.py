@@ -21,7 +21,7 @@ gflags.DEFINE_bool("append_document_length", True,
 """Counts all words in a document
 """
 class DocumentLengthFeatureExtractor(feature_extractor.FeatureExtractor):
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     return { "DocLen_" : math.log(len(text.split())+1) }
    
 if __name__ == '__main__':
