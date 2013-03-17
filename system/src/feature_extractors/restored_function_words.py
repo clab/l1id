@@ -38,7 +38,7 @@ FUNCTION_WORDS =  ["of","in","for","to","with","on","if","as","than","by",
 
 
 class RestoredFunctionWordsFeatureExtractor(feature_extractor.FeatureExtractor):
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     counts = collections.defaultdict(int)
 
     insertions = collections.defaultdict(int)
