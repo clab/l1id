@@ -26,7 +26,7 @@ gflags.DEFINE_bool("append_restored_punctuation_features", False,
 FUNCTION_WORDS = [",", "'", "/", '"', "?", "!", ".", ":", ";", "-","(", ")", "[", "]"]
 
 class RestoredPunctuationFeatureExtractor(feature_extractor.FeatureExtractor):
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     counts = collections.defaultdict(int)
 
     insertions = collections.defaultdict(int)
