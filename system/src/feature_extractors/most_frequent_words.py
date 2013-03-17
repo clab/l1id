@@ -19,7 +19,7 @@ gflags.DEFINE_integer("most_frequent_words_num", 10,
     "Number of most frequent words.")
 
 class MostFrequentWordsFeatureExtractor(feature_extractor.FeatureExtractor):
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     counts = {}
     total = 0.0
 
