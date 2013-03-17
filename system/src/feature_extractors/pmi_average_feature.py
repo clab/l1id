@@ -38,7 +38,7 @@ class PMIAverageFeatureExtractor(feature_extractor.FeatureExtractor):
             self.pmi_bigrams_dumps[gm2_file]=self.LoadPKFile(pmi_bigrams_dump+gm2_file)
     getcontext().prec = 28
   
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     counts = collections.defaultdict(int)
     total = 1
     pmi_sum=0
