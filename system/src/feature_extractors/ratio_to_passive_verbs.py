@@ -27,7 +27,7 @@ class RatioToPassiveVerbsFeatureExtractor(feature_extractor.FeatureExtractor):
   def __init__(self, pos_tagged_dir):
     self.pos_tagged_dir = pos_tagged_dir
 
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     verbs_count = 0.0
     passive_verbs_count = 0.0
     pos_filename = os.path.join(self.pos_tagged_dir, os.path.basename(filename))
