@@ -112,10 +112,10 @@ if [ "${ADD_MOST_FREQUENT_WORDS_FEATURES}" == "1" ] ; then
 fi
 #if [ "${ADD_PMI_AVERAGE_FEATURES}" == "1" ] ; then
 #  EXTRACT_FEATURES_PARAMS+="--append_pmi_average_features=True "
-#  EXTRACT_FEATURES_PARAMS+="--pmi_unigrams_dump=${PMI_UNIGRAMS_DUMP} "
-#  EXTRACT_FEATURES_PARAMS+="--pmi_bigrams_dump=${PMI_BIGRAMS_DUMP} "
-#  EXTRACT_FEATURES_PARAMS+="--pmi_unigrams_number=1024908267229 "
-#  EXTRACT_FEATURES_PARAMS+="--pmi_bigrams_number=910868505431 "
+#  EXTRACT_FEATURES_PARAMS+="--pmi_average_unigrams_dump=${PMI_UNIGRAMS_DUMP} "
+#  EXTRACT_FEATURES_PARAMS+="--pmi_average_bigrams_dump=${PMI_BIGRAMS_DUMP} "
+#  EXTRACT_FEATURES_PARAMS+="--pmi_average_unigrams_number=1024908267229 "
+#  EXTRACT_FEATURES_PARAMS+="--pmi_average_bigrams_number=910868505431 "
 #fi
 if [ "${ADD_PMI_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_pmi_features=True "
