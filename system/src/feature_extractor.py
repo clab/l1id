@@ -11,7 +11,8 @@ import os
 """
 
 class FeatureExtractor:
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  #def ExtractFeaturesFromInstance(self, text, language, filename):
+   def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     """Extracts features from a single input file.
        Params:
          text   - Text of the file.
