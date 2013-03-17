@@ -58,7 +58,7 @@ COHESIVE_MARKERS = ["as for",
 
 
 class CohesiveMarkersFeatureExtractor(feature_extractor.FeatureExtractor):
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     counts = collections.defaultdict(int)
     normalized_text = ' '.join(text.lower().split())
     for marker in COHESIVE_MARKERS:
