@@ -37,12 +37,16 @@ class InstanceExtractor:
     """Processing all .txt files in a directory."""
     nProcessed = 0
     for filename in sorted(glob.iglob(os.path.join(input_dir, "*.txt"))):
-      lang = self.file_to_lang_dict[os.path.basename(filename)]
-      self._ProcessSingleFile(filename, lang)
+      #lang = self.file_to_lang_dict[os.path.basename(filename)]
+      #self._ProcessSingleFile(filename, lang)
+      lang = self.file_to_lang_dict[os.path.basename(filename)][0]
+      prompt = self.file_to_lang_dict[os.path.basename(filename)][1]
+      self._ProcessSingleFile(filename,lang,prompt)
       nProcessed += 1
     assert nProcessed>0, 'No .txt files found in {}'.format(input_dir)
 
-  def _ProcessSingleFile(self, filename, language):
+  #def _ProcessSingleFile(self, filename, language):
+  def _ProcessSingleFile(self, filename, language,prompt):
     """Extracts features from an input file using feature_extractors."""
     base_filename = os.path.basename(filename)
     instance = "_".join( (language, base_filename) )
@@ -51,7 +55,8 @@ class InstanceExtractor:
     feature_dict = {}
     for extractor in self.feature_extractors:
       feature_dict.update(
-          extractor.ExtractFeaturesFromInstance(text, language, filename))  
+          #extractor.ExtractFeaturesFromInstance(text, language, filename))
+          extractor.ExtractFeaturesFromInstance(text, prompt, language, filename))
     self._WriteFeatures(instance, feature_dict)
     self._WriteLabel(instance, language)
 
@@ -70,7 +75,8 @@ def LoadMetadata(metadata_file):
   for line in metadata_file:
     # 278.txt,P6,GER,medium
     filename, prompt, lang, level = line.strip().split(",")
-    file_to_lang[filename] = lang
+    #file_to_lang[filename] = lang
+    file_to_lang[filename] = [lang,prompt]
   return file_to_lang
 
 def main(argv):
