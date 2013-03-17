@@ -24,7 +24,7 @@ class ContextualFunctionWordsFeatureExtractor(feature_extractor.FeatureExtractor
     self.function_words = open(function_words_path).readlines()
     self.function_words = map(lambda s: s.strip(), self.function_words)
 
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     # Find a corresponding tagged file
     pos_filename = os.path.join(self.fw_pos_tagged_dir, os.path.basename(filename))
     pos_tags=open(pos_filename).readlines()
