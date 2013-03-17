@@ -22,7 +22,7 @@ VERY_HIGH_RANK = 6000
 for known words is 5000."""
 
 class MeanWordRanksFeatureExtractor(feature_extractor.FeatureExtractor):
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     count = 0
     rank_sum = 0
     for word in text.split():

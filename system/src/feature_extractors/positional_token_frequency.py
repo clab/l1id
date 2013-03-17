@@ -34,7 +34,7 @@ POSITION_NAMES = {
 """Names of the various positions of the sentence, final period excluded."""
 
 class PositionalTokenFrequenciesFeatureExtractor(feature_extractor.FeatureExtractor):
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     counts = collections.defaultdict(int)
     total = 0
     for line in text.split("\n"):

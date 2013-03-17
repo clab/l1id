@@ -21,7 +21,7 @@ class MisspellingsFeatureExtractor(feature_extractor.FeatureExtractor):
   def __init__(self, cdpath):
     self.cdpath = cdpath
 
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     result = {}
     # /home/cdyer/l1id/system/data/input/NLI_2013_Training_Data/tokenized/1054261.txt
     corrected = re.sub(r'/tokenized/', r'/corrected/', filename)

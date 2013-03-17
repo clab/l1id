@@ -18,7 +18,7 @@ class PosBigramsFeatureExtractor(feature_extractor.FeatureExtractor):
   def __init__(self, pos_tagged_dir):
     self.pos_tagged_dir = pos_tagged_dir
 
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     # Find a corresponding tagged file
     pos_filename = os.path.join(self.pos_tagged_dir, os.path.basename(filename))
     counts = collections.defaultdict(int)

@@ -13,21 +13,22 @@ from decimal import *
 
 FLAGS = gflags.FLAGS
 
-gflags.DEFINE_bool("append_pmi_average_features", False,
+gflags.DEFINE_bool("append_pmi_features", False,
     "Append pmi average")
-gflags.DEFINE_string("pmi_average_unigrams_dump", "",
+gflags.DEFINE_string("pmi_unigrams_dump", "",
     "PMI google 1-grams dump file")
-gflags.DEFINE_string("pmi_average_bigrams_dump", "",
+gflags.DEFINE_string("pmi_bigrams_dump", "",
     "PMI google 2-grams dump files root directory")
-gflags.DEFINE_integer("pmi_average_unigrams_number", 1,
+gflags.DEFINE_integer("pmi_unigrams_number", 1,
     "PMI google 1-grams corpus size")
-gflags.DEFINE_integer("pmi_average_bigrams_number", 1,
+gflags.DEFINE_integer("pmi_bigrams_number", 1,
     "PMI google 2-grams corpus size")
+gflags.DEFINE_integer("pmi_threshold", 0,
+    "PMI threshold")
 
-""".
-"""
-class PMIAverageFeatureExtractor(feature_extractor.FeatureExtractor):
-  def __init__(self, pmi_unigrams_dump,pmi_bigrams_dump,pmi_unigrams_number,pmi_bigrams_number):
+""".Average and threshold PMI features"""
+class PMIFeatureExtractor(feature_extractor.FeatureExtractor):
+  def __init__(self, pmi_unigrams_dump,pmi_bigrams_dump,pmi_unigrams_number,pmi_bigrams_number,pmi_threshold):
     self.pmi_bigrams_dumps={}
     self.pmi_unigrams_dump = self.LoadPKFile(pmi_unigrams_dump)
     self.pmi_unigrams_number = pmi_unigrams_number
@@ -36,47 +37,78 @@ class PMIAverageFeatureExtractor(feature_extractor.FeatureExtractor):
     for gm2_file in bigrams_dupms_dir:
           if gm2_file.endswith(".pk"):
             self.pmi_bigrams_dumps[gm2_file]=self.LoadPKFile(pmi_bigrams_dump+gm2_file)
+    self.pmi_threshold=pmi_threshold
     getcontext().prec = 28
   
   def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
-    counts = collections.defaultdict(int)
-    total = 1
-    pmi_sum=0
-    text= re.split('\n', text)
-    for line in text:
+    result = {}
+    result.update(self.ExtractFeaturesAverage(text,filename))
+    result.update(self.ExtractFeaturesThreshold(text,filename))
+    return result
+  
+  def ExtractFeaturesThreshold(self, text, filename):
+    counts=collections.defaultdict(int)
+    total=0
+    pmi_counter=0
+    text_s=re.split('\n', text)
+    for line in text_s:
       line=re.split('\s', line)
       prev=""
       pmi=0
       for token in line:
         if prev!="":
-          tmp = self.pmi_unigrams_dump.setdefault(prev,0)# setdefault check if key exist in o(1) instead o(n)
-          if tmp!=0:
-            tmp = self.pmi_unigrams_dump.setdefault(token,0)
-            if tmp!=0:
-              bigram=prev+"_"+token
-              google_2gms=self.SearchFiles(bigram)
-              for gm2_file in google_2gms:
-                gm2_file=gm2_file+".pk"
-                tmp = self.pmi_bigrams_dumps[gm2_file].setdefault(bigram,0)
-                if tmp!=0:
-                  t1_freq=Decimal(self.pmi_unigrams_dump[prev])/Decimal(self.pmi_unigrams_number)
-                  t2_freq=Decimal(self.pmi_unigrams_dump[token])/Decimal(self.pmi_unigrams_number)
-                  t1t2_freq=Decimal(self.pmi_bigrams_dumps[gm2_file][bigram])/Decimal(self.pmi_bigrams_number) 
-                  pmi=math.log(Decimal(t1t2_freq)/Decimal(t1_freq*t2_freq),2)  #PMI value
-                  pmi_sum+=pmi
-                  total+=1
+          pmi=self.BigramPMIValue(prev,token)
+          if pmi and pmi>self.pmi_threshold:
+            pmi_counter+=1
+          total+=1
         prev=token
-    #if total!=0:
-    return { "PMI": float(pmi_sum) / total }
-    
+    return { "PMI_TH": float(pmi_counter) }
   
-  def LoadPKFile(self,filename):
+    
+  def ExtractFeaturesAverage(self, text, filename):
+    counts=collections.defaultdict(int)
+    total=1
+    pmi_sum=0
+    text_s= re.split('\n', text)
+    for line in text_s:
+      line=re.split('\s', line)
+      prev=""
+      pmi=0
+      for token in line:
+        if prev!="":
+          pmi=self.BigramPMIValue(prev,token)
+          if pmi:
+            pmi_sum+=pmi
+            total+=1
+        prev=token
+    return { "PMI": float(pmi_sum) / total }
+  
+  def LoadPKFile(self,filename): # load the hashtable
     with open(filename, "r") as f:
       print("Load Pickle file: "+filename)
       return pickle.load(f)
     
+  def BigramPMIValue(self,token1,token2):
+    pmi=0
+    tmp = self.pmi_unigrams_dump.setdefault(token1,0) # setdefault check if key exist in o(1) instead o(n)
+    if tmp!=0:
+      tmp = self.pmi_unigrams_dump.setdefault(token2,0)
+      if tmp!=0:
+        bigram=token1+"_"+token2
+        google_2gms=self.SearchFiles(bigram)
+        for gm2_file in google_2gms:
+          gm2_file=gm2_file+".pk"
+          tmp = self.pmi_bigrams_dumps[gm2_file].setdefault(bigram,0)
+          if tmp!=0:
+            t1_freq=Decimal(self.pmi_unigrams_dump[token1])/Decimal(self.pmi_unigrams_number)
+            t2_freq=Decimal(self.pmi_unigrams_dump[token2])/Decimal(self.pmi_unigrams_number)
+            t1t2_freq=Decimal(self.pmi_bigrams_dumps[gm2_file][bigram])/Decimal(self.pmi_bigrams_number) 
+            pmi = math.log(Decimal(t1t2_freq)/Decimal(t1_freq*t2_freq),2)  #PMI value
+            return pmi
+    return pmi
   
-  def SearchFiles(self,token):#indexing to google 2-grams files, to make the search faster
+  
+  def SearchFiles(self,token): #indexing to google 2-grams files, to make the search faster
     if token.startswith('a'):
       return['2gm-0020','2gm-0021']
     elif token.startswith('b'):
@@ -212,13 +244,13 @@ if __name__ == '__main__':
   sys.exit(1)
 
 def REGISTER_FEATURE_EXTRACTOR():
-  if not FLAGS.append_pmi_average_features:
+  if not FLAGS.append_pmi_features:
     return None
-  if len(FLAGS.pmi_average_unigrams_dump) == 0:
+  if len(FLAGS.pmi_unigrams_dump) == 0:
     print "Flag --pmi_unigrams_dump is required"
     sys.exit(1)
-  if len(FLAGS.pmi_average_bigrams_dump) == 0:
+  if len(FLAGS.pmi_bigrams_dump) == 0:
     print "Flag --pmi_bigrams_dump is required"
     sys.exit(1)
-  return PMIAverageFeatureExtractor(FLAGS.pmi_average_unigrams_dump,FLAGS.pmi_average_bigrams_dump,FLAGS.pmi_average_unigrams_number,FLAGS.pmi_average_bigrams_number)
+  return PMIFeatureExtractor(FLAGS.pmi_unigrams_dump,FLAGS.pmi_bigrams_dump,FLAGS.pmi_unigrams_number,FLAGS.pmi_bigrams_number,FLAGS.pmi_threshold)
   

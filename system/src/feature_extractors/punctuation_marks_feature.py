@@ -20,7 +20,7 @@ PUNCTUATION_DICT={
    FIXME: It counts punctuation marks inside words such as "don't" or "as-is".
 """
 class PunctuationFeatureExtractor(feature_extractor.FeatureExtractor):
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     counts = collections.defaultdict(int)
     total = 0
     for char in text:

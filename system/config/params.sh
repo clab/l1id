@@ -11,13 +11,16 @@ export ADD_PUNCTUATION_FEATURES=0
 export ADD_CFW_BIGRAMS_FEATURES=0
 export ADD_CFW_TRIGRAMS_FEATURES=0
 export ADD_CHARACTERS_FEATURES=0
+export ADD_CHARACTERS_PROMPT_FEATURES=0
+export ADD_MORE_FREQUENT_CHARACTERS_FEATURES=0
 export ADD_PRONOUNS_FEATURES=0
 export ADD_REPETITIONS_FEATURES=0
 export ADD_POSITIONAL_TOKEN_FEATURES=0
 export ADD_RATIO_TO_PASSIVE_VERBS_FEATURES=0
 export ADD_MEAN_WORD_RANKS_FEATURES=0
 export ADD_MOST_FREQUENT_WORDS_FEATURES=0
-export ADD_PMI_AVERAGE_FEATURES=0
+#export ADD_PMI_AVERAGE_FEATURES=0
+export ADD_PMI_FEATURES=0
 export ADD_DOCUMENT_LENGTH_FEATURES=0
 export ADD_COHESIVE_MARKERS_FEATURES=0
 export ADD_MISSPELLINGS_FEATURES=0
@@ -76,6 +79,16 @@ if [ "${ADD_CHARACTERS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_characters_ngrams_features=True "
   EXTRACT_FEATURES_PARAMS+="--characters_max_ngrams_order=3 "
 fi
+if [ "${ADD_CHARACTERS_PROMPT_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_characters_ngrams_prompt_features=True "
+  EXTRACT_FEATURES_PARAMS+="--characters_max_ngrams_prompt_order=3 "
+fi
+if [ "${ADD_MORE_FREQUENT_CHARACTERS_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_more_frequent_characters_ngrams_features=True "
+  EXTRACT_FEATURES_PARAMS+="--more_frequent_characters_ngrams_input_dir=${TRAINING_INPUT_DIR} "
+  EXTRACT_FEATURES_PARAMS+="--more_frequent_characters_max_ngrams_order=3 "
+  EXTRACT_FEATURES_PARAMS+="--frequency_limit=5 "
+fi
 if [ "${ADD_PRONOUNS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_pronouns_features=True "
 fi
@@ -97,12 +110,20 @@ if [ "${ADD_MOST_FREQUENT_WORDS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_most_frequent_words_features=True "
   EXTRACT_FEATURES_PARAMS+="--most_frequent_words_num=50 "
 fi
-if [ "${ADD_PMI_AVERAGE_FEATURES}" == "1" ] ; then
-  EXTRACT_FEATURES_PARAMS+="--append_pmi_average_features=True "
+#if [ "${ADD_PMI_AVERAGE_FEATURES}" == "1" ] ; then
+#  EXTRACT_FEATURES_PARAMS+="--append_pmi_average_features=True "
+#  EXTRACT_FEATURES_PARAMS+="--pmi_average_unigrams_dump=${PMI_UNIGRAMS_DUMP} "
+#  EXTRACT_FEATURES_PARAMS+="--pmi_average_bigrams_dump=${PMI_BIGRAMS_DUMP} "
+#  EXTRACT_FEATURES_PARAMS+="--pmi_average_unigrams_number=1024908267229 "
+#  EXTRACT_FEATURES_PARAMS+="--pmi_average_bigrams_number=910868505431 "
+#fi
+if [ "${ADD_PMI_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_pmi_features=True "
   EXTRACT_FEATURES_PARAMS+="--pmi_unigrams_dump=${PMI_UNIGRAMS_DUMP} "
   EXTRACT_FEATURES_PARAMS+="--pmi_bigrams_dump=${PMI_BIGRAMS_DUMP} "
   EXTRACT_FEATURES_PARAMS+="--pmi_unigrams_number=1024908267229 "
   EXTRACT_FEATURES_PARAMS+="--pmi_bigrams_number=910868505431 "
+  EXTRACT_FEATURES_PARAMS+="--pmi_threshold=0 "
 fi
 if [ "${ADD_DOCUMENT_LENGTH_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_document_length=True "
