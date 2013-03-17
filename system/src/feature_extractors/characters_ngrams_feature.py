@@ -19,7 +19,7 @@ class CharactersNgramsFeatureExtractor(feature_extractor.FeatureExtractor):
   def __init__(self, max_ngrams_order):
     self.max_ngrams_order = max_ngrams_order
 
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     result = {}
     for order in xrange(1, self.max_ngrams_order+1):
       result.update(self.ExtractFeaturesForOrder(order, text,filename))
