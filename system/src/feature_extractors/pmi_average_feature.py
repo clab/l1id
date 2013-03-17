@@ -15,13 +15,13 @@ FLAGS = gflags.FLAGS
 
 gflags.DEFINE_bool("append_pmi_average_features", False,
     "Append pmi average")
-gflags.DEFINE_string("pmi_unigrams_dump", "",
+gflags.DEFINE_string("pmi_average_unigrams_dump", "",
     "PMI google 1-grams dump file")
-gflags.DEFINE_string("pmi_bigrams_dump", "",
+gflags.DEFINE_string("pmi_average_bigrams_dump", "",
     "PMI google 2-grams dump files root directory")
-gflags.DEFINE_integer("pmi_unigrams_number", 1,
+gflags.DEFINE_integer("pmi_average_unigrams_number", 1,
     "PMI google 1-grams corpus size")
-gflags.DEFINE_integer("pmi_bigrams_number", 1,
+gflags.DEFINE_integer("pmi_average_bigrams_number", 1,
     "PMI google 2-grams corpus size")
 
 """.
@@ -214,11 +214,11 @@ if __name__ == '__main__':
 def REGISTER_FEATURE_EXTRACTOR():
   if not FLAGS.append_pmi_average_features:
     return None
-  if len(FLAGS.pmi_unigrams_dump) == 0:
+  if len(FLAGS.pmi_average_unigrams_dump) == 0:
     print "Flag --pmi_unigrams_dump is required"
     sys.exit(1)
-  if len(FLAGS.pmi_bigrams_dump) == 0:
+  if len(FLAGS.pmi_average_bigrams_dump) == 0:
     print "Flag --pmi_bigrams_dump is required"
     sys.exit(1)
-  return PMIAverageFeatureExtractor(FLAGS.pmi_unigrams_dump,FLAGS.pmi_bigrams_dump,FLAGS.pmi_unigrams_number,FLAGS.pmi_bigrams_number)
+  return PMIAverageFeatureExtractor(FLAGS.pmi_average_unigrams_dump,FLAGS.pmi_average_bigrams_dump,FLAGS.pmi_average_unigrams_number,FLAGS.pmi_average_bigrams_number)
   
