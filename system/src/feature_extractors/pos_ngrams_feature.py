@@ -23,7 +23,7 @@ class PosNgramsFeatureExtractor(feature_extractor.FeatureExtractor):
     self.pos_tagged_dir = pos_tagged_dir
     self.max_ngrams_order = max_ngrams_order
 
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     result = {}
     for order in xrange(1, self.max_ngrams_order+1):
       result.update(self.ExtractFeaturesForOrder(order, filename))

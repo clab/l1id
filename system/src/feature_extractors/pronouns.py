@@ -48,7 +48,7 @@ PRONOUNS = [
 """Counts all pronouns in a file and returns their probabilities.
 """
 class PronounsFeatureExtractor(feature_extractor.FeatureExtractor):
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     counts = collections.defaultdict(int)
     total = 0
     for word in text.split():

@@ -24,7 +24,7 @@ class ContextualFunctionWordsFeatureExtractor(feature_extractor.FeatureExtractor
     self.function_words = open(function_words_path).readlines()
     self.function_words=[fw.strip() for fw in self.function_words] 
 
-  def ExtractFeaturesFromInstance(self, text, language, filename):
+  def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
     # Find a corresponding tagged file
     pos_filename = os.path.join(self.fw_pos_tagged_dir, "/".join(filename.split("/")[-1:]))
     counts = collections.defaultdict(int)
