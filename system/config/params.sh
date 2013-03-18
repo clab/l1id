@@ -53,6 +53,12 @@ export CROSS_VALIDATION_RESULTS=${EXPERIMENT_DIR}/train.results.txt
 # NOTE: Don't forget to append an extra space after each parameter.
 EXTRACT_FEATURES_PARAMS=""
 
+if [ "${ADD_POS_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_pos_ngrams_features=True "
+  EXTRACT_FEATURES_PARAMS+="--max_ngrams_order=3 "
+  EXTRACT_FEATURES_PARAMS+="--pos_tagged_dir_ngrams=${POS_TAGGED_DIR} "
+fi
+
 if [ "${ADD_PUNCTUATION_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_punctuation_features=True "
 fi
