@@ -28,6 +28,7 @@ export ADD_MISSPELLINGS_FEATURES=0
 export ADD_RESTORED_FW_FEATURES=1
 export ADD_RESTORED_PUNCTUATION_FEATURES=1
 export ADD_RESTORED_CV_FEATURES=0
+export ADD_LEMMAS_FEATURES=1
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
@@ -138,5 +139,10 @@ if [ "${ADD_COHESIVE_MARKERS_FEATURES}" == "1" ] ; then
 fi
 if [ "${ADD_COHESIVE_VERBS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_cohesive_verbs_features=True "
+fi
+if [ "${ADD_LEMMAS_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_lemmas_features=True "
+  EXTRACT_FEATURES_PARAMS+="--pos_tagged_dir_lemmas=${POS_TAGGED_DIR} "
+  EXTRACT_FEATURES_PARAMS+="--most_frequent_lemmas_num=300 "
 fi
 export EXTRACT_FEATURES_PARAMS
