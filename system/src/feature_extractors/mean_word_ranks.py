@@ -14,7 +14,7 @@ FLAGS = gflags.FLAGS
 
 gflags.DEFINE_bool("append_mean_word_ranks_features", False,
     "Append mean word rank.")
-gflags.DEFINE_integer("mean_word_ranks_variant", 0,
+gflags.DEFINE_integer("mean_word_ranks_variant", 1,
     "Words not in the list are ignored altogether(1) or given very high rank(0).")
 
 VERY_HIGH_RANK = 6000

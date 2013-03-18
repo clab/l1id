@@ -23,9 +23,12 @@ export ADD_MOST_FREQUENT_WORDS_FEATURES=0
 export ADD_PMI_FEATURES=0
 export ADD_DOCUMENT_LENGTH_FEATURES=0
 export ADD_COHESIVE_MARKERS_FEATURES=0
+export ADD_COHESIVE_VERBS_FEATURES=0
 export ADD_MISSPELLINGS_FEATURES=0
 export ADD_RESTORED_FW_FEATURES=1
 export ADD_RESTORED_PUNCTUATION_FEATURES=1
+export ADD_RESTORED_CV_FEATURES=0
+export ADD_LEMMAS_FEATURES=1
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
@@ -70,6 +73,9 @@ fi
 if [ "${ADD_RESTORED_PUNCTUATION_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_restored_punctuation_features=True "
 fi
+if [ "${ADD_RESTORED_CV_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_restored_cohesive_verbs_features=True "
+fi
 if [ "${ADD_CFW_TRIGRAMS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_cfw_trigrams_features=True "
   EXTRACT_FEATURES_PARAMS+="--pos_tagged_dir_cfw_trigrams=${POS_TAGGED_DIR} "
@@ -108,7 +114,7 @@ if [ "${ADD_MEAN_WORD_RANKS_FEATURES}" == "1" ] ; then
 fi
 if [ "${ADD_MOST_FREQUENT_WORDS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_most_frequent_words_features=True "
-  EXTRACT_FEATURES_PARAMS+="--most_frequent_words_num=50 "
+  EXTRACT_FEATURES_PARAMS+="--most_frequent_words_num=100 "
 fi
 #if [ "${ADD_PMI_AVERAGE_FEATURES}" == "1" ] ; then
 #  EXTRACT_FEATURES_PARAMS+="--append_pmi_average_features=True "
@@ -130,5 +136,13 @@ if [ "${ADD_DOCUMENT_LENGTH_FEATURES}" == "1" ] ; then
 fi
 if [ "${ADD_COHESIVE_MARKERS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_cohesive_markers_features=True "
+fi
+if [ "${ADD_COHESIVE_VERBS_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_cohesive_verbs_features=True "
+fi
+if [ "${ADD_LEMMAS_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_lemmas_features=True "
+  EXTRACT_FEATURES_PARAMS+="--pos_tagged_dir_lemmas=${POS_TAGGED_DIR} "
+  EXTRACT_FEATURES_PARAMS+="--most_frequent_lemmas_num=300 "
 fi
 export EXTRACT_FEATURES_PARAMS
