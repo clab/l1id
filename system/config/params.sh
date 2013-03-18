@@ -27,6 +27,7 @@ export ADD_COHESIVE_VERBS_FEATURES=0
 export ADD_MISSPELLINGS_FEATURES=0
 export ADD_RESTORED_FW_FEATURES=1
 export ADD_RESTORED_PUNCTUATION_FEATURES=1
+export ADD_RESTORED_CV_FEATURES=0
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
@@ -70,6 +71,9 @@ if [ "${ADD_RESTORED_FW_FEATURES}" == "1" ] ; then
 fi
 if [ "${ADD_RESTORED_PUNCTUATION_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_restored_punctuation_features=True "
+fi
+if [ "${ADD_RESTORED_CV_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_restored_cohesive_verbs_features=True "
 fi
 if [ "${ADD_CFW_TRIGRAMS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_cfw_trigrams_features=True "

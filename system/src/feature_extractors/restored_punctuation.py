@@ -67,16 +67,16 @@ class RestoredPunctuationFeatureExtractor(feature_extractor.FeatureExtractor):
       total =  float(matches[word] + insertions[word] + deletions[word])
       if total > 0:
         if matches[word] > 0:
-          counts["Match_" + word] = math.log(matches[word]) #/total  
-          counts["Match_p_" + word] = matches[word]/total
+          counts["MatchP_" + word] = math.log(matches[word]) #/total  
+          counts["MatchP_p_" + word] = matches[word]/total
 
         if insertions[word] > 0:
-          counts["Insert_" + word] = math.log(insertions[word]) #/total
-          counts["Insert_p_" + word] = insertions[word]/total
+          counts["InsertP_" + word] = math.log(insertions[word]) #/total
+          counts["InsertP_p_" + word] = insertions[word]/total
 
         if deletions[word] > 0:
-          counts["Delete_" + word] = math.log(deletions[word]) #/total
-          counts["Delete_p_" + word] = deletions[word]/total
+          counts["DeleteP_" + word] = math.log(deletions[word]) #/total
+          counts["DeleteP_p_" + word] = deletions[word]/total
 
     return counts
 
