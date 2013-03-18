@@ -7,8 +7,12 @@ import feature_extractor
 import os
 import math
 
-from nltk.stem.porter import PorterStemmer
-#from nltk.stem.wordnet import WordNetLemmatizer
+try:
+  from nltk.stem.porter import PorterStemmer
+  #from nltk.stem.wordnet import WordNetLemmatizer
+except ImportError as ex:
+  def PorterStemmer(): # lazily complain about the import (only if lemma features are used)
+    raise ex
 
 FLAGS = gflags.FLAGS
 
