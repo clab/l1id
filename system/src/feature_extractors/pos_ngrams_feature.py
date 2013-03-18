@@ -39,13 +39,17 @@ class PosNgramsFeatureExtractor(feature_extractor.FeatureExtractor):
       pos_tags = [w.split("_")[-1] for w in words]
       for index in xrange(len(pos_tags)-order+1):
         pos_bigram = pos_tags[index:index+order]
-        counts["POS_" + "_".join(pos_bigram)] += 1
+        counts["_".join(pos_bigram)] += 1
         total += 1
     total = float(total)
+    all_counts = collections.defaultdict(int)
     # Normalize to probabilities
     for feature, count in counts.iteritems():
-      counts[feature] = math.log(count + 1)
-    return counts
+      #if order > 3 and count < 3:
+      #  continue
+      all_counts["POS_p_" + feature] = count/total
+      all_counts["POS_" + feature] = math.log(count + 1)
+    return all_counts
 
 if __name__ == '__main__':
   print "This module is a library, not supposed to be executed directly."
