@@ -14,7 +14,7 @@ import feature_extractor
 
 FLAGS = gflags.FLAGS
 
-gflags.DEFINE_bool("append_document_length", True,
+gflags.DEFINE_bool("append_document_length", False,
     "Append the length of a document")
 
 
