@@ -58,8 +58,8 @@ class BrownNgramsFeatureExtractor(feature_extractor.FeatureExtractor):
     all_counts = collections.defaultdict(int)
     # Normalize to probabilities
     for feature, count in counts.iteritems():
-      if order > 3 and count < 5:
-        continue
+      #if order > 3 and count < 5:
+      #  continue
       all_counts["B_p_" + feature] = count/total
       all_counts["B_" + feature] = math.log(count + 1)
     return all_counts
