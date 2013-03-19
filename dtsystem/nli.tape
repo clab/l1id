@@ -211,7 +211,7 @@ task train_predict : creg pyutil
     < pf22=(Brown: 0="/dev/null" 1=$feats@_brown[Section:dev])
     > idPreds preds weights pred_meta_path
     :: langs=@
-    :: reg=(Regularization: l2_1.0="--l2 1.0" l2_0="--l2 0" l2_0.001="--l2 0.001" l2_0.01="--l2 0.01" l2_0.05="--l2 0.05" l2_0.1="--l2 0.1" l2_0.5="--l2 0.5" l2_5.0="--l2 5.0" l1_1.0="--l1 1.0")
+    :: reg=(Regularization: l2_1.0="--l2 1.0" l2_0="--l2 0" l2_0.001="--l2 0.001" l2_0.01="--l2 0.01" l2_0.05="--l2 0.05" l2_0.1="--l2 0.1" l2_0.5="--l2 0.5" l2_2.0="--l2 2.0" l2_5.0="--l2 5.0" l2_10.0="--l2 10.0" l1_1.0="--l1 1.0")
   {
   	# a dummy label ensures that weights are learned for all actual classes (no default/background class)
   	echo "## $langs DUMMY" > header
@@ -247,7 +247,7 @@ task trainpredict : creg pyutil
     < pred_gold_lbls=$lbls@extraction[Section:dev] pred_feats=$feats@extraction[Section:dev] 
     < pred_tokdir=$tokdir[Section:dev] pred_meta=$meta[Section:dev]
     	> idPreds preds weights results pred_tokdir_path pred_meta_path
-    	:: reg=(Regularization: l2_1.0="--l2 1.0" l2_0="--l2 0" l2_0.001="--l2 0.001" l2_0.01="--l2 0.01" l2_0.05="--l2 0.05" l2_0.1="--l2 0.1" l2_0.5="--l2 0.5" l2_5.0="--l2 5.0" l1_1.0="--l1 1.0") {
+    	:: reg=(Regularization: l2_1.0="--l2 1.0" l2_0="--l2 0" l2_0.001="--l2 0.001" l2_0.01="--l2 0.01" l2_0.05="--l2 0.05" l2_0.1="--l2 0.1" l2_0.5="--l2 0.5" l2_2.0="--l2 2.0" l2_5.0="--l2 5.0" l2_10.0="--l2 10.0" l1_1.0="--l1 1.0") {
 
     # Now run Creg and store the results in a file.
   	# If it fails, see the stderr.
@@ -382,10 +382,21 @@ plan DevI2 {
 #		* (FreqWord: 0) * (PsvRatioFeatures: 1) * (Rep: 0) * (WordRank: 0) * (MisspellFeatures: 1) * (PMIFeatures: 1)
 }
 plan DevI3 {
-	reach eval_ via (Regularization: l2_0 l2_1.0) * (PosFeatures: 1) * (PunctFeatures: 1) 
+	reach eval_ via (Regularization: l2_0) * (PosFeatures: 1) * (PunctFeatures: 1) 
 		* (CxtFxnFeatures: 1) * (CharFeatures: 1) * (PronFeatures: 1) 
 		* (PositionFeatures: 1) * (DocLenFeatures: 1) * (PsvRatioFeatures: 1) 
 		* (MisspellFeatures: 1) * (Brown: 1)
+	
+	reach eval_ via (Regularization: l2_0 l2_1.0) * (PosFeatures: 1) * (PunctFeatures: 1) 
+		* (CxtFxnFeatures: 1) * (CharFeatures: 0) * (PronFeatures: 1) 
+		* (PositionFeatures: 1) * (DocLenFeatures: 1) * (PsvRatioFeatures: 1) 
+		* (MisspellFeatures: 1) * (FreqChar: 1)
+}
+plan DevI4 {
+	reach eval_ via (Regularization: l2_1.0 l2_2.0 l2_5.0 l2_10.0) * (PosFeatures: 1) * (PunctFeatures: 1) 
+		* (CxtFxnFeatures: 1) * (CharFeatures: 0) * (PronFeatures: 1) 
+		* (PositionFeatures: 1) * (DocLenFeatures: 1) * (PsvRatioFeatures: 1) 
+		* (MisspellFeatures: 1) * (Brown: 0) * (FreqChar: 1) * (CharPrompt: 1) * (Restore: 1)
 }
 
 #####
