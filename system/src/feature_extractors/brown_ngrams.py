@@ -39,6 +39,8 @@ class BrownNgramsFeatureExtractor(feature_extractor.FeatureExtractor):
       cluster, word, score = line.split('\t')
       self.words[word] = cluster
     self.max_ngrams_order = max_ngrams_order
+    self.corpus_ngrams = self.LoadNgramCounts (FLAGS.corrected_ngram_counts_prefix + "3grams")
+    self.corpus_ngrams.update(self.LoadNgramCounts (FLAGS.corrected_ngram_counts_prefix + "4grams"))
 
   
   def ExtractFeaturesFromInstance(self, text, prompt, language, filename):
@@ -57,8 +59,6 @@ class BrownNgramsFeatureExtractor(feature_extractor.FeatureExtractor):
     return ngrams
     
   def ExtractFeaturesForOrder(self, order, filename):
-    if order > 2 :
-      corpus_ngrams = self.LoadNgramCounts (FLAGS.corrected_ngram_counts_prefix + str(order) + "grams")
     corrected_filename = re.sub(r'/tokenized/', r'/corrected/', filename)
     counts = collections.defaultdict(int)
     total = 0
@@ -75,7 +75,7 @@ class BrownNgramsFeatureExtractor(feature_extractor.FeatureExtractor):
     all_counts = collections.defaultdict(int)
     # Normalize to probabilities
     for feature, count in counts.iteritems():
-      if order > 2 and feature in corpus_ngrams:
+      if order > 2 and feature not in self.corpus_ngrams:
         #print "filtered: ", feature
         continue
       all_counts["B_p_" + feature] = count/total
