@@ -12,9 +12,13 @@ import config.tape
 # 6. aggregate: compute statistics over all cross-validation folds, such as min, max, and mean accuracy (TODO)
 
 global {
-	tokdir=(Section: train="../system/data/input/NLI_2013_Training_Data/tokenized" dev="../system/data/input/NLI_2013_Development_Data/tokenized")
-	posdir=(Section: train="../system/data/work/pos_tagged_train" dev="../system/data/work/pos_tagged_dev")
-	  meta=(Section: train="../system/data/input/NLI_2013_Training_Data/index-training.csv" dev="../system/data/input/NLI_2013_Development_Data/index-dev.csv")
+	# "Section: dev" really means held-out
+	tokdir=(Section: train="../system/data/input/NLI_2013_Training_Data/tokenized" dev="../system/data/input/NLI_2013_Development_Data/tokenized" test="../system/data/input/NLI_2013_Test_Data/tokenized")
+	
+	posdir=(Section: train="../system/data/work/pos_tagged_train" dev="../system/data/work/pos_tagged_dev" test="../system/data/work/pos_tagged_test")
+	
+	  meta=(Section: train="../system/data/input/NLI_2013_Training_Data/index-training.csv" dev="../system/data/input/NLI_2013_Development_Data/index-dev.csv" test="../system/data/input/NLI_2013_Test_Data/index-test.csv")
+	
 	 langs="ARA CHI FRE GER HIN ITA JPN KOR SPA TEL TUR"
 }
 
@@ -27,7 +31,8 @@ task rawdata < tokdir=@ > emptyflags {
     echo "" > $emptyflags
 }
 task pos : pos_tagger 
-         < tokdir=@ posdir=(Section: train="../system/data/work/pos_tagged_train" dev="../system/data/work/pos_tagged_dev")
+         < tokdir=@ posdir=(Section: train="../system/data/work/pos_tagged_train" dev="../system/data/work/pos_tagged_dev"
+	         test="../system/data/work/pos_tagged_test")
          > flags {
   	for f in `ls $tokdir/*.txt` ; do
       fname=`basename $f`
@@ -216,18 +221,67 @@ task train_predict : creg pyutil
     < pf20=(CharPrompt: 0="/dev/null" 1=$feats@_charprompt[Section:dev])
     < pf21=(FreqChar: 0="/dev/null" 1=$feats@_freqchar[Section:dev])
     < pf22=(Brown: 0="/dev/null" 1=$feats@_brown[Section:dev])
+    < warm=models/l2_10_T_10_i_180
     > idPreds preds weights pred_meta_path
     :: langs=@
-    :: reg=(Regularization: l2_1.0="--l2 1.0" l2_0="--l2 0" l2_0.001="--l2 0.001" l2_0.01="--l2 0.01" l2_0.05="--l2 0.05" l2_0.1="--l2 0.1" l2_0.5="--l2 0.5" l2_2.0="--l2 2.0" l2_5.0="--l2 5.0" l2_10.0="--l2 10.0" l1_1.0="--l1 1.0")
+    :: reg=(Regularization: l2_1.0="--l2 1.0" l2_0="--l2 0" l2_0.001="--l2 0.001" l2_0.01="--l2 0.01" l2_0.05="--l2 0.05" l2_0.1="--l2 0.1" l2_0.5="--l2 0.5" l2_2.0="--l2 2.0" l2_5.0="--l2 5.0" l2_10.0="--l2 10.0" l2_10_T_10="--l2 10.0 -T 10.0" l1_1.0="--l1 1.0" l1_10.0="--l1 10.0")
   {
   	# a dummy label ensures that weights are learned for all actual classes (no default/background class)
   	echo "## $langs DUMMY" > header
   
   	set -x
   
-   	$creg/dist/bin/creg -y <(cat header $train_gold_lbls) -x $tf1 -x $tf2 -x $tf3 -x $tf4 -x $tf5 -x $tf6 -x $tf7 -x $tf8 -x $tf9 -x $tf10 -x $tf11 -x $tf12 -x $tf13 -x $tf14 -x $tf15 -x $tf16 -x $tf17 -x $tf18 -x $tf19 -x $tf20 -x $tf21 -x $tf22 --z $weights $reg --tx $pf1 --tx $pf2 --tx $pf3 --tx $pf4 --tx $pf5 --tx $pf6 --tx $pf7 --tx $pf8 --tx $pf9 --tx $pf10 --tx $pf11 --tx $pf12 --tx $pf13 --tx $pf14 --tx $pf15 --tx $pf16 --tx $pf17 --tx $pf18 --tx $pf19 --tx $pf20 --tx $pf21 --tx $pf22 > $idPreds
+   	$creg/dist/bin/creg -w $warm -y <(cat header $train_gold_lbls) -x $tf1 -x $tf2 -x $tf3 -x $tf4 -x $tf5 -x $tf6 -x $tf7 -x $tf8 -x $tf9 -x $tf10 -x $tf11 -x $tf12 -x $tf13 -x $tf14 -x $tf15 -x $tf16 -x $tf17 -x $tf18 -x $tf19 -x $tf20 -x $tf21 -x $tf22 --z $weights $reg --tx $pf1 --tx $pf2 --tx $pf3 --tx $pf4 --tx $pf5 --tx $pf6 --tx $pf7 --tx $pf8 --tx $pf9 --tx $pf10 --tx $pf11 --tx $pf12 --tx $pf13 --tx $pf14 --tx $pf15 --tx $pf16 --tx $pf17 --tx $pf18 --tx $pf19 --tx $pf20 --tx $pf21 --tx $pf22 > $idPreds
    	
    	cut -f2 $idPreds > $preds
+    #cut -f1 $pred_gold_lbls > ids
+    #cut -f2 $pred_gold_lbls > golds
+
+    # TODO: implement IO scheme in chunkeval
+    # Run evaluation script (requires B- to be prefixed to every label)
+    #paste ids <(sed -E 's/^(.+)$/B-\1/' golds) <(sed -E 's/^(.+)$/B-\1/' preds) > idGoldAndPreds
+	#$pyutil/chunkeval.py BIO idGoldAndPreds > $results
+	
+	#echo $pred_tokdir > $pred_tokdir_path
+	echo $pred_meta > $pred_meta_path
+  }
+
+task predict_ : creg pyutil
+	< weights=@train_predict
+    < pred_meta=$meta[Section:test]
+    < pf1=(PunctFeatures:   0="/dev/null" 1=$feats@_punct[Section:test])
+    < pf2=(PosFeatures:     0="/dev/null" 1=$feats@_pos[Section:test])
+    < pf3=(CharFeatures:    0="/dev/null" 1=$feats@_char[Section:test])
+    < pf4=(CxtFxnFeatures:  0="/dev/null" 1=$feats@_cxtfxn[Section:test])
+    < pf5=(PronFeatures:    0="/dev/null" 1=$feats@_pron[Section:test])
+    < pf6=(Rep:     0="/dev/null" 1=$feats@_rep[Section:test])
+    < pf7=(PositionFeatures:  0="/dev/null" 1=$feats@_position[Section:test])
+    < pf8=(PsvRatioFeatures:  0="/dev/null" 1=$feats@_psvratio[Section:test])
+    < pf9=(WordRank:  0="/dev/null" 1=$feats@_wordrank[Section:test])
+    < pf10=(FreqWord: 0="/dev/null" 100=$feats@_freqword[Section:test]) 
+    < pf11=(PMIFeatures:      0="/dev/null" 1=$feats@_pmi[Section:test])
+    < pf12=(DocLenFeatures:   0="/dev/null" 1=$feats@_doclen[Section:test])
+    < pf13=(Coh: 0="/dev/null" 1=$feats@_cohesive[Section:test])
+    < pf14=(MisspellFeatures: 0="/dev/null" 1=$feats@_misspell[Section:test])
+    < pf15=(CohVerbs: 0="/dev/null" 1=$feats@_cohverbs[Section:test])
+    < pf16=(LemmaFeatures:  0="/dev/null" 1=$feats@_lemmas[Section:test])
+    < pf17=(Restore:  0="/dev/null" 1=$feats@_restfxn[Section:test])
+    < pf18=(Restore:  0="/dev/null" 1=$feats@_restpunc[Section:test])
+    < pf19=(Restore:  0="/dev/null" 1=$feats@_restcohverbs[Section:test])
+    < pf20=(CharPrompt: 0="/dev/null" 1=$feats@_charprompt[Section:test])
+    < pf21=(FreqChar: 0="/dev/null" 1=$feats@_freqchar[Section:test])
+    < pf22=(Brown: 0="/dev/null" 1=$feats@_brown[Section:test])
+    > idPreds preds pred_meta_path csv="cmu-closed-1"
+  {
+  	
+  	set -x
+  
+   	$creg/dist/bin/creg -w $weights --tx $pf1 --tx $pf2 --tx $pf3 --tx $pf4 --tx $pf5 --tx $pf6 --tx $pf7 --tx $pf8 --tx $pf9 --tx $pf10 --tx $pf11 --tx $pf12 --tx $pf13 --tx $pf14 --tx $pf15 --tx $pf16 --tx $pf17 --tx $pf18 --tx $pf19 --tx $pf20 --tx $pf21 --tx $pf22 > $idPreds
+   	
+   	cut -f2 $idPreds > $preds
+   	
+   	sed -e 's/\t/,/' $preds > $csv
+   	
     #cut -f1 $pred_gold_lbls > ids
     #cut -f2 $pred_gold_lbls > golds
 
@@ -254,7 +308,7 @@ task trainpredict : creg pyutil
     < pred_gold_lbls=$lbls@extraction[Section:dev] pred_feats=$feats@extraction[Section:dev] 
     < pred_tokdir=$tokdir[Section:dev] pred_meta=$meta[Section:dev]
     	> idPreds preds weights results pred_tokdir_path pred_meta_path
-    	:: reg=(Regularization: l2_1.0="--l2 1.0" l2_0="--l2 0" l2_0.001="--l2 0.001" l2_0.01="--l2 0.01" l2_0.05="--l2 0.05" l2_0.1="--l2 0.1" l2_0.5="--l2 0.5" l2_2.0="--l2 2.0" l2_5.0="--l2 5.0" l2_10.0="--l2 10.0" l1_1.0="--l1 1.0") {
+    	:: reg=(Regularization: l2_1.0="--l2 1.0" l2_0="--l2 0" l2_0.001="--l2 0.001" l2_0.01="--l2 0.01" l2_0.05="--l2 0.05" l2_0.1="--l2 0.1" l2_0.5="--l2 0.5" l2_2.0="--l2 2.0" l2_5.0="--l2 5.0" l2_10.0="--l2 10.0" l2_10_T_10="--l2 10.0 -T 10.0" l1_1.0="--l1 1.0" l1_10.0="--l1 10.0") {
 
     # Now run Creg and store the results in a file.
   	# If it fails, see the stderr.
@@ -407,6 +461,22 @@ plan DevI4 {
 }
 plan DevI5 {
 	reach eval_ via (Regularization: l2_5.0 l2_10.0) * (PosFeatures: 1) * (PunctFeatures: 1) 
+		* (CxtFxnFeatures: 1) * (CharFeatures: 0) * (PronFeatures: 1) 
+		* (PositionFeatures: 1) * (DocLenFeatures: 1) * (PsvRatioFeatures: 1) 
+		* (MisspellFeatures: 1) * (Brown: 1) * (FreqChar: 1) * (CharPrompt: 1) * (Restore: 1)
+}
+plan DevI6 {
+	reach eval_ via (Regularization: l2_10_T_10 l1_10.0) * (PosFeatures: 1) * (PunctFeatures: 1) 
+		* (CxtFxnFeatures: 1) * (CharFeatures: 0) * (PronFeatures: 1) 
+		* (PositionFeatures: 1) * (DocLenFeatures: 1) * (PsvRatioFeatures: 1) 
+		* (MisspellFeatures: 1) * (Brown: 1) * (FreqChar: 1) * (CharPrompt: 1) * (Restore: 1)
+}
+plan TestExtract {
+	reach _punct,_pos,_cxtfxn,_pron,_position,_psvratio,_freqword,_doclen,_misspell,_restfxn,_restpunc,_restcohverbs,_charprompt,_freqchar,_brown via (Section: test)
+	# omitting: _pmi,_rep,_cohesive,_cohverbs,_lemmas,_char,_wordrank
+}
+plan TestPredict {
+	reach predict_	via	(Regularization: l2_10_T_10) * (PosFeatures: 1) * (PunctFeatures: 1) 
 		* (CxtFxnFeatures: 1) * (CharFeatures: 0) * (PronFeatures: 1) 
 		* (PositionFeatures: 1) * (DocLenFeatures: 1) * (PsvRatioFeatures: 1) 
 		* (MisspellFeatures: 1) * (Brown: 1) * (FreqChar: 1) * (CharPrompt: 1) * (Restore: 1)
