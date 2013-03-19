@@ -2,7 +2,7 @@
 
 # Name of the experiment. This also defines which directory the output will be
 # stored in (under ../data/work/).
-export EXPERIMENT_NAME=brown_clusters_ngrams_3grams_pref16_prob
+export EXPERIMENT_NAME=brown_clusters_1grams_min10
 
 # Which features should be extracted in this experiment.
 # Set to 1 features you want to be included in this experiment.
@@ -40,6 +40,7 @@ export FW_LIST_FILE=${INPUT_DIR}/function_words.txt
 export PMI_UNIGRAMS_DUMP=${INPUT_DIR}/1gms/vocab.pk
 export PMI_BIGRAMS_DUMP=${INPUT_DIR}/2gms/
 export BROWN_CLUSTERS=${INPUT_DIR}/en-c600.txt
+export CORRECTED_NGRAM_COUNTS_PREFIX=${INPUT_DIR}/NLI_2013_Training_Data/all_corrected.
 
 # Names of intermediate files:
 export POS_TAGGED_DIR=${EXPERIMENT_DIR}/pos_tagged
@@ -151,8 +152,10 @@ if [ "${ADD_LEMMAS_FEATURES}" == "1" ] ; then
 fi
 if [ "${ADD_BROWN_NGRAMS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_brown_ngrams=True "
-  EXTRACT_FEATURES_PARAMS+="--max_brown_ngrams_order=3 "
+  EXTRACT_FEATURES_PARAMS+="--max_brown_ngrams_order=4 "
   EXTRACT_FEATURES_PARAMS+="--max_brown_prefix_length=16 "
   EXTRACT_FEATURES_PARAMS+="--brown_clusters_filename=${BROWN_CLUSTERS} "
+  EXTRACT_FEATURES_PARAMS+="--brown_freq_filter=100 "
+  EXTRACT_FEATURES_PARAMS+="--corrected_ngram_counts_prefix=${CORRECTED_NGRAM_COUNTS_PREFIX} "
 fi
 export EXTRACT_FEATURES_PARAMS

@@ -25,6 +25,12 @@ gflags.DEFINE_integer("max_brown_prefix_length", 16,
 gflags.DEFINE_string("brown_clusters_filename", "",
     "Path to the file with Brown clusters")
 
+gflags.DEFINE_integer("brown_freq_filter", 0,
+    "filter min number of occurrences")
+
+gflags.DEFINE_string("corrected_ngram_counts_prefix", "",
+    "Path to the files with ngram-count ouputs for different ngram orders: all_corrected.1grams, all_corrected.2grams, all_corrected.3grams, all_corrected.4grams")
+
 class BrownNgramsFeatureExtractor(feature_extractor.FeatureExtractor):
   def __init__(self, brown_clusters_filename, max_ngrams_order):
     self.words =  collections.defaultdict(lambda: '0')
@@ -41,7 +47,18 @@ class BrownNgramsFeatureExtractor(feature_extractor.FeatureExtractor):
       result.update(self.ExtractFeaturesForOrder(order, filename))
     return result
 
+  def LoadNgramCounts (self, filename):
+    ngrams = set()
+    for line in open(filename):
+      ngram, count = line.strip().split('\t')
+      count = int(count) 
+      if count >= FLAGS.brown_freq_filter:
+        ngrams.add(ngram.replace(" ", "_"))
+    return ngrams
+    
   def ExtractFeaturesForOrder(self, order, filename):
+    if order > 2 :
+      corpus_ngrams = self.LoadNgramCounts (FLAGS.corrected_ngram_counts_prefix + str(order) + "grams")
     corrected_filename = re.sub(r'/tokenized/', r'/corrected/', filename)
     counts = collections.defaultdict(int)
     total = 0
@@ -58,8 +75,9 @@ class BrownNgramsFeatureExtractor(feature_extractor.FeatureExtractor):
     all_counts = collections.defaultdict(int)
     # Normalize to probabilities
     for feature, count in counts.iteritems():
-      #if order > 3 and count < 5:
-      #  continue
+      if order > 2 and feature in corpus_ngrams:
+        #print "filtered: ", feature
+        continue
       all_counts["B_p_" + feature] = count/total
       all_counts["B_" + feature] = math.log(count + 1)
     return all_counts
