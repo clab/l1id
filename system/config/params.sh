@@ -40,7 +40,7 @@ export FW_LIST_FILE=${INPUT_DIR}/function_words.txt
 export PMI_UNIGRAMS_DUMP=${INPUT_DIR}/1gms/vocab.pk
 export PMI_BIGRAMS_DUMP=${INPUT_DIR}/2gms/
 export BROWN_CLUSTERS=${INPUT_DIR}/en-c600.txt
-export CORRECTED_NGRAM_COUNTS_PREFIX=${INPUT_DIR}/NLI_2013_Training_Data/all_corrected.
+export CORRECTED_NGRAM_COUNTS_PREFIX=${INPUT_DIR}/NLI_2013_Training_Data/all_brown.
 
 # Names of intermediate files:
 export POS_TAGGED_DIR=${EXPERIMENT_DIR}/pos_tagged
