@@ -1,6 +1,7 @@
 global {
 	ducttape_experimental_imports=true
 	ducttape_experimental_packages=true
+	ducttape_experimental_multiproc=true
 	datadir=../NLI_2013_Training_Data
 }
 

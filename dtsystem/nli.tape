@@ -155,6 +155,11 @@ task _pmi : scripts < tokdir=@ meta=@ pmi_unigrams_dump=../system/data/input/1gm
     $scripts/extract_instances.py --input_dir="$tokdir" --metadata_filename="$meta" \
   --features_filename=$feats --labels_filename=lbls --append_pmi_features=True --pmi_threshold=0 --pmi_unigrams_dump=$pmi_unigrams_dump --pmi_bigrams_dump=$pmi_bigrams_dump --pmi_unigrams_number=1024908267229 --pmi_bigrams_number=910868505431
 }
+task _brown : scripts < tokdir=@ meta=@ brown_clusters=../system/data/input/en-c600.txt
+         > feats {
+    $scripts/extract_instances.py --input_dir="$tokdir" --metadata_filename="$meta" \
+  --features_filename=$feats --labels_filename=lbls --append_brown_ngrams=True --max_brown_ngrams_order=3 --max_brown_prefix_length=16 --brown_clusters_filename=$brown_clusters
+}
 
 task train_predict : creg pyutil
 	< train_gold_lbls=$lbls@labels[Section:train]
@@ -179,6 +184,7 @@ task train_predict : creg pyutil
     < tf19=(Restore:  0="/dev/null" 1=$feats@_restcohverbs[Section:train])
     < tf20=(CharPrompt: 0="/dev/null" 1=$feats@_charprompt[Section:train])
     < tf21=(FreqChar: 0="/dev/null" 1=$feats@_freqchar[Section:train])
+    < tf22=(Brown: 0="/dev/null" 1=$feats@_brown[Section:train])
     < pred_meta=$meta[Section:dev]
     < predict_golds=$lbls@labels[Section:dev]
     < pf1=(PunctFeatures:   0="/dev/null" 1=$feats@_punct[Section:dev])
@@ -202,6 +208,7 @@ task train_predict : creg pyutil
     < pf19=(Restore:  0="/dev/null" 1=$feats@_restcohverbs[Section:dev])
     < pf20=(CharPrompt: 0="/dev/null" 1=$feats@_charprompt[Section:dev])
     < pf21=(FreqChar: 0="/dev/null" 1=$feats@_freqchar[Section:dev])
+    < pf22=(Brown: 0="/dev/null" 1=$feats@_brown[Section:dev])
     > idPreds preds weights pred_meta_path
     :: langs=@
     :: reg=(Regularization: l2_1.0="--l2 1.0" l2_0="--l2 0" l2_0.001="--l2 0.001" l2_0.01="--l2 0.01" l2_0.05="--l2 0.05" l2_0.1="--l2 0.1" l2_0.5="--l2 0.5" l2_5.0="--l2 5.0" l1_1.0="--l1 1.0")
@@ -211,7 +218,7 @@ task train_predict : creg pyutil
   
   	set -x
   
-   	$creg/dist/bin/creg -y <(cat header $train_gold_lbls) -x $tf1 -x $tf2 -x $tf3 -x $tf4 -x $tf5 -x $tf6 -x $tf7 -x $tf8 -x $tf9 -x $tf10 -x $tf11 -x $tf12 -x $tf13 -x $tf14 -x $tf15 -x $tf16 -x $tf17 -x $tf18 -x $tf19 -x $tf20 -x $tf21 --z $weights $reg --tx $pf1 --tx $pf2 --tx $pf3 --tx $pf4 --tx $pf5 --tx $pf6 --tx $pf7 --tx $pf8 --tx $pf9 --tx $pf10 --tx $pf11 --tx $pf12 --tx $pf13 --tx $pf14 --tx $pf15 --tx $pf16 --tx $pf17 --tx $pf18 --tx $pf19 --tx $pf20 --tx $pf21 > $idPreds
+   	$creg/dist/bin/creg -y <(cat header $train_gold_lbls) -x $tf1 -x $tf2 -x $tf3 -x $tf4 -x $tf5 -x $tf6 -x $tf7 -x $tf8 -x $tf9 -x $tf10 -x $tf11 -x $tf12 -x $tf13 -x $tf14 -x $tf15 -x $tf16 -x $tf17 -x $tf18 -x $tf19 -x $tf20 -x $tf21 -x $tf22 --z $weights $reg --tx $pf1 --tx $pf2 --tx $pf3 --tx $pf4 --tx $pf5 --tx $pf6 --tx $pf7 --tx $pf8 --tx $pf9 --tx $pf10 --tx $pf11 --tx $pf12 --tx $pf13 --tx $pf14 --tx $pf15 --tx $pf16 --tx $pf17 --tx $pf18 --tx $pf19 --tx $pf20 --tx $pf21 --tx $pf22 > $idPreds
    	
    	cut -f2 $idPreds > $preds
     #cut -f1 $pred_gold_lbls > ids
@@ -374,7 +381,12 @@ plan DevI2 {
 #		* (PositionFeatures: 1) * (DocLenFeatures: 1) * (Coh: 0)
 #		* (FreqWord: 0) * (PsvRatioFeatures: 1) * (Rep: 0) * (WordRank: 0) * (MisspellFeatures: 1) * (PMIFeatures: 1)
 }
-
+plan DevI3 {
+	reach eval_ via (Regularization: l2_0 l2_1.0) * (PosFeatures: 1) * (PunctFeatures: 1) 
+		* (CxtFxnFeatures: 1) * (CharFeatures: 1) * (PronFeatures: 1) 
+		* (PositionFeatures: 1) * (DocLenFeatures: 1) * (PsvRatioFeatures: 1) 
+		* (MisspellFeatures: 1) * (Brown: 1)
+}
 
 #####
 # Things below are OLD!
