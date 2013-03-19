@@ -36,7 +36,7 @@ class PMIFeatureExtractor(feature_extractor.FeatureExtractor):
     bigrams_dupms_dir=os.listdir(pmi_bigrams_dump)
     for gm2_file in bigrams_dupms_dir:
           if gm2_file.endswith(".pk"):
-            self.pmi_bigrams_dumps[gm2_file]=self.LoadPKFile(pmi_bigrams_dump+gm2_file)
+            self.pmi_bigrams_dumps[gm2_file]=self.LoadPKFile(pmi_bigrams_dump+'/'+gm2_file)
     self.pmi_threshold=pmi_threshold
     getcontext().prec = 28
   

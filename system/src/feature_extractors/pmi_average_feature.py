@@ -53,8 +53,8 @@ class PMIAverageFeatureExtractor(feature_extractor.FeatureExtractor):
           if tmp!=0:
             tmp = self.pmi_unigrams_dump.setdefault(token,0)
             if tmp!=0:
-              bigram=prev+"_"+token
-              google_2gms=self.SearchFiles(bigram)
+              bigram=(prev,token)
+              google_2gms=self.SearchFiles(bigram[0])
               for gm2_file in google_2gms:
                 gm2_file=gm2_file+".pk"
                 tmp = self.pmi_bigrams_dumps[gm2_file].setdefault(bigram,0)
