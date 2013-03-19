@@ -165,7 +165,7 @@ task _brown : scripts < tokdir=@ meta=@ brown_clusters=../system/data/input/en-c
     bcountsdir=`dirname $bcounts1`     
     
     $scripts/extract_instances.py --input_dir="$tokdir" --metadata_filename="$meta" \
-  --features_filename=$feats --labels_filename=lbls --append_brown_ngrams=True --max_brown_ngrams_order=4 --max_brown_prefix_length=15 --brown_freq_filter=100 --brown_clusters_filename=$brown_clusters --corrected_ngram_counts_prefix="$bcountsdir/all_brown."
+  --features_filename=$feats --labels_filename=lbls --append_brown_ngrams=True --max_brown_ngrams_order=4 --max_brown_prefix_length=16 --brown_freq_filter=15 --brown_clusters_filename=$brown_clusters --corrected_ngram_counts_prefix="$bcountsdir/all_brown."
 }
 
 task train_predict : creg pyutil
