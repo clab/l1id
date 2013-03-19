@@ -2,7 +2,7 @@
 
 # Name of the experiment. This also defines which directory the output will be
 # stored in (under ../data/work/).
-export EXPERIMENT_NAME=restored_tokens
+export EXPERIMENT_NAME=brown_clusters_ngrams_3grams_pref16_prob
 
 # Which features should be extracted in this experiment.
 # Set to 1 features you want to be included in this experiment.
@@ -21,14 +21,15 @@ export ADD_MEAN_WORD_RANKS_FEATURES=0
 export ADD_MOST_FREQUENT_WORDS_FEATURES=0
 #export ADD_PMI_AVERAGE_FEATURES=0
 export ADD_PMI_FEATURES=0
-export ADD_DOCUMENT_LENGTH_FEATURES=0
+export ADD_DOCUMENT_LENGTH_FEATURES=1
 export ADD_COHESIVE_MARKERS_FEATURES=0
 export ADD_COHESIVE_VERBS_FEATURES=0
 export ADD_MISSPELLINGS_FEATURES=0
-export ADD_RESTORED_FW_FEATURES=1
-export ADD_RESTORED_PUNCTUATION_FEATURES=1
+export ADD_RESTORED_FW_FEATURES=0
+export ADD_RESTORED_PUNCTUATION_FEATURES=0
 export ADD_RESTORED_CV_FEATURES=0
-export ADD_LEMMAS_FEATURES=1
+export ADD_LEMMAS_FEATURES=0
+export ADD_BROWN_NGRAMS_FEATURES=1
 
 # Directory with training texts
 export TRAINING_INPUT_DIR=${INPUT_DIR}/NLI_2013_Training_Data/tokenized
@@ -38,6 +39,7 @@ export EXPERIMENT_DIR=${WORK_DIR}/${EXPERIMENT_NAME}
 export FW_LIST_FILE=${INPUT_DIR}/function_words.txt
 export PMI_UNIGRAMS_DUMP=${INPUT_DIR}/1gms/vocab.pk
 export PMI_BIGRAMS_DUMP=${INPUT_DIR}/2gms/
+export BROWN_CLUSTERS=${INPUT_DIR}/en-c600.txt
 
 # Names of intermediate files:
 export POS_TAGGED_DIR=${EXPERIMENT_DIR}/pos_tagged
@@ -50,11 +52,13 @@ export CROSS_VALIDATION_RESULTS=${EXPERIMENT_DIR}/train.results.txt
 # based on the parameters above.
 # NOTE: Don't forget to append an extra space after each parameter.
 EXTRACT_FEATURES_PARAMS=""
+
 if [ "${ADD_POS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_pos_ngrams_features=True "
   EXTRACT_FEATURES_PARAMS+="--max_ngrams_order=3 "
   EXTRACT_FEATURES_PARAMS+="--pos_tagged_dir_ngrams=${POS_TAGGED_DIR} "
 fi
+
 if [ "${ADD_PUNCTUATION_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_punctuation_features=True "
 fi
@@ -144,5 +148,11 @@ if [ "${ADD_LEMMAS_FEATURES}" == "1" ] ; then
   EXTRACT_FEATURES_PARAMS+="--append_lemmas_features=True "
   EXTRACT_FEATURES_PARAMS+="--pos_tagged_dir_lemmas=${POS_TAGGED_DIR} "
   EXTRACT_FEATURES_PARAMS+="--most_frequent_lemmas_num=300 "
+fi
+if [ "${ADD_BROWN_NGRAMS_FEATURES}" == "1" ] ; then
+  EXTRACT_FEATURES_PARAMS+="--append_brown_ngrams=True "
+  EXTRACT_FEATURES_PARAMS+="--max_brown_ngrams_order=3 "
+  EXTRACT_FEATURES_PARAMS+="--max_brown_prefix_length=16 "
+  EXTRACT_FEATURES_PARAMS+="--brown_clusters_filename=${BROWN_CLUSTERS} "
 fi
 export EXTRACT_FEATURES_PARAMS
