@@ -156,9 +156,16 @@ task _pmi : scripts < tokdir=@ meta=@ pmi_unigrams_dump=../system/data/input/1gm
   --features_filename=$feats --labels_filename=lbls --append_pmi_features=True --pmi_threshold=0 --pmi_unigrams_dump=$pmi_unigrams_dump --pmi_bigrams_dump=$pmi_bigrams_dump --pmi_unigrams_number=1024908267229 --pmi_bigrams_number=910868505431
 }
 task _brown : scripts < tokdir=@ meta=@ brown_clusters=../system/data/input/en-c600.txt
+	< bcounts1=../system/data/input/NLI_2013_Training_Data/all_brown.1grams
+	< bcounts2=../system/data/input/NLI_2013_Training_Data/all_brown.2grams
+	< bcounts3=../system/data/input/NLI_2013_Training_Data/all_brown.3grams
+	< bcounts4=../system/data/input/NLI_2013_Training_Data/all_brown.4grams
          > feats {
+    
+    bcountsdir=`dirname $bcounts1`     
+    
     $scripts/extract_instances.py --input_dir="$tokdir" --metadata_filename="$meta" \
-  --features_filename=$feats --labels_filename=lbls --append_brown_ngrams=True --max_brown_ngrams_order=3 --max_brown_prefix_length=16 --brown_clusters_filename=$brown_clusters
+  --features_filename=$feats --labels_filename=lbls --append_brown_ngrams=True --max_brown_ngrams_order=4 --max_brown_prefix_length=15 --brown_freq_filter=100 --brown_clusters_filename=$brown_clusters --corrected_ngram_counts_prefix="$bcountsdir/all_brown."
 }
 
 task train_predict : creg pyutil
@@ -397,6 +404,12 @@ plan DevI4 {
 		* (CxtFxnFeatures: 1) * (CharFeatures: 0) * (PronFeatures: 1) 
 		* (PositionFeatures: 1) * (DocLenFeatures: 1) * (PsvRatioFeatures: 1) 
 		* (MisspellFeatures: 1) * (Brown: 0) * (FreqChar: 1) * (CharPrompt: 1) * (Restore: 1)
+}
+plan DevI5 {
+	reach eval_ via (Regularization: l2_5.0 l2_10.0) * (PosFeatures: 1) * (PunctFeatures: 1) 
+		* (CxtFxnFeatures: 1) * (CharFeatures: 0) * (PronFeatures: 1) 
+		* (PositionFeatures: 1) * (DocLenFeatures: 1) * (PsvRatioFeatures: 1) 
+		* (MisspellFeatures: 1) * (Brown: 1) * (FreqChar: 1) * (CharPrompt: 1) * (Restore: 1)
 }
 
 #####
