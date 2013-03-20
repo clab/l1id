@@ -74,7 +74,11 @@ def LoadMetadata(metadata_file):
   file_to_lang = {}
   for line in metadata_file:
     # 278.txt,P6,GER,medium
-    filename, prompt, lang, level = line.strip().split(",")
+    if line.count(",")==3:
+      filename, prompt, lang, level = line.strip().split(",")
+    else:
+      filename, prompt, level = line.strip().split(",")  # language unavailable in test set
+      lang = '???'
     #file_to_lang[filename] = lang
     file_to_lang[filename] = [lang,prompt]
   return file_to_lang
