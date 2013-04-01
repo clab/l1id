@@ -1,0 +1,238 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{naaclhlt2013}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{hyperref}
+\usepackage{paralist}
+\defaultleftmargin{1em}{}{}{} % default is 2em
+
+\usepackage[round]{natbib}
+\setlength\titlebox{6.5cm}    % Expanding the titlebox
+
+\title{Identifying the L1 of non-native writers: the CMU-Haifa system\\[1em]
+{\large Chris Dyer$^1$ Manaal Faruqui$^1$ Noam Ordan$^2$ Nathan Schneider$^1$\\ Yulia Tsvetkov$^1$ Naama Twitto$^2$ Shuly Wintner$^2$}\\[-3em]
+}
+
+\author{
+\\
+$^1$Language Technologies Institute\\Carnegie Mellon University\\Pittsburgh, PA\\\texttt{cdyer@cs.cmu.edu}
+\And
+\\
+$^2$Department of Computer Science\\University of Haifa\\Haifa, Israel\\\texttt{shuly@cs.haifa.ac.il}
+%
+%
+%C.\ Dyer M.\ Faruqui N.\ Schneider Y.\ Tsvetkov\\Language Technologies Institute\\Carnegie Mellon University\\Pittsburgh, PA\\\texttt{cdyer@cs.cmu.edu}
+%\And
+%N.\ Ordan N.\ Twitto S.\ Wintner\\Department of Computer Science\\University of Haifa\\Israel\\\texttt{shuly@cs.haifa.ac.il}
+%
+%
+%Chris Dyer\\Language Technologies Institute\\Carnegie Mellon University\\Pittsburgh, PA\\\texttt{cdyer@cs.cmu.edu}
+%\And
+%Manaal Faruqui\\Language Technologies Institute\\Carnegie Mellon University\\Pittsburgh, PA\\\texttt{manaalfar@gmail.com}
+%\And
+%Noam Ordan\\Department of Computer Science\\University of Haifa\\Israel\\\texttt{noam.ordan@gmail.com}
+%\And
+%Nathan Schneider\\Language Technologies Institute\\Carnegie Mellon University\\Pittsburgh, PA\\\texttt{nathan@cmu.edu}
+%\And
+%Yulia Tsvetkov\\Language Technologies Institute\\Carnegie Mellon University\\Pittsburgh, PA\\\texttt{yulia.tsvetkov@gmail.com}
+%\And
+%Naama Twitto\\Department of Computer Science\\University of Haifa\\Israel\\\texttt{naama.twitto@gmail.com}
+%\And
+%Shuly Wintner\\Department of Computer Science\\University of Haifa\\Israel\\\texttt{shuly@cs.haifa.ac.il}
+}
+
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Given a dataset of English essays composed by non-native speakers, as
+part of the TOEFL exam, we identify with high accuracy the native
+language of the authors. We use standard text classification
+techniques, but define sophisticated classifiers that are sensitive to
+the specific patterns observed in the English of authors whose first
+language is structurally different. We describe the various features
+used for classification, as well as the settings of the classifier
+that yielded the highest accuracy.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+The task we address in this work is identifying the native language
+(\emph{L1}) of non-native English authors. More specifically, given a
+dataset
+\citep{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR} of
+short English essays, composed as part of the TOEFL exam (of English
+as a foreign language) by authors whose native language is one out
+of~11 possible languages (Arabic, Chinese, French, German, Hindi,
+Italian, Japanese, Korean, Spanish, Telugu, and Turkish), our task is
+to identify that language.
+
+This task has a clear empirical motivation. Non-native speakers make
+different errors when they write English, depending on their native
+language \citep{swan2001learner}; understanding the different types of
+errors is a prerequisite for correcting them
+\citep{Leacock:2010:AGE:1855062}, and systems such as the one we
+describe here can shed interesting light on such errors. Tutoring
+applications can use our system to identify the native language of
+students and offer better-targeted advice. Forensic linguistic
+applications are sometimes required to determine the L1 of authors
+\citep{estival-gaustad-pham-radford-hutchinson:2007:ALTA2007,estival2007author}. Additionally,
+we believe that the task is interesting in and of itself, providing a
+better understanding of non-native language. We are thus equally
+interested in defining \emph{meaningful} features whose contribution
+to the task can be linguistically interpreted.
+
+We address the task as a multiway text-classification task; we specify
+our methodology in Section~\ref{sec:methodology}. As in other author
+attribution tasks \citep{joula:2006}, the choice of features for the
+classifier is crucial; we discuss the features we define in
+Section~\ref{sec:features}. We report our results in
+Section~\ref{sec:results} and conclude with suggestions for future
+research.
+
+\section{Related work}
+\label{sec:literature}
+The task of L1 identification was introduced by
+\citet{koppel2005automatically,koppel2005determining}, who work on the
+International Corpus of Learner English \citep{icle}, which includes
+texts written by students from Russia, the Czech Republic, Bulgaria,
+France, and Spain. The texts lengths range from 500 to 850 words. The
+classification method is a linear SVM, and features include 400
+standard function words, 200 letter $n$-grams, 185 error types and 250
+rare part-of-speech (POS) bi-grams. Ten-fold cross-validation results
+on this dataset are 80\% accuracy.
+
+The same experimental setup is assumed by
+\citet{tsur-rappoport:2007:Cognitive-2007}, who are mostly interested
+in testing the hypothesis that an author's choice of words in a second
+language is influenced by the phonology of his or her L1. They confirm
+this hypothesis by carefully analyzing the features used by
+\citeauthor{koppel2005automatically}, controlling for potential
+biases.
+
+\citet{Wong-Dras:2009:ALTA2009,wong-dras:2011:EMNLP} are also
+motivated by a linguistic hypothesis, namely that syntactic errors in
+a text are influenced by the author's
+L1. \citet{Wong-Dras:2009:ALTA2009} analyze three error types
+statistically, and then add them as features in the same experimental
+setup as above (using LIBSVM with a radial kernel for
+classification). The error types are subject-verb disagreement,
+noun-number disagreement and misuse of determiners. Addition of these
+features does not improve on the results of
+\citeauthor{koppel2005automatically}. \citet{wong-dras:2011:EMNLP}
+further extend this work by adding as features horizontal slices of
+parse trees, thereby capturing more syntactic structure. This improves
+the results significantly, yielding 78\% accuracy compared with less
+than 65\% using only lexical features.
+
+\citet{kochmar2011identification} uses a different corpus, the
+Cambridge Learner Corpus, in which texts are 200-400 word long, and
+are authored by native speakers of five Germanic languages (German,
+Swiss German, Dutch, Swedish and Danish) and five Romance languages
+(French, Italian, Catalan, Spanish and Portuguese). Again, SVM is the
+classification device. Features include POS $n$-grams, character
+$n$-grams, phrase-structure rules (extracted from parse trees), and
+two measures of error rate. The classifier is evaluated on its ability
+to distinguish between pairs of closely-related L1s, and the results
+are usually excellent.
+
+A completely different approach is offered by
+\citet{brooke2011native}. Since training corpora for this task are
+rare, they use mainly L1 (blog) corpora. Given English word bi-grams
+$\langle e_1,e_2\rangle$, they try to assess, for each L1, how likely
+it is that an L1 bi-gram was translated literally by the author,
+resulting in $\langle e_1,e_2\rangle$. Working with four L1s (French,
+Spanish, Chinese, and Japanese), and evaluating on the International
+Corpus of Learner English, the results are lower than 50\%.
+
+Our dataset in this work is different, and consists of TOEFL essays
+written by speakers of eleven different L1s
+\citep{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR},
+distributed as part of the First Native Language Identification Shared
+Task \citep{tetreault-blanchard-cahill:2013:BEA}. We use a plethora of
+features; some of them are inspired by previous work outlined above,
+but many are motivated by other author attribution tasks, in
+particular identification of \emph{translationese}, the language of
+translated texts \citep{vered:noam:shuly}.
+
+\section{Methodology}
+\label{sec:methodology}
+Characteristics of the dataset. Development, train, test sets.
+
+For classification we use \emph{creg}...
+
+Pre-processing: POS-tagging, etc.
+
+\section{Features}
+\label{sec:features}
+We define a large arsenal of features, our motivation being both to
+improve the accuracy of classification and to be able to interpret the
+characteristics of the language produced by speakers of different
+L1s. In this section we define the features and motivate their use.%
+\footnote{Whenever counts are mentioned, we use the log of the count
+  as the feature.}  
+While some of the features were used in the works surveyed in
+Section~\ref{sec:literature}, many are novel, and are inspired by the
+features used to identify translationese by \citet{vered:noam:shuly}.
+We also report the accuracy of using each feature type, in isolation,
+on the training set.
+
+\begin{compactdesc}
+\item[Character $n$-grams] The number of character 1-, 2-, and
+  3-grams. 69.94\%.
+\item[Frequent character $n$-grams] Only those character $n$-grams
+  that are observed more than $m$ times in the corpus are
+  considered. ???
+\item[POS $n$-grams] The number of POS 1-, 2-, and 3-grams. 53.92\%.
+\item[Document length] The number of tokens in the text. 11.81\%.
+\item[Pronouns] The number of each pronoun. 22.81\%.
+\item[Punctuation] The number of each punctuation mark. 27.41\%.
+\item[Passives] The ratio of verbs to passive verbs. 12.26\%.
+\item[Positional token frequency] The choice of the first and last few
+  words in a sentence is highly constrained, and may be significantly
+  influenced by the authors L1. We use the counts (???) of the first
+  and last three words in each sentence as features. 53.03\%.
+\item[Cohesive markers] These are function words (and short phrases)
+  that have a strong discourse function in texts, contributing to its
+  cohesiveness. 25.71\%.
+\item[Cohesive verbs] ???. 22.85\%.
+\item[Function words] The number of occurrences of each word from a
+  pre-defined list of 100 most frequent words in English (excluding
+  punctuation). 42.47\%.
+\item[Contextual function words, bigrams] Pairs consisting of a
+  function word from the list mentioned above, along with the POS tag
+  of its adjacent word. This feature captures patterns such as verbs
+  and the preposition or particle immediately to their right, or nouns
+  and the determiner that precedes them. 62.79\%
+\item[Contextual function words, trigrams] Same as above, but counting
+  3-grams consisting of two function words and the POS tag of the
+  third word in the 3-gram. 62.32\%.
+\item[Lemmas] The number of each of the most frequent lemmas in the
+  text. ???. 58.95\%.
+\item[Prompt] Conjunction of the character $n$-gram features defined
+  above with the prompt; since the prompt contributes information on
+  the domain, it is likely that some words (and, hence, character
+  sequences) will occur more frequently with some prompts than with
+  others. 65.09\%.
+\item[Misspelling features] ???. 37.29\%.
+\item[Brown] ???
+\item[Restored] ???
+\end{compactdesc}
+
+\section{Results}
+\label{sec:results}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+\section*{Acknowledgments}
+This research was supported by a grant from the Israeli Ministry of
+Science and Technology.
+
+\clearpage
+
+\bibliography{l1id}
+\bibliographystyle{plainnat}
+
+\end{document}

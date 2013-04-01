@@ -1,0 +1,126 @@
+\begin{thebibliography}{16}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Blanchard et~al.(2013)Blanchard, Tetreault, Higgins, Cahill, and
+  Chodorow]{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR}
+Daniel Blanchard, Joel Tetreault, Derrick Higgins, Aoife Cahill, and Martin
+  Chodorow.
+\newblock {TOEFL11}: A corpus of non-native {E}nglish.
+\newblock Technical report, Educational Testing Service, 2013.
+
+\bibitem[Brooke and Hirst(2011)]{brooke2011native}
+Julian Brooke and Graeme Hirst.
+\newblock Native language detection with `cheap' learner corpora.
+\newblock In \emph{Conference of Learner Corpus Research (LCR2011)},
+  Louvain-la-Neuve, Belgium, 2011. Presses universitaires de Louvain.
+
+\bibitem[Estival et~al.(2007{\natexlab{a}})Estival, Gaustad, Pham, Radford, and
+  Hutchinson]{estival-gaustad-pham-radford-hutchinson:2007:ALTA2007}
+Dominique Estival, Tanja Gaustad, Son~Bao Pham, Will Radford, and Ben
+  Hutchinson.
+\newblock {TAT}: An author profiling tool with application to {A}rabic emails.
+\newblock In \emph{Proceedings of the Australasian Language Technology Workshop
+  2007}, pages 21--30, Melbourne, Australia, December 2007{\natexlab{a}}.
+\newblock URL \url{http://www.aclweb.org/anthology/U07-1006}.
+
+\bibitem[Estival et~al.(2007{\natexlab{b}})Estival, Gaustad, Pham, Radford, and
+  Hutchinson]{estival2007author}
+Dominique Estival, Tanja Gaustad, Son~Bao Pham, Will Radford, and Ben
+  Hutchinson.
+\newblock Author profiling for {E}nglish emails.
+\newblock In \emph{Proceedings of the 10th Conference of the Pacific
+  Association for Computational Linguistics}, pages 263--272, Melbourne,
+  Australia, 2007{\natexlab{b}}.
+
+\bibitem[Granger et~al.(2009)Granger, Dagneaux, Meunier, and Paquot]{icle}
+Sylviane Granger, Estelle Dagneaux, Fanny Meunier, and Magali Paquot.
+\newblock \emph{International Corpus of Learner {E}nglish}.
+\newblock Presses universitaires de Louvain, Louvain-la-Neuve, 2009.
+\newblock ISBN 978-2-87463-143-6.
+
+\bibitem[Juola(2006)]{joula:2006}
+Patrick Juola.
+\newblock Authorship attribution.
+\newblock \emph{Foundations and Trends in Information Retrieval}, 1\penalty0
+  (3):\penalty0 233--334, 2006.
+\newblock URL \url{http:/dx.doi.org/10.1561/1500000005}.
+
+\bibitem[Kochmar(2011)]{kochmar2011identification}
+Ekaterina Kochmar.
+\newblock Identification of a writer's native language by error analysis.
+\newblock Master's thesis, University of Cambridge, 2011.
+
+\bibitem[Koppel et~al.(2005{\natexlab{a}})Koppel, Schler, and
+  Zigdon]{koppel2005automatically}
+Moshe Koppel, Jonathan Schler, and Kfir Zigdon.
+\newblock Automatically determining an anonymous author's native language.
+\newblock \emph{Intelligence and Security Informatics}, pages 41--76,
+  2005{\natexlab{a}}.
+
+\bibitem[Koppel et~al.(2005{\natexlab{b}})Koppel, Schler, and
+  Zigdon]{koppel2005determining}
+Moshe Koppel, Jonathan Schler, and Kfir Zigdon.
+\newblock Determining an author's native language by mining a text for errors.
+\newblock In \emph{Proceedings of the eleventh ACM SIGKDD international
+  conference on Knowledge discovery in data mining}, pages 624--628, Chicago,
+  IL, 2005{\natexlab{b}}. ACM.
+
+\bibitem[Leacock et~al.(2010)Leacock, Chodorow, Gamon, and
+  Tetreault]{Leacock:2010:AGE:1855062}
+Claudia Leacock, Martin Chodorow, Michael Gamon, and Joel Tetreault.
+\newblock \emph{Automated Grammatical Error Detection for Language Learners}.
+\newblock Morgan and Claypool, 2010.
+\newblock URL
+  \url{http://www.morganclaypool.com/doi/abs/10.2200/S00275ED1V01Y201006HLT009}.
+
+\bibitem[Swan and Smith(2001)]{swan2001learner}
+Michael Swan and Bernard Smith.
+\newblock \emph{Learner {E}nglish: A Teacher's Guide to Interference and Other
+  Problems}.
+\newblock Cambridge Handbooks for Language Teachers. Cambridge University
+  Press, 2001.
+\newblock ISBN 9780521779395.
+
+\bibitem[Tetreault et~al.(2013)Tetreault, Blanchard, and
+  Cahill]{tetreault-blanchard-cahill:2013:BEA}
+Joel Tetreault, Daniel Blanchard, and Aoife Cahill.
+\newblock A report on the first native language identification shared task.
+\newblock In \emph{Proceedings of the Eighth Workshop on Innovative Use of NLP
+  for Building Educational Applications}, Atlanta, GA, USA, June 2013.
+  Association for Computational Linguistics.
+
+\bibitem[Tsur and Rappoport(2007)]{tsur-rappoport:2007:Cognitive-2007}
+Oren Tsur and Ari Rappoport.
+\newblock Using classifier features for studying the effect of native language
+  on the choice of written second language words.
+\newblock In \emph{Proceedings of the Workshop on Cognitive Aspects of
+  Computational Language Acquisition}, pages 9--16, Prague, Czech Republic,
+  June 2007. Association for Computational Linguistics.
+\newblock URL \url{http://www.aclweb.org/anthology/W/W07/W07-0602}.
+
+\bibitem[Volansky et~al.(Forthcoming)Volansky, Ordan, and
+  Wintner]{vered:noam:shuly}
+Vered Volansky, Noam Ordan, and Shuly Wintner.
+\newblock On the features of translationese.
+\newblock \emph{Literary and Linguistic Computing}, Forthcoming.
+
+\bibitem[Wong and Dras(2009)]{Wong-Dras:2009:ALTA2009}
+Sze-Meng~Jojo Wong and Mark Dras.
+\newblock Contrastive analysis and native language identification.
+\newblock In \emph{Proceedings of the Australasian Language Technology
+  Association Workshop 2009}, pages 53--61, Sydney, Australia, December 2009.
+\newblock URL \url{http://www.aclweb.org/anthology/U09-1008}.
+
+\bibitem[Wong and Dras(2011)]{wong-dras:2011:EMNLP}
+Sze-Meng~Jojo Wong and Mark Dras.
+\newblock Exploiting parse structures for native language identification.
+\newblock In \emph{Proceedings of the 2011 Conference on Empirical Methods in
+  Natural Language Processing}, pages 1600--1610, Edinburgh, Scotland, UK.,
+  July 2011. Association for Computational Linguistics.
+\newblock URL \url{http://www.aclweb.org/anthology/D11-1148}.
+
+\end{thebibliography}
