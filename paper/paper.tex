@@ -1,24 +1,79 @@
 \documentclass[11pt,letterpaper]{article}
+\usepackage[linkcolor=blue]{hyperref}	% must precede ACL style
+\usepackage{relsize} % relative font sizes (e.g. \smaller). must precede ACL style
 \usepackage{naaclhlt2013}
 \usepackage{times}
 \usepackage{latexsym}
-\usepackage{hyperref}
+
+
+\usepackage{amsmath,amsfonts,eucal,amsbsy,amsthm,amsopn,amssymb}
+
+\usepackage{txfonts}
+\usepackage[scaled]{beramono}
+\usepackage[T1]{fontenc}
+
 \usepackage{paralist}
 \defaultleftmargin{1em}{}{}{} % default is 2em
 
 \usepackage[round]{natbib}
 \setlength\titlebox{6.5cm}    % Expanding the titlebox
 
+
+
+% Author comments
+\usepackage{color}
+\usepackage{bm}
+\definecolor{orange}{rgb}{1,0.5,0}
+\definecolor{mdgreen}{rgb}{0,0.6,0}
+\definecolor{dkblue}{rgb}{0,0,0.5}
+\definecolor{dkgray}{rgb}{0.3,0.3,0.3}
+\definecolor{slate}{rgb}{0.25,0.25,0.4}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{purple}{rgb}{0.7,0,1.0}
+\newcommand{\ensuretext}[1]{#1}
+\newcommand{\cjdmarker}{\ensuretext{\textcolor{green}{\ensuremath{^{\textsc{CJ}}_{\textsc{D}}}}}}
+\newcommand{\nssmarker}{\ensuretext{\textcolor{magenta}{\ensuremath{^{\textsc{NS}}_{\textsc{S}}}}}}
+\newcommand{\swmarker}{\ensuretext{\textcolor{red}{\ensuremath{^{\textsc{S}}_{\textsc{W}}}}}}
+\newcommand{\ytmarker}{\ensuretext{\textcolor{blue}{\ensuremath{^{\textsc{Y}}_{\textsc{T}}}}}}
+\newcommand{\ntmarker}{\ensuretext{\textcolor{green}{\ensuremath{^{\textsc{N}}_{\textsc{T}}}}}}
+\newcommand{\arkcomment}[3]{\ensuretext{\textcolor{#3}{[#1 #2]}}}
+%\newcommand{\arkcomment}[3]{}
+\newcommand{\cjd}[1]{\arkcomment{\cjdmarker}{#1}{green}}
+\newcommand{\nss}[1]{\arkcomment{\nssmarker}{#1}{magenta}}
+\newcommand{\sw}[1]{\arkcomment{\swmarker}{#1}{red}}
+\newcommand{\yt}[1]{\arkcomment{\ytmarker}{#1}{blue}}
+\newcommand{\nt}[1]{\arkcomment{\ntmarker}{#1}{orange}}
+\newcommand{\w}{\mathbf{w}}
+\newcommand{\g}{\mathbf{g}}
+\newcommand{\f}{\mathbf{f}}
+\newcommand{\x}{\boldsymbol{x}}
+\newcommand{\y}{\boldsymbol{y}}
+\newcommand{\cost}{c}
+
+\newcommand{\Sref}[1]{\S\ref{#1}}
+\newcommand{\fref}[1]{figure~\ref{#1}}
+\newcommand{\Fref}[1]{Figure~\ref{#1}}
+\newcommand{\tref}[1]{table~\ref{#1}}
+\newcommand{\Tref}[1]{Table~\ref{#1}}
+
+
+% special macros
+
+\newcommand{\feat}[1]{\textsmaller[.5]{\textsf{#1}}} % code for a feature group
+
+
+
+
 \title{Identifying the L1 of non-native writers: the CMU-Haifa system\\[1em]
-{\large Chris Dyer$^1$ Manaal Faruqui$^1$ Noam Ordan$^2$ Nathan Schneider$^1$\\ Yulia Tsvetkov$^1$ Naama Twitto$^2$ Shuly Wintner$^2$}\\[-3em]
+{\large Chris Dyer$^\ast$ Manaal Faruqui$^\ast$ Noam Ordan$^\dagger$ Nathan Schneider$^\ast$\\ Yulia Tsvetkov$^\ast$ Naama Twitto$^\dagger$ Shuly Wintner$^\dagger$}\\[-3em]
 }
 
 \author{
 \\
-$^1$Language Technologies Institute\\Carnegie Mellon University\\Pittsburgh, PA\\\texttt{cdyer@cs.cmu.edu}
+$^\ast$Language Technologies Institute\\Carnegie Mellon University\\Pittsburgh, PA\\\texttt{cdyer@cs.cmu.edu}
 \And
 \\
-$^2$Department of Computer Science\\University of Haifa\\Haifa, Israel\\\texttt{shuly@cs.haifa.ac.il}
+$^\dagger$Department of Computer Science\\University of Haifa\\Haifa, Israel\\\texttt{shuly@cs.haifa.ac.il}
 %
 %
 %C.\ Dyer M.\ Faruqui N.\ Schneider Y.\ Tsvetkov\\Language Technologies Institute\\Carnegie Mellon University\\Pittsburgh, PA\\\texttt{cdyer@cs.cmu.edu}
@@ -84,11 +139,11 @@ interested in defining \emph{meaningful} features whose contribution
 to the task can be linguistically interpreted.
 
 We address the task as a multiway text-classification task; we specify
-our methodology in Section~\ref{sec:methodology}. As in other author
+our methodology in \Sref{sec:methodology}. As in other author
 attribution tasks \citep{joula:2006}, the choice of features for the
 classifier is crucial; we discuss the features we define in
-Section~\ref{sec:features}. We report our results in
-Section~\ref{sec:results} and conclude with suggestions for future
+\Sref{sec:features}. We report our results in
+\Sref{sec:results} and conclude with suggestions for future
 research.
 
 \section{Related work}
@@ -164,8 +219,13 @@ For classification we use \emph{creg}...
 
 Pre-processing: POS-tagging, etc.
 
-\section{Features}
-\label{sec:features}
+\section{Model Overview}
+%\label{sec:features}
+
+\nss{I think we should break this up into sections by feature group (below). 
+Here we can talk about learning and regularization and give a high-level overview 
+of features.}
+
 We define a large arsenal of features, our motivation being both to
 improve the accuracy of classification and to be able to interpret the
 characteristics of the language produced by speakers of different
@@ -173,7 +233,7 @@ L1s. In this section we define the features and motivate their use.%
 \footnote{Whenever counts are mentioned, we use the log of the count
   as the feature.}  
 While some of the features were used in the works surveyed in
-Section~\ref{sec:literature}, many are novel, and are inspired by the
+\Sref{sec:literature}, many are novel, and are inspired by the
 features used to identify translationese by \citet{vered:noam:shuly}.
 We also report the accuracy of using each feature type, in isolation,
 on the training set.
@@ -219,6 +279,45 @@ on the training set.
 \item[Brown] ???
 \item[Restored] ???
 \end{compactdesc}
+
+\section{Main Features}\label{sec:mainfeats}
+
+These four feature groups form the core of our model.
+
+\subsection{\feat{POS}: part-of-speech sequences}
+
+\subsection{\feat{FreqChar}: frequent character $n$-grams}
+
+\subsection{\feat{CharPrompt}: character $n$-grams paired with the prompt ID}
+
+\subsection{\feat{Brown}: Brown clusters}
+
+\section{Additional Features}
+
+Each of these adds a small number of parameters to the model. 
+We report the empirical improvement that each of these brings 
+independently when added to the main features (\Sref{sec:mainfeats}).
+The full model combines all features.
+
+\subsection{\feat{CxtFxn}: Contextual function words\nss{does this subsume pronouns?}}
+
+\subsection{\feat{DocLen}: Document length in tokens}
+
+\subsection{\feat{Misspell}: Spelling correction edits}
+
+\subsection{\feat{Position}: \nss{?}}
+
+\subsection{\feat{Pron}: pronouns\nss{?}}
+
+\subsection{\feat{PsvRatio}: Ratio of passive to active voice verbs\nss{or is it the proportion of passive verbs?}}
+
+\subsection{\feat{Punct}: Count of each punctuation mark}
+
+\subsection{\feat{Restore}: LM-restored function words}
+
+\subsection{Discarded Features}
+
+\nss{things that didn't help in our preliminary experiments}
 
 \section{Results}
 \label{sec:results}
