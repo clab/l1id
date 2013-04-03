@@ -243,7 +243,7 @@ on the training set.
   3-grams. 69.94\%.
 \item[Frequent character $n$-grams] Only those character $n$-grams
   that are observed more than $m$ times in the corpus are
-  considered. ???
+  considered. ??? \nt{this includes 1 to 4 $n$-grams, resulting in 74.12\%}
 \item[POS $n$-grams] The number of POS 1-, 2-, and 3-grams. 53.92\%.
 \item[Document length] The number of tokens in the text. 11.81\%.
 \item[Pronouns] The number of each pronoun. 22.81\%.
@@ -253,12 +253,12 @@ on the training set.
   words in a sentence is highly constrained, and may be significantly
   influenced by the authors L1. We use the counts (???) of the first
   and last three words in each sentence as features. 53.03\%.
-\item[Cohesive markers] These are function words (and short phrases)
-  that have a strong discourse function in texts, contributing to its
-  cohesiveness. 25.71\%.
-\item[Cohesive verbs] ???. 22.85\%.
+\item[Cohesive markers] These are 40 function words (and short phrases)
+  that have a strong discourse function in texts \nt{such as 'however', 'becuase', 'in fact' etc}, contributing to its
+  cohesiveness. 25.71\%. \nt{Translators tend to spell out implicit utterances and render them explicitly in the target text (REFERENCE TO BLUM-KULKA); MAYBE APPEND THE LIST IN THE END?} 
+\item[Cohesive verbs] \nt{This is a list of manually compiled verbs that serve, like `cohesive markers' to spell out implicit utterances; they include, among others, `indicating', `implying' and `containing'. Same, consider appending the list}. 22.85\%.
 \item[Function words] The number of occurrences of each word from a
-  pre-defined list of 100 most frequent words in English (excluding
+  pre-defined list of 100 \nt{did you use only 100? it should be 400 and the reference should be to Koppel and Ordan} most frequent words in English (excluding
   punctuation). 42.47\%.
 \item[Contextual function words, bigrams] Pairs consisting of a
   function word from the list mentioned above, along with the POS tag
@@ -266,9 +266,8 @@ on the training set.
   and the preposition or particle immediately to their right, or nouns
   and the determiner that precedes them. 62.79\%
 \item[Contextual function words, trigrams] Same as above, but counting
-  3-grams consisting of two function words and the POS tag of the
-  third word in the 3-gram. 62.32\%.
-\item[Lemmas] The number of each of the most frequent lemmas in the
+  \nt{2- or} 3-grams consisting of one or two function words (respectively) and the POS tag of the third word \nt{character?} in the \nt{2- or} 3-gram. 62.32\%.
+\item[Lemmas] \nt{these should be actually `stems' as produced by the Stanford tagger} The number of each of the most frequent lemmas in the
   text. ???. 58.95\%.
 \item[Prompt] Conjunction of the character $n$-gram features defined
   above with the prompt; since the prompt contributes information on
@@ -299,7 +298,7 @@ We report the empirical improvement that each of these brings
 independently when added to the main features (\Sref{sec:mainfeats}).
 The full model combines all features.
 
-\subsection{\feat{CxtFxn}: Contextual function words\nss{does this subsume pronouns?}}
+\subsection{\feat{CxtFxn}: Contextual function words\nss{does this subsume pronouns?}} \nt{yes}
 
 \subsection{\feat{DocLen}: Document length in tokens}
 
@@ -307,7 +306,7 @@ The full model combines all features.
 
 \subsection{\feat{Position}: \nss{?}}
 
-\subsection{\feat{Pron}: pronouns\nss{?}}
+\subsection{\feat{Pron}: pronouns\nss{?}} \nt{A list of 25 pronouns in English, again, append list}
 
 \subsection{\feat{PsvRatio}: Ratio of passive to active voice verbs\nss{or is it the proportion of passive verbs?}}
 
