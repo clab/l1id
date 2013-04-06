@@ -291,12 +291,12 @@ We begin by motivating our choice of features.
 \item[Restored tags] We focus on three important token classes defined
   above: punctuation marks, function words and cohesive verbs. We
   first remove words in these classes from the texts, and then recover
-  the most likely hidden POS tags in a sequence of words, according to
+  the most likely hidden tokens \yt{To Shuly: I removed 'POS'. We recover words, not POS tags, I used the word 'tags' to distinguish between words to recover and all other words. Probably the word 'tag' is misleading, I changed it to 'token'} in a sequence of words, according to
   an $n$-gram language model trained on all essays in the training
   corpus corrected with a spell checker and containing both words and
-  hidden tags. This feature should capture specific words or
+  hidden tokens. This feature should capture specific words or
   punctuation marks that are consistently omitted (deletions), or
-  misused (insertions, substitutions). To restore hidden tags we use
+  misused (insertions, substitutions). To restore hidden tokens we use
   the \texttt{hidden-ngram} utility provided in SRILM
   \citep{stolcke02srilm}.
 \item[Brown clusters] \sw{???}
@@ -363,7 +363,7 @@ feature type in isolation.
   62.79\%, tri-gram 62.32\%.
 \item[\feat{Misspell}] Spelling correction edits. \sw{???}. 37.29\%.
 \item[\feat{Restore}] Counts of substitutions, deletions and
-  insertions of predefined tags that we restored in the texts. 47.67\%
+  insertions of predefined tokens that we restored in the texts. 47.67\%
 \end{compactdesc}
 \noindent
 \Tref{tbl:addfeats} reports the empirical improvement that each of
