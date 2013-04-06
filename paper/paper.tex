@@ -251,8 +251,8 @@ on the training set.
 \item[POS $n$-grams] All essays were tagged with the Stanford part-of-speech tagger \citep{toutanova-03}.
 Features were extracted to count every POS 1-, 2-, and 3-gram in each document. 53.92\%.
 \item[Document length] The number of tokens in the text. 11.81\%.
-\item[Pronouns] The number of each pronoun. 22.81\%.
-\item[Punctuation] The number of each punctuation mark. 27.41\%.
+\item[Pronouns] The number of each pronoun. 22.81\%.\nss{subsumed by contextual function words, right?}
+\item[Punctuation] The number of each punctuation mark. 27.41\%.\nss{subsumed by char n-grams, right?}
 \item[Passives] The ratio of verbs to passive verbs. 12.26\%.
 \item[Positional token frequency] The choice of the first and last few
   words in a sentence is highly constrained, and may be significantly
@@ -305,7 +305,7 @@ We report the empirical improvement that each of these brings
 independently when added to the main features (\Sref{sec:mainfeats}).
 The full model combines all features.
 
-\subsection{\feat{CxtFxn}: Contextual function words\nss{does this subsume pronouns?}} \nt{yes}
+\subsection{\feat{CxtFxn}: Contextual function words}
 
 \subsection{\feat{DocLen}: Document length in tokens}
 
@@ -383,6 +383,7 @@ TEL & 0 & 1 & 0 & 0 & 18 & 1 & 2 & 1 & 1 & 73 & 3 & 85.9 & 73.0 & 78.9 \\
 TUR & 4 & 0 & 2 & 2 & 0 & 2 & 2 & 4 & 4 & 0 & 80 & 76.9 & 80.0 & 78.4 \\
 \end{tabular}
 \caption{Official test set confusion matrix with the full model. \nss{which direction is predicted vs. gold?}
+The largest class of errors was predicting Telugu where the correct label was Hindi\nss{or vice versa?}---this happened 18 times. 
 Accuracy is 81.5\%.}\label{tbl:matrix}
 \end{table*}
 
