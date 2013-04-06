@@ -113,19 +113,17 @@ used for classification, as well as the settings of the classifier
 that yielded the highest accuracy.
 \end{abstract}
 
-\nss{shouldn't we use the official bib style file instead of natbib?}
-
 \section{Introduction}
 \label{sec:intro}
 The task we address in this work is identifying the native language
 (\emph{L1}) of non-native English authors. More specifically, given a
-dataset
-\citep{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR} of
-short English essays, composed as part of the TOEFL exam (of English
-as a foreign language) by authors whose native language is one out
-of~11 possible languages (Arabic, Chinese, French, German, Hindi,
-Italian, Japanese, Korean, Spanish, Telugu, and Turkish), our task is
-to identify that language.
+dataset of short English essays
+\citep{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR},
+composed as part of the \emph{Test of English as a Foreign Language
+  (TOEFL)} by authors whose native language is one out of~11 possible
+languages (Arabic, Chinese, French, German, Hindi, Italian, Japanese,
+Korean, Spanish, Telugu, and Turkish), our task is to identify that
+language.
 
 This task has a clear empirical motivation. Non-native speakers make
 different errors when they write English, depending on their native
@@ -219,116 +217,118 @@ translated texts \citep{vered:noam:shuly}.
 \label{sec:methodology}
 Characteristics of the dataset. Development, train, test sets.
 
-For classification we use \emph{creg}...
+For classification we use \emph{creg}... \nss{Here we can talk about
+  learning and regularization and give a high-level overview of
+  features.}
 
-Pre-processing: POS-tagging, etc.
+All essays were tagged with the Stanford part-of-speech tagger
+\citep{toutanova-03}. We did not parse the dataset.
 
 \section{Model Overview}
-%\label{sec:features}
-
-\nss{I think we should break this up into sections by feature group (below). 
-Here we can talk about learning and regularization and give a high-level overview 
-of features.}
-
+\label{sec:features}
 We define a large arsenal of features, our motivation being both to
 improve the accuracy of classification and to be able to interpret the
 characteristics of the language produced by speakers of different
-L1s. In this section we define the features and motivate their use.%
-\footnote{Whenever counts are mentioned, we use the log of the count
-  as the feature.}  
+L1s.
+
+\subsection{Motivation}
 While some of the features were used in the works surveyed in
 \Sref{sec:literature}, many are novel, and are inspired by the
 features used to identify translationese by \citet{vered:noam:shuly}.
-We also report the accuracy of using each feature type, in isolation,
-on the training set.
+We begin by motivating our choice of features.
 
 \begin{compactdesc}
-\item[Character $n$-grams] The number of character 1-, 2-, and
-  3-grams. 69.94\%.
-\item[Frequent character $n$-grams] Only those character $n$-grams
-  that are observed more than $m$ times in the corpus are
-  considered. ??? \nt{this includes 1 to 4 $n$-grams, resulting in 74.12\%}
-\item[POS $n$-grams] All essays were tagged with the Stanford part-of-speech tagger \citep{toutanova-03}.
-Features were extracted to count every POS 1-, 2-, and 3-gram in each document. 53.92\%.
-\item[Document length] The number of tokens in the text. 11.81\%.
-\item[Pronouns] The number of each pronoun. 22.81\%.\nss{subsumed by contextual function words, right?}
-\item[Punctuation] The number of each punctuation mark. 27.41\%.\nss{subsumed by char n-grams, right?}
-\item[Passives] The ratio of verbs to passive verbs. 12.26\%.
+\item[POS $n$-grams] Part-of-speech $n$-grams were used in various
+  text-classification tasks.
+\item[Prompt] Since the prompt contributes information on the domain,
+  it is likely that some words (and, hence, character sequences) will
+  occur more frequently with some prompts than with others. We
+  therefore use the prompt ID in conjunction with other features.
+\item[Document length] The number of tokens in the text is highly
+  correlated with the author's level of fluency, which in turn is
+  correlated with the author's L1.
+\item[Pronouns] The use of pronoun varies greatly among different
+  authors. We use the same list of~25 English pronouns that
+  \citet{vered:noam:shuly} use for identifying translationese.\nss{subsumed by contextual function words, right?}
+\item[Punctuation] Similarly, different languages use punctuation
+  differently, and we expect this to taint the use of punctuation in
+  non-native texts.\nss{subsumed by char n-grams, right?}
+\item[Passives] English uses passive voice more frequently than other
+  languages. Again, the use of passives in L2 can be correlated with
+  the author's L1.
 \item[Positional token frequency] The choice of the first and last few
   words in a sentence is highly constrained, and may be significantly
-  influenced by the authors L1. We use the counts (???)\yt{counts for first two and last three words before the period} of the first
-  and last three words in each sentence as features. 53.03\%.
-\item[Cohesive markers] These are 40 function words (and short phrases)
-  that have a strong discourse function in texts \nt{such as 'however', 'becuase', 'in fact' etc}, contributing to its
-  cohesiveness. 25.71\%. \nt{Translators tend to spell out implicit utterances and render them explicitly in the target text (REFERENCE TO BLUM-KULKA); MAYBE APPEND THE LIST IN THE END?} 
-\item[Cohesive verbs] \nt{This is a list of manually compiled verbs that serve, like `cohesive markers' to spell out implicit utterances; they include, among others, `indicating', `implying' and `containing'. Same, consider appending the list}. 22.85\%.
-\item[Function words] The number of occurrences of each word from a
-  pre-defined list of 100 \nt{did you use only 100? it should be 400 and the reference should be to Koppel and Ordan} \yt{we used 100. differences between 100 and >100 were insignificant} most frequent words in English (excluding
-  punctuation). 42.47\%.
-\item[Contextual function words, bigrams] Pairs consisting of a
+  influenced by the author's L1.
+\item[Cohesive markers] These are 40 function words (and short
+  phrases) that have a strong discourse function in texts (`however',
+  `because', `in fact', etc.) Translators tend to spell out implicit
+  utterances and render them explicitly in the target text
+  \citep{Blum-Kulka:1986}. We use the list
+  of~\citet{vered:noam:shuly}.
+\item[Cohesive verbs] This is a list of manually compiled verbs that
+  are used, like cohesive markers, to spell out implicit utterances
+  (`indicate', `imply', `contain', etc.)
+\item[Function words] Frequent tokens, which are mostly function
+  words, have been used successfully for various text classification
+  tasks. \citet{koppel-ordan:2011:ACL-HLT2011} define a list of 400
+  such words, of which we only use~100 (using the entire list was not
+  significantly different).
+\item[Contextual function words] To further capitalize on the ability
+  of function words to discriminate, we define pairs consisting of a
   function word from the list mentioned above, along with the POS tag
   of its adjacent word. This feature captures patterns such as verbs
   and the preposition or particle immediately to their right, or nouns
-  and the determiner that precedes them. 62.79\%
-\item[Contextual function words, trigrams] Same as above, but counting
-  \nt{2- or} 3-grams consisting of one or two function words (respectively) and the POS tag of the third word \nt{character?} in the \nt{2- or} 3-gram. 62.32\%.
-\item[Lemmas] \nt{these should be actually `stems' as produced by the Stanford tagger} The number of each of the most frequent lemmas in the
-  text. ???. 58.95\%.
-\item[Prompt] Conjunction of the character $n$-gram features defined
-  above with the prompt; since the prompt contributes information on
-  the domain, it is likely that some words (and, hence, character
-  sequences) will occur more frequently with some prompts than with
-  others. 65.09\%.
-\item[Misspelling features] ???. 37.29\%.
-\item[Brown] ???
-\item[Restored] \yt{Counts of substitutions, deletions and insertions of predefined tags that we restored in essays edited with a spelling  corrector and missing all these tags. We define three types of tags: (1) punctuation marks (same list as for punctuation feature), (2) function words (WH-words, prepositions, conjunctions, articles, auxiliary verbs, quantifiers, personal pronouns, possessive pronouns, quantified pronouns), (3) cohesion verbs (lemma, present contiguous/progressive and present simple for each verb). We first remove these tags from texts and then recover the most likely hidden tags in a sequence of words, according to an N-gram language model trained on all essays in the training corpus corrected with a spell checker and containing both words and hidden tags. This feature should capture specific words or punctuation marks that are consistently omitted (deletions), or misused (insertions, substitutions).  To restore hidden tags we use hidden-ngram utility provided in SRILM toolkit\footnote{http://www.speech.sri.com/projects/srilm/manpages/hidden-ngram.1.html} (ref to SRILM). 47.67\%}
-
-
+  and the determiner that precedes them. We also define 3-grams
+  consisting of one or two function words and the POS tag of the third
+  word in the 3-gram.
+\item[Lemmas] The content of the text is not considered a good
+  indication of the author's L1, but many text categorization tasks
+  use lemmas (more precisely, the stems produced by the tagger) as
+  features approximating the content.
+\item[Misspelling features] Clearly, the spelling errors that learners
+  make in English depend on the phonological properties of their
+  L1. \sw{???}
+\item[Restored tags] We focus on three important token classes defined
+  above: punctuation marks, function words and cohesive verbs. We
+  first remove words in these classes from the texts, and then recover
+  the most likely hidden tokens \yt{To Shuly: I removed 'POS'. We recover words, not POS tags, I used the word 'tags' to distinguish between words to recover and all other words. Probably the word 'tag' is misleading, I changed it to 'token'} in a sequence of words, according to
+  an $n$-gram language model trained on all essays in the training
+  corpus corrected with a spell checker and containing both words and
+  hidden tokens. This feature should capture specific words or
+  punctuation marks that are consistently omitted (deletions), or
+  misused (insertions, substitutions). To restore hidden tokens we use
+  the \texttt{hidden-ngram} utility provided in SRILM
+  \citep{stolcke02srilm}.
+\item[Brown clusters] \sw{???}
 \end{compactdesc}
 
-\section{Main Features}\label{sec:mainfeats}
+\subsection{Main Features}
+\label{sec:mainfeats}
+First, we use the following four feature types as the core of our
+model.  Whenever counts are mentioned, we use the log of the count as
+the feature.  We report the accuracy of using each feature type, in
+isolation, on the training set.
 
-These four feature groups form the core of our model.
+\begin{compactdesc}
+\item[\feat{POS}] Part-of-speech $n$-grams.  Features were extracted
+  to count every POS 1-, 2-, and 3-gram in each
+  document. 53.92\%. \sw{But the table says 55.18}
+\item[\feat{FreqChar}] Frequent character $n$-grams.  We experimented
+  with character $n$-grams: The number of character 1-, 2-, and
+  3-grams. This yielded 69.94\% accuracy.  We then refined the feature
+  to include only those character $n$-grams that are observed more
+  than $m$ times in the corpus are considered. \sw{$n$ ranges from~1
+    to~4, and $m$ is set to~???. 74.12\%}
+\item[\feat{CharPrompt}] Conjunction of the character $n$-gram
+  features defined above with the prompt ID. 65.09\%.
+\item[\feat{Brown}] Brown clusters. \sw{???}
+\end{compactdesc}
+\noindent
+The accuracy of the classifier on the development set using these four
+feature types is reported in \Tref{tbl:mainfeats}.
 
-\subsection{\feat{POS}: part-of-speech sequences}
-
-\subsection{\feat{FreqChar}: frequent character $n$-grams}
-
-\subsection{\feat{CharPrompt}: character $n$-grams paired with the prompt ID}
-
-\subsection{\feat{Brown}: Brown clusters}
-
-\section{Additional Features}
-
-Each of these adds a small number of parameters to the model. 
-We report the empirical improvement that each of these brings 
-independently when added to the main features (\Sref{sec:mainfeats}).
-The full model combines all features.
-
-\subsection{\feat{CxtFxn}: Contextual function words}
-
-\subsection{\feat{DocLen}: Document length in tokens}
-
-\subsection{\feat{Misspell}: Spelling correction edits}
-
-\subsection{\feat{Position}: \nss{?}}
-
-\subsection{\feat{Pron}: pronouns\nss{?}} \nt{A list of 25 pronouns in English, again, append list}
-
-\subsection{\feat{PsvRatio}: Ratio of passive to active voice verbs\nss{or is it the proportion of passive verbs?}}
-
-\subsection{\feat{Punct}: Count of each punctuation mark}
-
-\subsection{\feat{Restore}: LM-restored function words}
-
-\subsection{Discarded Features}
-
-\nss{things that didn't help in our preliminary experiments}
-
-\section{Results}
-\label{sec:results}
-
-\begin{table}\small\centering
+\begin{table}[hbt]
+\small\centering
 \begin{tabular}{lrcc}
 \textbf{Feature Group} & \multicolumn{1}{c}{\textbf{\# Params}} & \textbf{Accuracy (\%)} & \textbf{$\ell_2$} \\
 \hline
@@ -338,12 +338,40 @@ The full model combines all features.
 \qquad + \feat{Brown} & 5,664,461 & 81.09 & 1.0 \\
 \end{tabular}
 \caption{Dev set accuracy with \textsc{main} feature groups, added cumulatively. 
-The number of parameters is always a multiple of 11 (the number of classes). 
-Only $\ell_2$ regularization was used for these experiments; 
-the penalty was tuned on the dev set as well.}\label{tbl:mainfeats}
+  The number of parameters is always a multiple of 11 (the number of classes). 
+  Only $\ell_2$ regularization was used for these experiments; 
+  the penalty was tuned on the dev set as well.}
+\label{tbl:mainfeats}
 \end{table}
 
-\begin{table}\small\centering
+\subsection{Additional Features}
+To the basic set of features we now add more specific,
+linguistically-motivated features, each adding a small number of
+parameters to the model.  As above, we indicate the accuracy of each
+feature type in isolation.
+
+\begin{compactdesc}
+\item[\feat{DocLen}] Document length in tokens. 11.81\%.
+\item[\feat{Punct}] Counts of each punctuation mark. 27.41\%.
+\item[\feat{Pron}] Counts of each pronoun. 22.81\%.
+\item[\feat{Position}] Positional token frequency. We use the counts
+  for the first two and last three words before the period in each
+  sentence as features. 53.03\%.
+\item[\feat{PsvRatio}] The proportion of passive verbs out of all
+  verbs. 12.26\%.
+\item[\feat{CxtFxn}] Contextual function words. Bi-grams yield
+  62.79\%, tri-gram 62.32\%.
+\item[\feat{Misspell}] Spelling correction edits. \sw{???}. 37.29\%.
+\item[\feat{Restore}] Counts of substitutions, deletions and
+  insertions of predefined tokens that we restored in the texts. 47.67\%
+\end{compactdesc}
+\noindent
+\Tref{tbl:addfeats} reports the empirical improvement that each of
+these brings independently when added to the main features
+(\Sref{sec:mainfeats}).
+
+\begin{table}[hbt]
+\small\centering
 \begin{tabular}{lrcc}
 \textbf{Feature Group} & \multicolumn{1}{c}{\textbf{\# Params}} & \textbf{Accuracy (\%)} & \textbf{$\ell_2$} \\
 \hline
@@ -358,12 +386,35 @@ the penalty was tuned on the dev set as well.}\label{tbl:mainfeats}
 \textsc{main} + \feat{CxtFxn} & 7,669,684 & 81.73 & 1.0 \\
 \end{tabular}
 \caption{Dev set accuracy with \textsc{main} features plus additional feature groups, added independently. 
-$\ell_2$ regularization was tuned as in \tref{tbl:mainfeats} (two values, 1.0 and 5.0, were tried for each 
+$\ell_2$ regularization was tuned as in \Tref{tbl:mainfeats} (two values, 1.0 and 5.0, were tried for each 
 configuration; more careful tuning might produce slightly better accuracy).
-Results are sorted by accuracy; only three groups exhibited independent improvements over the \textsc{main} feature set.}\label{tbl:addfeats}
+Results are sorted by accuracy; only three groups exhibited independent improvements over the \textsc{main} feature set.}
+\label{tbl:addfeats}
 \end{table}
 
-\begin{table*}\small\centering
+
+\subsection{Discarded Features}
+We also tried several other feature types that did not improve the
+accuracy of the classifier on the development set.
+\begin{compactdesc}
+\item[Cohesive markers] Counts of each cohesive marker. 25.71\%.
+\item[Cohesive verbs] Counts of each cohesive verb. 22.85\%.
+\item[Function words] Counts of function words. 42.47\%. This feature
+  is subsumed by the highly discriminative \feat{CxtFxn} feature.
+\end{compactdesc}
+
+
+\section{Results}
+\label{sec:results}
+The full model that we used to classify the test set combines all
+features listed in \Tref{tbl:addfeats}. Using all these features, the
+accuracy on the development set is \sw{???}, and on the test set it
+is~81.5\%. \Tref{tbl:matrix} lists the confusion matrix on the test
+set, as well as precision, recall and $F_1$-score for each L1.
+
+
+\begin{table*}[hbt]
+\small\centering
 \begin{tabular}{>{\bf}l|r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r|ccc} %from the email sent by the organizers
 	& \bf ARA & \bf CHI & \bf FRE & \bf GER & \bf HIN & \bf ITA & \bf JPN & \bf KOR & \bf SPA & \bf TEL & \bf TUR & \bf Precision (\%) & \bf Recall (\%) & \bf $F_1$ (\%) \\
 \hline
@@ -387,6 +438,7 @@ The largest class of errors was predicting Telugu where the correct label was Hi
 Accuracy is 81.5\%.}\label{tbl:matrix}
 \end{table*}
 
+\sw{Analysis? Error analysis? Observations?}
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -395,7 +447,7 @@ Accuracy is 81.5\%.}\label{tbl:matrix}
 This research was supported by a grant from the Israeli Ministry of
 Science and Technology.\nss{anything from the CMU side?}
 
-\clearpage
+%\clearpage
 
 \bibliography{l1id}
 \bibliographystyle{plainnat}
