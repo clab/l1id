@@ -251,14 +251,14 @@ on the training set.
 \item[Passives] The ratio of verbs to passive verbs. 12.26\%.
 \item[Positional token frequency] The choice of the first and last few
   words in a sentence is highly constrained, and may be significantly
-  influenced by the authors L1. We use the counts (???) of the first
+  influenced by the authors L1. We use the counts (???)\yt{counts for first two and last three words before the period} of the first
   and last three words in each sentence as features. 53.03\%.
 \item[Cohesive markers] These are 40 function words (and short phrases)
   that have a strong discourse function in texts \nt{such as 'however', 'becuase', 'in fact' etc}, contributing to its
   cohesiveness. 25.71\%. \nt{Translators tend to spell out implicit utterances and render them explicitly in the target text (REFERENCE TO BLUM-KULKA); MAYBE APPEND THE LIST IN THE END?} 
 \item[Cohesive verbs] \nt{This is a list of manually compiled verbs that serve, like `cohesive markers' to spell out implicit utterances; they include, among others, `indicating', `implying' and `containing'. Same, consider appending the list}. 22.85\%.
 \item[Function words] The number of occurrences of each word from a
-  pre-defined list of 100 \nt{did you use only 100? it should be 400 and the reference should be to Koppel and Ordan} most frequent words in English (excluding
+  pre-defined list of 100 \nt{did you use only 100? it should be 400 and the reference should be to Koppel and Ordan} \yt{we used 100. differences between 100 and >100 were insignificant} most frequent words in English (excluding
   punctuation). 42.47\%.
 \item[Contextual function words, bigrams] Pairs consisting of a
   function word from the list mentioned above, along with the POS tag
@@ -276,7 +276,9 @@ on the training set.
   others. 65.09\%.
 \item[Misspelling features] ???. 37.29\%.
 \item[Brown] ???
-\item[Restored] ???
+\item[Restored] \yt{Counts of substitutions, deletions and insertions of predefined tags that we restored in essays edited with a spelling  corrector and missing all these tags. We define three types of tags: (1) punctuation marks (same list as for punctuation feature), (2) function words (WH-words, prepositions, conjunctions, articles, auxiliary verbs, quantifiers, personal pronouns, possessive pronouns, quantified pronouns), (3) cohesion verbs (lemma, present contiguous/progressive and present simple for each verb). We first remove these tags from texts and then recover the most likely hidden tags in a sequence of words, according to an N-gram language model trained on all essays in the training corpus corrected with a spell checker and containing both words and hidden tags. This feature should capture specific words or punctuation marks that are consistently omitted (deletions), or misused (insertions, substitutions).  To restore hidden tags we use hidden-ngram utility provided in SRILM toolkit\footnote{http://www.speech.sri.com/projects/srilm/manpages/hidden-ngram.1.html} (ref to SRILM). 47.67\%}
+
+
 \end{compactdesc}
 
 \section{Main Features}\label{sec:mainfeats}
