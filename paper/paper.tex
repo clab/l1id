@@ -286,9 +286,7 @@ We begin by motivating our choice of features.
   indication of the author's L1, but many text categorization tasks
   use lemmas (more precisely, the stems produced by the tagger) as
   features approximating the content.
-\item[Misspelling features] Clearly, the spelling errors that learners
-  make in English depend on the phonological properties of their
-  L1. \sw{???}
+\item[Misspelling features] Learning to perceive, produce, and encode non-native phonemic contrasts is extremely difficult for L2 learners \citep{hayes-harb:2008}. Since English's orthography is largely phonemic---even if it is irregular in many places, we expect leaners whose native phoneme contrasts are different from those of English to make characteristic spelling errors. For example, since Japanese and Korean lack a phonemic /l/-/r/ contrast, we expect native speakers of those languages to be more likely to make spelling errors that confuse {\tt l} and {\tt r} relative to native speakers of languages such as Spanish in which that pair is contrastive. To make this information available to our model, we use a noisy channel spelling corrector \citep{kernighan:1990} to identify and correct misspelled words in the training and test data. From these corrections, we extract minimal edit features that show what insertions, deletions, substitutions and joinings (where two separate words are written merged into a single orthographic token) were made by the author of the essay.
 \item[Restored tags] We focus on three important token classes defined
   above: punctuation marks, function words and cohesive verbs. We
   first remove words in these classes from the texts, and then recover
@@ -298,9 +296,10 @@ We begin by motivating our choice of features.
   hidden tokens. This feature should capture specific words or
   punctuation marks that are consistently omitted (deletions), or
   misused (insertions, substitutions). To restore hidden tokens we use
-  the \texttt{hidden-ngram} utility provided in SRILM
+  the \texttt{hidden-ngram} utility provided in SRI's language modeling toolkit
   \citep{stolcke02srilm}.
-\item[Brown clusters] \sw{???}
+\item[Brown clusters] \cite{brown:cl1992} describe an algorithm that induces a hierarchical clustering of a language's vocabulary based on each vocabulary item's tendency to appear in similar left and right contexts in a training corpus. While originally developed to reduce the number of parameters required in $n$-gram language models, Brown clusters have been found to be extremely effective as lexical representations in a variety of regression problems that condition on text \citep{koo:2008,turian:acl2010,owoputi:2013}.  Using an open-source implementation of the algorithm,\footnote{\url{https://github.com/percyliang/brown-cluster}} we clustered 8~billion words of English into 600~classes.\footnote{\url{http://www.ark.cs.cmu.edu/cdyer/en-600/cluster_viewer.html}}  We included log counts of all $4$-grams of Brown clusters that occurred at least $100$ times in the NLI training data.
+
 \end{compactdesc}
 
 \subsection{Main Features}
