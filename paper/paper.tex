@@ -221,6 +221,14 @@ Characteristics of the dataset. Development, train, test sets.
 For classification we use \emph{creg}... \nss{Here we can talk about
   learning and regularization and give a high-level overview of
   features.}
+  
+For classification we use the {\tt creg} regression modeling framework to train a 11-class logistic regression classifier.\footnote{https://github.com/redpony/creg}  We parameterize the L1 classifier as a multiclass logistic regression:
+\begin{align*}
+p(y& \mid \textbf{w}, i) \propto \exp \sum_j \lambda_j h_j(y, \textbf{w}, i) ,
+\end{align*}
+where $h_j(\cdot)$ are feature functions, $\lambda_j$ are the corresponding weights, and $y$ refer to the outputs: eleven L1 class labels. \yt{regularization???}  
+
+
 
 All essays were tagged with the Stanford part-of-speech tagger
 \citep{toutanova-03}. We did not parse the dataset.
@@ -311,8 +319,8 @@ isolation, on the training set.
 
 \begin{compactdesc}
 \item[\feat{POS}] Part-of-speech $n$-grams.  Features were extracted
-  to count every POS 1-, 2-, and 3-gram in each
-  document. 53.92\%. \sw{But the table says 55.18}
+  to count every POS 1-, 2-, 3- and 4-gram in each
+  document. 55.18\%. 
 \item[\feat{FreqChar}] Frequent character $n$-grams.  We experimented
   with character $n$-grams: The number of character 1-, 2-, and
   3-grams. This yielded 69.94\% accuracy.  We then refined the feature
@@ -321,7 +329,7 @@ isolation, on the training set.
     to~4, and $m$ is set to~???. 74.12\%}
 \item[\feat{CharPrompt}] Conjunction of the character $n$-gram
   features defined above with the prompt ID. 65.09\%.
-\item[\feat{Brown}] Brown clusters. \sw{???}
+\item[\feat{Brown}] Substitutions, deletions and insertions counts of Brown clusters 1- and 2-grams in each document. 72.26\%.
 \end{compactdesc}
 \noindent
 The accuracy of the classifier on the development set using these four
@@ -408,7 +416,7 @@ accuracy of the classifier on the development set.
 \label{sec:results}
 The full model that we used to classify the test set combines all
 features listed in \Tref{tbl:addfeats}. Using all these features, the
-accuracy on the development set is \sw{???}, and on the test set it
+accuracy on the development set is~84.55\%, and on the test set it
 is~81.5\%. \Tref{tbl:matrix} lists the confusion matrix on the test
 set, as well as precision, recall and $F_1$-score for each L1.
 The largest class of errors was predicting Telugu where the correct label 
