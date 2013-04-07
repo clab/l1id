@@ -1,0 +1,132 @@
+GER
+Total essays	900
+Avg. sentences per essay	17.77
+Avg. tokens per essay	376.53
+Total tokens	338880
+Total types	11519
+TEL
+Total essays	900
+Avg. sentences per essay	16.60
+Avg. tokens per essay	359.04
+Total tokens	323135
+Total types	13607
+FRE
+Total essays	900
+Avg. sentences per essay	16.28
+Avg. tokens per essay	353.77
+Total tokens	318393
+Total types	11759
+JPN
+Total essays	900
+Avg. sentences per essay	17.35
+Avg. tokens per essay	312.78
+Total tokens	281498
+Total types	10828
+CHI
+Total essays	900
+Avg. sentences per essay	18.10
+Avg. tokens per essay	361.81
+Total tokens	325631
+Total types	12688
+TUR
+Total essays	900
+Avg. sentences per essay	17.97
+Avg. tokens per essay	352.67
+Total tokens	317404
+Total types	11561
+ITA
+Total essays	900
+Avg. sentences per essay	12.92
+Avg. tokens per essay	325.79
+Total tokens	293211
+Total types	10854
+ARA
+Total essays	900
+Avg. sentences per essay	12.44
+Avg. tokens per essay	310.13
+Total tokens	279116
+Total types	14233
+SPA
+Total essays	900
+Avg. sentences per essay	14.02
+Avg. tokens per essay	361.96
+Total tokens	325761
+Total types	12438
+KOR
+Total essays	900
+Avg. sentences per essay	18.55
+Avg. tokens per essay	336.63
+Total tokens	302965
+Total types	11699
+HIN
+Total essays	900
+Avg. sentences per essay	17.61
+Avg. tokens per essay	385.34
+Total tokens	346803
+Total types	14489
+P2
+Total essays	1299
+Avg. sentences per essay	17.65
+Avg. tokens per essay	362.13
+Total tokens	470402
+Total types	14465
+P3
+Total essays	1156
+Avg. sentences per essay	16.38
+Avg. tokens per essay	347.68
+Total tokens	401918
+Total types	14147
+P1
+Total essays	1369
+Avg. sentences per essay	15.15
+Avg. tokens per essay	341.45
+Total tokens	467443
+Total types	14841
+P6
+Total essays	775
+Avg. sentences per essay	16.47
+Avg. tokens per essay	358.55
+Total tokens	277879
+Total types	9956
+P7
+Total essays	1369
+Avg. sentences per essay	15.40
+Avg. tokens per essay	339.93
+Total tokens	465362
+Total types	14260
+P4
+Total essays	1210
+Avg. sentences per essay	16.44
+Avg. tokens per essay	340.26
+Total tokens	411713
+Total types	15008
+P5
+Total essays	1368
+Avg. sentences per essay	16.91
+Avg. tokens per essay	361.51
+Total tokens	494552
+Total types	15110
+P8
+Total essays	1354
+Avg. sentences per essay	16.39
+Avg. tokens per essay	342.34
+Total tokens	463528
+Total types	15688
+high
+Total essays	3465
+Avg. sentences per essay	17.93
+Avg. tokens per essay	400.65
+Total tokens	1388260
+Total types	28329
+medium
+Total essays	5366
+Avg. sentences per essay	16.19
+Avg. tokens per essay	339.06
+Total tokens	1819407
+Total types	37393
+low
+Total essays	1069
+Avg. sentences per essay	11.88
+Avg. tokens per essay	229.31
+Total tokens	245130
+Total types	13110
