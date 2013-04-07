@@ -4,6 +4,7 @@
 \usepackage{naaclhlt2013}
 \usepackage{times}
 \usepackage{latexsym}
+\usepackage{tipa}
 
 
 \usepackage{amsmath,amsfonts,eucal,amsbsy,amsthm,amsopn,amssymb}
@@ -62,7 +63,7 @@
 % special macros
 
 \newcommand{\feat}[1]{\textsmaller[.5]{\textsf{#1}}} % code for a feature group
-
+\newcommand{\textnl}{\textsl}
 
 
 
@@ -116,7 +117,7 @@ that yielded the highest accuracy.
 \section{Introduction}
 \label{sec:intro}
 The task we address in this work is identifying the native language
-(\emph{L1}) of non-native English authors. More specifically, given a
+(\emph{L1}) of non-native English (\emph{L2}) authors. More specifically, given a
 dataset of short English essays
 \citep{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR},
 composed as part of the \emph{Test of English as a Foreign Language
@@ -247,12 +248,12 @@ We begin by motivating our choice of features.
 \item[Document length] The number of tokens in the text is highly
   correlated with the author's level of fluency, which in turn is
   correlated with the author's L1.
-\item[Pronouns] The use of pronoun varies greatly among different
+\item[Pronouns] The use of pronouns varies greatly among different
   authors. We use the same list of~25 English pronouns that
-  \citet{vered:noam:shuly} use for identifying translationese.\nss{subsumed by contextual function words, right?}
+  \citet{vered:noam:shuly} use for identifying translationese.
 \item[Punctuation] Similarly, different languages use punctuation
   differently, and we expect this to taint the use of punctuation in
-  non-native texts.\nss{subsumed by char n-grams, right?}
+  non-native texts. Of course, character $n$-grams subsume this feature.
 \item[Passives] English uses passive voice more frequently than other
   languages. Again, the use of passives in L2 can be correlated with
   the author's L1.
@@ -260,19 +261,19 @@ We begin by motivating our choice of features.
   words in a sentence is highly constrained, and may be significantly
   influenced by the author's L1.
 \item[Cohesive markers] These are 40 function words (and short
-  phrases) that have a strong discourse function in texts (`however',
-  `because', `in fact', etc.) Translators tend to spell out implicit
+  phrases) that have a strong discourse function in texts (\textnl{however},
+  \textnl{because}, \textnl{in fact}, etc.) Translators tend to spell out implicit
   utterances and render them explicitly in the target text
   \citep{Blum-Kulka:1986}. We use the list
   of~\citet{vered:noam:shuly}.
 \item[Cohesive verbs] This is a list of manually compiled verbs that
   are used, like cohesive markers, to spell out implicit utterances
-  (`indicate', `imply', `contain', etc.)
+  (\textnl{indicate}, \textnl{imply}, \textnl{contain}, etc.)
 \item[Function words] Frequent tokens, which are mostly function
   words, have been used successfully for various text classification
   tasks. \citet{koppel-ordan:2011:ACL-HLT2011} define a list of 400
   such words, of which we only use~100 (using the entire list was not
-  significantly different).
+  significantly different). Note that pronouns are included in this list.
 \item[Contextual function words] To further capitalize on the ability
   of function words to discriminate, we define pairs consisting of a
   function word from the list mentioned above, along with the POS tag
@@ -291,7 +292,7 @@ We begin by motivating our choice of features.
 \item[Restored tags] We focus on three important token classes defined
   above: punctuation marks, function words and cohesive verbs. We
   first remove words in these classes from the texts, and then recover
-  the most likely hidden tokens \yt{To Shuly: I removed 'POS'. We recover words, not POS tags, I used the word 'tags' to distinguish between words to recover and all other words. Probably the word 'tag' is misleading, I changed it to 'token'} in a sequence of words, according to
+  the most likely hidden tokens in a sequence of words, according to
   an $n$-gram language model trained on all essays in the training
   corpus corrected with a spell checker and containing both words and
   hidden tokens. This feature should capture specific words or
@@ -411,6 +412,9 @@ features listed in \Tref{tbl:addfeats}. Using all these features, the
 accuracy on the development set is \sw{???}, and on the test set it
 is~81.5\%. \Tref{tbl:matrix} lists the confusion matrix on the test
 set, as well as precision, recall and $F_1$-score for each L1.
+The largest class of errors was predicting Telugu where the correct label 
+was Hindi\nss{or vice versa?}---this happened 18 times. 
+
 
 
 \begin{table*}[hbt]
@@ -434,11 +438,79 @@ TEL & 0 & 1 & 0 & 0 & 18 & 1 & 2 & 1 & 1 & 73 & 3 & 85.9 & 73.0 & 78.9 \\
 TUR & 4 & 0 & 2 & 2 & 0 & 2 & 2 & 4 & 4 & 0 & 80 & 76.9 & 80.0 & 78.4 \\
 \end{tabular}
 \caption{Official test set confusion matrix with the full model. \nss{which direction is predicted vs. gold?}
-The largest class of errors was predicting Telugu where the correct label was Hindi\nss{or vice versa?}---this happened 18 times. 
-Accuracy is 81.5\%.}\label{tbl:matrix}
+Accuracy is 81.5\%.}
+\label{tbl:matrix}
 \end{table*}
 
-\sw{Analysis? Error analysis? Observations?}
+Production of L2 texts, not unlike translating from L1 to L2, involves
+a tension between the imposing models of L1 (and the source text), on
+the one hand, and a set of cognitive constraints resulting from the
+efforts to generate the target text, on the other. The former is
+called \emph{interference} in Translation Studies \citep{Toury:1995}
+and \emph{interlanguage} in second language acquisition
+\citep{Selinker1972}.
+
+\citet{vered:noam:shuly} designed 32 classifiers to test the validity
+of the forces acting on translated texts, and found that interference
+consistently yielded the best performing classifiers. And indeed, in
+this work too, which replicates some of their classifiers, we find
+again that fingerprints of the source language are dominant in the
+makeup of L2 texts.
+
+The main difference, however, between texts translated by
+professionals and the texts we address here, is that more often than
+not professional translators translate into their mother tongue,
+whereas L2 writers write out of their mother tongue by definition. So
+interference is ever more exaggerated in their case, for example, also
+phonologically \citep{tsur-rappoport:2007:Cognitive-2007}.
+
+We illustrate this with some examples from Arabic native speakers. The
+character sequence \textnl{alot} is overrepresented in Arabic L2
+texts. Arabic has no indefinite article and we speculate that Arabic
+speakers conceive \textnl{a lot} as a single word; the Arabic
+equivalent for \textnl{a lot} is used adverbially like an \textnl{-ly}
+suffix in English. For the same reason, another prominent feature is a
+missing definite article before nouns and adjectives . Additionally,
+Arabic, being an Abjad language, rarely indicates vowels, and indeed
+we find many missing \textnl{e}-s and \textnl{i}-s in the texts of
+Arabic speakers. Phonologically, because Arabic conflates
+/\textipa{I}/ and /\textipa{@}/ into /i/ (at least in Modern Standard
+Arabic), we see that many \textnl{e}-s are indeed substituted for
+\textnl{i}-s in these texts.
+
+German overuses hyphens in two interesting ways. German can
+notoriously use relative clauses freely, and such constructions
+frequently occur between hyphens in the dataset, as in \textnl{any
+  given rational being -- let us say Immanual Kant -- we find
+  that}. Another overuse of hyphens stems from compounding, another
+facet of German, for example in \textnl{well-known},
+\textnl{community-help}, \textnl{spare-time}, \textnl{football-club},
+etc. Many of these reflect an effort to both connect and separate
+connected forms in the original (e.g., \textnl{Fussballklub}, which in
+English would be more naturally rendered as \textnl{football club}).
+Another unexpected feature of German is a frequent substitution of the
+letter \textnl{y} for \textnl{z} (and vice versa), most probably
+triggered by their switched positions on German keyboards.
+ 
+The word \textnl{that} occurs more frequently in the texts of German
+L1 speakers, perhaps because in English it is optional in relative
+clauses whereas in German it is not.  Last, \textnl{often} is
+overused; being a cognate of the German \textnl{oft} it is not
+cognitively expensive to retrieve it. Spanish, on the other hand,
+literally translates \textnl{muchas veces} into \textnl{many times},
+which is similarly overused on the dataset. \sw{any Spanish speaker
+  who could validate this expression?}
+
+Other informative features include substitutions of \textnl{r}-s and
+\textnl{l}-s in the texts of Japanese authors, for obvious reasons;
+and the characters \textnl{r} and \textnl{s} are important in Chinese
+and Spanish, respectively, for reasons that are unclear to
+us. Similarly, the word \textnl{then} is dominant in the texts of
+Hindi speakers. Finally, it is clear that authors refer to their
+native cultures (and, consequently, native languages and countries);
+the strings \textnl{Turkish}, \textnl{Korea}, and \textnl{Ita} were
+dominant in the texts of Turkish, Korean and Italian native speakers,
+respectively.
 
 \section{Conclusion}
 \label{sec:conclusion}
