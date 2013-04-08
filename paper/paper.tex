@@ -224,9 +224,9 @@ For classification we use \emph{creg}... \nss{Here we can talk about
   
 For classification we use the {\tt creg} regression modeling framework to train a 11-class logistic regression classifier.\footnote{https://github.com/redpony/creg}  We parameterize the L1 classifier as a multiclass logistic regression:
 \begin{align*}
-p(y& \mid \textbf{w}, i) \propto \exp \sum_j \lambda_j h_j(y, \textbf{w}, i) ,
+p(y& \mid \textbf{d}, i) \propto \exp \sum_j \lambda_j h_j(y, \textbf{d}, i) ,
 \end{align*}
-where $h_j(\cdot)$ are feature functions, $\lambda_j$ are the corresponding weights, and $y$ refer to the outputs: eleven L1 class labels. \yt{regularization???}  
+where $\textbf{d}$ are documents, $h_j(\cdot)$ are feature functions, $\lambda_j$ are the corresponding weights, and $y$ refer to the outputs: eleven L1 class labels. \yt{regularization???}  
 
 
 
