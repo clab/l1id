@@ -519,8 +519,18 @@ the strings \textnl{Turkish}, \textnl{Korea}, and \textnl{Ita} were
 dominant in the texts of Turkish, Korean and Italian native speakers,
 respectively.
 
-\section{Conclusion}
-\label{sec:conclusion}
+\section{Discussion}
+\label{sec:discussion}
+
+\nt{We experimented with different classifiers and a large set of features to solve an 11-way classification problem. Most of our features are linguistically informed and we believe that this direction should be further pursued. Potentially there are at least three motivations for identifying the mother tongue of L1 learners: (1) for the sake of sports, in which case linguistic and pedagogical theory doesn't matter: the more accurate the better; (2) to facilitate human assessment and grading; (3) to point out the differences between different L2 writers, on the one hand, and to discriminate L2 writers as a single set from native tongue writers, on the other; this can pave the way for improving teaching methods and identify the individual difficulties of specific L1 learners.}
+
+\nt{Our point of departure was the analogy between translated texts as a genre in its own and L2 writers as pseudo translators, relying heavily on their mother tongue and transferring their native models to a second language. Moreover, we assumed that like translators, L2 writers will write in a simplified manner and overuse explicit markers. Although this should be studied vis-a-vis comparable outputs of mother tongue writers in English, we observe that the best features in our classifier are of the ``interference'' type, i.e. phonological, morphological and syntactic, mostly in the form of misspelling features, restoration tags, punctuation and lexical and syntactic modeling. }
+
+\nt{We would like to stress that certain features indicating L2 do not have any bearing on the quality of the English produced, a phenomenon discussed extensively in Translation Studies \cite{Toury:1995}), were interference is observed by the over- or underuse of certain features. reflecting the typological differences between a specific pair of languages. For example, the fact that Italian native speakers favor the syntactic sequence of determiner + adjective + noun (e.g., ``a big risk'' or ``this new business'') has zero prescriptive value for teachers.}
+
+\nt{Last, we noted that certain L2 writers tend to repeat more often words appearing in the prompts, i.e. in the questions that triggered their essays. When we experimented on certain classifiers with and without the prompt number as a feature, we actually noted a decrease in performance. For the sake of sports, we should have in fact removed them from our classifier, but we stress their theoretical importance: some L2 writers repeat them more often and this may reflect different educational background (introducing this as a feature offsets its effect). Had we had a hypothetical 12th unseen L2, we believe it would have enabled us to cross-classify better. Again, this feature says nothing about the quality of the text, just as the tendency of Korean and Italian writers to mention their home country more often does not. }
+%\section{Conclusion}
+%\label{sec:conclusion}
 
 \section*{Acknowledgments}
 This research was supported by a grant from the Israeli Ministry of
