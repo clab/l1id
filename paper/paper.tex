@@ -216,11 +216,29 @@ translated texts \citep{vered:noam:shuly}.
 
 \section{Methodology}
 \label{sec:methodology}
-Characteristics of the dataset. Development, train, test sets.
+Training and development set released by the NLI Shared task \citep{tetreault-EtAl:2012:PAPERS} is a balanced set of 1000 TOEFL essays per L1,  10 to 20 sentences each, 900 documents for training and 100 for development. Each document is annotated with a writers English proficiency level (low, medium, high) and a prompt (1 to 8). All essays are tokenized and split to sentences. We detail in  \Tref{tbl:stats:level} training corpora statistics split by writers proficiency.
 
-For classification we use \emph{creg}... \nss{Here we can talk about
-  learning and regularization and give a high-level overview of
-  features.}
+\begin{table}[hbt]
+\small\centering
+\begin{tabular}{lrcc}
+% \textbf{Proficiency}  & \textbf{\# Documents} & \textbf{\# Tokens} & \textbf{\# Types} \\
+%\hline
+%Low & 1.069 & 245,130 & 13,110 \\
+%Medium & 5,366 & 1,819,407 & 37,393 \\ 
+%High & 3,456 & 1,388,260 & 28,329 \\ 
+  & \textbf{Low} & \textbf{Medium} & \textbf{High} \\
+\hline
+\# Documents & 1,069 & 5,366 & 3,456 \\
+\# Tokens & 245,130 & 1,819,407 & 1,388,260 \\ 
+\# Types & 13,110 & 37,393 & 28,329 \\ 
+\end{tabular}
+\caption{Training set statistics.}
+\label{tbl:stats:level}
+\end{table} 
+
+
+
+
   
 For classification we use the {\tt creg} regression modeling framework to train a 11-class logistic regression classifier.\footnote{https://github.com/redpony/creg}  We parameterize the L1 classifier as a multiclass logistic regression:
 \begin{align*}
@@ -325,8 +343,8 @@ isolation, on the training set.
   with character $n$-grams: The number of character 1-, 2-, and
   3-grams. This yielded 69.94\% accuracy.  We then refined the feature
   to include only those character $n$-grams that are observed more
-  than $m$ times in the corpus are considered. \sw{$n$ ranges from~1
-    to~4, and $m$ is set to~???. 74.12\%}
+  than $m$ times in the corpus are considered. $n$ ranges from~1
+    to~4, and $m$ is set to~5. 74.12\%
 \item[\feat{CharPrompt}] Conjunction of the character $n$-gram
   features defined above with the prompt ID. 65.09\%.
 \item[\feat{Brown}] Substitutions, deletions and insertions counts of Brown clusters 1- and 2-grams in each document. 72.26\%.
@@ -526,7 +544,7 @@ respectively.
 
 \nt{Our point of departure was the analogy between translated texts as a genre in its own and L2 writers as pseudo translators, relying heavily on their mother tongue and transferring their native models to a second language. Moreover, we assumed that like translators, L2 writers will write in a simplified manner and overuse explicit markers. Although this should be studied vis-a-vis comparable outputs of mother tongue writers in English, we observe that the best features in our classifier are of the ``interference'' type, i.e. phonological, morphological and syntactic, mostly in the form of misspelling features, restoration tags, punctuation and lexical and syntactic modeling. }
 
-\nt{We would like to stress that certain features indicating L2 do not have any bearing on the quality of the English produced, a phenomenon discussed extensively in Translation Studies \cite{Toury:1995}), were interference is observed by the over- or underuse of certain features. reflecting the typological differences between a specific pair of languages. For example, the fact that Italian native speakers favor the syntactic sequence of determiner + adjective + noun (e.g., ``a big risk'' or ``this new business'') has zero prescriptive value for teachers.}
+\nt{We would like to stress that certain features indicating L2 do not have any bearing on the quality of the English produced, a phenomenon discussed extensively in Translation Studies \citep{Toury:1995}), were interference is observed by the over- or underuse of certain features. reflecting the typological differences between a specific pair of languages. For example, the fact that Italian native speakers favor the syntactic sequence of determiner + adjective + noun (e.g., ``a big risk'' or ``this new business'') has zero prescriptive value for teachers.}
 
 \nt{Last, we noted that certain L2 writers tend to repeat more often words appearing in the prompts, i.e. in the questions that triggered their essays. When we experimented on certain classifiers with and without the prompt number as a feature, we actually noted a decrease in performance. For the sake of sports, we should have in fact removed them from our classifier, but we stress their theoretical importance: some L2 writers repeat them more often and this may reflect different educational background (introducing this as a feature offsets its effect). Had we had a hypothetical 12th unseen L2, we believe it would have enabled us to cross-classify better. Again, this feature says nothing about the quality of the text, just as the tendency of Korean and Italian writers to mention their home country more often does not. }
 %\section{Conclusion}
