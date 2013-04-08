@@ -334,16 +334,16 @@ isolation, on the training set.
 \begin{compactdesc}
 \item[\feat{POS}] Part-of-speech $n$-grams.  Features were extracted
   to count every POS 1-, 2-, 3- and 4-gram in each
-  document. 55.18\%. 
+  document. 55.18\%. \yt{CHI:IN PRP VBD, ARA:NN VBZ, KOR:DT JJ} 
 \item[\feat{FreqChar}] Frequent character $n$-grams.  We experimented
   with character $n$-grams: The number of character 1-, 2-, and
   3-grams. This yielded 69.94\% accuracy.  We then refined the feature
   to include only those character $n$-grams that are observed more
   than $m$ times in the corpus are considered. $n$ ranges from~1
-    to~4, and $m$ is set to~5. 74.12\%
+    to~4, and $m$ is set to~5. 74.12\% \yt{TUR:T u r k, ITA:I t a l, JPN:J a p a, \textbf{ITA: o v e} :) }  
 \item[\feat{CharPrompt}] Conjunction of the character $n$-gram
   features defined above with the prompt ID. 65.09\%.
-\item[\feat{Brown}] Substitutions, deletions and insertions counts of Brown clusters 1- and 2-grams in each document. 72.26\%.
+\item[\feat{Brown}] Substitutions, deletions and insertions counts of Brown clusters 1- and 2-grams in each document. 72.26\%. \yt{in top-30 features Brown features occur up to 5 times in 10 out of 11 L1s (all except Arabic)} 
 \end{compactdesc}
 \noindent
 The accuracy of the classifier on the development set using these four
@@ -374,18 +374,18 @@ feature type in isolation.
 
 \begin{compactdesc}
 \item[\feat{DocLen}] Document length in tokens. 11.81\%.
-\item[\feat{Punct}] Counts of each punctuation mark. 27.41\%.
+\item[\feat{Punct}] Counts of each punctuation mark. 27.41\%. 
 \item[\feat{Pron}] Counts of each pronoun. 22.81\%.
 \item[\feat{Position}] Positional token frequency. We use the counts
   for the first two and last three words before the period in each
-  sentence as features. 53.03\%.
+  sentence as features. 53.03\%. \yt{ARA: second word `,', CHI: second word `is', HIN: second word `can'}  
 \item[\feat{PsvRatio}] The proportion of passive verbs out of all
   verbs. 12.26\%.
 \item[\feat{CxtFxn}] Contextual function words. Bi-grams yield
-  62.79\%, tri-gram 62.32\%.
-\item[\feat{Misspell}] Spelling correction edits. \sw{???}. 37.29\%.
+  62.79\%, tri-gram 62.32\%. \yt{CHI: some JJ, HIN: as VBN, } 
+\item[\feat{Misspell}] Spelling correction edits. \sw{???}. 37.29\%. \yt{ARA: DEL:e, INS:e, SUBST:e:i; GER: SUBST:z:y; JPN: SUBST:l:r, SUBST:r:l;SPA: DOUBLE:s, MID:INS:s, INS:s }
 \item[\feat{Restore}] Counts of substitutions, deletions and
-  insertions of predefined tokens that we restored in the texts. 47.67\%
+  insertions of predefined tokens that we restored in the texts. 47.67\% \yt{CHI: Delete do, GER: Delete on, ITA Delete be}  
 \end{compactdesc}
 \noindent
 \Tref{tbl:addfeats} reports the empirical improvement that each of
