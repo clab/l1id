@@ -41,6 +41,7 @@
 \newcommand{\ntmarker}{\ensuretext{\textcolor{green}{\ensuremath{^{\textsc{N}}_{\textsc{T}}}}}}
 \newcommand{\arkcomment}[3]{\ensuretext{\textcolor{#3}{[#1 #2]}}}
 %\newcommand{\arkcomment}[3]{}
+\newcommand{\ignore}[1]{}
 \newcommand{\cjd}[1]{\arkcomment{\cjdmarker}{#1}{green}}
 \newcommand{\nss}[1]{\arkcomment{\nssmarker}{#1}{magenta}}
 \newcommand{\sw}[1]{\arkcomment{\swmarker}{#1}{red}}
@@ -338,27 +339,25 @@ Firstly the employers live more savely because they are going to have more money
 
 \end{compactdesc}
 
-\subsection{Primary Features}
+\subsection{Main Features}
 \label{sec:mainfeats}
-First, we use the following four feature types as the baseline features in our
+FWe use the following four feature types as the baseline features in our
 model.  For features that are sensitive to frequency, we use the log of the (frequency-plus-one) as
 the feature's value.  For each feature type, we report the accuracy of using just that feature type in
-isolation on the training set\cjd{training? development? cross validated?}.
+isolation on the training set\cjd{training? development? cross validated?} in Tab.~\ref{tbl:mainfeats}.
 
 
 \begin{compactdesc}
 \item[\feat{POS}] Part-of-speech $n$-grams.  Features were extracted
   to count every POS 1-, 2-, 3- and 4-gram in each
-  document. 55.18\%. \yt{CHI:IN PRP VBD, ARA:NN VBZ, KOR:DT JJ} 
+  document. 55.18\%. \ignore{CHI:IN PRP VBD, ARA:NN VBZ, KOR:DT JJ} 
 \item[\feat{FreqChar}] Frequent character $n$-grams.  We experimented
-  with character $n$-grams: The number of character 1-, 2-, and
-  3-grams. This yielded 69.94\% accuracy.  We then refined the feature
-  to include only those character $n$-grams that are observed more
-  than $m$ times in the corpus are considered. $n$ ranges from~1
-    to~4, and $m$ is set to~5. 74.12\% \yt{TUR:T u r k, ITA:I t a l, JPN:J a p a, \textbf{ITA: o v e} :) }  
-\item[\feat{CharPrompt}] Conjunction of the character $n$-gram
-  features defined above with the prompt ID. 65.09\%.
-\item[\feat{Brown}] Substitutions, deletions and insertions counts of Brown clusters 1- and 2-grams in each document. 72.26\%. \yt{in top-30 features Brown features occur up to 5 times in 10 out of 11 L1s (all except Arabic)} 
+  with character $n$-grams: To reduce the number of parameters, we removed features
+  only those character $n$-grams that are observed more
+  than $5$ times in the training corpus, and $n$ ranges from~1
+    to~4. Accuracy: $74.12\%$. High-weight features include: {\tt TUR:Turk}, {\tt ITA:Ital}, {\tt JPN:Japa}.\item[\feat{CharPrompt}] Conjunction of the character $n$-gram
+  features defined above with the prompt ID. Accuracy: 65.09\%.
+\item[\feat{Brown}] Substitutions, deletions and insertions counts of Brown cluster unigrams and bigrams in each document. Accuracy: 72.26\%. \ignore{in top-30 features Brown features occur up to 5 times in 10 out of 11 L1s (all except Arabic)} 
 \end{compactdesc}
 \noindent
 The accuracy of the classifier on the development set using these four
