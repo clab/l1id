@@ -63,6 +63,7 @@
 % special macros
 
 \newcommand{\feat}[1]{\textsmaller[.5]{\textsf{#1}}} % code for a feature group
+\newcommand{\featstr}[1]{\textsmaller[.5]{\verb|#1|}} % full feature name
 \newcommand{\textnl}{\textsl}
 
 
@@ -254,7 +255,30 @@ L1s.
 While some of the features were used in the works surveyed in
 \Sref{sec:literature}, many are novel, and are inspired by the
 features used to identify translationese by \citet{vered:noam:shuly}.
-We begin by motivating our choice of features.
+We begin by motivating our choice of features, many of which are illustrated in \fref{fig:german} for an example sentence.
+
+\begin{figure*}\centering\small
+Firstly the employers live more savely because they are going to have more money to spend for luxury .\\[10pt]
+
+\begin{tabular}{p{6em}p{15em}p{15em}}
+ & \multicolumn{1}{c}{\bf Presence} & \multicolumn{1}{c}{\bf Considered alternatives/edits} \\
+\hline
+\bf Characters & \smaller[.5]\begin{tabular}{@{}p{12em}p{5em}@{}}\verb|"CHAR_l_y_ "|:&$\log{2+1}$\\ \verb|"CharPrompt_P5_g_o_i"|:&$\log{1+1}$\\ \verb|"MFChar_e_ "|:&$\log{1+1}$\\ \verb|"Punc_period"|:&$\log{1+1}$\end{tabular}
+ & \smaller[.5]\begin{tabular}{@{}p{12em}p{5em}@{}}\verb|"DeleteP_p_."|:&$1.0$\\ \verb|"InsertP_p_,"|:&$1.0$\\ \verb|"MID:SUBST:v:f"|:&$\log{1+1}$\\ \verb|"SUBST:v:f"|:&$\log{1+1}$\end{tabular} \\
+\hline
+\bf Words & \smaller[.5]\begin{tabular}{@{}p{12em}p{5em}@{}}\verb|"DocLen_"|:&$\log{19+1}$\\ \verb|"MeanWordRank"|:&$422.6$\\ \verb|"CohMarker_because"|:&$\log{1+1}$\\ \verb|"MostFreq_have"|:&$\log{1+1}$\\ 
+\verb|"PosToken_last_luxury"|:&$\log{1+1}$\\ \verb|"Pronouns_they"|:&$\log{1+1}$\end{tabular}
+ & \smaller[.5]\begin{tabular}{@{}p{12em}p{5em}@{}}\verb|"MSP:safely"|:&$\log{1+1}$\\ \verb|"Match_p_to"|:&$0.5$\\ \verb|"Delete_p_to"|:&$0.5$\\ \verb|"Delete_p_are"|:&$1.0$\\ \verb|"Delete_p_because"|:&$1.0$\\ 
+\verb|"Delete_p_for"|:&$1.0$\end{tabular} \\
+\hline
+\bf POS & \smaller[.5]\begin{tabular}{@{}p{12em}p{5em}@{}}\verb|"POS_VBP_VBG_TO"|:&$\log{1+1}$\\ \verb|"POS_p_VBP_VBG_TO"|:&$0.059$\end{tabular} \\
+\hline
+\bf Words + POS & \smaller[.5]\begin{tabular}{@{}p{12em}p{5em}@{}}\verb|"VBP_VBG_to"|:&$\log{1+1}$\\ \verb|"FW__more RB"|:&$\log{1+1}$\end{tabular} \\
+\hline
+\end{tabular}
+
+\caption{Some of the features extracted for an L1 German sentence.}\label{fig:german}
+\end{figure*}
 
 \begin{compactdesc}
 \item[POS $n$-grams] Part-of-speech $n$-grams were used in various
@@ -323,9 +347,10 @@ We begin by motivating our choice of features.
 \subsection{Main Features}
 \label{sec:mainfeats}
 First, we use the following four feature types as the core of our
-model.  Whenever counts are mentioned, we use the log of the count as
+model.  Whenever counts are mentioned, we use the log of the count-plus-one\nss{added: plus one} as
 the feature.  We report the accuracy of using each feature type, in
 isolation, on the training set.
+
 
 \begin{compactdesc}
 \item[\feat{POS}] Part-of-speech $n$-grams.  Features were extracted
