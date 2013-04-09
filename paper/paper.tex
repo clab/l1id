@@ -69,7 +69,7 @@
 
 
 \title{Identifying the L1 of non-native writers: the CMU-Haifa system\\[1em]
-{\large Chris Dyer$^\ast$ Manaal Faruqui$^\ast$ Noam Ordan$^\dagger$ Nathan Schneider$^\ast$\\ Yulia Tsvetkov$^\ast$ Naama Twitto$^\dagger$ Shuly Wintner$^\dagger$}\\[-3em]
+{\large Chris Dyer$^\ast$ Manaal Faruqui$^\ast$ Noam Ordan$^\dagger$ Nathan Schneider$^\ast$\\ Yulia Tsvetkov$^\ast$ Victor Chahuneau$^\ast$ Naama Twitto$^\dagger$ Shuly Wintner$^\dagger$}\\[-3em]
 }
 
 \author{
@@ -114,7 +114,7 @@ that yielded the highest accuracy.
 \section{Introduction}
 \label{sec:intro}
 The task we address in this work is identifying the native language
-(\emph{L1}) of non-native English (\emph{L2}) authors. More specifically, given a
+(L1) of non-native English (L2) authors. More specifically, given a
 dataset of short English essays
 \citep{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR},
 composed as part of the \emph{Test of English as a Foreign Language
@@ -138,8 +138,7 @@ better understanding of non-native language. We are thus equally
 interested in defining \emph{meaningful} features whose contribution
 to the task can be linguistically interpreted.
 
-We address the task as a multiway text-classification task; we specify
-our methodology in \Sref{sec:methodology}. As in other author
+We address the task as a multiway text-classification task; we describe our data in \Sref{sec:data} and classification model in \Sref{sec:model}. As in other author
 attribution tasks \citep{joula:2006}, the choice of features for the
 classifier is crucial; we discuss the features we define in
 \Sref{sec:features}. We report our results in
@@ -151,10 +150,9 @@ research.
 The task of L1 identification was introduced by
 \citet{koppel2005automatically,koppel2005determining}, who work on the
 International Corpus of Learner English \citep{icle}, which includes
-texts written by students from Russia, the Czech Republic, Bulgaria,
-France, and Spain. The texts lengths range from 500 to 850 words. The
-classification method is a linear SVM, and features include 400
-standard function words, 200 letter $n$-grams, 185 error types and 250
+texts written by students from 5 countries, Russia, the Czech Republic, Bulgaria,
+France, and Spain. The texts lengths range from 500~to 850~words. Their
+classification method is a linear SVM, and features include 400~standard function words, 200~letter $n$-grams, 185~error types and 250
 rare part-of-speech (POS) bi-grams. Ten-fold cross-validation results
 on this dataset are 80\% accuracy.
 
@@ -211,9 +209,10 @@ but many are motivated by other author attribution tasks, in
 particular identification of \emph{translationese}, the language of
 translated texts \citep{vered:noam:shuly}.
 
-\section{Methodology}
-\label{sec:methodology}
-The dataset released by the NLI Shared task \citep{tetreault-EtAl:2012:PAPERS} is a balanced set of 1000 TOEFL essays per each native language. Essays are short, consisting of 10 to 20 sentences each. The dataset is split into 900 documents for training and 100 for development. Each document is annotated with the author's English proficiency level (low, medium, high) and an identification (1 to 8) of the prompt given to the author to trigger the essay. All essays are tokenized and split into sentences. We detail in \Tref{tbl:stats:level} some statistics on the training corpora, listed by the authors' proficiency level.
+\section{Data}
+\label{sec:data}
+The dataset released by the NLI Shared task \citep{tetreault-EtAl:2012:PAPERS} is a balanced set of 1000 TOEFL essays per each native language. Essays are short, consisting of 10 to 20 sentences each. The dataset is split into 900 documents for training and 100 for development. Each document is annotated with the author's English proficiency level (low, medium, high) and an identification (1 to 8) of the prompt given to the author to trigger the essay. All essays are tokenized and split into sentences. We detail in \Tref{tbl:stats:level} some statistics on the training corpora, listed by the authors' proficiency level. All essays were tagged with the Stanford part-of-speech tagger
+\citep{toutanova-03}. We did not parse the dataset.
 
 \begin{table}[hbt]
 \small\centering
@@ -233,18 +232,22 @@ The dataset released by the NLI Shared task \citep{tetreault-EtAl:2012:PAPERS} i
 \label{tbl:stats:level}
 \end{table} 
 
-For classification we use the \texttt{creg} regression modeling framework to train a 11-class logistic regression classifier.\footnote{https://github.com/redpony/creg}  We parameterize the L1 classifier as a multiclass logistic regression:
+\section{Model}
+\label{sec:model}
+For our classification model we used the \texttt{creg} regression modeling framework to train a 11-class logistic regression classifier.\footnote{https://github.com/redpony/creg}  We parameterize the classifier as a multiclass logistic regression:
 \begin{align*}
-p(y& \mid \textbf{d}, i) \propto \exp \sum_j \lambda_j h_j(y, \textbf{d}, i) ,
+p_{\boldsymbol{\lambda}}(y& \mid \textbf{x})= \frac{\exp \sum_j \lambda_j h_j(y, \textbf{x})}{Z_{\boldsymbol{\lambda}}(\textbf{x})} ,
 \end{align*}
-where $\textbf{d}$ are documents, $h_j(\cdot)$ are feature functions, $\lambda_j$ are the corresponding weights, and $y$ refer to the outputs: eleven L1 class labels. \yt{regularization???}  
+where $\textbf{x}$ are documents, $h_j(\cdot)$ are real-valued feature functions, $\lambda_j$ are the corresponding weights, and $y$ is one of the eleven L1 class labels. To train the parameters of our model, we minimized the following objective,
+\begin{align*}
+\mathcal{L} = \alpha \overbrace{\sum_j \lambda_j^2}^{\textrm{$\ell_2$ reg.}} - \sum_{\{(\textbf{x}_i,y_i )\}_{i=1}^{|\mathcal{D}|}} \Big(& \overbrace{\log p_{\boldsymbol{\lambda}}(y_i \mid \textbf{x}_i)}^{\textrm{log likelihood}}  + \\
+& \tau \underbrace{\mathbb{E}_{p_{\boldsymbol{\lambda}}(y_i \mid \textbf{x}_i)} \log p_{\boldsymbol{\lambda}}(y_i \mid \textbf{x}_i)}_{-\textrm{conditional entropy}}\Big) ,
+\end{align*}
+which combines the negative log likelihood of the training dataset $\mathcal{D}$, an $\ell_2$ (quadratic) penalty on the magnitude of $\boldsymbol{\lambda}$ (weighted by $\alpha$), and the \emph{negative} entropy of the predictive model (weighted by $\tau$). While an $\ell_2$ weight penalty is standard in regression problems like this, we found that the the additional entropy term gave more reliable results. Intuitively, the entropic regularizer encourages the remain maximally uncertain about its predictions. In the metaphor of ``maximum entropy'', the entropic prior finds a solution that has \emph{more} entropy than the ``maximum'' model that is compatible with the constraints.
 
+The objective cannot be minimized in closed form, but it does have a unique minimum and is straightforwardly differentiable, so we used L-BFGS to find the optimal weight settings \citep{lbfgs}.
 
-
-All essays were tagged with the Stanford part-of-speech tagger
-\citep{toutanova-03}. We did not parse the dataset.
-
-\section{Model Overview}
+\section{Feature Overview}
 \label{sec:features}
 We define a large arsenal of features, our motivation being both to
 improve the accuracy of classification and to be able to interpret the
