@@ -106,8 +106,8 @@ $^\dagger$Department of Computer Science\\University of Haifa\\Haifa, Israel\\\t
 \begin{document}
 \maketitle
 \begin{abstract}
-We show that it is possible to learn to identify, with high accuracy, the native language of English test takers writers from the content of the essays they write.  Our method uses standard text classification
-techniques based on multiclass logistic regression to exploit in conjunction individually weak indicators to predict the most probable native language from a set of 11 possibilities. We describe the various features
+We show that it is possible to learn to identify, with high accuracy, the native language of English test takers from the content of the essays they write.  Our method uses standard text classification
+techniques based on multiclass logistic regression, combining individually weak indicators to predict the most probable native language from a set of 11 possibilities. We describe the various features
 used for classification, as well as the settings of the classifier
 that yielded the highest accuracy.
 \end{abstract}
@@ -427,7 +427,7 @@ feature type in isolation.
 \item[\feat{PsvRatio}] The proportion of passive verbs out of all
   verbs.
 \item[\feat{CxtFxn}] Contextual function words. \raggedright High-weight features include: {\tt CHI:<some JJ>}; \mbox{\tt HIN:<as VBN>}. 
-\item[\feat{Misspell}] Spelling correction edits. \sw{???}. \raggedright High-weight features include: {\tt ARA:DEL<e>}, {\tt ARA:INS<e>}, {\tt ARA:SUBST<e>/<i>}; {\tt GER:SUBST<z>/<y>}; {\tt JPN:SUBST<l>/<r>}, {\tt JPN:SUBST<r>/<l>}; {\tt SPA:DOUBLE<s>}, {\tt SPA:MID\_INS<s>}, {\tt SPA:INS<s>}.
+\item[\feat{Misspell}] Spelling correction edits. Features included substitutions, deletions, insertions, doubling of letters and missing doublings of letters, and splittings (\textnl{alot}$\rightarrow$\textnl{a lot}), as well as the word position where the error occurred. \raggedright High-weight features include: {\tt ARA:DEL<e>}, {\tt ARA:INS<e>}, {\tt ARA:SUBST<e>/<i>}; {\tt GER:SUBST<z>/<y>}; {\tt JPN:SUBST<l>/<r>}, {\tt JPN:SUBST<r>/<l>}; {\tt SPA:DOUBLE<s>}, {\tt SPA:MID\_INS<s>}, {\tt SPA:INS<s>}.
 \item[\feat{Restore}] Counts of substitutions, deletions and
   insertions of predefined tokens that we restored in the texts. High-weight features include: {\tt CHI:DELWORD<do>}; {\tt GER:DELWORD<on>}; {\tt ITA:DELWORD<be>}  
 \end{compactdesc}
@@ -475,17 +475,19 @@ accuracy of the classifier on the development set.
 The full model that we used to classify the test set combines all
 features listed in \tref{tbl:addfeats}. Using all these features, the
 accuracy on the development set is~84.55\%, and on the test set it
-is~81.5\%. \Tref{tbl:matrix} lists the confusion matrix on the test
+is~81.5\%. The values for $\alpha$ and $\tau$ were tuned to optimize development set performance, and found to be $\alpha=5$,$\tau=2$.
+
+\Tref{tbl:matrix} lists the confusion matrix on the test
 set, as well as precision, recall and $F_1$-score for each L1.
-The largest class of errors was predicting Telugu where the correct label 
-was Hindi\nss{or vice versa?}---this happened 18 times. 
+The largest error type involved predicting Telugu when the true label 
+was Hindi, which happened 18 times.  This error is unsurprising since many Hindi and Telugu speakers are arguably native speakers of Indian English.
 
 
 
 \begin{table*}[hbt]
 \small\centering
 \begin{tabular}{>{\bf}l|r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r|ccc} %from the email sent by the organizers
-	& \bf ARA & \bf CHI & \bf FRE & \bf GER & \bf HIN & \bf ITA & \bf JPN & \bf KOR & \bf SPA & \bf TEL & \bf TUR & \bf Precision (\%) & \bf Recall (\%) & \bf $F_1$ (\%) \\
+\emph{true}$\downarrow$	& \bf ARA & \bf CHI & \bf FRE & \bf GER & \bf HIN & \bf ITA & \bf JPN & \bf KOR & \bf SPA & \bf TEL & \bf TUR & \bf Precision (\%) & \bf Recall (\%) & \bf $F_1$ (\%) \\
 \hline
 ARA & 80 & 0 & 2 & 1 & 3 & 4 & 1 & 0 & 4 & 2 & 3 & 80.8 & 80.0 & 80.4 \\
 CHI & 3 & 80 & 0 & 1 & 1 & 0 & 6 & 7 & 1 & 0 & 1 & 88.9 & 80.0 & 84.2 \\
@@ -502,7 +504,7 @@ SPA & 2 & 0 & 2 & 0 & 1 & 8 & 2 & 1 & 78 & 1 & 5 & 77.2 & 78.0 & 77.6 \\
 TEL & 0 & 1 & 0 & 0 & 18 & 1 & 2 & 1 & 1 & 73 & 3 & 85.9 & 73.0 & 78.9 \\
 TUR & 4 & 0 & 2 & 2 & 0 & 2 & 2 & 4 & 4 & 0 & 80 & 76.9 & 80.0 & 78.4 \\
 \end{tabular}
-\caption{Official test set confusion matrix with the full model. \nss{which direction is predicted vs. gold?}
+\caption{Official test set confusion matrix with the full model. 
 Accuracy is 81.5\%.}
 \label{tbl:matrix}
 \end{table*}
@@ -513,64 +515,50 @@ the one hand, and a set of cognitive constraints resulting from the
 efforts to generate the target text, on the other. The former is
 called \emph{interference} in Translation Studies \citep{Toury:1995}
 and \emph{interlanguage} in second language acquisition
-\citep{Selinker1972}.
-
-\citet{vered:noam:shuly} designed 32 classifiers to test the validity
-of the forces acting on translated texts, and found that interference
+\citep{Selinker1972}. \citet{vered:noam:shuly} designed 32 classifiers to test the validity
+of the forces acting on translated texts, and found that features sensitive to interference
 consistently yielded the best performing classifiers. And indeed, in
-this work too, which replicates some of their classifiers, we find
-again that fingerprints of the source language are dominant in the
-makeup of L2 texts.
-
-The main difference, however, between texts translated by
+this work too, we find fingerprints of the source language are dominant in the
+makeup of L2 texts. The main difference, however, between texts translated by
 professionals and the texts we address here, is that more often than
 not professional translators translate into their mother tongue,
 whereas L2 writers write out of their mother tongue by definition. So
-interference is ever more exaggerated in their case, for example, also
+interference is ever more exaggerated in this case, for example, also
 phonologically \citep{tsur-rappoport:2007:Cognitive-2007}.
 
-We illustrate this with some examples from Arabic native speakers. The
+We explore the effects of interference by analyzing several patterns we observe in the features.
+Our classifier finds that the
 character sequence \textnl{alot} is overrepresented in Arabic L2
 texts. Arabic has no indefinite article and we speculate that Arabic
 speakers conceive \textnl{a lot} as a single word; the Arabic
 equivalent for \textnl{a lot} is used adverbially like an \textnl{-ly}
 suffix in English. For the same reason, another prominent feature is a
-missing definite article before nouns and adjectives . Additionally,
+missing definite article before nouns and adjectives. Additionally,
 Arabic, being an Abjad language, rarely indicates vowels, and indeed
 we find many missing \textnl{e}-s and \textnl{i}-s in the texts of
 Arabic speakers. Phonologically, because Arabic conflates
 /\textipa{I}/ and /\textipa{@}/ into /i/ (at least in Modern Standard
-Arabic), we see that many \textnl{e}-s are indeed substituted for
-\textnl{i}-s in these texts.
+Arabic), we see that many {\tt e}'s are indeed substituted for
+{\tt i}'s in these texts.
 
-German overuses hyphens in two interesting ways. German can
-notoriously use relative clauses freely, and such constructions
-frequently occur between hyphens in the dataset, as in \textnl{any
+We find that essays that contain hyphens are more likely to be from German authors. We again find evidence of interference from the native language here. First, relative clauses are widely used in German, and we see this pattern in L2 English of L1 German speakers. For example, \textnl{any
   given rational being -- let us say Immanual Kant -- we find
-  that}. Another overuse of hyphens stems from compounding, another
-facet of German, for example in \textnl{well-known},
+  that}. Another source of extra hyphens stems from compounding convention. So, for example, we find \textnl{well-known},
 \textnl{community-help}, \textnl{spare-time}, \textnl{football-club},
 etc. Many of these reflect an effort to both connect and separate
 connected forms in the original (e.g., \textnl{Fussballklub}, which in
 English would be more naturally rendered as \textnl{football club}).
-Another unexpected feature of German is a frequent substitution of the
-letter \textnl{y} for \textnl{z} (and vice versa), most probably
-triggered by their switched positions on German keyboards.
+Another unexpected feature of essays by native Germans is a frequent substitution of the
+letter \textnl{y} for \textnl{z} and vice versa. We suspect this owes to their switched positions on German keyboards.
  
-The word \textnl{that} occurs more frequently in the texts of German
-L1 speakers, perhaps because in English it is optional in relative
-clauses whereas in German it is not.  Last, \textnl{often} is
-overused; being a cognate of the German \textnl{oft} it is not
-cognitively expensive to retrieve it. Spanish, on the other hand,
-literally translates \textnl{muchas veces} into \textnl{many times},
-which is similarly overused on the dataset. \sw{any Spanish speaker
-  who could validate this expression?}
+Lexical item frequency also provides clues to the L1 of the essay writers. The word \textnl{that} occurs more frequently in the texts of German
+L1 speakers. We hypothesize that in English it is optional in relative
+clauses whereas in German it is not, so German speakers are less comfortable using the non-obligatory form.  Also, \textnl{often} is
+over represented. We hypothesize that since it is cognate of German \textnl{oft}, it is not
+cognitively expensive to retrieve it. We find \textnl{many times}---a literal translation of \textnl{muchas veces}--- in Spanish essays.
 
-Other informative features include substitutions of \textnl{r}-s and
-\textnl{l}-s in the texts of Japanese authors, for obvious reasons;
-and the characters \textnl{r} and \textnl{s} are important in Chinese
-and Spanish, respectively, for reasons that are unclear to
-us. Similarly, the word \textnl{then} is dominant in the texts of
+Other informative features that reflect L1 features include frequent misspellings involving confusions of {\tt l} and {\tt r} in Japanese essays. More mysteriously, the characters \textnl{r} and \textnl{s} are misused in Chinese
+and Spanish, respectively. The word \textnl{then} is dominant in the texts of
 Hindi speakers. Finally, it is clear that authors refer to their
 native cultures (and, consequently, native languages and countries);
 the strings \textnl{Turkish}, \textnl{Korea}, and \textnl{Ita} were
@@ -580,21 +568,19 @@ respectively.
 \section{Discussion}
 \label{sec:discussion}
 
-We experimented with different classifiers and a large set of features to solve an 11-way classification problem. Most of our features are linguistically informed and we believe that this direction should be further pursued. There are at least three motivations for identifying the mother tongue of L1 learners: (1) for the sake of sports, in which case linguistic and pedagogical theory doesn't matter: the more accurate the better; (2) to facilitate human assessment and grading; (3) to point out the differences between different L2 writers, on the one hand, and to discriminate L2 writers as a single set from native tongue writers, on the other; this can pave the way for improving teaching methods and identify the individual difficulties of specific L1 learners.
+We experimented with different classifiers and a large set of features to solve an 11-way classification problem. We hope that studying this problem will improve to facilitate human assessment, grading, and teaching of English as a second language. While the core features used are sparse and sensitive to lexical and even orthographic features of the writing, many of them are linguistically informed and provide insight into how L1 and L2 interact.  
 
-Our point of departure was the analogy between translated texts as a genre in its own and L2 writers as pseudo translators, relying heavily on their mother tongue and transferring their native models to a second language. Moreover, we assumed that like translators, L2 writers will write in a simplified manner and overuse explicit markers. Although this should be studied vis-a-vis comparable outputs of mother tongue writers in English, we observe that the best features of our classifiers are of the ``interference'' type, i.e. phonological, morphological and syntactic in nature, mostly in the form of misspelling features, restoration tags, punctuation and lexical and syntactic modeling.
+Our point of departure was the analogy between translated texts as a genre in its own and L2 writers as pseudo translators, relying heavily on their mother tongue and transferring their native models to a second language. In formulating our features, we assumed that like translators, L2 writers will write in a simplified manner and overuse explicit markers. Although this should be studied vis-a-vis comparable outputs of mother tongue writers in English, we observe that the best features of our classifiers are of the ``interference'' type, i.e. phonological, morphological and syntactic in nature, mostly in the form of misspelling features, restoration tags, punctuation and lexical and syntactic modeling.
 
-We would like to stress that certain features indicating L2 do not have any bearing on the quality of the English produced, a phenomenon discussed extensively in Translation Studies \citep{Toury:1995}, where interference is observed by the overuse or underuse of certain features reflecting the typological differences between a specific pair of languages. For example, the fact that Italian native speakers favor the syntactic sequence of determiner + adjective + noun (e.g., \textnl{a big risk} or \textnl{this new business}) has little prescriptive value for teachers.
+We would like to stress that certain features indicating a particular L1 have no bearing on the quality of the English produced. This has been discussed extensively in Translation Studies \citep{Toury:1995}, where interference is observed by the overuse or underuse of certain features reflecting the typological differences between a specific pair of languages, but which is still within grammatical limits. For example, the fact that Italian native speakers favor the syntactic sequence of determiner + adjective + noun (e.g., \textnl{a big risk} or \textnl{this new business}) has little prescriptive value for teachers.
 
-Last, we noted that certain L2 writers tend to repeat more often words appearing in the prompts, i.e., in the questions that triggered their essays. When we experimented on certain classifiers with and without the prompt number as a feature, we actually noted a decrease in performance. For the sake of sports, we should have in fact removed them from our classifier, but we stress their theoretical importance: some L2 writers repeat them more often and this may reflect different educational backgrounds (introducing this as a feature offsets its effect). Had we had a hypothetical 12th unseen L2, we believe it would have enabled us to cross-classify better. Again, this feature says nothing about the quality of the text, just as the tendency of Korean and Italian writers to mention their home country more often does not.
+A further example of how L2 quality and the ability to predict L1 are uncorrelated, we noted that certain L2 writers often repeat words appearing in their essay prompts, and including information about whether the writer was reusing prompt words improved classification accuracy. We suggest this reflects different educational backgrounds. This feature says nothing about the quality of the text, just as the tendency of Korean and Italian writers to mention their home country more often does not.
 %\section{Conclusion}
 %\label{sec:conclusion}
 
 \section*{Acknowledgments}
 This research was supported by a grant from the Israeli Ministry of
-Science and Technology.\nss{anything from the CMU side?}
-
-%\clearpage
+Science and Technology.
 
 \bibliography{l1id}
 \bibliographystyle{plainnat}
