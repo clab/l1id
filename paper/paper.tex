@@ -206,7 +206,7 @@ Our dataset in this work consists of TOEFL essays
 written by speakers of eleven different L1s
 \citep{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR},
 distributed as part of the Native Language Identification Shared
-Task \citep{tetreault-blanchard-cahill:2013:BEA}. The training data consists of 1000 essays from each native language. The essays are short, consisting of 10~to 20~sentences each. We used the provided splits of 900 documents for training and 100 for development. Each document is annotated with the author's English proficiency level (low, medium, high) and an identification (1 to 8) of the essay prompt. All essays are tokenized and split into sentences. In \Tref{tbl:stats:level} we provide some statistics on the training corpora, listed by the authors' proficiency level. All essays were tagged with the Stanford part-of-speech tagger
+Task \citep{tetreault-blanchard-cahill:2013:BEA}. The training data consists of 1000 essays from each native language. The essays are short, consisting of 10~to 20~sentences each. We used the provided splits of 900 documents for training and 100 for development. Each document is annotated with the author's English proficiency level (low, medium, high) and an identification (1 to 8) of the essay prompt. All essays are tokenized and split into sentences. In \tref{tbl:stats:level} we provide some statistics on the training corpora, listed by the authors' proficiency level. All essays were tagged with the Stanford part-of-speech tagger
 \citep{toutanova-03}. We did not parse the dataset.
 
 \begin{table}[hbt]
@@ -339,29 +339,60 @@ Firstly the employers live more savely because they are going to have more money
 
 \end{compactdesc}
 
+
+\begin{table}\centering\small
+\begin{tabular}{l@{}c}
+\bf Feature & \bf Accuracy (\%) \\
+\hline
+\feat{POS} & 55.18\\
+\feat{FreqChar} & 74.12\\
+\feat{CharPrompt} & 65.09\\
+\feat{Brown} & 72.26\\
+\hline
+\feat{DocLen} & 11.81\\
+\feat{Punct} & 27.41\\
+\feat{Pron} & 22.81\\
+\feat{Position} & 53.03\\
+\feat{PsvRatio} & 12.26\\
+\feat{CxtFxn} \textsmaller{(bigram)} & 62.79\\
+\feat{CxtFxn} \textsmaller{(trigram)} & 62.32\\
+\feat{Misspell} & 37.29\\
+\feat{Restore} & 47.67\\ 
+\hline
+\feat{CohMark} & 25.71\\
+\feat{CohVerb} & 22.85\\
+\feat{FxnWord} & 42.47\\
+\hline
+\end{tabular}
+\caption{Independent performance of feature types detailed in \Sref{sec:mainfeats}, \Sref{sec:addfeats} and \Sref{sec:discarded}. 
+Accuracy is averaged over 10 folds of cross-validation on the training set.}
+\end{table}
+
 \subsection{Main Features}
 \label{sec:mainfeats}
 FWe use the following four feature types as the baseline features in our
 model.  For features that are sensitive to frequency, we use the log of the (frequency-plus-one) as
-the feature's value.  For each feature type, we report the accuracy of using just that feature type in
-isolation on the training set\cjd{training? development? cross validated?} in Tab.~\ref{tbl:mainfeats}.
+the feature's value.  \Tref{tbl:mainfeats} reports the accuracy of using each feature type in
+isolation (with 10-fold cross-validation on the training set).
 
 
 \begin{compactdesc}
 \item[\feat{POS}] Part-of-speech $n$-grams.  Features were extracted
   to count every POS 1-, 2-, 3- and 4-gram in each
-  document. 55.18\%. \ignore{CHI:IN PRP VBD, ARA:NN VBZ, KOR:DT JJ} 
+  document. \ignore{CHI:IN PRP VBD, ARA:NN VBZ, KOR:DT JJ} 
 \item[\feat{FreqChar}] Frequent character $n$-grams.  We experimented
   with character $n$-grams: To reduce the number of parameters, we removed features
   only those character $n$-grams that are observed more
   than $5$ times in the training corpus, and $n$ ranges from~1
-    to~4. Accuracy: $74.12\%$. High-weight features include: {\tt TUR:Turk}, {\tt ITA:Ital}, {\tt JPN:Japa}.\item[\feat{CharPrompt}] Conjunction of the character $n$-gram
-  features defined above with the prompt ID. Accuracy: 65.09\%.
-\item[\feat{Brown}] Substitutions, deletions and insertions counts of Brown cluster unigrams and bigrams in each document. Accuracy: 72.26\%. \ignore{in top-30 features Brown features occur up to 5 times in 10 out of 11 L1s (all except Arabic)} 
+    to~4. High-weight features include: {\tt TUR:Turk}, {\tt ITA:Ital}, {\tt JPN:Japa}.
+\item[\feat{CharPrompt}] Conjunction of the character $n$-gram
+  features defined above with the prompt ID.
+\item[\feat{Brown}] Substitutions, deletions and insertions counts of Brown cluster 
+unigrams and bigrams in each document.\ignore{in top-30 features Brown features occur up to 5 times in 10 out of 11 L1s (all except Arabic)} 
 \end{compactdesc}
 \noindent
 The accuracy of the classifier on the development set using these four
-feature types is reported in \Tref{tbl:mainfeats}.
+feature types is reported in \tref{tbl:mainfeats}.
 
 \begin{table}[hbt]
 \small\centering
@@ -380,26 +411,25 @@ feature types is reported in \Tref{tbl:mainfeats}.
 \label{tbl:mainfeats}
 \end{table}
 
-\subsection{Additional Features}
+\subsection{Additional Features}\label{sec:addfeats}
 To the basic set of features we now add more specific,
 linguistically-motivated features, each adding a small number of
 parameters to the model.  As above, we indicate the accuracy of each
 feature type in isolation.
 
 \begin{compactdesc}
-\item[\feat{DocLen}] Document length in tokens. 11.81\%.
-\item[\feat{Punct}] Counts of each punctuation mark. 27.41\%. 
-\item[\feat{Pron}] Counts of each pronoun. 22.81\%.
+\item[\feat{DocLen}] Document length in tokens.
+\item[\feat{Punct}] Counts of each punctuation mark. 
+\item[\feat{Pron}] Counts of each pronoun.
 \item[\feat{Position}] Positional token frequency. We use the counts
   for the first two and last three words before the period in each
-  sentence as features. 53.03\%. \yt{ARA: second word `,', CHI: second word `is', HIN: second word `can'}  
+  sentence as features. \yt{ARA: second word `,', CHI: second word `is', HIN: second word `can'}  
 \item[\feat{PsvRatio}] The proportion of passive verbs out of all
-  verbs. 12.26\%.
-\item[\feat{CxtFxn}] Contextual function words. Bi-grams yield
-  62.79\%, tri-gram 62.32\%. \yt{CHI: some JJ, HIN: as VBN, } 
-\item[\feat{Misspell}] Spelling correction edits. \sw{???}. 37.29\%. \yt{ARA: DEL:e, INS:e, SUBST:e:i; GER: SUBST:z:y; JPN: SUBST:l:r, SUBST:r:l;SPA: DOUBLE:s, MID:INS:s, INS:s }
+  verbs.
+\item[\feat{CxtFxn}] Contextual function words. \yt{CHI: some JJ, HIN: as VBN, } 
+\item[\feat{Misspell}] Spelling correction edits. \sw{???}. \yt{ARA: DEL:e, INS:e, SUBST:e:i; GER: SUBST:z:y; JPN: SUBST:l:r, SUBST:r:l;SPA: DOUBLE:s, MID:INS:s, INS:s }
 \item[\feat{Restore}] Counts of substitutions, deletions and
-  insertions of predefined tokens that we restored in the texts. 47.67\% \yt{CHI: Delete do, GER: Delete on, ITA Delete be}  
+  insertions of predefined tokens that we restored in the texts. \yt{CHI: Delete do, GER: Delete on, ITA Delete be}  
 \end{compactdesc}
 \noindent
 \Tref{tbl:addfeats} reports the empirical improvement that each of
@@ -422,28 +452,28 @@ these brings independently when added to the main features
 \textsc{main} + \feat{CxtFxn} & 7,669,684 & 81.73 & 1.0 \\
 \end{tabular}
 \caption{Dev set accuracy with \textsc{main} features plus additional feature groups, added independently. 
-$\ell_2$ regularization was tuned as in \Tref{tbl:mainfeats} (two values, 1.0 and 5.0, were tried for each 
+$\ell_2$ regularization was tuned as in \tref{tbl:mainfeats} (two values, 1.0 and 5.0, were tried for each 
 configuration; more careful tuning might produce slightly better accuracy).
 Results are sorted by accuracy; only three groups exhibited independent improvements over the \textsc{main} feature set.}
 \label{tbl:addfeats}
 \end{table}
 
 
-\subsection{Discarded Features}
+\subsection{Discarded Features}\label{sec:discarded}
 We also tried several other feature types that did not improve the
 accuracy of the classifier on the development set.
 \begin{compactdesc}
-\item[Cohesive markers] Counts of each cohesive marker. 25.71\%.
-\item[Cohesive verbs] Counts of each cohesive verb. 22.85\%.
-\item[Function words] Counts of function words. 42.47\%. This feature
-  is subsumed by the highly discriminative \feat{CxtFxn} feature.
+\item[\feat{CohMark}] Counts of each cohesive marker.
+\item[\feat{CohVerb}] Counts of each cohesive verb.
+\item[\feat{FxnWord}] Counts of function words. These features
+  are subsumed by the highly discriminative \feat{CxtFxn} features.
 \end{compactdesc}
 
 
 \section{Results}
 \label{sec:results}
 The full model that we used to classify the test set combines all
-features listed in \Tref{tbl:addfeats}. Using all these features, the
+features listed in \tref{tbl:addfeats}. Using all these features, the
 accuracy on the development set is~84.55\%, and on the test set it
 is~81.5\%. \Tref{tbl:matrix} lists the confusion matrix on the test
 set, as well as precision, recall and $F_1$-score for each L1.
