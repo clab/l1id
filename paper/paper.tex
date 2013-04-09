@@ -119,13 +119,13 @@ dataset of short English essays
 \citep{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR},
 composed as part of the \emph{Test of English as a Foreign Language
   (TOEFL)} by authors whose native language is one out of~11 possible
-languages (Arabic, Chinese, French, German, Hindi, Italian, Japanese,
-Korean, Spanish, Telugu, and Turkish), our task is to identify that
+languages---Arabic, Chinese, French, German, Hindi, Italian, Japanese,
+Korean, Spanish, Telugu, or Turkish---our task is to identify that
 language.
 
 This task has a clear empirical motivation. Non-native speakers make
 different errors when they write English, depending on their native
-language \citep{swan2001learner}; understanding the different types of
+language \citep{lado-57,swan2001learner}; understanding the different types of
 errors is a prerequisite for correcting them
 \citep{Leacock:2010:AGE:1855062}, and systems such as the one we
 describe here can shed interesting light on such errors. Tutoring
@@ -136,7 +136,7 @@ applications are sometimes required to determine the L1 of authors
 we believe that the task is interesting in and of itself, providing a
 better understanding of non-native language. We are thus equally
 interested in defining \emph{meaningful} features whose contribution
-to the task can be linguistically interpreted.
+to the task can be linguistically interpreted. Briefly, our features draw heavily on prior work in general text classification and authorship identification, those used in identifying so-called \emph{translationese} \cite{vered:noam:shuly}, and a class of features that involves  determining what minimal changes would be necessary to transform the essays into ``standard'' English (as determined by an $n$-gram language model).
 
 We address the task as a multiway text-classification task; we describe our data in \Sref{sec:data} and classification model in \Sref{sec:model}. As in other author
 attribution tasks \citep{joula:2006}, the choice of features for the
@@ -151,21 +151,21 @@ The task of L1 identification was introduced by
 \citet{koppel2005automatically,koppel2005determining}, who work on the
 International Corpus of Learner English \citep{icle}, which includes
 texts written by students from 5 countries, Russia, the Czech Republic, Bulgaria,
-France, and Spain. The texts lengths range from 500~to 850~words. Their
+France, and Spain. The texts range from 500~to 850~words in length. Their
 classification method is a linear SVM, and features include 400~standard function words, 200~letter $n$-grams, 185~error types and 250
-rare part-of-speech (POS) bi-grams. Ten-fold cross-validation results
+rare part-of-speech (POS) bigrams. Ten-fold cross-validation results
 on this dataset are 80\% accuracy.
 
 The same experimental setup is assumed by
 \citet{tsur-rappoport:2007:Cognitive-2007}, who are mostly interested
 in testing the hypothesis that an author's choice of words in a second
-language is influenced by the phonology of his or her L1. They confirm
+language is influenced by the \emph{phonology} of his or her L1. They confirm
 this hypothesis by carefully analyzing the features used by
 \citeauthor{koppel2005automatically}, controlling for potential
 biases.
 
 \citet{Wong-Dras:2009:ALTA2009,wong-dras:2011:EMNLP} are also
-motivated by a linguistic hypothesis, namely that syntactic errors in
+motivated by a linguistic hypothesis, namely that \emph{syntactic} errors in
 a text are influenced by the author's
 L1. \citet{Wong-Dras:2009:ALTA2009} analyze three error types
 statistically, and then add them as features in the same experimental
@@ -183,7 +183,7 @@ than 65\% using only lexical features.
 Cambridge Learner Corpus, in which texts are 200-400 word long, and
 are authored by native speakers of five Germanic languages (German,
 Swiss German, Dutch, Swedish and Danish) and five Romance languages
-(French, Italian, Catalan, Spanish and Portuguese). Again, SVM is the
+(French, Italian, Catalan, Spanish and Portuguese). Again, SVMs are used as the
 classification device. Features include POS $n$-grams, character
 $n$-grams, phrase-structure rules (extracted from parse trees), and
 two measures of error rate. The classifier is evaluated on its ability
@@ -192,26 +192,20 @@ are usually excellent.
 
 A completely different approach is offered by
 \citet{brooke2011native}. Since training corpora for this task are
-rare, they use mainly L1 (blog) corpora. Given English word bi-grams
+rare, they use mainly L1 (blog) corpora. Given English word bigrams
 $\langle e_1,e_2\rangle$, they try to assess, for each L1, how likely
 it is that an L1 bi-gram was translated literally by the author,
 resulting in $\langle e_1,e_2\rangle$. Working with four L1s (French,
 Spanish, Chinese, and Japanese), and evaluating on the International
-Corpus of Learner English, the results are lower than 50\%.
-
-Our dataset in this work is different, and consists of TOEFL essays
-written by speakers of eleven different L1s
-\citep{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR},
-distributed as part of the First Native Language Identification Shared
-Task \citep{tetreault-blanchard-cahill:2013:BEA}. We use a plethora of
-features; some of them are inspired by previous work outlined above,
-but many are motivated by other author attribution tasks, in
-particular identification of \emph{translationese}, the language of
-translated texts \citep{vered:noam:shuly}.
+Corpus of Learner English, accuracy is below 50\%.
 
 \section{Data}
 \label{sec:data}
-The dataset released by the NLI Shared task \citep{tetreault-EtAl:2012:PAPERS} is a balanced set of 1000 TOEFL essays per each native language. Essays are short, consisting of 10 to 20 sentences each. The dataset is split into 900 documents for training and 100 for development. Each document is annotated with the author's English proficiency level (low, medium, high) and an identification (1 to 8) of the prompt given to the author to trigger the essay. All essays are tokenized and split into sentences. We detail in \Tref{tbl:stats:level} some statistics on the training corpora, listed by the authors' proficiency level. All essays were tagged with the Stanford part-of-speech tagger
+Our dataset in this work consists of TOEFL essays
+written by speakers of eleven different L1s
+\citep{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR},
+distributed as part of the Native Language Identification Shared
+Task \citep{tetreault-blanchard-cahill:2013:BEA}. The training data consists of 1000 essays from each native language. The essays are short, consisting of 10~to 20~sentences each. We used the provided splits of 900 documents for training and 100 for development. Each document is annotated with the author's English proficiency level (low, medium, high) and an identification (1 to 8) of the essay prompt. All essays are tokenized and split into sentences. In \Tref{tbl:stats:level} we provide some statistics on the training corpora, listed by the authors' proficiency level. All essays were tagged with the Stanford part-of-speech tagger
 \citep{toutanova-03}. We did not parse the dataset.
 
 \begin{table}[hbt]
@@ -236,12 +230,12 @@ The dataset released by the NLI Shared task \citep{tetreault-EtAl:2012:PAPERS} i
 \label{sec:model}
 For our classification model we used the \texttt{creg} regression modeling framework to train a 11-class logistic regression classifier.\footnote{https://github.com/redpony/creg}  We parameterize the classifier as a multiclass logistic regression:
 \begin{align*}
-p_{\boldsymbol{\lambda}}(y& \mid \textbf{x})= \frac{\exp \sum_j \lambda_j h_j(y, \textbf{x})}{Z_{\boldsymbol{\lambda}}(\textbf{x})} ,
+p_{\boldsymbol{\lambda}}(y& \mid \textbf{x})= \frac{\exp \sum_j \lambda_j h_j(\textbf{x},y)}{Z_{\boldsymbol{\lambda}}(\textbf{x})} ,
 \end{align*}
-where $\textbf{x}$ are documents, $h_j(\cdot)$ are real-valued feature functions, $\lambda_j$ are the corresponding weights, and $y$ is one of the eleven L1 class labels. To train the parameters of our model, we minimized the following objective,
+where $\textbf{x}$ are documents, $h_j(\cdot)$ are real-valued feature functions of the document being classified, $\lambda_j$ are the corresponding weights, and $y$ is one of the eleven L1 class labels. To train the parameters of our model, we minimized the following objective,
 \begin{align*}
 \mathcal{L} = \alpha \overbrace{\sum_j \lambda_j^2}^{\textrm{$\ell_2$ reg.}} - \sum_{\{(\textbf{x}_i,y_i )\}_{i=1}^{|\mathcal{D}|}} \Big(& \overbrace{\log p_{\boldsymbol{\lambda}}(y_i \mid \textbf{x}_i)}^{\textrm{log likelihood}}  + \\
-& \tau \underbrace{\mathbb{E}_{p_{\boldsymbol{\lambda}}(y_i \mid \textbf{x}_i)} \log p_{\boldsymbol{\lambda}}(y_i \mid \textbf{x}_i)}_{-\textrm{conditional entropy}}\Big) ,
+& \tau \underbrace{\mathbb{E}_{p_{\boldsymbol{\lambda}}(y' \mid \textbf{x}_i)} \log p_{\boldsymbol{\lambda}}(y' \mid \textbf{x}_i)}_{-\textrm{conditional entropy}}\Big) ,
 \end{align*}
 which combines the negative log likelihood of the training dataset $\mathcal{D}$, an $\ell_2$ (quadratic) penalty on the magnitude of $\boldsymbol{\lambda}$ (weighted by $\alpha$), and the \emph{negative} entropy of the predictive model (weighted by $\tau$). While an $\ell_2$ weight penalty is standard in regression problems like this, we found that the the additional entropy term gave more reliable results. Intuitively, the entropic regularizer encourages the remain maximally uncertain about its predictions. In the metaphor of ``maximum entropy'', the entropic prior finds a solution that has \emph{more} entropy than the ``maximum'' model that is compatible with the constraints.
 
@@ -254,11 +248,8 @@ improve the accuracy of classification and to be able to interpret the
 characteristics of the language produced by speakers of different
 L1s.
 
-\subsection{Motivation}
-While some of the features were used in the works surveyed in
-\Sref{sec:literature}, many are novel, and are inspired by the
-features used to identify translationese by \citet{vered:noam:shuly}.
-We begin by motivating our choice of features, many of which are illustrated in \fref{fig:german} for an example sentence.
+While some of the features were used in prior work (\Sref{sec:literature}), we focus on two broad novel categories of features: those inspired by the
+features used to identify translationese by \citet{vered:noam:shuly} and those extracted by automatic statistical ``correction'' of the essays. Refer to \fref{fig:german} to see the set of features and their values that were extracted from an example sentence.
 
 \begin{figure*}\centering\small
 Firstly the employers live more savely because they are going to have more money to spend for luxury .\\[10pt]
@@ -347,12 +338,12 @@ Firstly the employers live more savely because they are going to have more money
 
 \end{compactdesc}
 
-\subsection{Main Features}
+\subsection{Primary Features}
 \label{sec:mainfeats}
-First, we use the following four feature types as the core of our
-model.  Whenever counts are mentioned, we use the log of the count-plus-one\nss{added: plus one} as
-the feature.  We report the accuracy of using each feature type, in
-isolation, on the training set.
+First, we use the following four feature types as the baseline features in our
+model.  For features that are sensitive to frequency, we use the log of the (frequency-plus-one) as
+the feature's value.  For each feature type, we report the accuracy of using just that feature type in
+isolation on the training set\cjd{training? development? cross validated?}.
 
 
 \begin{compactdesc}
