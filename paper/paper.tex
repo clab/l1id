@@ -18,7 +18,10 @@
 
 \usepackage{array}
 
-\usepackage[round]{natbib}
+%\usepackage[round]{natbib}
+\newcommand{\citep}[1]{\cite{#1}}
+\newcommand{\citet}[1]{\newcite{#1}}
+
 \setlength\titlebox{6.5cm}    % Expanding the titlebox
 
 
@@ -65,7 +68,7 @@
 
 \newcommand{\feat}[1]{\textsmaller[.5]{\textsf{#1}}} % code for a feature group
 \newcommand{\featstr}[1]{\textsmaller[.5]{\verb|#1|}} % full feature name
-\newcommand{\textnl}{\textsl}
+\newcommand{\textnl}{\textit}
 
 
 
@@ -149,8 +152,9 @@ research.
 
 \section{Related work}
 \label{sec:literature}
-The task of L1 identification was introduced by
-\citet{koppel2005automatically,koppel2005determining}, who work on the
+The task of L1 identification was introduced by Koppel et~al. \shortcite{koppel2005automatically,koppel2005determining}%
+%\citet{koppel2005automatically,koppel2005determining}
+, who work on the
 International Corpus of Learner English \citep{icle}, which includes
 texts written by students from 5 countries, Russia, the Czech Republic, Bulgaria,
 France, and Spain. The texts range from 500~to 850~words in length. Their
@@ -163,10 +167,13 @@ The same experimental setup is assumed by
 in testing the hypothesis that an author's choice of words in a second
 language is influenced by the \emph{phonology} of his or her L1. They confirm
 this hypothesis by carefully analyzing the features used by
-\citeauthor{koppel2005automatically}, controlling for potential
+Koppel et~al.\nocite{koppel2005automatically}%\citeauthor{koppel2005automatically}
+, controlling for potential
 biases.
 
-\citet{Wong-Dras:2009:ALTA2009,wong-dras:2011:EMNLP} are also
+Wong and Dras \shortcite{Wong-Dras:2009:ALTA2009,wong-dras:2011:EMNLP}
+%\citet{Wong-Dras:2009:ALTA2009,wong-dras:2011:EMNLP} 
+are also
 motivated by a linguistic hypothesis, namely that \emph{syntactic} errors in
 a text are influenced by the author's
 L1. \citet{Wong-Dras:2009:ALTA2009} analyze three error types
@@ -175,7 +182,8 @@ setup as above (using LIBSVM with a radial kernel for
 classification). The error types are subject-verb disagreement,
 noun-number disagreement and misuse of determiners. Addition of these
 features does not improve on the results of
-\citeauthor{koppel2005automatically}. \citet{wong-dras:2011:EMNLP}
+Koppel et~al.\nocite{koppel2005automatically}%\citeauthor{koppel2005automatically}
+. \citet{wong-dras:2011:EMNLP}
 further extend this work by adding as features horizontal slices of
 parse trees, thereby capturing more syntactic structure. This improves
 the results significantly, yielding 78\% accuracy compared with less
@@ -230,7 +238,7 @@ Task \citep{tetreault-blanchard-cahill:2013:BEA}. The training data consists of 
 
 \section{Model}
 \label{sec:model}
-For our classification model we used the \texttt{creg} regression modeling framework to train a 11-class logistic regression classifier.\footnote{https://github.com/redpony/creg}  We parameterize the classifier as a multiclass logistic regression:
+For our classification model we used the \texttt{creg} regression modeling framework to train a 11-class logistic regression classifier.\footnote{\url{https://github.com/redpony/creg}}  We parameterize the classifier as a multiclass logistic regression:
 \begin{align*}
 p_{\boldsymbol{\lambda}}(y& \mid \textbf{x})= \frac{\exp \sum_j \lambda_j h_j(\textbf{x},y)}{Z_{\boldsymbol{\lambda}}(\textbf{x})} ,
 \end{align*}
@@ -239,7 +247,7 @@ where $\textbf{x}$ are documents, $h_j(\cdot)$ are real-valued feature functions
 \mathcal{L} = \alpha \overbrace{\sum_j \lambda_j^2}^{\textrm{$\ell_2$ reg.}} - \sum_{\{(\textbf{x}_i,y_i )\}_{i=1}^{|\mathcal{D}|}} \Big(& \overbrace{\log p_{\boldsymbol{\lambda}}(y_i \mid \textbf{x}_i)}^{\textrm{log likelihood}}  + \\
 & \tau \underbrace{\mathbb{E}_{p_{\boldsymbol{\lambda}}(y' \mid \textbf{x}_i)} \log p_{\boldsymbol{\lambda}}(y' \mid \textbf{x}_i)}_{-\textrm{conditional entropy}}\Big) ,
 \end{align*}
-which combines the negative log likelihood of the training dataset $\mathcal{D}$, an $\ell_2$ (quadratic) penalty on the magnitude of $\boldsymbol{\lambda}$ (weighted by $\alpha$), and the \emph{negative} entropy of the predictive model (weighted by $\tau$). While an $\ell_2$ weight penalty is standard in regression problems like this, we found that the the additional entropy term gave more reliable results. Intuitively, the entropic regularizer encourages the remain maximally uncertain about its predictions. In the metaphor of ``maximum entropy'', the entropic prior finds a solution that has \emph{more} entropy than the ``maximum'' model that is compatible with the constraints.
+which combines the negative log likelihood of the training dataset $\mathcal{D}$, an $\ell_2$ (quadratic) penalty on the magnitude of $\boldsymbol{\lambda}$ (weighted by $\alpha$), and the \emph{negative} entropy of the predictive model (weighted by $\tau$). While an $\ell_2$ weight penalty is standard in regression problems like this, we found that the the additional entropy term gave more reliable results. Intuitively, the entropic regularizer encourages the model to remain maximally uncertain about its predictions. In the metaphor of ``maximum entropy'', the entropic prior finds a solution that has \emph{more} entropy than the ``maximum'' model that is compatible with the constraints.
 
 The objective cannot be minimized in closed form, but it does have a unique minimum and is straightforwardly differentiable, so we used L-BFGS to find the optimal weight settings \citep{lbfgs}.
 
@@ -300,13 +308,13 @@ Firstly the employers live more savely because they are going to have more money
   influenced by the author's L1.
 \item[Cohesive markers] These are 40 function words (and short
   phrases) that have a strong discourse function in texts (\textnl{however},
-  \textnl{because}, \textnl{in fact}, etc.) Translators tend to spell out implicit
+  \textnl{because}, \textnl{in fact}, etc.). Translators tend to spell out implicit
   utterances and render them explicitly in the target text
   \citep{Blum-Kulka:1986}. We use the list
   of~\citet{vered:noam:shuly}.
 \item[Cohesive verbs] This is a list of manually compiled verbs that
   are used, like cohesive markers, to spell out implicit utterances
-  (\textnl{indicate}, \textnl{imply}, \textnl{contain}, etc.)
+  (\textnl{indicate}, \textnl{imply}, \textnl{contain}, etc.).
 \item[Function words] Frequent tokens, which are mostly function
   words, have been used successfully for various text classification
   tasks. \citet{koppel-ordan:2011:ACL-HLT2011} define a list of 400
@@ -324,7 +332,7 @@ Firstly the employers live more savely because they are going to have more money
   indication of the author's L1, but many text categorization tasks
   use lemmas (more precisely, the stems produced by the tagger) as
   features approximating the content.
-\item[Misspelling features] Learning to perceive, produce, and encode non-native phonemic contrasts is extremely difficult for L2 learners \citep{hayes-harb:2008}. Since English's orthography is largely phonemic---even if it is irregular in many places, we expect leaners whose native phoneme contrasts are different from those of English to make characteristic spelling errors. For example, since Japanese and Korean lack a phonemic /l/-/r/ contrast, we expect native speakers of those languages to be more likely to make spelling errors that confuse {\tt l} and {\tt r} relative to native speakers of languages such as Spanish in which that pair is contrastive. To make this information available to our model, we use a noisy channel spelling corrector \citep{kernighan:1990} to identify and correct misspelled words in the training and test data. From these corrections, we extract minimal edit features that show what insertions, deletions, substitutions and joinings (where two separate words are written merged into a single orthographic token) were made by the author of the essay.
+\item[Misspelling features] Learning to perceive, produce, and encode non-native phonemic contrasts is extremely difficult for L2 learners \citep{hayes-harb:2008}. Since English's orthography is largely phonemic---even if it is irregular in many places, we expect leaners whose native phoneme contrasts are different from those of English to make characteristic spelling errors. For example, since Japanese and Korean lack a phonemic /l/-/r/ contrast, we expect native speakers of those languages to be more likely to make spelling errors that confuse \textnl{l} and \textnl{r} relative to native speakers of languages such as Spanish in which that pair is contrastive. To make this information available to our model, we use a noisy channel spelling corrector \citep{kernighan:1990} to identify and correct misspelled words in the training and test data. From these corrections, we extract minimal edit features that show what insertions, deletions, substitutions and joinings (where two separate words are written merged into a single orthographic token) were made by the author of the essay.
 \item[Restored tags] We focus on three important token classes defined
   above: punctuation marks, function words and cohesive verbs. We
   first remove words in these classes from the texts, and then recover
@@ -428,7 +436,7 @@ feature type in isolation.
 \item[\feat{PsvRatio}] The proportion of passive verbs out of all
   verbs.
 \item[\feat{CxtFxn}] Contextual function words. \raggedright High-weight features include: {\tt CHI:<some JJ>}; \mbox{\tt HIN:<as VBN>}. 
-\item[\feat{Misspell}] Spelling correction edits. Features included substitutions, deletions, insertions, doubling of letters and missing doublings of letters, and splittings (\textnl{alot}$\rightarrow$\textnl{a lot}), as well as the word position where the error occurred. \raggedright High-weight features include: {\tt ARA:DEL<e>}, {\tt ARA:INS<e>}, {\tt ARA:SUBST<e>/<i>}; {\tt GER:SUBST<z>/<y>}; {\tt JPN:SUBST<l>/<r>}, {\tt JPN:SUBST<r>/<l>}; {\tt SPA:DOUBLE<s>}, {\tt SPA:MID\_INS<s>}, {\tt SPA:INS<s>}.
+\item[\feat{Misspell}] Spelling correction edits. Features included substitutions, deletions, insertions, doubling of letters and missing doublings of letters, and splittings (\textnl{alot}$\rightarrow$\textnl{a lot}), as well as the word position where the error occurred\nss{i.e. beginning, middle, or end?}. \raggedright High-weight features include: {\tt ARA:DEL<e>}, {\tt ARA:INS<e>}, {\tt ARA:SUBST<e>/<i>}; {\tt GER:SUBST<z>/<y>}; {\tt JPN:SUBST<l>/<r>}, {\tt JPN:SUBST<r>/<l>}; {\tt SPA:DOUBLE<s>}, {\tt SPA:MID\_INS<s>}, {\tt SPA:INS<s>}.
 \item[\feat{Restore}] Counts of substitutions, deletions and
   insertions of predefined tokens that we restored in the texts. High-weight features include: {\tt CHI:DELWORD<do>}; {\tt GER:DELWORD<on>}; {\tt ITA:DELWORD<be>}  
 \end{compactdesc}
@@ -515,7 +523,7 @@ a tension between the imposing models of L1 (and the source text), on
 the one hand, and a set of cognitive constraints resulting from the
 efforts to generate the target text, on the other. The former is
 called \emph{interference} in Translation Studies \citep{Toury:1995}
-and \emph{interlanguage} in second language acquisition
+and \emph{interlanguage}\nss{do you mean `transfer'? I think `interlanguage' refers to the L2 as used by a nonnative speaker, and `transfer' from the L1 is one of the influences on interlanguage.} in second language acquisition
 \citep{Selinker1972}. \citet{vered:noam:shuly} designed 32 classifiers to test the validity
 of the forces acting on translated texts, and found that features sensitive to interference
 consistently yielded the best performing classifiers. And indeed, in
@@ -536,11 +544,11 @@ equivalent for \textnl{a lot} is used adverbially like an \textnl{-ly}
 suffix in English. For the same reason, another prominent feature is a
 missing definite article before nouns and adjectives. Additionally,
 Arabic, being an Abjad language, rarely indicates vowels, and indeed
-we find many missing \textnl{e}-s and \textnl{i}-s in the texts of
+we find many missing \textnl{e}'s and \textnl{i}'s in the texts of
 Arabic speakers. Phonologically, because Arabic conflates
 /\textipa{I}/ and /\textipa{@}/ into /i/ (at least in Modern Standard
-Arabic), we see that many {\tt e}'s are indeed substituted for
-{\tt i}'s in these texts.
+Arabic), we see that many \textnl{e}'s are indeed substituted for
+\textnl{i}'s in these texts.
 
 We find that essays that contain hyphens are more likely to be from German authors. We again find evidence of interference from the native language here. First, relative clauses are widely used in German, and we see this pattern in L2 English of L1 German speakers. For example, \textnl{any
   given rational being -- let us say Immanual Kant -- we find
@@ -558,7 +566,7 @@ clauses whereas in German it is not, so German speakers are less comfortable usi
 over represented. We hypothesize that since it is cognate of German \textnl{oft}, it is not
 cognitively expensive to retrieve it. We find \textnl{many times}---a literal translation of \textnl{muchas veces}--- in Spanish essays.
 
-Other informative features that reflect L1 features include frequent misspellings involving confusions of {\tt l} and {\tt r} in Japanese essays. More mysteriously, the characters \textnl{r} and \textnl{s} are misused in Chinese
+Other informative features that reflect L1 features include frequent misspellings involving confusions of \textnl{l} and \textnl{r} in Japanese essays. More mysteriously, the characters \textnl{r} and \textnl{s} are misused in Chinese
 and Spanish, respectively. The word \textnl{then} is dominant in the texts of
 Hindi speakers. Finally, it is clear that authors refer to their
 native cultures (and, consequently, native languages and countries);
@@ -571,7 +579,7 @@ respectively.
 
 We experimented with different classifiers and a large set of features to solve an 11-way classification problem. We hope that studying this problem will improve to facilitate human assessment, grading, and teaching of English as a second language. While the core features used are sparse and sensitive to lexical and even orthographic features of the writing, many of them are linguistically informed and provide insight into how L1 and L2 interact.  
 
-Our point of departure was the analogy between translated texts as a genre in its own and L2 writers as pseudo translators, relying heavily on their mother tongue and transferring their native models to a second language. In formulating our features, we assumed that like translators, L2 writers will write in a simplified manner and overuse explicit markers. Although this should be studied vis-a-vis comparable outputs of mother tongue writers in English, we observe that the best features of our classifiers are of the ``interference'' type, i.e. phonological, morphological and syntactic in nature, mostly in the form of misspelling features, restoration tags, punctuation and lexical and syntactic modeling.
+Our point of departure was the analogy between translated texts as a genre in its own and L2 writers as pseudo translators, relying heavily on their mother tongue and transferring their native models to a second language. In formulating our features, we assumed that like translators, L2 writers will write in a simplified manner and overuse explicit markers. Although this should be studied vis-\`{a}-vis comparable outputs of mother tongue writers in English, we observe that the best features of our classifiers are of the ``interference'' type, i.e. phonological, morphological and syntactic in nature, mostly in the form of misspelling features, restoration tags, punctuation and lexical and syntactic modeling.
 
 We would like to stress that certain features indicating a particular L1 have no bearing on the quality of the English produced. This has been discussed extensively in Translation Studies \citep{Toury:1995}, where interference is observed by the overuse or underuse of certain features reflecting the typological differences between a specific pair of languages, but which is still within grammatical limits. For example, the fact that Italian native speakers favor the syntactic sequence of determiner + adjective + noun (e.g., \textnl{a big risk} or \textnl{this new business}) has little prescriptive value for teachers.
 
@@ -579,11 +587,14 @@ A further example of how L2 quality and the ability to predict L1 are uncorrelat
 %\section{Conclusion}
 %\label{sec:conclusion}
 
+\nss{comment on how we did in relation to other task participants? if I were a reader I'd want to know}
+
 \section*{Acknowledgments}
 This research was supported by a grant from the Israeli Ministry of
 Science and Technology.
 
 \bibliography{l1id}
-\bibliographystyle{plainnat}
+%\bibliographystyle{plainnat}
+\bibliographystyle{naaclhlt2013}
 
 \end{document}
