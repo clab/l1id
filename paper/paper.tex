@@ -116,6 +116,8 @@ used for classification, as well as the settings of the classifier
 that yielded the highest accuracy.
 \end{abstract}
 
+\nss{comment on how we did in relation to other task participants? as a reader I'd want to know!}
+
 \section{Introduction}
 \label{sec:intro}
 The task we address in this work is identifying the native language
@@ -374,14 +376,14 @@ Firstly the employers live more savely because they are going to have more money
 \hline
 \end{tabular}
 \caption{Independent performance of feature types detailed in \Sref{sec:mainfeats}, \Sref{sec:addfeats} and \Sref{sec:discarded}. 
-Accuracy is averaged over 10 folds of cross-validation on the training set.}
+Accuracy is averaged over 10 folds of cross-validation on the training set.}\label{tbl:isolatedfeats}
 \end{table}
 
 \subsection{Main Features}
 \label{sec:mainfeats}
 We use the following four feature types as the baseline features in our
 model.  For features that are sensitive to frequency, we use the log of the (frequency-plus-one) as
-the feature's value.  \Tref{tbl:mainfeats} reports the accuracy of using each feature type in
+the feature's value.  \Tref{tbl:isolatedfeats} reports the accuracy of using each feature type in
 isolation (with 10-fold cross-validation on the training set).
 
 
@@ -401,7 +403,8 @@ unigrams and bigrams in each document.\ignore{in top-30 features Brown features 
 \end{compactdesc}
 \noindent
 The accuracy of the classifier on the development set using these four
-feature types is reported in \tref{tbl:mainfeats}.
+feature types is reported in \tref{tbl:mainfeats}.\footnote{For experiments in this paper combining multiple types of features, 
+we used Jonathan Clark's workflow management tool, \texttt{ducttape} (\url{https://github.com/jhclark/ducttape}).}
 
 \begin{table}[hbt]
 \small\centering
@@ -484,7 +487,7 @@ accuracy of the classifier on the development set.
 The full model that we used to classify the test set combines all
 features listed in \tref{tbl:addfeats}. Using all these features, the
 accuracy on the development set is~84.55\%, and on the test set it
-is~81.5\%. The values for $\alpha$ and $\tau$ were tuned to optimize development set performance, and found to be $\alpha=5$,$\tau=2$.
+is~81.5\%. The values for $\alpha$ and $\tau$ were tuned to optimize development set performance, and found to be $\alpha=5, \tau=2$.
 
 \Tref{tbl:matrix} lists the confusion matrix on the test
 set, as well as precision, recall and $F_1$-score for each L1.
@@ -587,7 +590,6 @@ A further example of how L2 quality and the ability to predict L1 are uncorrelat
 %\section{Conclusion}
 %\label{sec:conclusion}
 
-\nss{comment on how we did in relation to other task participants? if I were a reader I'd want to know}
 
 \section*{Acknowledgments}
 This research was supported by a grant from the Israeli Ministry of
