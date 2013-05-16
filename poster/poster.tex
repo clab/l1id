@@ -1,0 +1,508 @@
+\documentclass[landscape,final]{baposter}
+
+\usepackage{times}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{tipa}
+%\usepackage{biblatex}
+
+\usepackage{multicol}
+\usepackage{natbib}
+\newcommand{\namecite}{\citet}
+\renewcommand{\cite}{\citep}
+\bibpunct[, ]{[}{]}{;}{n}{,}{,}
+
+\usepackage{pgfbaselayers}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+\usepackage{helvet}
+\usepackage{palatino}
+
+\newcommand{\captionfont}{\footnotesize}
+\newcommand{\hl}[1]{\color{red}{#1}}
+%\newcommand{\textgl}[1]{``#1''}
+%\newcommand{\word}[2]{\textnl{#1} \textgl{#2}}
+%\newcommand{\gloss}[3]{\textnl{#1} (\textnl{#2}) \textgl{#3}}
+
+%\newcommand{\upspc}{\vspace{-1.9em}}
+
+\newcommand{\feat}[1]{\textsmaller[.5]{\textsf{#1}}} % code for a feature group
+\newcommand{\textnl}{\textsl}
+
+\selectcolormodel{cmyk}
+
+\graphicspath{{../}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Multicol Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\columnsep}{0.7em}
+\setlength{\columnseprule}{0mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Save space in lists. Use this after the opening of the list
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\compresslist}{%
+\setlength{\itemsep}{1pt}%
+\setlength{\parskip}{0pt}%
+\setlength{\parsep}{0pt}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Begin of Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Here starts the poster
+%%%---------------------------------------------------------------------------
+%%% Format it to your taste with the options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\typeout{Poster Starts}
+\background{
+  \begin{tikzpicture}[remember picture,overlay]%
+    \draw (current page.north west)+(-2em,-0em) node[anchor=north west] {\hspace{-2em}\includegraphics[height=1.1\textheight]{silhouettes_background}};
+  \end{tikzpicture}%
+}
+\definecolor{silver}{cmyk}{0,0,0,0.3}
+\definecolor{yellow}{cmyk}{0,0,0.9,0.0}
+\definecolor{reddishyellow}{cmyk}{0,0.22,1.0,0.0}
+\definecolor{black}{cmyk}{0,0,0.0,1.0}
+\definecolor{darkYellow}{cmyk}{0,0,1.0,0.5}
+\definecolor{darkSilver}{cmyk}{0,0,0,0.1}
+
+\definecolor{lightyellow}{cmyk}{0,0,0.3,0.0}
+\definecolor{lighteryellow}{cmyk}{0,0,0.1,0.0}
+\definecolor{lighteryellow}{cmyk}{0,0,0.1,0.0}
+\definecolor{lightestyellow}{cmyk}{0,0,0.05,0.0}
+% My colors
+\definecolor{lightmagenta}{cmyk}{0,0.3,0.0,0.0}
+\definecolor{lightermagenta}{cmyk}{0,0.1,0,0.0}
+\definecolor{lightestmagenta}{cmyk}{0,0.05,0.0,0.0}
+\definecolor{cyan}{cmyk}{0.9,0.,0.0,0.0}
+\definecolor{lightcyan}{cmyk}{0.3,0.,0.0,0.0}
+\definecolor{lightercyan}{cmyk}{0.1,0,0,0.0}
+\definecolor{lightestcyan}{cmyk}{0.05,0.0,0.0,0.0}
+\definecolor{blue}{cmyk}{0.5,0.2,0.0,0.0}
+\definecolor{lightblue}{cmyk}{0.2,0.12,0.0,0.0}
+\definecolor{lighterblue}{cmyk}{0.1,0.05,0,0.0}
+\definecolor{lightestblue}{cmyk}{0.01,0.005,0.0,0.0}
+
+\definecolor{darkpurple}{cmyk}{1,1,0.0,0.0}
+\definecolor{lightpurple}{cmyk}{0.1,0.4,0.0,0.0}
+
+\begin{poster}{
+  % Show grid to help with alignment
+  grid=no,
+  % Column spacing
+  colspacing=0.8em,
+  % Color style
+  bgColorOne=lightestcyan, %lighteryellow,
+  bgColorTwo=lighterblue, %lightestyellow,
+  borderColor=darkpurple, %reddishyellow,
+  headerColorOne=blue, %yellow,
+  headerColorTwo=darkpurple, %reddishyellow,
+  headerFontColor=black,
+  boxColorOne=lighterblue, %lightyellow,
+  boxColorTwo=lighterblue, %lighteryellow,
+  % Format of textbox
+  textborder=rounded, %roundedleft,
+  % Format of text header
+  eyecatcher=yes,
+  headerborder=closed,
+  headerheight=0.1\textheight,
+  headershape=rounded, %roundedright,
+  headershade=plain,
+  headerfont=\Large\textsf, %Sans Serif
+  boxshade=plain,
+%  background=shade-tb,
+  background=plain,
+  linewidth=2pt
+  }
+  % Eye Catcher
+  {%\begin{minipage}{7em}
+\includegraphics[width=9em]{img/CarnegieMellonUniversity}\\
+%\end{minipage}
+} % No eye catcher for this poster. If an eye catcher is present, the title is centered between eye-catcher and logo.
+  % Title
+  {\bf %Sans Serif
+  %\bf% Serif
+  Identifying the native language of non-native English writers 
+  }
+    % Authors
+  {\large\sl %Sans Serif
+  % Serif
+  Chris Dyer, Manaal Faruqui, Nathan Schneider, Yulia Tsvetkov, Language Technologies Institute,
+  Carnegie Mellon University, Pittsburgh, PA
+  \large
+  \\Noam Ordan, Naama Twitto, Shuly Wintner,
+  Department of Computer Science,University of Haifa, Haifa, Israel
+  }
+  % University logo clip=true, trim=l b r t,
+  {  \includegraphics[height=5.1em]{img/University_of_Haifa_logo} %logo1
+  }
+ % {  \includegraphics[height=5.1em]{img/logo1}
+  %}
+
+  \tikzstyle{light shaded}=[top color=baposterBGtwo!30!white,bottom color=baposterBGone!30!white,shading=axis,shading angle=30]
+
+  % Width of left inset image
+   %  \newlength{\leftimgwidth}
+    % \setlength{\leftimgwidth}{0.78em+8.0em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Now define the boxes that make up the poster
+%%%---------------------------------------------------------------------------
+%%% Each box has a name and can be placed absolutely or relatively.
+%%% The only inconvenience is that you can only specify a relative position 
+%%% towards an already declared box. So if you have a box attached to the 
+%%% bottom, one to the top and a third one which should be in between, you 
+%%% have to specify the top and bottom boxes before you specify the middle 
+%%% box.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %
+    % A coloured circle useful as a bullet with an adjustably strong filling
+    \newcommand{\colouredcircle}[1]{%
+      \tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em); \draw[draw=black,fill=bgColorOne!80!black!#1!white,line width=0.03em] (0,0) circle(0.18em);}}
+
+    \newcommand{\numbox}[1]{%
+      \tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em); \draw[draw=black,fill=headerColorOne!80!black!80!white,line width=0.03em] (0,0) circle(0.5em); \path (0,0) node {\smaller #1};}\hspace{0.2em}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Abstract%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Abstract}{name=abstract,column=0,row=0,span=1}{
+{\bf We show that it is possible to identify, with high accuracy, the native language of English test takers from the content of the essays they write.} %as part of the TOEFL exam.} 
+We use standard machine-learning text classification techniques to %define sophisticated classifiers and% 
+predict the most probable native language from a set of 11 possibilities: Arabic, Chinese, French, German, Hindi, Italian, Japanese, Korean, Spanish, Telugu, and Turkish.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%System Overview%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\headerbox{System Overview}{name=diagram,column=1,span=2}{
+%This system was developed to classify each essay to one of 11-class languages. For our classification model, we use the \texttt{creg} regression modelling framework..\footnote{\url{https://github.com/redpony/creg}}  
+%\begin{center}
+% \includegraphics[width=0.7\textwidth]{img/diagram1}
+%\end{center}
+%}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Motivation%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\headerbox{Motivation }{name=motivation,column=0,span=1, below=abstract}{
+Our motivation is both to improve the accuracy of classification and to be able to interpret the characteristics of the language produced by speakers of different native languages. %Analysis of the results can shed light on the characteristics of the language produced by non-native authors.
+%Except of that this task is interesting in and of itself, 
+Such a system can be useful for a number of applications:
+
+\begin{itemize}
+\item Tutoring applications that can identify the native language of the writer can offer better targeted feedback to language learners about their errors, since many errors are native language-specific.
+
+ %the different types of errors made by non-native speakers when they write English, depends on their native language \cite{lado-57,swan2001learner}. 
+%System to identify the native language of the writer, can offer better targeted feedback to language learners about their errors.
+\item Forensic linguistic applications often need to determine the native language of authors.
+%systems, such as the one we describe, can assist determining the native language of the authors % \cite{estival-gaustad-pham-radford-hutchinson:2007:ALTA2007,estival2007author}.
+\end{itemize}
+
+
+
+}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Main Features%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Main Features}{name=mf,column=1, span = 2}{ 
+This system was developed to classify each essay to one of 11-class languages. For our classification model, we use the \texttt{creg} regression modelling framework (\url{https://github.com/redpony/creg}).%\footnote{\url{https://github.com/redpony/creg}} 
+%\linebreak 
+We define a large arsenal of features. %some of them inspired by the features used to identify translationese by \cite{vered:noam:shuly}. 
+The following four feature types are used as the baseline features:
+\begin{description}
+\item [Part-of-speech (POS) $n$-grams] Features were extracted to 
+ count every POS 1-, 2-, and 3-gram in each document. %53.92\% 
+\item [FreqChar] We experimented with character $n$-grams. To reduce the number of parameters, we retain only those character $n$-grams that are observed more than 5 times in the training corpus. The value of $n$ ranges from 1 to 4.
+%Frequent character $n$-grams. We experimented with character $n$-grams. To reduce the number of parameters, we removed features only those character $n$-grams that are observed more than $5$ times in the training corpus, and $n$ ranges from~1 to~4.
+\item [CharPrompt] Conjunction of the character $n$-gram features defined above with the prompt ID %65.09
+\item [Brown clusters] Using the Brown clusters algorithm %\cite{brown:cl1992} 
+we clustered 8~billion words of English into 600~classes. Then we included log counts of all $4$-grams of Brown clusters that occurred at least $100$ times in the training data.
+\end{description}
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Main Features%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Additional Features}{name=addf,column=1, span = 2,below=mf}{ 
+To the basic set of features we add more specific, linguistically-motivated features such as:
+
+\begin{description}
+%\item[Position] Positional token frequency. The log counts for the first two and last three words before the period in each sentence as features.
+\item[PsvRatio] The proportion of passive verbs out of all verbs.
+\item[DocLen] Document length in tokens.
+%\item[Pron] Log counts of each pronoun.
+\item[Punct] Log counts of each punctuation mark. 
+\item[Misspell] Spelling correction edits. Features included substitutions, deletions, insertions and joinings (\textnl{alot}$\rightarrow$\textnl{a lot}) that were made by the author of the essay. High-weight features include: {\tt ARA:DEL<e>}, {\tt ARA:INS<e>}; {\tt GER:SUBST<z>/<y>}; {\tt JPN:SUBST<l>/<r>}, {\tt JPN:SUBST<r>/<l>};  {\tt SPA:INS<s>}.% as well as the word position where the error occurred.
+\item[CxtFxn]Contextual function words. We define pairs consisting of a function word, along with the POS tag of its adjacent word. We also define 3-grams consisting of one or two function words and the POS tag of the third word in the 3-gram.
+\end{description}
+
+}
+%%Additional features:
+%\begin{description}
+%\item[DocLen] Document length in tokens. 11.81\%.
+%\item[Punct] Counts of each punctuation mark. 27.41\%.
+%\item[Pron] Counts of each pronoun. 22.81\%.
+%\item[Position] Positional token frequency. We use the counts for the first two and last three words before the period in each sentence as features. 53.03\%.
+%\item[PsvRatio] The proportion of passive verbs out of all verbs. 12.26\%.
+%\item[CxtFxn] Contextual function words. Bi-grams yield 62.79\%, tri-gram 62.32\%.
+%\item[Misspell] Spelling correction edits. ???. 37.29\%.
+%\item[Restore] Counts of substitutions, deletions and insertions of predefined tokens that we restored in the texts. 47.67\
+%\end{description}
+%
+%\begin{center}
+%\begin{tabular}{lrc}
+%\small
+%\textbf{Feature Group} & \multicolumn{1}{c}{\# Params}  & \multicolumn{1}{c}{Accuracy(\%)} \\\hline
+%%\feat{POS} & 540,947 & 55.18 \\
+%\textsc{main} & 5,664,461 & 81.09 \\
+%\textsc{main} + \feat{Position} & 6,153,015 & 81.00 \\
+%\textsc{main} + \feat{PsvRatio} & 5,664,472 & 81.00 \\
+%\textsc{main} + \feat{DocLen} & 5,664,472 & 81.09  \\
+%\textsc{main} + \feat{Pron} & 5,664,736 & 81.09  \\
+%\textsc{main} + \feat{Punct} & 5,664,604 & 81.09  \\
+%\textsc{main} + \feat{Misspell} & 5,799,860 & 81.27  \\
+%\textsc{main} + \feat{Restore} & 5,682,589 & 81.36  \\
+%\textsc{main} + \feat{CxtFxn} & 7,669,684 & 81.73 \\
+%%+ \feat{FreqChar} & 1,036,871 & 79.55 \\ 
+%%\quad + \feat{CharPrompt} & 2,111,175 & 79.82 \\ 
+%%\qquad + \feat{Brown} & 5,664,461 & 81.09 \\
+%\end{tabular}
+%\end{center}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Results%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  \headerbox{Accuracy}{name=results,column=3,span=1}{
+The full model that we used to classify the test set combines all features. %The accuracy of the full model on the test set is 81.5\%. %listed in \tref{tbl:addfeats}. 
+%In this model, the accuracy  for 10-fold cross-validation on the development set is {\bf ~84.55\% }, and on the test set it is~81.5\%. %most of the additional features exhibited negligible improvement.
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+      \hline
+ \multirow{2}{*} {} Feature Group & \# Params 	& Accuracy(\%)	\\				
+       \hline\hline
+\feat{POS} & 540,947 & 55.18 \\
++ \feat{FreqChar} & 1,036,871 & 79.55 \\ 
+\quad + \feat{CharPrompt} & 2,111,175 & 79.82 \\ 
+\qquad + \feat{Brown} & 5,664,461 & 81.09 \\
+			\hline%\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+      \hline
+ \multirow{2}{*} {} Feature Group & \# Params 	& Accuracy(\%)	\\				
+       \hline\hline
+\textsc{main} & 5,664,461 & 81.09 \\
+%\textsc{main} + \feat{Position} & 6,153,015 & 81.00 \\
+\textsc{main} + \feat{PsvRatio} & 5,664,472 & 81.00 \\
+\textsc{main} + \feat{DocLen} & 5,664,472 & 81.09  \\
+%\textsc{main} + \feat{Pron} & 5,664,736 & 81.09  \\
+\textsc{main} + \feat{Punct} & 5,664,604 & 81.09  \\
+\textsc{main} + \feat{Misspell} & 5,799,860 & 81.27  \\
+%\textsc{main} + \feat{Restore} & 5,682,589 & 81.36  \\
+\textsc{main} + \feat{CxtFxn} & 7,669,684 & 81.73 \\
+\textsc{full model} & - & {\bf 84.55} \\
+
+			\hline%\hline
+\end{tabular}
+\end{center}
+\begin{center}
+The accuracy for 10-fold cross-validation on the development set.
+\end{center}
+}
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Datasets%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  \headerbox{Datasets}{name=dataset,column=0,span=1,below=motivation}{
+
+The dataset consists of 12,100 English TOEFL essays written by speakers of 11 different languages, distributed as part of the First Native Language Identification Shared Task. Each essay is labelled with the author's English language proficiency level (high, medium, or low) and an identification (1 to 8) of the essay prompt.
+%The dataset consists of TOEFL 12,100 English essays written by speakers of 11 different languages, 
+%\cite{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR}, 
+%distributed as part of the First Native Language Identification Shared Task %\cite{tetreault-blanchard-cahill:2013:BEA}.
+%Each essay is labelled with the author's English language proficiency level (high, medium, or low) and an identification (1 to 8) of the essay prompt. %The essays are short, consisting of 10 to 20 sentences each. %(300 to 400 tokens). %We use 9,900 documents for training, 1,100 for development and 1,100 as a test set
+   
+%\begin{center}
+%\begin{tabular}{|l|r|r|}
+%\textbf{Data} & \multicolumn{1}{c}{\# essays} \\\hline
+%Training & 9,900\\
+%Development  & 1,100 \\
+%Testing  &  1,100 \\
+%\end{tabular}
+%\end{center}
+
+\begin{center}
+\begin{tabular}{|l|c|}
+      \hline
+ \multirow{2}{*}{} Data & \# essays \\				
+      \hline\hline
+      Training			& 9,900	 \\	
+      Development			& 1,100 \\		
+      Testing	& 1,100	\\	
+			\hline%\hline
+\end{tabular}
+\end{center}
+\begin{center}
+Number of essays per dataset.
+\end{center}
+
+\begin{center}
+\begin{tabular}{|l|r|r|r|}
+      \hline
+ \multirow{2}{*}{} & Low 	& Medium 		& High \\				
+      \hline\hline
+      Essays			& 1,069 			& 5,366 			& 3,456 \\	
+      Tokens			& 245,130 			& 1,819,407 			& 	1,388,260	\\	
+      Types			& 13,110 			& 37,393 			&  	28,329	\\	
+			\hline%\hline
+\end{tabular}
+\end{center}
+\begin{center}
+Corpus size per author's proficiency level.
+\end{center}
+
+}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Results Analysis%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Analysis}{name=analysis,column=3,span=1,below=results}{
+ % \scriptsize 
+Texts produced by non native English writers involves a tension between the imposing models of the native language, on the one hand, and a set of cognitive constraints resulting from the efforts to generate the target text, on the other. 
+The former is called \emph{interference} in Translation Studies. %\cite{Toury:1995}. 
+%\linebreak
+We explore the effects of interference by analysing several patterns we observe in the features. 
+
+\begin{itemize}
+\item Arabic speakers use \textnl{a lot} as a single word more often and sometime omit the definite article before nouns and adjectives. 
+\item German authors use Hyphens more frequently, probably due to compounding in their native language. They also tend to substitute the letter \textnl{y} with \textnl{z} and vice versa.
+%German authors use Hyphens more frequently and tending to substitute the letter \textnl{y} with \textnl{z} and vice versa. We suspect this owes to their switched positions on German keyboards. 
+\item Japanese authors confuse \textnl{l} and \textnl{r}.
+\item The characters \textnl{r} and \textnl{s} are misused in Chinese
+and Spanish, respectively.
+%\item The word \textnl{then} is dominant in the texts of Hindi speakers.
+\end{itemize}
+
+%\begin{itemize}
+%\item Character sequence \textnl{alot} is overrepresented in English written by Arabic speakers.  %and we speculate that Arabic speakers conceive \textnl{a lot} as a single word; For the same reason, another prominent feature is 
+%\item A missing definite article before nouns and adjectives. Arabic has no indefinite article.
+%\item Essays that contain hyphens are more likely to be from German authors. 
+%\item Essays by native Germans is a frequent substitution of the letter \textnl{y} for \textnl{z} and vice versa. We suspect this owes to their switched positions on German keyboards.
+%%Another unexpected feature of essays by native Germans is a frequent substitution of the letter \textnl{y} for \textnl{z} and vice versa. We suspect this owes to their switched positions on German keyboards. 
+%\item Frequent misspellings involving confusions of \textnl{l} and \textnl{r} in Japanese essays.
+%\end{itemize}
+}
+
+\headerbox{Results}{name=tsclass,column=1,span=2,below=addf}{
+%\begin{description}
+%\item [] %%% 
+%\end{description}
+
+\begin{center}
+\begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|r|}
+      \hline
+ \multirow{2}{*}{} &ARA & CHI & FRE & GER & HIN & ITA & JPN &  KOR & SPA &  TEL &  TUR  \\				
+      \hline\hline
+ARA & 80 & 0 & 2 & 1 & 3 & 4 & 1 & 0 & 4 & 2 & 3 \\
+CHI & 3 & 80 & 0 & 1 & 1 & 0 & 6 & 7 & 1 & 0 & 1  \\
+\hline
+FRE & 2 & 2 & 81 & 5 & 1 & 2 & 1 & 0 & 3 & 0 & 3  \\
+GER & 1 & 1 & 1 & 93 & 0 & 0 & 0 & 1 & 1 & 0 & 2 \\
+\hline
+HIN & 2 & 0 & 0 & 1 & 77 & 1 & 0 & 1 & 5 & 9 & 4  \\
+ITA & 2 & 0 & 3 & 1 & 1 & 87 & 1 & 0 & 3 & 0 & 2  \\
+\hline
+JPN & 2 & 1 & 1 & 2 & 0 & 1 & 87 & 5 & 0 & 0 & 1 \\
+KOR & 1 & 5 & 2 & 0 & 1 & 0 & 9 & 81 & 1 & 0 & 0  \\
+\hline
+SPA & 2 & 0 & 2 & 0 & 1 & 8 & 2 & 1 & 78 & 1 & 5  \\
+TEL & 0 & 1 & 0 & 0 & 18 & 1 & 2 & 1 & 1 & 73 & 3  \\
+%\hline
+TUR & 4 & 0 & 2 & 2 & 0 & 2 & 2 & 4 & 4 & 0 & 80  \\
+			\hline%\hline
+\end{tabular}
+\end{center}
+\begin{center}
+Official test set confusion matrix with the full model. Accuracy on the test set is 81.5\%
+\end{center}
+
+
+%\begin{center}
+%\begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|r|}
+%\hline
+%%\small
+%\multirow{2}{*}{} & ARA & CHI & FRE & GER & HIN & ITA & JPN &  KOR & SPA &  TEL &  TUR & \\				
+%\hline\hline
+%ARA & 80 & 0 & 2 & 1 & 3 & 4 & 1 & 0 & 4 & 2 & 3 & 80.8 & 80.0 & 80.4 \\
+%CHI & 3 & 80 & 0 & 1 & 1 & 0 & 6 & 7 & 1 & 0 & 1 & 88.9 & 80.0 & 84.2 \\
+%FRE & 2 & 2 & 81 & 5 & 1 & 2 & 1 & 0 & 3 & 0 & 3 & 86.2 & 81.0 & 83.5 \\
+%%\hline
+%GER & 1 & 1 & 1 & 93 & 0 & 0 & 0 & 1 & 1 & 0 & 2 & 87.7 & 93.0 & 90.3 \\
+%HIN & 2 & 0 & 0 & 1 & 77 & 1 & 0 & 1 & 5 & 9 & 4 & 74.8 & 77.0 & 75.9 \\
+%ITA & 2 & 0 & 3 & 1 & 1 & 87 & 1 & 0 & 3 & 0 & 2 & 82.1 & 87.0 & 84.5 \\
+%%\hline
+%JPN & 2 & 1 & 1 & 2 & 0 & 1 & 87 & 5 & 0 & 0 & 1 & 78.4 & 87.0 & 82.5 \\
+%KOR & 1 & 5 & 2 & 0 & 1 & 0 & 9 & 81 & 1 & 0 & 0 & 80.2 & 81.0 & 80.6 \\
+%SPA & 2 & 0 & 2 & 0 & 1 & 8 & 2 & 1 & 78 & 1 & 5 & 77.2 & 78.0 & 77.6 \\
+%%\hline
+%TEL & 0 & 1 & 0 & 0 & 18 & 1 & 2 & 1 & 1 & 73 & 3 & 85.9 & 73.0 & 78.9 \\
+%TUR & 4 & 0 & 2 & 2 & 0 & 2 & 2 & 4 & 4 & 0 & 80 & 76.9 & 80.0 & 78.4 \\
+%\hline\hline
+%\end{tabular}
+%\end{center}
+%\begin{center}
+%C
+%\end{center}
+
+
+%\begin{center}
+%%\begin{tabular}{>{\bf}l|r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r@{ }r|ccc}
+%\begin{tabular}{l|rrrrrrrrrrr|ccc}
+%\small
+%& \bf ARA & \bf CHI & \bf FRE & \bf GER & \bf HIN & \bf ITA & \bf JPN & \bf KOR & \bf SPA & \bf TEL & \bf TUR & \bf Precision (\%) & \bf Recall (\%) & \bf $F_1$ (\%) \\
+%\hline
+%ARA & 80 & 0 & 2 & 1 & 3 & 4 & 1 & 0 & 4 & 2 & 3 & 80.8 & 80.0 & 80.4 \\
+%CHI & 3 & 80 & 0 & 1 & 1 & 0 & 6 & 7 & 1 & 0 & 1 & 88.9 & 80.0 & 84.2 \\
+%FRE & 2 & 2 & 81 & 5 & 1 & 2 & 1 & 0 & 3 & 0 & 3 & 86.2 & 81.0 & 83.5 \\
+%\hline
+%GER & 1 & 1 & 1 & 93 & 0 & 0 & 0 & 1 & 1 & 0 & 2 & 87.7 & 93.0 & 90.3 \\
+%HIN & 2 & 0 & 0 & 1 & 77 & 1 & 0 & 1 & 5 & 9 & 4 & 74.8 & 77.0 & 75.9 \\
+%ITA & 2 & 0 & 3 & 1 & 1 & 87 & 1 & 0 & 3 & 0 & 2 & 82.1 & 87.0 & 84.5 \\
+%\hline
+%JPN & 2 & 1 & 1 & 2 & 0 & 1 & 87 & 5 & 0 & 0 & 1 & 78.4 & 87.0 & 82.5 \\
+%KOR & 1 & 5 & 2 & 0 & 1 & 0 & 9 & 81 & 1 & 0 & 0 & 80.2 & 81.0 & 80.6 \\
+%SPA & 2 & 0 & 2 & 0 & 1 & 8 & 2 & 1 & 78 & 1 & 5 & 77.2 & 78.0 & 77.6 \\
+%\hline
+%TEL & 0 & 1 & 0 & 0 & 18 & 1 & 2 & 1 & 1 & 73 & 3 & 85.9 & 73.0 & 78.9 \\
+%TUR & 4 & 0 & 2 & 2 & 0 & 2 & 2 & 4 & 4 & 0 & 80 & 76.9 & 80.0 & 78.4 \\
+%\end{tabular}
+%\end{center}
+
+
+%\begin{center}
+% \includegraphics[width=0.67\textwidth]{img/graph}
+%\end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%References%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\headerbox{References}{name=references,column=3,span=1,below=analysis}{
+%    \smaller
+%    \vspace{-1.2em}
+%    \renewcommand{\refname}{}
+%\bibliographystyle{plainnat}
+%\bibliography{l1id}
+%  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Acknowledgements%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Acknowledgements}{name=ack,column=3,span=1,below=analysis}{
+%\scriptsize 
+    This research was supported by a grant from the Israeli Ministry of Science and Technology.  
+}
+
+\end{poster}%
+\end{document}
