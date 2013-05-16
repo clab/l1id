@@ -24,7 +24,7 @@
 
 \usepackage{helvet}
 \usepackage{palatino}
-
+\usepackage{listings}
 \newcommand{\captionfont}{\footnotesize}
 \newcommand{\hl}[1]{\color{red}{#1}}
 %\newcommand{\textgl}[1]{``#1''}
@@ -34,7 +34,8 @@
 %\newcommand{\upspc}{\vspace{-1.9em}}
 
 \newcommand{\feat}[1]{\textsmaller[.5]{\textsf{#1}}} % code for a feature group
-\newcommand{\textnl}{\textsl}
+%\newcommand{\featstr}[1]{\textsmaller[.5]{\begin{lstlisting}#1\end{lstlisting}}} % full feature name
+\newcommand{\textnl}{\textit}
 
 \selectcolormodel{cmyk}
 
@@ -137,7 +138,7 @@
   % Title
   {\bf %Sans Serif
   %\bf% Serif
-  Identifying the native language of non-native English writers 
+  Identifying the native language of non-native English writers
   }
     % Authors
   {\large\sl %Sans Serif
@@ -179,71 +180,139 @@
       \tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em); \draw[draw=black,fill=headerColorOne!80!black!80!white,line width=0.03em] (0,0) circle(0.5em); \path (0,0) node {\smaller #1};}\hspace{0.2em}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Abstract%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Abstract}{name=abstract,column=0,row=0,span=1}{
-{\bf We show that it is possible to identify, with high accuracy, the native language of English test takers from the content of the essays they write.} %as part of the TOEFL exam.} 
-We use standard machine-learning text classification techniques to %define sophisticated classifiers and% 
-predict the most probable native language from a set of 11 possibilities: Arabic, Chinese, French, German, Hindi, Italian, Japanese, Korean, Spanish, Telugu, and Turkish.
+\headerbox{Abstract}{name=abstract,column=0,row=0,span=1.15}{
+{\bf We show that it is possible to identify, with high accuracy, the native language of English test takers from the content of the essays they write.} 
+Our method uses standard text classification techniques based on multiclass logistic regression, combining individually weak indicators to predict the most probable native language from a set of 11 possibilities: Arabic, Chinese, French, German, Hindi, Italian, Japanese, Korean, Spanish, Telugu, and Turkish.
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%System Overview%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\headerbox{System Overview}{name=diagram,column=1,span=2}{
-%This system was developed to classify each essay to one of 11-class languages. For our classification model, we use the \texttt{creg} regression modelling framework..\footnote{\url{https://github.com/redpony/creg}}  
-%\begin{center}
-% \includegraphics[width=0.7\textwidth]{img/diagram1}
-%\end{center}
-%}
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Motivation%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\headerbox{Motivation }{name=motivation,column=0,span=1, below=abstract}{
-Our motivation is both to improve the accuracy of classification and to be able to interpret the characteristics of the language produced by speakers of different native languages. %Analysis of the results can shed light on the characteristics of the language produced by non-native authors.
-%Except of that this task is interesting in and of itself, 
-Such a system can be useful for a number of applications:
-
-\begin{itemize}
-\item Tutoring applications that can identify the native language of the writer can offer better targeted feedback to language learners about their errors, since many errors are native language-specific.
-
- %the different types of errors made by non-native speakers when they write English, depends on their native language \cite{lado-57,swan2001learner}. 
-%System to identify the native language of the writer, can offer better targeted feedback to language learners about their errors.
-\item Forensic linguistic applications often need to determine the native language of authors.
-%systems, such as the one we describe, can assist determining the native language of the authors % \cite{estival-gaustad-pham-radford-hutchinson:2007:ALTA2007,estival2007author}.
-\end{itemize}
-
-
-
-}  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Main Features%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Main Features}{name=mf,column=1, span = 2}{ 
-This system was developed to classify each essay to one of 11-class languages. For our classification model, we use the \texttt{creg} regression modelling framework (\url{https://github.com/redpony/creg}).%\footnote{\url{https://github.com/redpony/creg}} 
+\headerbox{Features}{name=features,column=0,span=1.15,below=abstract}{
+For our classification model, we use the \texttt{creg} \\\url{https://github.com/redpony/creg}
 %\linebreak 
-We define a large arsenal of features. %some of them inspired by the features used to identify translationese by \cite{vered:noam:shuly}. 
-The following four feature types are used as the baseline features:
-\begin{description}
-\item [Part-of-speech (POS) $n$-grams] Features were extracted to 
- count every POS 1-, 2-, and 3-gram in each document. %53.92\% 
-\item [FreqChar] We experimented with character $n$-grams. To reduce the number of parameters, we retain only those character $n$-grams that are observed more than 5 times in the training corpus. The value of $n$ ranges from 1 to 4.
-%Frequent character $n$-grams. We experimented with character $n$-grams. To reduce the number of parameters, we removed features only those character $n$-grams that are observed more than $5$ times in the training corpus, and $n$ ranges from~1 to~4.
-\item [CharPrompt] Conjunction of the character $n$-gram features defined above with the prompt ID %65.09
-\item [Brown clusters] Using the Brown clusters algorithm %\cite{brown:cl1992} 
-we clustered 8~billion words of English into 600~classes. Then we included log counts of all $4$-grams of Brown clusters that occurred at least $100$ times in the training data.
-\end{description}
-
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Main Features%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Additional Features}{name=addf,column=1, span = 2,below=mf}{ 
-To the basic set of features we add more specific, linguistically-motivated features such as:
 
 \begin{description}
-%\item[Position] Positional token frequency. The log counts for the first two and last three words before the period in each sentence as features.
+\item [Part-of-speech (POS) $n$-grams] Counts of every POS 1-, 2-, and 3-gram in each document. %53.92\% 
+\item [FreqChar] Counts of character $n$-grams that are observed more than 5 times in the training corpus. $n$ ranges from~1 to~4.
+\item [CharPrompt] Conjunction of the FreqChar features with the prompt ID %65.09
+\item [Brown clusters] We clustered 8~billion words of English into 600~clusters of words that appear in similar left and right contexts. (\url{http://www.ark.cs.cmu.edu/cdyer/en-600/cluster_viewer.html}). Our features are counts of $n$-grams of Brown clusters as lexical representations. $n$ ranges from~1 to~4.
 \item[PsvRatio] The proportion of passive verbs out of all verbs.
 \item[DocLen] Document length in tokens.
-%\item[Pron] Log counts of each pronoun.
-\item[Punct] Log counts of each punctuation mark. 
-\item[Misspell] Spelling correction edits. Features included substitutions, deletions, insertions and joinings (\textnl{alot}$\rightarrow$\textnl{a lot}) that were made by the author of the essay. High-weight features include: {\tt ARA:DEL<e>}, {\tt ARA:INS<e>}; {\tt GER:SUBST<z>/<y>}; {\tt JPN:SUBST<l>/<r>}, {\tt JPN:SUBST<r>/<l>};  {\tt SPA:INS<s>}.% as well as the word position where the error occurred.
-\item[CxtFxn]Contextual function words. We define pairs consisting of a function word, along with the POS tag of its adjacent word. We also define 3-grams consisting of one or two function words and the POS tag of the third word in the 3-gram.
+\item[Punct] Counts of each punctuation mark. 
+\item[Misspell] Spelling correction edits. Features included substitutions, deletions, insertions and joinings (\textnl{alot}$\rightarrow$\textnl{a lot}) that were made by the author of the essay. High-weight features include: {\tt ARA:DEL<e>}, {\tt ARA:INS<e>}; {\tt GER:SUBST<z>/<y>}; {\tt JPN:SUBST<l>/<r>}, {\tt JPN:SUBST<r>/<l>}; {\tt SPA:INS<s>}.% as well as the word position where the error occurred.
+\item[\feat{Restore}] Counts of substitutions, deletions and
+  insertions of predefined tokens that we restored in the texts: {\tt CHI:DELWORD<do>}; {\tt GER:DELWORD<on>}.%; {\tt ITA:DELWORD<be>} 
+\item[CxtFxn] Contextual function words. Counts of $n$-grams consisting of one or two function words and the POS tag of the adjacent words: {\tt CHI:<some JJ>}; \mbox{\tt HIN:<as VBN>}. 
+
 \end{description}
+}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Example%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Example: L1 German sentence}{name=example,column=1.15,span = 1.85}{ 
+%We focus on two broad novel categories of features: those inspired by the features used to identify translationese and those extracted by automatic statistical ``correction'' of the essays.
+
+\centering\small
+\vspace{4pt}
+\textbf{Firstly the employers live more savely because they are going to have more money to spend for luxury .}\\[14pt]
+
+\begin{tabular}{p{6em}p{15em}p{15em}}
+ & \multicolumn{1}{c}{\bf Presence} & \multicolumn{1}{c}{\bf Considered alternatives/edits} \\
+\hline
+\bf Characters
+& 
+\smaller[.5]
+ \begin{tabular}{@{}p{12em}p{5em}@{}} 
+   "FreqChar\_l\_y\_ ":&$\log{2+1}$\\"CharPrompt\_P5\_g\_o\_i":&$\log{1+1}$\\"Punct\_period":&$\log{1+1}$ %\\"MFChar\_e\_ ":&$\log{1+1}$
+ \end{tabular} 
+& 
+\smaller[.5]
+ \begin{tabular}{@{}p{12em}p{5em}@{}} 
+   "Misspell\_DeleteP\_p\_.":&$1.0$\\"Misspell\_InsertP\_p\_,":& $1.0$\\"Misspell\_MID:SUBST:v:f":&$\log{1+1}$\\"Misspell\_SUBST:v:f":&$\log{1+1}$
+ \end{tabular} \\
+\hline
+\bf Words 
+& 
+\smaller[.5]
+ \begin{tabular}{@{}p{12em}p{5em}@{}}
+    "DocLen\_":&$\log{19+1}$\\"MeanWordRank":&$422.6$\\"CohMarker\_because":&$\log{1+1}$\\"MostFreq\_have":&$\log{1+1}$\\"PosToken\_last\_luxury":&$\log{1+1}$\\ "Pronouns\_they":&$\log{1+1}$
+ \end{tabular}
+& 
+\smaller[.5]
+ \begin{tabular}{@{}p{12em}p{5em}@{}}
+   "Misspell\_safely":&$\log{1+1}$\\"Restore\_Match\_p\_to":&$0.5$\\"Restore\_Delete\_p\_to":&$0.5$\\"Restore\_Delete\_p\_are":&$1.0$\\"Restore\_Delete\_p\_because":&$1.0$\\"Restore\_Delete\_p\_for":&$1.0$
+ \end{tabular} \\
+\hline
+\bf{POS} 
+& 
+\smaller[.5]
+\begin{tabular}{@{}p{12em}p{5em}@{}}
+  "POS\_VBP\_VBG\_TO":&$\log{1+1}$\\"POS\_p\_VBP\_VBG\_TO":&$0.059$
+\end{tabular} \\
+\hline
+\bf Words + POS 
+& 
+\smaller[.5]
+\begin{tabular}{@{}p{12em}p{5em}@{}}
+  "CxtFxn\_VBP\_VBG\_to":&$\log{1+1}$\\"CxtFxn\_more\_RB":&$\log{1+1}$
+\end{tabular} \\
+\hline
+
+\bf Brown
+& 
+\smaller[.5]
+\begin{tabular}{@{}p{30.5em}p{5em}@{}}
+  "C\_1111101111110\_110100011110\_110101101100":
+  & $\log{1+1}$\\
+  
+\end{tabular} \\\\[14pt]
+
+\end{tabular}
+
+\begin{tabular}{p{10em}p{32em}}
+  \multicolumn{1}{c}{\bf Brown clusters} & \multicolumn{1}{c}{\bf Words in cluster}\\\hline
+ C\_1111101111110   & investors customers patients employees consumers users citizens shareholders clients individuals managers buyers viewers \textbf{employers} guests readers immigrants taxpayers humans donors households homeowners competitors travelers audiences borrowers shoppers offenders physicians creditors subscribers stockholders sellers entrepreneurs advertisers applicants motorists tenants builders smokers strangers collectors listeners savers retirees outsiders travellers bidders bondholders patrons\\ \hline
+  
+ C\_110100011110   & \textbf{live} remain stay stand die sit compete operate invest participate arrive engage succeed lie cope gather testify comply communicate proceed weigh disagree cooperate intervene expire rein behave interact thrive interfere prevail persist coincide explode collaborate linger grips enroll indulge resonate dine tread prosper loom grapple reside retaliate collide regroup innovate \\ \hline
+ 
+  C\_110101101100   & \textbf{more} less fewer ... \\\\
+ 
+ \end{tabular} 
+% \begin{center}
+%Some of the features extracted for an L1 German sentence.
+%\end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Results%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Results}{name=results,column=1.15,span=1.85,below=example}{
+\begin{center}
+\small
+\begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|r||c|c|}
+      \hline
+ \multirow{2}{*}{} &ARA & CHI & FRE & GER & HIN & ITA & JPN &  KOR & SPA &  TEL &  TUR	& \bf P(\%) & \bf R(\%)  \\			
+      \hline\hline
+ARA & 80 & 0 & 2 & 1 & 3 & 4 & 1 & 0 & 4 & 2 & 3 & 80.8 & 80.0  \\
+CHI & 3 & 80 & 0 & 1 & 1 & 0 & 6 & 7 & 1 & 0 & 1 & 88.9 & 80.0  \\
+\hline
+FRE & 2 & 2 & 81 & 5 & 1 & 2 & 1 & 0 & 3 & 0 & 3 & 86.2 & 81.0  \\
+GER & 1 & 1 & 1 & 93 & 0 & 0 & 0 & 1 & 1 & 0 & 2 & 87.7 & 93.0  \\
+\hline
+HIN & 2 & 0 & 0 & 1 & 77 & 1 & 0 & 1 & 5 & 9 & 4 & 74.8 & 77.0  \\
+ITA & 2 & 0 & 3 & 1 & 1 & 87 & 1 & 0 & 3 & 0 & 2 & 82.1 & 87.0   \\
+\hline
+JPN & 2 & 1 & 1 & 2 & 0 & 1 & 87 & 5 & 0 & 0 & 1 & 78.4 & 87.0 \\
+KOR & 1 & 5 & 2 & 0 & 1 & 0 & 9 & 81 & 1 & 0 & 0 & 80.2 & 81.0  \\
+\hline
+SPA & 2 & 0 & 2 & 0 & 1 & 8 & 2 & 1 & 78 & 1 & 5 & 77.2 & 78.0  \\
+TEL & 0 & 1 & 0 & 0 & 18 & 1 & 2 & 1 & 1 & 73 & 3 & 85.9 & 73.0   \\
+%\hline
+TUR & 4 & 0 & 2 & 2 & 0 & 2 & 2 & 4 & 4 & 0 & 80 & 76.9 & 80.0   \\
+			\hline%\hline
+\end{tabular}
+\end{center}
+\begin{center}
+Official test set confusion matrix with the full model. Accuracy on the test set is 81.5\%\\
+\end{center}
 
 }
+
 %%Additional features:
 %\begin{description}
 %\item[DocLen] Document length in tokens. 11.81\%.
@@ -285,7 +354,7 @@ The full model that we used to classify the test set combines all features. %The
 \begin{center}
 \begin{tabular}{|l|c|c|c|}
       \hline
- \multirow{2}{*} {} Feature Group & \# Params 	& Accuracy(\%)	\\				
+ \multirow{2}{*} {} Main features & \# Params 	& Accuracy(\%)	\\				
        \hline\hline
 \feat{POS} & 540,947 & 55.18 \\
 + \feat{FreqChar} & 1,036,871 & 79.55 \\ 
@@ -298,7 +367,7 @@ The full model that we used to classify the test set combines all features. %The
 \begin{center}
 \begin{tabular}{|l|c|c|c|}
       \hline
- \multirow{2}{*} {} Feature Group & \# Params 	& Accuracy(\%)	\\				
+ \multirow{2}{*} {} Additional features & \# Params 	& Accuracy(\%)	\\				
        \hline\hline
 \textsc{main} & 5,664,461 & 81.09 \\
 %\textsc{main} + \feat{Position} & 6,153,015 & 81.00 \\
@@ -307,7 +376,7 @@ The full model that we used to classify the test set combines all features. %The
 %\textsc{main} + \feat{Pron} & 5,664,736 & 81.09  \\
 \textsc{main} + \feat{Punct} & 5,664,604 & 81.09  \\
 \textsc{main} + \feat{Misspell} & 5,799,860 & 81.27  \\
-%\textsc{main} + \feat{Restore} & 5,682,589 & 81.36  \\
+\textsc{main} + \feat{Restore} & 5,682,589 & 81.36  \\
 \textsc{main} + \feat{CxtFxn} & 7,669,684 & 81.73 \\
 \textsc{full model} & - & {\bf 84.55} \\
 
@@ -315,72 +384,23 @@ The full model that we used to classify the test set combines all features. %The
 \end{tabular}
 \end{center}
 \begin{center}
-The accuracy for 10-fold cross-validation on the development set.
+10-fold cross-validation on the development set.
 \end{center}
 }
 
  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Datasets%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-  \headerbox{Datasets}{name=dataset,column=0,span=1,below=motivation}{
-
-The dataset consists of 12,100 English TOEFL essays written by speakers of 11 different languages, distributed as part of the First Native Language Identification Shared Task. Each essay is labelled with the author's English language proficiency level (high, medium, or low) and an identification (1 to 8) of the essay prompt.
-%The dataset consists of TOEFL 12,100 English essays written by speakers of 11 different languages, 
-%\cite{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR}, 
-%distributed as part of the First Native Language Identification Shared Task %\cite{tetreault-blanchard-cahill:2013:BEA}.
-%Each essay is labelled with the author's English language proficiency level (high, medium, or low) and an identification (1 to 8) of the essay prompt. %The essays are short, consisting of 10 to 20 sentences each. %(300 to 400 tokens). %We use 9,900 documents for training, 1,100 for development and 1,100 as a test set
-   
-%\begin{center}
-%\begin{tabular}{|l|r|r|}
-%\textbf{Data} & \multicolumn{1}{c}{\# essays} \\\hline
-%Training & 9,900\\
-%Development  & 1,100 \\
-%Testing  &  1,100 \\
-%\end{tabular}
-%\end{center}
-
-\begin{center}
-\begin{tabular}{|l|c|}
-      \hline
- \multirow{2}{*}{} Data & \# essays \\				
-      \hline\hline
-      Training			& 9,900	 \\	
-      Development			& 1,100 \\		
-      Testing	& 1,100	\\	
-			\hline%\hline
-\end{tabular}
-\end{center}
-\begin{center}
-Number of essays per dataset.
-\end{center}
-
-\begin{center}
-\begin{tabular}{|l|r|r|r|}
-      \hline
- \multirow{2}{*}{} & Low 	& Medium 		& High \\				
-      \hline\hline
-      Essays			& 1,069 			& 5,366 			& 3,456 \\	
-      Tokens			& 245,130 			& 1,819,407 			& 	1,388,260	\\	
-      Types			& 13,110 			& 37,393 			&  	28,329	\\	
-			\hline%\hline
-\end{tabular}
-\end{center}
-\begin{center}
-Corpus size per author's proficiency level.
-\end{center}
-
-}
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Results Analysis%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \headerbox{Analysis}{name=analysis,column=3,span=1,below=results}{
  % \scriptsize 
-Texts produced by non native English writers involves a tension between the imposing models of the native language, on the one hand, and a set of cognitive constraints resulting from the efforts to generate the target text, on the other. 
+Texts produced by non native English writers involve a tension between the imposing models of the native language, on the one hand, and a set of cognitive constraints resulting from the efforts to generate the target text, on the other. 
 The former is called \emph{interference} in Translation Studies. %\cite{Toury:1995}. 
 %\linebreak
-We explore the effects of interference by analysing several patterns we observe in the features. 
+We explore the effects of interference by analyzing several patterns we observe in the features. 
 
 \begin{itemize}
 \item Arabic speakers use \textnl{a lot} as a single word more often and sometime omit the definite article before nouns and adjectives. 
-\item German authors use Hyphens more frequently, probably due to compounding in their native language. They also tend to substitute the letter \textnl{y} with \textnl{z} and vice versa.
+\item German authors use hyphens more frequently, probably due to compounding in their native language. They also tend to substitute the letter \textnl{y} with \textnl{z} and vice versa.
 %German authors use Hyphens more frequently and tending to substitute the letter \textnl{y} with \textnl{z} and vice versa. We suspect this owes to their switched positions on German keyboards. 
 \item Japanese authors confuse \textnl{l} and \textnl{r}.
 \item The characters \textnl{r} and \textnl{s} are misused in Chinese
@@ -398,38 +418,6 @@ and Spanish, respectively.
 %\end{itemize}
 }
 
-\headerbox{Results}{name=tsclass,column=1,span=2,below=addf}{
-%\begin{description}
-%\item [] %%% 
-%\end{description}
-
-\begin{center}
-\begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|r|}
-      \hline
- \multirow{2}{*}{} &ARA & CHI & FRE & GER & HIN & ITA & JPN &  KOR & SPA &  TEL &  TUR  \\				
-      \hline\hline
-ARA & 80 & 0 & 2 & 1 & 3 & 4 & 1 & 0 & 4 & 2 & 3 \\
-CHI & 3 & 80 & 0 & 1 & 1 & 0 & 6 & 7 & 1 & 0 & 1  \\
-\hline
-FRE & 2 & 2 & 81 & 5 & 1 & 2 & 1 & 0 & 3 & 0 & 3  \\
-GER & 1 & 1 & 1 & 93 & 0 & 0 & 0 & 1 & 1 & 0 & 2 \\
-\hline
-HIN & 2 & 0 & 0 & 1 & 77 & 1 & 0 & 1 & 5 & 9 & 4  \\
-ITA & 2 & 0 & 3 & 1 & 1 & 87 & 1 & 0 & 3 & 0 & 2  \\
-\hline
-JPN & 2 & 1 & 1 & 2 & 0 & 1 & 87 & 5 & 0 & 0 & 1 \\
-KOR & 1 & 5 & 2 & 0 & 1 & 0 & 9 & 81 & 1 & 0 & 0  \\
-\hline
-SPA & 2 & 0 & 2 & 0 & 1 & 8 & 2 & 1 & 78 & 1 & 5  \\
-TEL & 0 & 1 & 0 & 0 & 18 & 1 & 2 & 1 & 1 & 73 & 3  \\
-%\hline
-TUR & 4 & 0 & 2 & 2 & 0 & 2 & 2 & 4 & 4 & 0 & 80  \\
-			\hline%\hline
-\end{tabular}
-\end{center}
-\begin{center}
-Official test set confusion matrix with the full model. Accuracy on the test set is 81.5\%
-\end{center}
 
 
 %\begin{center}
@@ -487,7 +475,7 @@ Official test set confusion matrix with the full model. Accuracy on the test set
 %\begin{center}
 % \includegraphics[width=0.67\textwidth]{img/graph}
 %\end{center}
-}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%References%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\headerbox{References}{name=references,column=3,span=1,below=analysis}{
