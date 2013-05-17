@@ -186,8 +186,8 @@ Our method uses standard text classification techniques based on multiclass logi
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Model}{name=model,column=0,span=1.15,below=abstract}{
-We use a logistic regression model implemented by \texttt{creg} trained to maximize log-likelihood, penalized by a combined $\ell_2$ and entropic regularizer.
+\headerbox{Classification Model}{name=model,column=0,span=1.15,below=abstract}{
+We use a logistic regression classifier implemented by \texttt{creg} trained to maximize the log-likelihood of the training data, penalized by a combined $\ell_2$ and entropic regularizer.
 \begin{align*}
 \hat{\boldsymbol{\lambda}} = \arg \min_{\boldsymbol{\lambda}} \alpha \overbrace{\sum_j \lambda_j^2}^{\textrm{$\ell_2$ reg.}} - \sum_{\{(\textbf{x}_i,y_i )\}_{i=1}^{|\mathcal{D}|}} \Big(& \overbrace{\log p_{\boldsymbol{\lambda}}(y_i \mid \textbf{x}_i)}^{\textrm{log likelihood}}  + \\
 & \vspace{-1cm} \tau \underbrace{\mathbb{E}_{p_{\boldsymbol{\lambda}}(y' \mid \textbf{x}_i)} \log p_{\boldsymbol{\lambda}}(y' \mid \textbf{x}_i)}_{-\textrm{conditional entropy}}\Big)
