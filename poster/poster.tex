@@ -1,6 +1,6 @@
 \documentclass[landscape,final]{baposter}
 
-\usepackage{times}
+%\usepackage{times}
 \usepackage{calc}
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -22,8 +22,9 @@
 \pgfdeclarelayer{foreground}
 \pgfsetlayers{background,main,foreground}
 
-\usepackage{helvet}
-\usepackage{palatino}
+\usepackage{fourier} % utopia font
+\renewcommand*\sfdefault{uop} % optima font
+%\usepackage{palatino}
 \usepackage{listings}
 \newcommand{\captionfont}{\footnotesize}
 \newcommand{\hl}[1]{\color{red}{#1}}
@@ -75,7 +76,8 @@
     \draw (current page.north west)+(-2em,-0em) node[anchor=north west] {\hspace{-2em}\includegraphics[height=1.1\textheight]{silhouettes_background}};
   \end{tikzpicture}%
 }
-\definecolor{silver}{cmyk}{0,0,0,0.3}
+\definecolor{silver}{cmyk}{0,0,0,0.5}
+\definecolor{lightgray}{cmyk}{0,0,0,0.05}
 \definecolor{yellow}{cmyk}{0,0,0.9,0.0}
 \definecolor{reddishyellow}{cmyk}{0,0.22,1.0,0.0}
 \definecolor{black}{cmyk}{0,0,0.0,1.0}
@@ -106,30 +108,30 @@
   % Show grid to help with alignment
   grid=no,
   % Column spacing
-  colspacing=0.8em,
+  colspacing=1.4em,
   % Color style
-  bgColorOne=lightestcyan, %lighteryellow,
-  bgColorTwo=lighterblue, %lightestyellow,
-  borderColor=darkpurple, %reddishyellow,
-  headerColorOne=blue, %yellow,
+  bgColorOne=white, %lighteryellow,
+  bgColorTwo=white, %lightestyellow,
+  borderColor=lightgray, %reddishyellow,
+  headerColorOne=red, %yellow,
   headerColorTwo=darkpurple, %reddishyellow,
-  headerFontColor=black,
-  boxColorOne=lighterblue, %lightyellow,
-  boxColorTwo=lighterblue, %lighteryellow,
+  headerFontColor=white,
+  boxColorOne=lightgray, %lightyellow,
+  boxColorTwo=lightgray, %lighteryellow,
   % Format of textbox
-  textborder=rounded, %roundedleft,
+  textborder=rounded-small, %roundedleft,
   % Format of text header
   eyecatcher=yes,
   headerborder=closed,
   headerheight=0.1\textheight,
   headershape=rounded, %roundedright,
   headershade=plain,
-  headerfont=\Large\textsf, %Sans Serif
+  headerfont=\large\bf\sc\textsf, %Sans Serif
   boxshade=plain,
 %  background=shade-tb,
   background=plain,
-  linewidth=2pt
-  }
+  linewidth=1pt
+}
   % Eye Catcher
   {%\begin{minipage}{7em}
 \includegraphics[width=9em]{img/cmu_logo}\\
@@ -138,16 +140,17 @@
   % Title
   {\bf %Sans Serif
   %\bf% Serif
-  Identifying the native language of non-native English writers
+  \textsf{Identifying the L1 of Non-native Writers: The CMU-Haifa System}
   }
     % Authors
-  {\large\sl %Sans Serif
+  {\large %\it %Sans Serif
   % Serif
-  Chris Dyer, Manaal Faruqui, Nathan Schneider, Yulia Tsvetkov, Language Technologies Institute,
-  Carnegie Mellon University, Pittsburgh, PA
-  \large
-  \\Noam Ordan, Naama Twitto, Shuly Wintner,
-  Department of Computer Science,University of Haifa, Haifa, Israel
+  Yulia Tsvetkov$\overset{^\textsc{c}}{\textrm{,}}$ Naama Twitto$\overset{^\textsc{h}}{\textrm{,}}$ Nathan Schneider$\overset{^\textsc{c}}{\textrm{,}}$ Noam Ordan$\overset{^\textsc{h}}{\textrm{,}}$ 
+  Manaal Faruqui$\overset{^\textsc{c}}{\textrm{,}}$ Victor Chahuneau$\overset{^\textsc{c}}{\textrm{,}}$ Shuly Wintner$\overset{^\textsc{h}}{\textrm{,}}$ and Chris Dyer$\overset{^\textsc{c}}{\textrm{}}$
+  \\
+  Language Technologies Institute,
+  \textbf{C}arnegie Mellon University, Pittsburgh, PA
+  $\bullet$ Department of Computer Science, University of \textbf{H}aifa, Haifa, Israel
   }
   % University logo clip=true, trim=l b r t,
   {  \includegraphics[height=5.1em]{img/haifa_univ_logo} %logo1
@@ -217,48 +220,52 @@ We use a logistic regression classifier implemented by \texttt{creg} trained to 
 \headerbox{Example: L1 German sentence}{name=example,column=1.15,span = 1.85}{ 
 %We focus on two broad novel categories of features: those inspired by the features used to identify translationese and those extracted by automatic statistical ``correction'' of the essays.
 
-\centering\small
-\vspace{4pt}
-\textbf{Firstly the employers live more savely because they are going to have more money to spend for luxury .}\\[14pt]
 
-\begin{tabular}{p{6em}p{15em}p{15em}}
+\vspace{4pt}
+\begin{center}
+\textsf{\large Firstly the employers live more savely because they~are~going~to~have~more~money~to~spend~for~luxury~.}
+\end{center}
+\hspace{1em}Some of the features extracted:
+
+\begin{center}\small
+\begin{tabular}{p{6.5em}p{17em}p{17em}}
  & \multicolumn{1}{c}{\bf Presence} & \multicolumn{1}{c}{\bf Considered alternatives/edits} \\
 \hline
 \bf Characters
 & 
 \smaller[.5]
- \begin{tabular}{@{}p{12em}p{5em}@{}} 
+ \begin{tabular}{p{12em}p{5em}} 
    "FreqChar\_l\_y\_ ":&$\log{2+1}$\\"CharPrompt\_P5\_g\_o\_i":&$\log{1+1}$\\"Punct\_period":&$\log{1+1}$ %\\"MFChar\_e\_ ":&$\log{1+1}$
  \end{tabular} 
 & 
 \smaller[.5]
- \begin{tabular}{@{}p{12em}p{5em}@{}} 
+ \begin{tabular}{p{12em}p{5em}} 
    "Misspell\_DeleteP\_p\_.":&$1.0$\\"Misspell\_InsertP\_p\_,":& $1.0$\\"Misspell\_MID:SUBST:v:f":&$\log{1+1}$\\"Misspell\_SUBST:v:f":&$\log{1+1}$
  \end{tabular} \\
 \hline
 \bf Words 
 & 
 \smaller[.5]
- \begin{tabular}{@{}p{12em}p{5em}@{}}
+ \begin{tabular}{p{12em}p{5em}}
     "DocLen\_":&$\log{19+1}$\\"MeanWordRank":&$422.6$\\"CohMarker\_because":&$\log{1+1}$\\"MostFreq\_have":&$\log{1+1}$\\"PosToken\_last\_luxury":&$\log{1+1}$\\ "Pronouns\_they":&$\log{1+1}$
  \end{tabular}
 & 
 \smaller[.5]
- \begin{tabular}{@{}p{12em}p{5em}@{}}
+ \begin{tabular}{p{12em}p{5em}}
    "Misspell\_safely":&$\log{1+1}$\\"Restore\_Match\_p\_to":&$0.5$\\"Restore\_Delete\_p\_to":&$0.5$\\"Restore\_Delete\_p\_are":&$1.0$\\"Restore\_Delete\_p\_because":&$1.0$\\"Restore\_Delete\_p\_for":&$1.0$
  \end{tabular} \\
 \hline
 \bf{POS} 
 & 
 \smaller[.5]
-\begin{tabular}{@{}p{12em}p{5em}@{}}
+\begin{tabular}{p{12em}p{5em}}
   "POS\_VBP\_VBG\_TO":&$\log{1+1}$\\"POS\_p\_VBP\_VBG\_TO":&$0.059$
 \end{tabular} \\
 \hline
 \bf Words + POS 
 & 
 \smaller[.5]
-\begin{tabular}{@{}p{12em}p{5em}@{}}
+\begin{tabular}{p{12em}p{5em}}
   "CxtFxn\_VBP\_VBG\_to":&$\log{1+1}$\\"CxtFxn\_more\_RB":&$\log{1+1}$
 \end{tabular} \\
 \hline
@@ -270,11 +277,13 @@ We use a logistic regression classifier implemented by \texttt{creg} trained to 
   "C\_1111101111110\_110100011110\_110101101100":
   & $\log{1+1}$\\
   
-\end{tabular} \\\\[14pt]
+\end{tabular} \\[4pt]
 
 \end{tabular}
+\end{center}
 
-\begin{tabular}{p{10em}p{32em}}
+\begin{center}\small
+\begin{tabular}{p{8em}p{40em}}
   \multicolumn{1}{c}{\bf Brown clusters} & \multicolumn{1}{c}{\bf Words in cluster}\\\hline
  C\_1111101111110   & investors customers patients employees consumers users citizens shareholders clients individuals managers buyers viewers \textbf{employers} guests readers immigrants taxpayers humans donors households homeowners competitors travelers audiences borrowers shoppers offenders physicians creditors subscribers stockholders sellers entrepreneurs advertisers applicants motorists tenants builders smokers strangers collectors listeners savers retirees outsiders travellers bidders bondholders patrons\\ \hline
   
@@ -282,7 +291,8 @@ We use a logistic regression classifier implemented by \texttt{creg} trained to 
  
   C\_110101101100   & \textbf{more} less fewer ... \\\\
  
- \end{tabular} 
+ \end{tabular}
+\end{center} 
 % \begin{center}
 %Some of the features extracted for an L1 German sentence.
 %\end{center}
@@ -292,31 +302,33 @@ We use a logistic regression classifier implemented by \texttt{creg} trained to 
 \headerbox{Results}{name=results,column=1.15,span=1.85,below=example}{
 \begin{center}
 \small
-\begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|r||c|c|}
-      \hline
- \multirow{2}{*}{} &ARA & CHI & FRE & GER & HIN & ITA & JPN &  KOR & SPA &  TEL &  TUR	& \bf P(\%) & \bf R(\%)  \\			
-      \hline\hline
+\begin{tabular}{r|r|r|r|r|r|r|r|r|r|r|r||c|c|}
+      %\hline
+ \multicolumn{1}{c}{} & \multicolumn{1}{c}{ARA} & \multicolumn{1}{c}{CHI} & \multicolumn{1}{c}{FRE} & \multicolumn{1}{c}{GER} 
+ & \multicolumn{1}{c}{HIN} & \multicolumn{1}{c}{ITA} & \multicolumn{1}{c}{JPN} &  \multicolumn{1}{c}{KOR} & \multicolumn{1}{c}{SPA} 
+ &  \multicolumn{1}{c}{TEL} & \multicolumn{1}{c}{TUR}	& \multicolumn{1}{c}{\bf P(\%)} & \multicolumn{1}{c}{\bf R(\%)}  \\			
+      \cline{2-14} %\hline
 ARA & 80 & 0 & 2 & 1 & 3 & 4 & 1 & 0 & 4 & 2 & 3 & 80.8 & 80.0  \\
 CHI & 3 & 80 & 0 & 1 & 1 & 0 & 6 & 7 & 1 & 0 & 1 & 88.9 & 80.0  \\
-\hline
+\cline{2-14}
 FRE & 2 & 2 & 81 & 5 & 1 & 2 & 1 & 0 & 3 & 0 & 3 & 86.2 & 81.0  \\
 GER & 1 & 1 & 1 & 93 & 0 & 0 & 0 & 1 & 1 & 0 & 2 & 87.7 & 93.0  \\
-\hline
+\cline{2-14}
 HIN & 2 & 0 & 0 & 1 & 77 & 1 & 0 & 1 & 5 & 9 & 4 & 74.8 & 77.0  \\
 ITA & 2 & 0 & 3 & 1 & 1 & 87 & 1 & 0 & 3 & 0 & 2 & 82.1 & 87.0   \\
-\hline
+\cline{2-14}
 JPN & 2 & 1 & 1 & 2 & 0 & 1 & 87 & 5 & 0 & 0 & 1 & 78.4 & 87.0 \\
 KOR & 1 & 5 & 2 & 0 & 1 & 0 & 9 & 81 & 1 & 0 & 0 & 80.2 & 81.0  \\
-\hline
+\cline{2-14}
 SPA & 2 & 0 & 2 & 0 & 1 & 8 & 2 & 1 & 78 & 1 & 5 & 77.2 & 78.0  \\
 TEL & 0 & 1 & 0 & 0 & 18 & 1 & 2 & 1 & 1 & 73 & 3 & 85.9 & 73.0   \\
 %\hline
 TUR & 4 & 0 & 2 & 2 & 0 & 2 & 2 & 4 & 4 & 0 & 80 & 76.9 & 80.0   \\
-			\hline%\hline
+			\cline{2-14}%\hline
 \end{tabular}
 \end{center}
 \begin{center}
-Official test set confusion matrix with the full model. Accuracy on the test set is 81.5\%\\
+Official test set confusion matrix with the full model. Accuracy on the test set is 81.5\%.\\
 \end{center}
 
 }
@@ -359,11 +371,12 @@ Official test set confusion matrix with the full model. Accuracy on the test set
 The full model that we used to classify the test set combines all features. %The accuracy of the full model on the test set is 81.5\%. %listed in \tref{tbl:addfeats}. 
 %In this model, the accuracy  for 10-fold cross-validation on the development set is {\bf ~84.55\% }, and on the test set it is~81.5\%. %most of the additional features exhibited negligible improvement.
 
-\begin{center}
-\begin{tabular}{|l|c|c|c|}
-      \hline
- \multirow{2}{*} {} Main features & \# Params 	& Accuracy(\%)	\\				
-       \hline\hline
+
+\begin{center}\small
+\begin{tabular}{|l|r|c|}
+      %\hline
+ \multicolumn{1}{p{9em}}{Main features} &  \multicolumn{1}{c}{\# Params}	&  \multicolumn{1}{c}{Accuracy(\%)}	\\				
+       \hline %\hline
 \feat{POS} & 540,947 & 55.18 \\
 + \feat{FreqChar} & 1,036,871 & 79.55 \\ 
 \quad + \feat{CharPrompt} & 2,111,175 & 79.82 \\ 
@@ -372,11 +385,11 @@ The full model that we used to classify the test set combines all features. %The
 \end{tabular}
 \end{center}
 
-\begin{center}
-\begin{tabular}{|l|c|c|c|}
-      \hline
- \multirow{2}{*} {} Additional features & \# Params 	& Accuracy(\%)	\\				
-       \hline\hline
+\begin{center}\small
+\begin{tabular}{|l|c|c|}
+      %\hline
+ \multicolumn{1}{p{9em}}{Additional features} & \multicolumn{1}{c}{\# Params} & \multicolumn{1}{c}{Accuracy(\%)}	\\				
+       \hline %\hline
 \textsc{main} & 5,664,461 & 81.09 \\
 %\textsc{main} + \feat{Position} & 6,153,015 & 81.00 \\
 \textsc{main} + \feat{PsvRatio} & 5,664,472 & 81.00 \\

@@ -1,119 +1,134 @@
-%% 
-%% This is file `baposter.cls'
-%% 
-%% An relatively comfortable latex class to produce posters with a grid based 
-%% layout. It comes with a number of combinable styles and is (maybe only for 
-%% the writer) easy to extend, as all the graphics is based on pgf.
-%%
-%% It is meant to be used with pdftex, but might also work with pslatex if you
-%% are not interested in things like transparency.
-%%
-%% Copyright (C) 2007 Brian Amberg
-%%
-%% 29. April 2009 Incorporated Patches by Arne Henningsen
-%%     - added some class options
-%%        - a4shrink: shrink the paper to A4 size (for printing drafts or handouts)
-%%        - movebody=Xpt: move the text/poster body Xpt to the right
-%%                    (or to the left if Xpt is negative),
-%%                    e.g. for manually centering the poster on the page
-%%        - showframe: use the "showframe" option of the "geometry" package
-%%        - a0paper (default): set paper size to A0
-%%        - archE: set paper size to Arch E
-%%     - setting "background" can be "none" now (otherwise the "showframe"
-%%          option has no effect)
-%%     - the page number has been removed (it was mostly not visible before)
-%%     - the "margin=" option works now
-%% 04. December 2008
-%%     - Mainly an update to the landscape example
-%% 14. November 2008
-%%     - Actually center the title when eyecatcher is used.
-%% 04. November 2008
-%%     - Fixed bug with eyecatcher not working.
-%% 26. June 2008
-%%     - Fixed bug with plain background mode.
-%% 14. June 2008
-%%     - Support for portrait/landscape switching.
-%%     - Some smaller bugfixes.
-%% 01. June 2007
-%%     - First version released.
-%%
-%% Use this class with pdflatex
-%%
-%% I have confirmed that this package works with 
-%%   - texlive 2007 and 
-%%   - miktex 2.7
-%%
-%% It does not seem to work with 
-%%   - miktex 2.2
-%%   - some old versions of tetex
-%%
-%% Licence: GPL
-\ProvidesClass{baposter}[2009/04/29 v1.03 baposter class]
-\NeedsTeXFormat{LaTeX2e}[1995/06/01]
-\LoadClass{article}
-\typeout{baposter: Brian Amberg, 2007, 2008, 2009 | http://www.brian-amberg.de/uni/poster/}
+  %% 
+  %% This is file `baposter.cls'
+  %% 
+  %% An relatively comfortable latex class to produce posters with a grid based 
+  %% layout. It comes with a number of combinable styles and is (maybe only for 
+  %% the writer) easy to extend, as all the graphics is based on pgf.
+  %%
+  %% It is meant to be used with pdftex, but might also work with pslatex if you
+  %% are not interested in things like transparency.
+  %%
+  %% Copyright (C) 2007 Brian Amberg
+  %%
+  %% 11. December 2010: Fixed "Empty Second Page" bug
+  %%     - A second empty page was introduced when a document ended with 
+  %%           \end{poster}
+  %%         \end{document}
+  %%       This was fixed thanks to a suggestion by Martin Aulbach
+  %%     - Added
+  %%         \thispagestyle{empty}
+  %%       to suppress page numbers, which became visible when the margins are large.
+  %%       The underlying problem of page-size handling has not yet been solved.
+  %% 30. September 2010: Border Bugfixes
+  %%     - Correct background color with textborder=rounded-small, Thanks to Ke Chen for the bugreport and patch
+  %%     - Correctly draw rectangular text boxes, Thanks to abenkst for the bugreport and fix
+  %% 10. June 2010: Added option to set the number of columns
+  %%     - added a class option to set the number of columns
+  %%         - columns=5: sets the number of columns to 5, possible values are 1..6, default is 3 in portrait and 4 in landscape format 
+  %% 29. April 2009: Incorporated Patches by Arne Henningsen
+  %%     - added some class options
+  %%        - a4shrink: shrink the paper to A4 size (for printing drafts or handouts)
+  %%        - movebody=Xpt: move the text/poster body Xpt to the right
+  %%                    (or to the left if Xpt is negative),
+  %%                    e.g. for manually centering the poster on the page
+  %%        - showframe: use the "showframe" option of the "geometry" package
+  %%        - a0paper (default): set paper size to A0
+  %%        - archE: set paper size to Arch E
+  %%     - setting "background" can be "none" now (otherwise the "showframe"
+  %%          option has no effect)
+  %%     - the page number has been removed (it was mostly not visible before)
+  %%     - the "margin=" option works now
+  %% 04. December 2008
+  %%     - Mainly an update to the landscape example
+  %% 14. November 2008
+  %%     - Actually center the title when eyecatcher is used.
+  %% 04. November 2008
+  %%     - Fixed bug with eyecatcher not working.
+  %% 26. June 2008
+  %%     - Fixed bug with plain background mode.
+  %% 14. June 2008
+  %%     - Support for portrait/landscape switching.
+  %%     - Some smaller bugfixes.
+  %% 01. June 2007
+  %%     - First version released.
+  %%
+  %% Use this class with pdflatex
+  %%
+  %% I have confirmed that this package works with 
+  %%   - texlive 2007 and 
+  %%   - miktex 2.7
+  %%
+  %% It does not seem to work with 
+  %%   - miktex 2.2
+  %%   - some old versions of tetex
+  %%
+  %% Licence: GPL
+  \ProvidesClass{baposter}[2010/06/10 v1.04 baposter class]
+  \NeedsTeXFormat{LaTeX2e}[1995/06/01]
+  \LoadClass{article}
+  \typeout{baposter: Brian Amberg, 2007, 2008, 2009 | http://www.brian-amberg.de/uni/poster/}
 
-%% Define lengths only once on inclusion, such that we can make multiple posters
-\newlength{\baposter@basepaperwidth}  
-\newlength{\baposter@basepaperheight}
-\newlength{\baposter@basemargin}    
-\newlength{\headerheight}%
-\newlength{\colwidth}%
-\newlength{\colheight}%
-\newlength{\baposter@@colspacing}%
-\newlength{\boxstartx}%
-\newlength{\boxstarty}%
-\newlength{\boxwidth}%
-\newlength{\boxheight}%
-\newlength{\baposter@titleimage@left@width}%
-\newlength{\baposter@titleimage@right@width}%
-\newlength{\baposter@titleimage@textwidth}%
-\newbox\baposter@content%
-\newbox\baposter@titleimage@left%
-\newbox\baposter@titleimage@title%
-\newbox\baposter@titleimage@right%
+  %% Define lengths only once on inclusion, such that we can make multiple posters
+  \newlength{\baposter@basepaperwidth}  
+  \newlength{\baposter@basepaperheight}
+  \newlength{\baposter@basemargin}    
+  \newlength{\headerheight}%
+  \newlength{\colwidth}%
+  \newlength{\colheight}%
+  \newlength{\baposter@@colspacing}%
+  \newlength{\boxstartx}%
+  \newlength{\boxstarty}%
+  \newlength{\boxwidth}%
+  \newlength{\boxheight}%
+  \newlength{\baposter@titleimage@left@width}%
+  \newlength{\baposter@titleimage@right@width}%
+  \newlength{\baposter@titleimage@textwidth}%
+  \newbox\baposter@content%
+  \newbox\baposter@titleimage@left%
+  \newbox\baposter@titleimage@title%
+  \newbox\baposter@titleimage@right%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Packages
-%-------------------------------------------------------------------------------
-% The only ``weird'' dependency of this package is pgf. All the rest should be
-% installed on any decent system.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\typeout{Use Packages}
-\usepackage{xkeyval}
-\usepackage{calc}
-\usepackage[cmyk]{xcolor}
-\usepackage{tikz}
-\usepackage{pgf}
-\usepackage{ifthen}
-\usepackage[T1]{fontenc}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Packages
+  %-------------------------------------------------------------------------------
+  % The only ``weird'' dependency of this package is pgf. All the rest should be
+  % installed on any decent system.
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \typeout{Use Packages}
+  \usepackage{xkeyval}
+  \usepackage{calc}
+  \usepackage[cmyk]{xcolor}
+  \usepackage{tikz}
+  \usepackage{pgf}
+  \usepackage{ifthen}
+  \usepackage[T1]{fontenc}
 
-\usetikzlibrary{snakes}
+  \usetikzlibrary{decorations}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Settings
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TODO: Add package options
-\typeout{Setup}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Settings
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % TODO: Add package options
+  \typeout{Setup}
 
-% Choose a smaller value for larger fonts
-\newcommand{\baposter@fontscale}{0.292}
-% Landscape versus portrait
-\newcommand{\baposter@format}{}
-% default paper size
-\newcommand{\baposter@papersize}{a0paper}
-% use the ``showframe'' option of the ``geometry'' package?
-\newcommand{\baposter@showframe}{false}
+  % Choose a smaller value for larger fonts
+  \newcommand{\baposter@fontscale}{0.292} %def: 0.292
+  % Landscape versus portrait
+  \newcommand{\baposter@format}{}
+  % default paper size
+  \newcommand{\baposter@papersize}{a0paper}
+  % use the ``showframe'' option of the ``geometry'' package?
+  \newcommand{\baposter@showframe}{false}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Zoom
-%-------------------------------------------------------------------------------
-% We scale the page from fontscale * a0 up to a0
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\typeout{Zoom}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Zoom
+  %-------------------------------------------------------------------------------
+  % We scale the page from fontscale * a0 up to a0
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \typeout{Zoom}
 
-\DeclareOption{landscape}{\renewcommand{\baposter@format}{landscape}}
-\DeclareOption{portrait}{\renewcommand{\baposter@format}{}}
+  \DeclareOption{landscape}{\renewcommand{\baposter@format}{landscape}}
+  \DeclareOption{portrait}{\renewcommand{\baposter@format}{}}
 \DeclareOption{archE}{\renewcommand{\baposter@papersize}{archE}}
 \DeclareOption{a0paper}{\renewcommand{\baposter@papersize}{a0paper}}
 \DeclareOption{a4shrink}{\newcommand{\baposter@finalpapersize}{a4paper}}
@@ -185,6 +200,7 @@
 \typeout{Keys}
 \define@cmdkey[ba]{poster}[baposter@]{grid}                  [no]          {}
 \define@cmdkey[ba]{poster}[baposter@]{eyecatcher}            [yes]         {}
+\define@cmdkey[ba]{poster}[baposter@]{columns}               [{}]          {}
 \define@cmdkey[ba]{poster}[baposter@]{textborder}            [faded]       {}
 \define@cmdkey[ba]{poster}[baposter@]{headerborder}          [none]        {}
 \define@cmdkey[ba]{poster}[baposter@]{headershape}           [roundedright]{}
@@ -229,6 +245,7 @@
   grid=no,
   % Is there an eyecatcher image
   eyecatcher=yes,
+  columns={},
   % Colours
   bgColorOne=baposter@silver,
   bgColorTwo=green,
@@ -267,7 +284,7 @@
 %%% The settings are
 %%%   - grid=yes,[no]:    Show grid to help with alignment
 %%%   - colspacing=0.7em: Column spacing
-%%% TODO: Add option for  number of columns
+%%%   - columns=4:        number of columns (default 4 in landscape and 3 in portrait format) (maximum number is 6)
 %%%   - color=[orange]:   xcolor color definition used as the main color of the poster
 %%%   - colortwo=[white]: The other color for gradient based layouts
 %%%   - textborder=none,bars,coils,triangles,rectangle,rounded,small-rounded,roundedleft,roundedright,[faded]
@@ -278,6 +295,7 @@
 %%%                       Shape of the box-header region
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newenvironment{poster}[5]{%
+  \thispagestyle{empty}% Suppress Page Number
   \typeout{Poster Starts}%
   \setkeys[ba]{poster}{#1}%
 %
@@ -297,31 +315,34 @@
 %
   \typeout{Format}%
   \ifthenelse{\equal{\baposter@format}{landscape}}{%
-    \newcommand{\baposter@@columns}{4}%
+    \ifthenelse{\equal{\baposter@columns}{}}{\renewcommand{\baposter@columns}{4}}{}
   }{%
-    \newcommand{\baposter@@columns}{3}%
+    \ifthenelse{\equal{\baposter@columns}{}}{\renewcommand{\baposter@columns}{3}}{}
   }%
 %
-  \typeout{Columns}%
+  \typeout{Columns: \baposter@columns}%
   \setlength{\baposter@@colspacing}{\baposter@colspacing}%
+  \typeout{1}%
   \setlength{\colwidth}{\textwidth}%
-  \addtolength{\colwidth}{-\baposter@@columns\baposter@@colspacing}\addtolength{\colwidth}{\baposter@@colspacing}%
-  \ifthenelse{\equal{\baposter@@columns}{1}}{
+  \typeout{2}%
+  \addtolength{\colwidth}{-\baposter@columns\baposter@@colspacing}\addtolength{\colwidth}{\baposter@@colspacing}%
+  \typeout{3}%
+  \ifthenelse{\equal{\baposter@columns}{1}}{
     \setlength{\colwidth}{\colwidth}%
   }{
-    \ifthenelse{\equal{\baposter@@columns}{2}}{
+    \ifthenelse{\equal{\baposter@columns}{2}}{
       \setlength{\colwidth}{0.5\colwidth}%
     }{
-      \ifthenelse{\equal{\baposter@@columns}{3}}{
+      \ifthenelse{\equal{\baposter@columns}{3}}{
         \setlength{\colwidth}{0.3333333333333\colwidth}%
       }{
-        \ifthenelse{\equal{\baposter@@columns}{4}}{
+        \ifthenelse{\equal{\baposter@columns}{4}}{
           \setlength{\colwidth}{0.25\colwidth}%
         }{
-          \ifthenelse{\equal{\baposter@@columns}{5}}{
+          \ifthenelse{\equal{\baposter@columns}{5}}{
             \setlength{\colwidth}{0.2\colwidth}%
           }{
-            \ifthenelse{\equal{\baposter@@columns}{6}}{
+            \ifthenelse{\equal{\baposter@columns}{6}}{
               \setlength{\colwidth}{0.16666666666\colwidth}%
             }{
               \error{You do not want so many columns}
@@ -698,9 +719,9 @@
         \begin{scope}[color=borderColor]%
         \ifthenelse{\equal{\baposter@boxshade}{none}}{%
         }{
-          \fill[box colors,rc] (\baposter@box@name tnw) -- (\baposter@box@name sw) -- (\baposter@box@name se) -- (\baposter@box@name tne);%
+          \fill[box colors] (\baposter@box@name tnw) -- (\baposter@box@name sw) -- (\baposter@box@name se) -- (\baposter@box@name tne);%
         }
-        \draw[color=borderColor,rc] (\baposter@box@name tnw) -- (\baposter@box@name sw) -- (\baposter@box@name se) -- (\baposter@box@name tne);%
+        \draw[color=borderColor] (\baposter@box@name tnw) -- (\baposter@box@name sw) -- (\baposter@box@name se) -- (\baposter@box@name tne);%
         \end{scope}%
       }{\ifthenelse{\equal{\baposter@textborder}{rounded}}  {%
         \ifthenelse{\equal{\baposter@boxshade}{none}}{%
@@ -744,10 +765,10 @@
         \end{scope}%
       }{\ifthenelse{\equal{\baposter@textborder}{rounded-small}}  {%
         \begin{scope}[color=borderColor,src]%
-          \draw (\baposter@box@name tnw) -- (\baposter@box@name sw) -- (\baposter@box@name se) -- (\baposter@box@name tne);%
+          \draw[color=borderColor,box colors] (\baposter@box@name tnw) -- (\baposter@box@name sw) -- (\baposter@box@name se) -- (\baposter@box@name tne);%
         \end{scope}%
       }{%
-        \PackageError{baposter.cls}{Unknown text-box style \baposter@headerborder}{Edit your file to choose a valid option}}{}
+        \PackageError{baposter.cls}{Unknown text-box style \baposter@textborder}{Edit your file to choose a valid option}}{}
       }}}}}}}}%
   %
       \typeout{Drawing Text}%
@@ -826,4 +847,5 @@
     }
   \end{tikzpicture}%
  % \xkvview{}
+ \par
   }%
