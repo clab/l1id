@@ -306,7 +306,7 @@ We use a logistic regression classifier implemented by \texttt{creg} trained to 
       %\hline
  \multicolumn{1}{c}{} & \multicolumn{1}{c}{ARA} & \multicolumn{1}{c}{CHI} & \multicolumn{1}{c}{FRE} & \multicolumn{1}{c}{GER} 
  & \multicolumn{1}{c}{HIN} & \multicolumn{1}{c}{ITA} & \multicolumn{1}{c}{JPN} &  \multicolumn{1}{c}{KOR} & \multicolumn{1}{c}{SPA} 
- &  \multicolumn{1}{c}{TEL} & \multicolumn{1}{c}{TUR}	& \multicolumn{1}{c}{\bf P(\%)} & \multicolumn{1}{c}{\bf R(\%)}  \\			
+ &  \multicolumn{1}{c}{TEL} & \multicolumn{1}{c}{TUR}	& \multicolumn{1}{c}{\bf P (\%)} & \multicolumn{1}{c}{\bf R (\%)}  \\			
       \cline{2-14} %\hline
 ARA & 80 & 0 & 2 & 1 & 3 & 4 & 1 & 0 & 4 & 2 & 3 & 80.8 & 80.0  \\
 CHI & 3 & 80 & 0 & 1 & 1 & 0 & 6 & 7 & 1 & 0 & 1 & 88.9 & 80.0  \\
@@ -348,7 +348,7 @@ Official test set confusion matrix with the full model. Accuracy on the test set
 %\begin{center}
 %\begin{tabular}{lrc}
 %\small
-%\textbf{Feature Group} & \multicolumn{1}{c}{\# Params}  & \multicolumn{1}{c}{Accuracy(\%)} \\\hline
+%\textbf{Feature Group} & \multicolumn{1}{c}{\# Params}  & \multicolumn{1}{c}{Accuracy (\%)} \\\hline
 %%\feat{POS} & 540,947 & 55.18 \\
 %\textsc{main} & 5,664,461 & 81.09 \\
 %\textsc{main} + \feat{Position} & 6,153,015 & 81.00 \\
@@ -375,7 +375,7 @@ The full model that we used to classify the test set combines all features. %The
 \begin{center}\small
 \begin{tabular}{|l|r|c|}
       %\hline
- \multicolumn{1}{p{9em}}{Main features} &  \multicolumn{1}{c}{\# Params}	&  \multicolumn{1}{c}{Accuracy(\%)}	\\				
+ \multicolumn{1}{p{9em}}{Main features} &  \multicolumn{1}{c}{\# Params}	&  \multicolumn{1}{c}{Accuracy (\%)}	\\				
        \hline %\hline
 \feat{POS} & 540,947 & 55.18 \\
 + \feat{FreqChar} & 1,036,871 & 79.55 \\ 
@@ -388,7 +388,7 @@ The full model that we used to classify the test set combines all features. %The
 \begin{center}\small
 \begin{tabular}{|l|c|c|}
       %\hline
- \multicolumn{1}{p{9em}}{Additional features} & \multicolumn{1}{c}{\# Params} & \multicolumn{1}{c}{Accuracy(\%)}	\\				
+ \multicolumn{1}{p{9em}}{Additional features} & \multicolumn{1}{c}{\# Params} & \multicolumn{1}{c}{Accuracy (\%)}	\\				
        \hline %\hline
 \textsc{main} & 5,664,461 & 81.09 \\
 %\textsc{main} + \feat{Position} & 6,153,015 & 81.00 \\
