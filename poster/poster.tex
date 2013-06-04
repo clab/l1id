@@ -304,11 +304,11 @@ We use a logistic regression classifier implemented by \texttt{creg} trained to 
 \small
 \begin{tabular}{r|r|r|r|r|r|r|r|r|r|r|r||c|c|}
       %\hline
- \multicolumn{1}{c}{} & \multicolumn{1}{c}{ARA} & \multicolumn{1}{c}{CHI} & \multicolumn{1}{c}{FRE} & \multicolumn{1}{c}{GER} 
+ \multicolumn{1}{c}{\emph{true}$\downarrow$} & \multicolumn{1}{c}{ARA} & \multicolumn{1}{c}{CHI} & \multicolumn{1}{c}{FRE} & \multicolumn{1}{c}{GER} 
  & \multicolumn{1}{c}{HIN} & \multicolumn{1}{c}{ITA} & \multicolumn{1}{c}{JPN} &  \multicolumn{1}{c}{KOR} & \multicolumn{1}{c}{SPA} 
  &  \multicolumn{1}{c}{TEL} & \multicolumn{1}{c}{TUR}	& \multicolumn{1}{c}{\bf P (\%)} & \multicolumn{1}{c}{\bf R (\%)}  \\			
       \cline{2-14} %\hline
-ARA & 80 & 0 & 2 & 1 & 3 & 4 & 1 & 0 & 4 & 2 & 3 & 80.8 & 80.0  \\
+ ARA & 80 & 0 & 2 & 1 & 3 & 4 & 1 & 0 & 4 & 2 & 3 & 80.8 & 80.0  \\
 CHI & 3 & 80 & 0 & 1 & 1 & 0 & 6 & 7 & 1 & 0 & 1 & 88.9 & 80.0  \\
 \cline{2-14}
 FRE & 2 & 2 & 81 & 5 & 1 & 2 & 1 & 0 & 3 & 0 & 3 & 86.2 & 81.0  \\
@@ -377,10 +377,11 @@ The full model that we used to classify the test set combines all features. %The
       %\hline
  \multicolumn{1}{p{9em}}{Main features} &  \multicolumn{1}{c}{\# Params}	&  \multicolumn{1}{c}{Accuracy (\%)}	\\				
        \hline %\hline
-\feat{POS} & 540,947 & 55.18 \\
+\feat{POS only} & 540,947 & 55.18 \\
 + \feat{FreqChar} & 1,036,871 & 79.55 \\ 
 \quad + \feat{CharPrompt} & 2,111,175 & 79.82 \\ 
 \qquad + \feat{Brown} & 5,664,461 & 81.09 \\
+\feat{Brown only} & 1,240,420 & 72.26 \\
 			\hline%\hline
 \end{tabular}
 \end{center}
